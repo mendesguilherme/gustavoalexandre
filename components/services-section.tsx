@@ -1,5 +1,5 @@
 import { Car, Shield, CreditCard, RefreshCw } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent } from "../components/ui/card"
 
 export function ServicesSection() {
   const services = [
