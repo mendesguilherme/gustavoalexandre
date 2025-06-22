@@ -11,7 +11,6 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Calendar, Fuel, Settings, Search } from "lucide-react"
 import Link from "next/link"
-import { MobileMenuProvider } from '@/Context/MobileMenuContext' // ou o caminho relativo correto
 
 export default function VeiculosPage() {
   const [searchTerm, setSearchTerm] = useState("")
