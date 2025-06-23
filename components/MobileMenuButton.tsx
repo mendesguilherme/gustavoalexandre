@@ -1,6 +1,6 @@
 "use client"
 import { Menu, X } from "lucide-react"
-import { useMobileMenu } from "@/context/MobileMenuContext"
+import { useMobileMenu } from "../context/MobileMenuContext"
 
 export function MobileMenuButton() {
   const { isOpen, toggle } = useMobileMenu()

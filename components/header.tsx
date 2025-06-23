@@ -1,15 +1,13 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Phone, MapPin } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { MobileMenu } from "@/components/MobileMenu"
-import { MobileMenuButton } from "@/components/MobileMenuButton"
-import { MobileMenuProvider } from "@/context/MobileMenuContext"
+import { Button } from "../components/ui/button"
+import { MobileMenu } from "../components/MobileMenu"
+import { MobileMenuButton } from "../components/MobileMenuButton"
 
 export function Header() {
   return (
-  <MobileMenuProvider>
-    <header className="bg-black text-white sticky top-0 z-50">
+    <header className="bg-black text-white sticky top-0 z-50 w-full overflow-x-hidden">
       <div className="container mx-auto px-4">
         {/* Top bar */}
         <div className="hidden md:flex justify-between items-center py-2 text-sm border-b border-gray-800">
@@ -28,9 +26,10 @@ export function Header() {
           </div>
         </div>
 
-        {/* Logo centralizado com menu button no mobile */}
-        <div className="relative flex items-center justify-center py-1 md:justify-between">
-          <Link href="/">
+        {/* Linha principal do header */}
+        <div className="flex items-center justify-between py-3">
+          {/* Logo */}
+          <Link href="/" className="flex-shrink-0">
             <Image
               src="/images/logo.png"
               alt="Logo"
@@ -40,36 +39,37 @@ export function Header() {
             />
           </Link>
 
-          {/* Botão do menu mobile alinhado à direita */}
-          <div className="absolute right-4 top-1/2 -translate-y-1/2 md:hidden">
-            <MobileMenuButton />
+          {/* Navegação desktop */}
+          <div className="hidden md:flex items-center space-x-6">
+            <nav className="flex space-x-6">
+              <Link href="/" className="hover:text-red-500 transition-colors">
+                Início
+              </Link>
+              <Link href="/veiculos" className="hover:text-red-500 transition-colors">
+                Veículos
+              </Link>
+              <Link href="#servicos" className="hover:text-red-500 transition-colors">
+                Serviços
+              </Link>
+              <Link href="#contato" className="hover:text-red-500 transition-colors">
+                Contato
+              </Link>
+            </nav>
+
+            <Button className="bg-red-600 hover:bg-red-700">
+              Fale Conosco
+            </Button>
           </div>
 
-          {/* Navegação desktop */}
-          <nav className="hidden md:flex space-x-8">
-            <Link href="/" className="hover:text-red-500 transition-colors">
-              Início
-            </Link>
-            <Link href="/veiculos" className="hover:text-red-500 transition-colors">
-              Veículos
-            </Link>
-            <Link href="#servicos" className="hover:text-red-500 transition-colors">
-              Serviços
-            </Link>
-            <Link href="#contato" className="hover:text-red-500 transition-colors">
-              Contato
-            </Link>
-          </nav>
-
-          <Button className="hidden md:block bg-red-600 hover:bg-red-700">
-            Fale Conosco
-          </Button>
+          {/* Botão do menu mobile */}
+          <div className="md:hidden">
+            <MobileMenuButton />
+          </div>
         </div>
 
         {/* Menu mobile abaixo do header */}
         <MobileMenu />
       </div>
     </header>
-  </MobileMenuProvider>
   )
 }

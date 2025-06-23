@@ -97,6 +97,19 @@ export default function VeiculosPage() {
       badge: "Seminovo",
       description: "Hatch econômico e confiável, perfeito para o dia a dia.",
     },
+    {
+      id: 7,
+      name: "Chevrolet Classic 1.0 LS",
+      brand: "Chevrolet",
+      price: "R$ 29.000",
+      year: "2013",
+      fuel: "Flex",
+      transmission: "Manual",
+      km: "154.000 km",
+      image: "/placeholder.svg?height=300&width=400",
+      badge: "Usado",
+      description: "Único dono, direção hidráulica, alarme, em ótimo estado de conservação.",
+    },
   ]
 
   const filteredVehicles = vehicles.filter((vehicle) => {

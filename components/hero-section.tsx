@@ -1,18 +1,18 @@
 "use client"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
+import { Button } from "../components/ui/button"
+import { Card, CardContent } from "../components/ui/card"
+import { Input } from "../components/ui/input"
+import { Label } from "../components/ui/label"
+import { Textarea } from "../components/ui/textarea"
 import { ChevronRight, Car, Shield, CreditCard, RefreshCw } from "lucide-react"
 import Link from "next/link"
 
 export function HeroSection() {
   return (
-    <section className="relative bg-gradient-to-br from-black via-[#0c0e16] to-[#111827] text-white py-16 lg:py-24">
+    <section className="relative overflow-hidden bg-gradient-to-br from-black via-[#0c0e16] to-[#111827] text-white py-16 lg:py-24">
       {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent transform -skew-x-12"></div>
+      <div className="absolute inset-0 opacity-5 flex justify-center overflow-hidden">
+        <div className="w-[150%] h-full bg-gradient-to-r from-transparent via-white to-transparent transform -skew-x-12"></div>
       </div>
 
       {/* Decorative arrows */}
