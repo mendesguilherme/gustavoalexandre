@@ -4,7 +4,7 @@ import { Phone, MapPin } from "lucide-react"
 import { Button } from "../components/ui/button"
 import { MobileMenu } from "../components/MobileMenu"
 import { MobileMenuButton } from "../components/MobileMenuButton"
-import { MobileMenuContext } from '../Context/MobileMenuContext'
+import { MobileMenuContext } from '../context/MobileMenuContext'
 
 export function Header() {
   return (
