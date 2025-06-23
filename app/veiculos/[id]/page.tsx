@@ -32,7 +32,6 @@ export default function VehicleDetailsPage() {
   const params = useParams()
   const vehicleId = params.id
 
-  // Mock data - em um app real, isso viria de uma API
   const vehicle = {
     id: vehicleId,
     name: "Honda Civic 2022",
@@ -85,7 +84,6 @@ export default function VehicleDetailsPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Aqui você implementaria o envio do formulário
     console.log("Formulário enviado:", formData)
     alert("Obrigado pelo interesse! Entraremos em contato em breve.")
   }
@@ -95,29 +93,21 @@ export default function VehicleDetailsPage() {
       <Header />
 
       <div className="container mx-auto px-4 py-8">
-        {/* Breadcrumb */}
         <div className="flex items-center space-x-2 text-sm text-gray-600 mb-6">
-          <Link href="/" className="hover:text-red-600">
-            Início
-          </Link>
+          <Link href="/" className="hover:text-red-600">Início</Link>
           <span>/</span>
-          <Link href="/veiculos" className="hover:text-red-600">
-            Veículos
-          </Link>
+          <Link href="/veiculos" className="hover:text-red-600">Veículos</Link>
           <span>/</span>
           <span className="text-gray-900">{vehicle.name}</span>
         </div>
 
-        {/* Back button */}
         <Link href="/veiculos" className="inline-flex items-center space-x-2 text-red-600 hover:text-red-700 mb-6">
           <ArrowLeft className="h-4 w-4" />
           <span>Voltar para veículos</span>
         </Link>
 
         <div className="grid lg:grid-cols-3 gap-8">
-          {/* Left column - Images and details */}
           <div className="lg:col-span-2 space-y-6">
-            {/* Vehicle header */}
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div>
                 <div className="flex items-center gap-3 mb-2">
@@ -127,54 +117,29 @@ export default function VehicleDetailsPage() {
                 <div className="text-3xl font-bold text-red-600">{vehicle.price}</div>
               </div>
               <div className="flex gap-2">
-                <a
-                  href={`https://wa.me/5517991237276?text=Olá! Tenho interesse no ${vehicle.name}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href={`https://wa.me/5517991237276?text=Olá! Tenho interesse no ${vehicle.name}`} target="_blank" rel="noopener noreferrer">
                   <Button className="bg-green-600 hover:bg-green-700">
-                    <MessageCircle className="h-4 w-4 mr-2" />
-                    WhatsApp
+                    <MessageCircle className="h-4 w-4 mr-2" />WhatsApp
                   </Button>
                 </a>
                 <a href="tel:+5517991237276">
                   <Button variant="outline">
-                    <Phone className="h-4 w-4 mr-2" />
-                    Ligar
+                    <Phone className="h-4 w-4 mr-2" />Ligar
                   </Button>
                 </a>
               </div>
             </div>
 
-            {/* Image gallery */}
             <Card>
               <CardContent className="p-0">
                 <div className="relative">
-                  <Image
-                    src={vehicle.images[selectedImage] || "/placeholder.svg"}
-                    alt={vehicle.name}
-                    width={600}
-                    height={400}
-                    className="w-full h-80 object-cover rounded-t-lg"
-                  />
+                  <Image src={vehicle.images[selectedImage]} alt={vehicle.name} width={600} height={400} className="w-full h-80 object-cover rounded-t-lg" />
                 </div>
                 <div className="p-4">
                   <div className="grid grid-cols-4 gap-2">
                     {vehicle.images.map((image, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setSelectedImage(index)}
-                        className={`relative rounded-lg overflow-hidden ${
-                          selectedImage === index ? "ring-2 ring-red-600" : ""
-                        }`}
-                      >
-                        <Image
-                          src={image || "/placeholder.svg"}
-                          alt={`${vehicle.name} - Foto ${index + 1}`}
-                          width={150}
-                          height={100}
-                          className="w-full h-20 object-cover"
-                        />
+                      <button key={index} onClick={() => setSelectedImage(index)} className={`relative rounded-lg overflow-hidden ${selectedImage === index ? "ring-2 ring-red-600" : ""}`}>
+                        <Image src={image} alt={`${vehicle.name} - Foto ${index + 1}`} width={150} height={100} className="w-full h-20 object-cover" />
                       </button>
                     ))}
                   </div>
@@ -182,58 +147,38 @@ export default function VehicleDetailsPage() {
               </CardContent>
             </Card>
 
-            {/* Vehicle specifications */}
             <Card>
               <CardContent className="p-6">
                 <h2 className="text-2xl font-semibold mb-4">Especificações</h2>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="flex items-center space-x-3">
                     <Calendar className="h-5 w-5 text-red-600" />
-                    <div>
-                      <span className="text-sm text-gray-600">Ano</span>
-                      <div className="font-semibold">{vehicle.year}</div>
-                    </div>
+                    <div><span className="text-sm text-gray-600">Ano</span><div className="font-semibold">{vehicle.year}</div></div>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Gauge className="h-5 w-5 text-red-600" />
-                    <div>
-                      <span className="text-sm text-gray-600">Quilometragem</span>
-                      <div className="font-semibold">{vehicle.km}</div>
-                    </div>
+                    <div><span className="text-sm text-gray-600">Quilometragem</span><div className="font-semibold">{vehicle.km}</div></div>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Fuel className="h-5 w-5 text-red-600" />
-                    <div>
-                      <span className="text-sm text-gray-600">Combustível</span>
-                      <div className="font-semibold">{vehicle.fuel}</div>
-                    </div>
+                    <div><span className="text-sm text-gray-600">Combustível</span><div className="font-semibold">{vehicle.fuel}</div></div>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Settings className="h-5 w-5 text-red-600" />
-                    <div>
-                      <span className="text-sm text-gray-600">Transmissão</span>
-                      <div className="font-semibold">{vehicle.transmission}</div>
-                    </div>
+                    <div><span className="text-sm text-gray-600">Transmissão</span><div className="font-semibold">{vehicle.transmission}</div></div>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Car className="h-5 w-5 text-red-600" />
-                    <div>
-                      <span className="text-sm text-gray-600">Cor</span>
-                      <div className="font-semibold">{vehicle.color}</div>
-                    </div>
+                    <div><span className="text-sm text-gray-600">Cor</span><div className="font-semibold">{vehicle.color}</div></div>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Car className="h-5 w-5 text-red-600" />
-                    <div>
-                      <span className="text-sm text-gray-600">Portas</span>
-                      <div className="font-semibold">{vehicle.doors}</div>
-                    </div>
+                    <div><span className="text-sm text-gray-600">Portas</span><div className="font-semibold">{vehicle.doors}</div></div>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Description */}
             <Card>
               <CardContent className="p-6">
                 <h2 className="text-2xl font-semibold mb-4">Descrição</h2>
@@ -241,7 +186,6 @@ export default function VehicleDetailsPage() {
               </CardContent>
             </Card>
 
-            {/* Features */}
             <Card>
               <CardContent className="p-6">
                 <h2 className="text-2xl font-semibold mb-4">Equipamentos e Opcionais</h2>
@@ -257,73 +201,36 @@ export default function VehicleDetailsPage() {
             </Card>
           </div>
 
-          {/* Right column - Lead form */}
-          <div className="space-y-6">
-            {/* Contact form */}
-            <Card className="sticky top-4">
+          {/* Right column - Sticky */}
+          <div className="sticky top-4 space-y-6 h-fit">
+            <Card>
               <CardContent className="p-6">
                 <h3 className="text-2xl font-semibold mb-4">Tenho Interesse</h3>
                 <p className="text-gray-600 mb-6">
                   Preencha o formulário e entraremos em contato para agendar uma visita ou test drive.
                 </p>
-
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <Label htmlFor="name">Nome completo *</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      placeholder="Seu nome completo"
-                      required
-                    />
+                    <Input id="name" name="name" value={formData.name} onChange={handleInputChange} placeholder="Seu nome completo" required />
                   </div>
-
                   <div>
                     <Label htmlFor="phone">WhatsApp *</Label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      placeholder="(17) 99999-9999"
-                      required
-                    />
+                    <Input id="phone" name="phone" value={formData.phone} onChange={handleInputChange} placeholder="(17) 99999-9999" required />
                   </div>
-
                   <div>
                     <Label htmlFor="email">E-mail</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="seu@email.com"
-                    />
+                    <Input id="email" name="email" type="email" value={formData.email} onChange={handleInputChange} placeholder="seu@email.com" />
                   </div>
-
                   <div>
                     <Label htmlFor="message">Mensagem</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      placeholder="Gostaria de agendar um test drive, saber sobre financiamento..."
-                      rows={4}
-                    />
+                    <Textarea id="message" name="message" value={formData.message} onChange={handleInputChange} placeholder="Gostaria de agendar um test drive, saber sobre financiamento..." rows={4} />
                   </div>
-
-                  <Button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-lg py-3">
-                    Enviar Interesse
-                  </Button>
+                  <Button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-lg py-3">Enviar Interesse</Button>
                 </form>
               </CardContent>
             </Card>
 
-            {/* Guarantee info */}
             <Card className="bg-red-50">
               <CardContent className="p-6">
                 <div className="flex items-center space-x-3 mb-4">
@@ -339,7 +246,6 @@ export default function VehicleDetailsPage() {
               </CardContent>
             </Card>
 
-            {/* Location */}
             <Card>
               <CardContent className="p-6">
                 <div className="flex items-center space-x-3 mb-4">
