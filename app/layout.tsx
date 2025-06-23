@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body className={${inter.className} overflow-x-hidden max-w-screen}>
+      <body className={`${inter.className} overflow-x-hidden max-w-screen`}>
         <MobileMenuWrapper>{children}</MobileMenuWrapper>
       </body>
     </html>
