@@ -3,7 +3,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
-import { MobileMenuProvider } from "@/Context/MobileMenuContext"
+import { MobileMenuProvider } from "../Context/MobileMenuContext"
 
 const inter = Inter({ subsets: ["latin"] })
 
