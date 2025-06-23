@@ -146,6 +146,6 @@ export const vehicles = [
       "Vidros dianteiros elétricos",
       "Desembaçador traseiro",
     ],
-    images: ["/images/Corsa Classc/01.jpeg", "/images/Corsa Classc/02.jpeg", "/images/Corsa Classc/03.jpeg", "/images/Corsa Classc/04.jpeg", "/images/Corsa Classc/05.jpeg", "/images/Corsa Classc/06.jpeg", "/images/Corsa Classc/07.jpeg", "/images/Corsa Classc/08.jpeg"],
+    images: ["/images/corsa-classic/01.jpeg", "/images/corsa-classic/02.jpeg", "/images/Corsa Classc/03.jpeg", "/images/Corsa Classc/04.jpeg", "/images/Corsa Classc/05.jpeg", "/images/Corsa Classc/06.jpeg", "/images/Corsa Classc/07.jpeg", "/images/Corsa Classc/08.jpeg"],
   },
 ];
