@@ -129,7 +129,7 @@ export const vehicles = [
   },
   {
     id: 7,
-    name: "Chevrolet Classic 1.0 LS",
+    name: "Chevrolet Corsa Classic 1.0 LS",
     brand: "Chevrolet",
     price: "R$ 29.000",
     year: "2013",
@@ -146,6 +146,6 @@ export const vehicles = [
       "Vidros dianteiros elétricos",
       "Desembaçador traseiro",
     ],
-    images: ["/images/classic1.jpg", "/images/classic2.jpg"],
+    images: ["/images/Corsa Classc/01.jpeg", "/images/Corsa Classc/02.jpeg", "/images/Corsa Classc/03.jpeg", "/images/Corsa Classc/04.jpeg", "/images/Corsa Classc/05.jpeg", "/images/Corsa Classc/06.jpeg", "/images/Corsa Classc/07.jpeg", "/images/Corsa Classc/08.jpeg"],
   },
 ];
