@@ -11,6 +11,7 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Calendar, Fuel, Settings, Search } from "lucide-react"
 import Link from "next/link"
+import { vehicles } from "@/data/vehicles"
 
 export default function VeiculosPage() {
   const [searchTerm, setSearchTerm] = useState("")
@@ -18,106 +19,12 @@ export default function VeiculosPage() {
   const [selectedYear, setSelectedYear] = useState("")
   const [selectedPrice, setSelectedPrice] = useState("")
 
-  const vehicles = [
-    {
-      id: 1,
-      name: "Honda Civic 2022",
-      brand: "Honda",
-      price: "R$ 89.900",
-      year: "2022",
-      fuel: "Flex",
-      transmission: "Automático",
-      km: "25.000 km",
-      image: "/placeholder.svg?height=300&width=400",
-      badge: "Seminovo",
-      description: "Veículo em excelente estado, revisado e com garantia.",
-    },
-    {
-      id: 2,
-      name: "Chevrolet Onix 2023",
-      brand: "Chevrolet",
-      price: "R$ 65.900",
-      year: "2023",
-      fuel: "Flex",
-      transmission: "Manual",
-      km: "15.000 km",
-      image: "/placeholder.svg?height=300&width=400",
-      badge: "Novo",
-      description: "Veículo zero km com todas as garantias de fábrica.",
-    },
-    {
-      id: 3,
-      name: "Nissan Kicks 2021",
-      brand: "Nissan",
-      price: "R$ 78.900",
-      year: "2021",
-      fuel: "Flex",
-      transmission: "CVT",
-      km: "35.000 km",
-      image: "/placeholder.svg?height=300&width=400",
-      badge: "Seminovo",
-      description: "SUV completo com baixa quilometragem e único dono.",
-    },
-    {
-      id: 4,
-      name: "Toyota Corolla 2020",
-      brand: "Toyota",
-      price: "R$ 95.900",
-      year: "2020",
-      fuel: "Flex",
-      transmission: "Automático",
-      km: "40.000 km",
-      image: "/placeholder.svg?height=300&width=400",
-      badge: "Seminovo",
-      description: "Sedan premium com manutenção em dia na concessionária.",
-    },
-    {
-      id: 5,
-      name: "Volkswagen T-Cross 2022",
-      brand: "Volkswagen",
-      price: "R$ 82.900",
-      year: "2022",
-      fuel: "Flex",
-      transmission: "Automático",
-      km: "20.000 km",
-      image: "/placeholder.svg?height=300&width=400",
-      badge: "Seminovo",
-      description: "SUV compacto ideal para cidade com baixo consumo.",
-    },
-    {
-      id: 6,
-      name: "Hyundai HB20 2023",
-      brand: "Hyundai",
-      price: "R$ 58.900",
-      year: "2023",
-      fuel: "Flex",
-      transmission: "Manual",
-      km: "8.000 km",
-      image: "/placeholder.svg?height=300&width=400",
-      badge: "Seminovo",
-      description: "Hatch econômico e confiável, perfeito para o dia a dia.",
-    },
-    {
-      id: 7,
-      name: "Chevrolet Classic 1.0 LS",
-      brand: "Chevrolet",
-      price: "R$ 29.000",
-      year: "2013",
-      fuel: "Flex",
-      transmission: "Manual",
-      km: "154.000 km",
-      image: "/placeholder.svg?height=300&width=400",
-      badge: "Usado",
-      description: "Único dono, direção hidráulica, alarme, em ótimo estado de conservação.",
-    },
-  ]
-
   const filteredVehicles = vehicles.filter((vehicle) => {
     return (
       vehicle.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-      (selectedBrand === "" || vehicle.brand === selectedBrand) &&
-      (selectedYear === "" || vehicle.year === selectedYear) &&
-      (selectedPrice === "" ||
+      (selectedBrand === "" || selectedBrand === "all" || vehicle.brand === selectedBrand) &&
+      (selectedYear === "" || selectedYear === "all" || vehicle.year === selectedYear) &&
+      (selectedPrice === "" || selectedPrice === "all" ||
         (selectedPrice === "ate-50k" && Number.parseInt(vehicle.price.replace(/\D/g, "")) <= 50000) ||
         (selectedPrice === "50k-80k" &&
           Number.parseInt(vehicle.price.replace(/\D/g, "")) > 50000 &&
@@ -179,6 +86,7 @@ export default function VeiculosPage() {
                 <SelectItem value="2022">2022</SelectItem>
                 <SelectItem value="2021">2021</SelectItem>
                 <SelectItem value="2020">2020</SelectItem>
+                <SelectItem value="2013">2013</SelectItem>
               </SelectContent>
             </Select>
             <Select value={selectedPrice} onValueChange={setSelectedPrice}>
