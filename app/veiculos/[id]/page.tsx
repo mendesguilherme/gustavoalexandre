@@ -90,9 +90,11 @@ export default function VehicleDetailsPage() {
           <div className="lg:col-span-2 space-y-6">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div>
-                <div className="flex items-center gap-3 mb-2">
+                <div className="flex flex-wrap items-center gap-3 mb-2">
                   <h1 className="text-3xl font-bold text-gray-900">{vehicle.name}</h1>
-                  <Badge className="bg-red-600">{vehicle.badge}</Badge>
+                  <div className="shrink-0">
+                    <Badge className="bg-red-600">{vehicle.badge}</Badge>
+                  </div>
                 </div>
                 <div className="text-3xl font-bold text-red-600">{vehicle.price}</div>
               </div>
