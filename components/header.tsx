@@ -26,46 +26,44 @@ export function Header() {
           </div>
         </div>
 
-        {/* Logo centralizado com menu button no mobile */}
-        <div className="flex items-center justify-between py-1 md:justify-between w-full">
-          {/* Logo centralizado no mobile */}
-          <div className="flex-1 flex justify-center md:justify-start">
-            <Link href="/">
-              <Image
-                src="/images/logo.png"
-                alt="Logo"
-                width={160}
-                height={48}
-                className="object-contain"
-              />
-            </Link>
-          </div>
-
-          {/* Botão do menu mobile alinhado à direita */}
-          <div className="md:hidden">
-            <MobileMenuButton />
-          </div>
+        {/* Linha principal do header */}
+        <div className="flex items-center justify-between py-3">
+          {/* Logo */}
+          <Link href="/" className="flex-shrink-0">
+            <Image
+              src="/images/logo.png"
+              alt="Logo"
+              width={160}
+              height={48}
+              className="object-contain"
+            />
+          </Link>
 
           {/* Navegação desktop */}
-          <nav className="hidden md:flex space-x-8">
-            <Link href="/" className="hover:text-red-500 transition-colors">
-              Início
-            </Link>
-            <Link href="/veiculos" className="hover:text-red-500 transition-colors">
-              Veículos
-            </Link>
-            <Link href="#servicos" className="hover:text-red-500 transition-colors">
-              Serviços
-            </Link>
-            <Link href="#contato" className="hover:text-red-500 transition-colors">
-              Contato
-            </Link>
-          </nav>
+          <div className="hidden md:flex items-center space-x-6">
+            <nav className="flex space-x-6">
+              <Link href="/" className="hover:text-red-500 transition-colors">
+                Início
+              </Link>
+              <Link href="/veiculos" className="hover:text-red-500 transition-colors">
+                Veículos
+              </Link>
+              <Link href="#servicos" className="hover:text-red-500 transition-colors">
+                Serviços
+              </Link>
+              <Link href="#contato" className="hover:text-red-500 transition-colors">
+                Contato
+              </Link>
+            </nav>
 
-          <div className="hidden md:block">
             <Button className="bg-red-600 hover:bg-red-700">
               Fale Conosco
             </Button>
+          </div>
+
+          {/* Botão do menu mobile */}
+          <div className="md:hidden">
+            <MobileMenuButton />
           </div>
         </div>
 
