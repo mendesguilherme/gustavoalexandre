@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link"
 import { Button } from "../components/ui/button"
-import { useMobileMenu } from "../Context/MobileMenuContext"
+import { useMobileMenu } from "../context/MobileMenuContext"
 
 export function MobileMenu() {
   const { isOpen } = useMobileMenu()
