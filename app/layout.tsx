@@ -1,11 +1,8 @@
-// app/layout.tsx
-"use client"
-
-import type React from "react"
+// NÃO usar "use client" aqui
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
-import { MobileMenuProvider } from "@/Context/MobileMenuContext"
+import { MobileMenuWrapper } from "@/components/mobile-menu-wrapper"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -20,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR">
       <body className={inter.className}>
-        <MobileMenuProvider>{children}</MobileMenuProvider>
+        <MobileMenuWrapper>{children}</MobileMenuWrapper>
       </body>
     </html>
   )
