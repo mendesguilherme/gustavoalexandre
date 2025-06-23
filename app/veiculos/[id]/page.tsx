@@ -118,15 +118,37 @@ export default function VehicleDetailsPage() {
               <CardContent className="p-0">
                 <div className="relative">
                   <Image
-                    src={vehicle.image || "/placeholder.svg"}
-                    alt={vehicle.name}
+                    src={vehicle.images[selectedImage] || "/placeholder.svg"}
+                    alt={`${vehicle.name} - imagem ${selectedImage + 1}`}
                     width={600}
                     height={400}
                     className="w-full h-80 object-cover rounded-t-lg"
                   />
                 </div>
-              </CardContent>
-            </Card>
+                {vehicle.images.length > 1 && (
+                  <div className="grid grid-cols-4 gap-2 p-4">
+                  {vehicle.images.map((img, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setSelectedImage(idx)}
+                      className={`relative rounded-lg overflow-hidden ${
+                        selectedImage === idx ? "ring-2 ring-red-600" : ""
+                      }`}
+                    >
+                      <Image
+                        src={img}
+                        alt={`${vehicle.name} miniatura ${idx + 1}`}
+                        width={150}
+                        height={100}
+                        className="w-full h-20 object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
+              )}
+            </CardContent>
+          </Card>
+
 
             <Card>
               <CardContent className="p-6">
