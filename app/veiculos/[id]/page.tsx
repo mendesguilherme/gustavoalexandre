@@ -32,7 +32,7 @@ import {
 
 export default function VehicleDetailsPage() {
   const params = useParams()
-  const vehicleId = params.id
+  const vehicleId = params?.id
   const vehicle = vehicles.find((v) => String(v.id) === String(vehicleId))
 
   const [selectedImage, setSelectedImage] = useState(0)
@@ -118,33 +118,12 @@ export default function VehicleDetailsPage() {
               <CardContent className="p-0">
                 <div className="relative">
                   <Image
-                    src={vehicle.images[selectedImage]}
+                    src={vehicle.image || "/placeholder.svg"}
                     alt={vehicle.name}
                     width={600}
                     height={400}
                     className="w-full h-80 object-cover rounded-t-lg"
                   />
-                </div>
-                <div className="p-4">
-                  <div className="grid grid-cols-4 gap-2">
-                    {vehicle.images.map((image, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setSelectedImage(index)}
-                        className={`relative rounded-lg overflow-hidden ${
-                          selectedImage === index ? "ring-2 ring-red-600" : ""
-                        }`}
-                      >
-                        <Image
-                          src={image}
-                          alt={`${vehicle.name} - Foto ${index + 1}`}
-                          width={150}
-                          height={100}
-                          className="w-full h-20 object-cover"
-                        />
-                      </button>
-                    ))}
-                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -157,8 +136,6 @@ export default function VehicleDetailsPage() {
                   <Item icon={<Gauge />} label="Quilometragem" value={vehicle.km} />
                   <Item icon={<Fuel />} label="Combustível" value={vehicle.fuel} />
                   <Item icon={<Settings />} label="Transmissão" value={vehicle.transmission} />
-                  <Item icon={<Car />} label="Cor" value={vehicle.color} />
-                  <Item icon={<Car />} label="Portas" value={vehicle.doors} />
                 </div>
               </CardContent>
             </Card>
@@ -169,23 +146,8 @@ export default function VehicleDetailsPage() {
                 <p className="text-gray-700 leading-relaxed">{vehicle.description}</p>
               </CardContent>
             </Card>
-
-            <Card>
-              <CardContent className="p-6">
-                <h2 className="text-2xl font-semibold mb-4">Equipamentos e Opcionais</h2>
-                <div className="grid md:grid-cols-2 gap-3">
-                  {vehicle.features.map((feature, index) => (
-                    <div key={index} className="flex items-center space-x-2">
-                      <CheckCircle className="h-4 w-4 text-green-600" />
-                      <span className="text-gray-700">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
           </div>
 
-          {/* Coluna lateral */}
           <aside className="sticky top-4 space-y-6 h-fit">
             <Card>
               <CardContent className="p-6">
