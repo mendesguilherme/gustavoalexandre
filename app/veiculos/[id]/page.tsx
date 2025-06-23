@@ -1,11 +1,12 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { useParams } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
+
+import { vehicles } from "@/data/vehicles"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Card, CardContent } from "@/components/ui/card"
@@ -14,7 +15,6 @@ import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { vehicles } from "@/data/vehicles"
 
 import {
   Calendar,
@@ -33,41 +33,7 @@ import {
 export default function VehicleDetailsPage() {
   const params = useParams()
   const vehicleId = params.id
-
-  const vehicle = {
-    id: vehicleId,
-    name: "Honda Civic 2022",
-    brand: "Honda",
-    price: "R$ 89.900",
-    year: "2022",
-    fuel: "Flex",
-    transmission: "Automático",
-    km: "25.000 km",
-    color: "Prata",
-    doors: "4 portas",
-    engine: "2.0 16V",
-    badge: "Seminovo",
-    description:
-      "Honda Civic 2022 em excelente estado de conservação. Veículo revisado, com baixa quilometragem e único dono. Todas as manutenções realizadas na concessionária autorizada.",
-    features: [
-      "Ar condicionado digital",
-      "Direção elétrica",
-      "Vidros elétricos",
-      "Travas elétricas",
-      "Central multimídia",
-      "Câmera de ré",
-      "Sensor de estacionamento",
-      "Airbags frontais e laterais",
-      "Freios ABS",
-      "Controle de estabilidade",
-    ],
-    images: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-    ],
-  }
+  const vehicle = vehicles.find((v) => String(v.id) === String(vehicleId))
 
   const [selectedImage, setSelectedImage] = useState(0)
   const [formData, setFormData] = useState({
@@ -76,6 +42,18 @@ export default function VehicleDetailsPage() {
     email: "",
     message: "",
   })
+
+  if (!vehicle) {
+    return (
+      <div>
+        <Header />
+        <div className="container mx-auto px-4 py-12 text-center text-xl text-red-600">
+          Veículo não encontrado.
+        </div>
+        <Footer />
+      </div>
+    )
+  }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -119,14 +97,18 @@ export default function VehicleDetailsPage() {
                 <div className="text-3xl font-bold text-red-600">{vehicle.price}</div>
               </div>
               <div className="flex gap-2">
-                <a href={`https://wa.me/5517991237276?text=Olá! Tenho interesse no ${vehicle.name}`} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={`https://wa.me/5517991237276?text=Olá! Tenho interesse no ${vehicle.name}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Button className="bg-green-600 hover:bg-green-700">
-                    <MessageCircle className="h-4 w-4 mr-2" />WhatsApp
+                    <MessageCircle className="h-4 w-4 mr-2" /> WhatsApp
                   </Button>
                 </a>
                 <a href="tel:+5517991237276">
                   <Button variant="outline">
-                    <Phone className="h-4 w-4 mr-2" />Ligar
+                    <Phone className="h-4 w-4 mr-2" /> Ligar
                   </Button>
                 </a>
               </div>
@@ -135,13 +117,31 @@ export default function VehicleDetailsPage() {
             <Card>
               <CardContent className="p-0">
                 <div className="relative">
-                  <Image src={vehicle.images[selectedImage]} alt={vehicle.name} width={600} height={400} className="w-full h-80 object-cover rounded-t-lg" />
+                  <Image
+                    src={vehicle.images[selectedImage]}
+                    alt={vehicle.name}
+                    width={600}
+                    height={400}
+                    className="w-full h-80 object-cover rounded-t-lg"
+                  />
                 </div>
                 <div className="p-4">
                   <div className="grid grid-cols-4 gap-2">
                     {vehicle.images.map((image, index) => (
-                      <button key={index} onClick={() => setSelectedImage(index)} className={`relative rounded-lg overflow-hidden ${selectedImage === index ? "ring-2 ring-red-600" : ""}`}>
-                        <Image src={image} alt={`${vehicle.name} - Foto ${index + 1}`} width={150} height={100} className="w-full h-20 object-cover" />
+                      <button
+                        key={index}
+                        onClick={() => setSelectedImage(index)}
+                        className={`relative rounded-lg overflow-hidden ${
+                          selectedImage === index ? "ring-2 ring-red-600" : ""
+                        }`}
+                      >
+                        <Image
+                          src={image}
+                          alt={`${vehicle.name} - Foto ${index + 1}`}
+                          width={150}
+                          height={100}
+                          className="w-full h-20 object-cover"
+                        />
                       </button>
                     ))}
                   </div>
@@ -153,30 +153,12 @@ export default function VehicleDetailsPage() {
               <CardContent className="p-6">
                 <h2 className="text-2xl font-semibold mb-4">Especificações</h2>
                 <div className="grid md:grid-cols-2 gap-4">
-                  <div className="flex items-center space-x-3">
-                    <Calendar className="h-5 w-5 text-red-600" />
-                    <div><span className="text-sm text-gray-600">Ano</span><div className="font-semibold">{vehicle.year}</div></div>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Gauge className="h-5 w-5 text-red-600" />
-                    <div><span className="text-sm text-gray-600">Quilometragem</span><div className="font-semibold">{vehicle.km}</div></div>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Fuel className="h-5 w-5 text-red-600" />
-                    <div><span className="text-sm text-gray-600">Combustível</span><div className="font-semibold">{vehicle.fuel}</div></div>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Settings className="h-5 w-5 text-red-600" />
-                    <div><span className="text-sm text-gray-600">Transmissão</span><div className="font-semibold">{vehicle.transmission}</div></div>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Car className="h-5 w-5 text-red-600" />
-                    <div><span className="text-sm text-gray-600">Cor</span><div className="font-semibold">{vehicle.color}</div></div>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Car className="h-5 w-5 text-red-600" />
-                    <div><span className="text-sm text-gray-600">Portas</span><div className="font-semibold">{vehicle.doors}</div></div>
-                  </div>
+                  <Item icon={<Calendar />} label="Ano" value={vehicle.year} />
+                  <Item icon={<Gauge />} label="Quilometragem" value={vehicle.km} />
+                  <Item icon={<Fuel />} label="Combustível" value={vehicle.fuel} />
+                  <Item icon={<Settings />} label="Transmissão" value={vehicle.transmission} />
+                  <Item icon={<Car />} label="Cor" value={vehicle.color} />
+                  <Item icon={<Car />} label="Portas" value={vehicle.doors} />
                 </div>
               </CardContent>
             </Card>
@@ -203,32 +185,29 @@ export default function VehicleDetailsPage() {
             </Card>
           </div>
 
-          {/* Right column - Sticky */}
-          <div className="sticky top-4 space-y-6 h-fit">
+          {/* Coluna lateral */}
+          <aside className="sticky top-4 space-y-6 h-fit">
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-2xl font-semibold mb-4">Tenho Interesse</h3>
-                <p className="text-gray-600 mb-6">
-                  Preencha o formulário e entraremos em contato para agendar uma visita ou test drive.
-                </p>
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <Label htmlFor="name">Nome completo *</Label>
-                    <Input id="name" name="name" value={formData.name} onChange={handleInputChange} placeholder="Seu nome completo" required />
-                  </div>
-                  <div>
-                    <Label htmlFor="phone">WhatsApp *</Label>
-                    <Input id="phone" name="phone" value={formData.phone} onChange={handleInputChange} placeholder="(17) 99999-9999" required />
-                  </div>
-                  <div>
-                    <Label htmlFor="email">E-mail</Label>
-                    <Input id="email" name="email" type="email" value={formData.email} onChange={handleInputChange} placeholder="seu@email.com" />
-                  </div>
+                  <InputField label="Nome completo *" name="name" value={formData.name} onChange={handleInputChange} required />
+                  <InputField label="WhatsApp *" name="phone" value={formData.phone} onChange={handleInputChange} required />
+                  <InputField label="E-mail" name="email" type="email" value={formData.email} onChange={handleInputChange} />
                   <div>
                     <Label htmlFor="message">Mensagem</Label>
-                    <Textarea id="message" name="message" value={formData.message} onChange={handleInputChange} placeholder="Gostaria de agendar um test drive, saber sobre financiamento..." rows={4} />
+                    <Textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      placeholder="Gostaria de agendar um test drive..."
+                      rows={4}
+                    />
                   </div>
-                  <Button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-lg py-3">Enviar Interesse</Button>
+                  <Button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-lg py-3">
+                    Enviar Interesse
+                  </Button>
                 </form>
               </CardContent>
             </Card>
@@ -261,11 +240,46 @@ export default function VehicleDetailsPage() {
                 </div>
               </CardContent>
             </Card>
-          </div>
+          </aside>
         </div>
       </div>
 
       <Footer />
+    </div>
+  )
+}
+
+function Item({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
+  return (
+    <div className="flex items-center space-x-3">
+      <div className="text-red-600">{icon}</div>
+      <div>
+        <span className="text-sm text-gray-600">{label}</span>
+        <div className="font-semibold">{value}</div>
+      </div>
+    </div>
+  )
+}
+
+function InputField({
+  label,
+  name,
+  value,
+  onChange,
+  type = "text",
+  required = false,
+}: {
+  label: string
+  name: string
+  value: string
+  onChange: React.ChangeEventHandler<HTMLInputElement>
+  type?: string
+  required?: boolean
+}) {
+  return (
+    <div>
+      <Label htmlFor={name}>{label}</Label>
+      <Input id={name} name={name} type={type} value={value} onChange={onChange} required={required} />
     </div>
   )
 }
