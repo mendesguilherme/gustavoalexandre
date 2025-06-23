@@ -7,7 +7,7 @@ import { MobileMenuButton } from "../components/MobileMenuButton"
 
 export function Header() {
   return (
-    <header className="bg-black text-white sticky top-0 z-50">
+    <header className="bg-black text-white sticky top-0 z-50 w-full overflow-x-hidden">
       <div className="container mx-auto px-4">
         {/* Top bar */}
         <div className="hidden md:flex justify-between items-center py-2 text-sm border-b border-gray-800">
@@ -27,19 +27,22 @@ export function Header() {
         </div>
 
         {/* Logo centralizado com menu button no mobile */}
-        <div className="relative flex items-center justify-center py-1 md:justify-between">
-          <Link href="/">
-            <Image
-              src="/images/logo.png"
-              alt="Logo"
-              width={160}
-              height={48}
-              className="object-contain"
-            />
-          </Link>
+        <div className="flex items-center justify-between py-1 md:justify-between w-full">
+          {/* Logo centralizado no mobile */}
+          <div className="flex-1 flex justify-center md:justify-start">
+            <Link href="/">
+              <Image
+                src="/images/logo.png"
+                alt="Logo"
+                width={160}
+                height={48}
+                className="object-contain"
+              />
+            </Link>
+          </div>
 
           {/* Botão do menu mobile alinhado à direita */}
-          <div className="absolute right-4 top-1/2 -translate-y-1/2 md:hidden">
+          <div className="md:hidden">
             <MobileMenuButton />
           </div>
 
@@ -59,9 +62,11 @@ export function Header() {
             </Link>
           </nav>
 
-          <Button className="hidden md:block bg-red-600 hover:bg-red-700">
-            Fale Conosco
-          </Button>
+          <div className="hidden md:block">
+            <Button className="bg-red-600 hover:bg-red-700">
+              Fale Conosco
+            </Button>
+          </div>
         </div>
 
         {/* Menu mobile abaixo do header */}
