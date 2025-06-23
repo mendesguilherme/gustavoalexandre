@@ -4,11 +4,9 @@ import { Phone, MapPin } from "lucide-react"
 import { Button } from "../components/ui/button"
 import { MobileMenu } from "../components/MobileMenu"
 import { MobileMenuButton } from "../components/MobileMenuButton"
-import { MobileMenuContext } from '../context/MobileMenuContext'
 
 export function Header() {
   return (
-  <MobileMenuProvider>
     <header className="bg-black text-white sticky top-0 z-50">
       <div className="container mx-auto px-4">
         {/* Top bar */}
@@ -70,6 +68,5 @@ export function Header() {
         <MobileMenu />
       </div>
     </header>
-  </MobileMenuProvider>
   )
 }
