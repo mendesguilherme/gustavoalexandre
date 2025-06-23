@@ -10,8 +10,8 @@ export default function Home() {
     <main>
       <Header />
       <HeroSection />
-      <ServicesSection />
       <FeaturedVehicles />
+      <ServicesSection />      
       <ContactSection />
       <Footer />
     </main>
