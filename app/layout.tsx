@@ -1,8 +1,7 @@
-import type React from "react"
-import type { Metadata } from "next"
 import { Inter } from "next/font/google"
+import type { Metadata } from "next"
 import "./globals.css"
-import { MobileMenuProvider } from "../Context/MobileMenuContext" // ajuste o caminho se necessário
+import { Providers } from "./providers"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -21,9 +20,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={inter.className}>
-        <MobileMenuProvider>
+        <Providers>
           {children}
-        </MobileMenuProvider>
+        </Providers>
       </body>
     </html>
   )
