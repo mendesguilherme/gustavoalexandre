@@ -1,28 +1,25 @@
-import { Inter } from "next/font/google"
+// app/layout.tsx
+import type React from "react"
 import type { Metadata } from "next"
+import { Inter } from "next/font/google"
 import "./globals.css"
-import { Providers } from "./providers"
+import { MobileMenuProvider } from "@/Context/MobileMenuContext"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Gustavo Alexandre Multimarcas - Compra, Venda e Troca de Veículos",
-  description:
-    "Carros revisados e periciados com garantia. Compra, venda, troca e financiamento de veículos novos e seminovos em Bebedouro-SP.",
+  description: "Carros revisados e periciados com garantia. Compra, venda, troca e financiamento de veículos novos e seminovos em Bebedouro-SP.",
   generator: "v0.dev",
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
       <body className={inter.className}>
-        <Providers>
+        <MobileMenuProvider>
           {children}
-        </Providers>
+        </MobileMenuProvider>
       </body>
     </html>
   )
