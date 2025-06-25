@@ -29,17 +29,17 @@ const banners = [
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-black via-[#0c0e16] to-[#111827] text-white py-16 lg:py-24">
+    <section className="relative overflow-hidden bg-gradient-to-br from-black via-[#0c0e16] to-[#111827] text-white py-8 lg:py-12">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5 flex justify-center overflow-hidden">
         <div className="w-[150%] h-full bg-gradient-to-r from-transparent via-white to-transparent transform -skew-x-12"></div>
       </div>
 
       {/* Decorative arrows */}
-      <div className="absolute top-10 right-10 hidden lg:block">
+      <div className="absolute top-5 right-10 hidden lg:block">
         <div className="flex space-x-2">
           {[...Array(6)].map((_, i) => (
-            <ChevronRight key={i} className="h-6 w-6 text-white opacity-10" />
+            <ChevronRight key={i} className="h-6 w-6 text-white opacity-5" />
           ))}
         </div>
       </div>
@@ -80,10 +80,10 @@ export function HeroSection() {
                     </Link>
                   </div>
 
-      <div className="absolute bottom-10 left-10 hidden lg:block">
+      <div className="absolute bottom-5 left-10 hidden lg:block">
         <div className="flex space-x-2">
           {[...Array(6)].map((_, i) => (
-            <ChevronRight key={i} className="h-6 w-6 text-white opacity-10" />
+            <ChevronRight key={i} className="h-6 w-6 text-white opacity-5" />
           ))}
         </div>
       </div>
