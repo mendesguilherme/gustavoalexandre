@@ -92,37 +92,38 @@ export function ContactSection() {
             </div>
           </div>
 
-          {/* Contact Form */}
-          <Card className="bg-white text-gray-900">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-semibold mb-6">Envie sua Mensagem</h3>
-              <form className="space-y-4">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="contact-name">Nome</Label>
-                    <Input id="contact-name" placeholder="Seu nome" />
+          <div className="flex flex-col justify-end h-full">
+            <Card className="bg-white text-gray-900">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-semibold mb-6">Envie sua Mensagem</h3>
+                <form className="space-y-4">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <Label htmlFor="contact-name">Nome</Label>
+                      <Input id="contact-name" placeholder="Seu nome" />
+                    </div>
+                    <div>
+                      <Label htmlFor="contact-phone">Telefone</Label>
+                      <Input id="contact-phone" placeholder="(17) 99999-9999" />
+                    </div>
                   </div>
                   <div>
-                    <Label htmlFor="contact-phone">Telefone</Label>
-                    <Input id="contact-phone" placeholder="(17) 99999-9999" />
+                    <Label htmlFor="contact-email">E-mail</Label>
+                    <Input id="contact-email" type="email" placeholder="seu@email.com" />
                   </div>
-                </div>
-                <div>
-                  <Label htmlFor="contact-email">E-mail</Label>
-                  <Input id="contact-email" type="email" placeholder="seu@email.com" />
-                </div>
-                <div>
-                  <Label htmlFor="contact-subject">Assunto</Label>
-                  <Input id="contact-subject" placeholder="Como podemos ajudar?" />
-                </div>
-                <div>
-                  <Label htmlFor="contact-message">Mensagem</Label>
-                  <Textarea id="contact-message" placeholder="Descreva sua necessidade ou dúvida..." rows={4} />
-                </div>
-                <Button className="w-full bg-red-600 hover:bg-red-700 text-lg py-3">Enviar Mensagem</Button>
-              </form>
-            </CardContent>
-          </Card>
+                  <div>
+                    <Label htmlFor="contact-subject">Assunto</Label>
+                    <Input id="contact-subject" placeholder="Como podemos ajudar?" />
+                  </div>
+                  <div>
+                    <Label htmlFor="contact-message">Mensagem</Label>
+                    <Textarea id="contact-message" placeholder="Descreva sua necessidade ou dúvida..." rows={4} />
+                  </div>
+                  <Button className="w-full bg-red-600 hover:bg-red-700 text-lg py-3">Enviar Mensagem</Button>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </div>
     </section>
