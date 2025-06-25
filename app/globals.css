@@ -107,4 +107,60 @@ body {
     overscroll-behavior: none;
     touch-action: pan-y;
   }
+
+  .hero-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem 4%;
+  flex-wrap: wrap;
+}
+
+.banner-swiper {
+  flex: 1;
+  min-width: 320px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.custom-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-custom-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+.swiper-prev,
+.swiper-next {
+  background-color: red;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-form {
+  flex: 1;
+  min-width: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 }
