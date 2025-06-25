@@ -76,7 +76,7 @@ export function HeroSection() {
                 procedência. Facilitamos seu sonho com as melhores condições de financiamento.
               </p>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-x-2 gap-y-4">
                 <div className="flex items-center space-x-3">
                   <div className="bg-red-600 p-2 rounded-full">
                     <Car className="h-5 w-5" />
@@ -131,7 +131,7 @@ export function HeroSection() {
                 Condições exclusivas para você realizar o sonho do carro próprio sem comprometer o seu orçamento. Faça uma simulação!
               </p>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-x-1 gap-y-4">
                 <div className="flex items-center space-x-3">
                   <div className="bg-red-600 p-2 rounded-full">
                     <CreditCard className="h-5 w-5" />
@@ -165,7 +165,7 @@ export function HeroSection() {
       </div>   
 
         {/* Right side - Lead Form */}
-        <div className="hero-form">
+        <div className="hero-form flex justify-center px-4 mt-6">
           <Card className="bg-white/10 backdrop-blur-sm border-white/20">
             <CardContent className="p-6">
               <h3 className="text-2xl font-bold mb-6 text-center text-white">Encontre seu veículo ideal</h3>
