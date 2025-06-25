@@ -76,26 +76,26 @@ export function HeroSection() {
                 procedência. Facilitamos seu sonho com as melhores condições de financiamento.
               </p>
 
-              <div className="grid grid-cols-2 gap-x-2 gap-y-4">
-                <div className="flex items-center space-x-3">
+              <div className="flex flex-wrap gap-x-[3px] gap-y-3">
+                <div className="flex items-center space-x-2">
                   <div className="bg-red-600 p-2 rounded-full">
                     <Car className="h-5 w-5" />
                   </div>
                   <span className="text-sm">Veículos Revisados</span>
                 </div>
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-2">
                   <div className="bg-red-600 p-2 rounded-full">
                     <Shield className="h-5 w-5" />
                   </div>
                   <span className="text-sm">Com Garantia</span>
                 </div>
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-2">
                   <div className="bg-red-600 p-2 rounded-full">
                     <CreditCard className="h-5 w-5" />
                   </div>
                   <span className="text-sm">Financiamento</span>
                 </div>
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-2">
                   <div className="bg-red-600 p-2 rounded-full">
                     <RefreshCw className="h-5 w-5" />
                   </div>
@@ -131,14 +131,14 @@ export function HeroSection() {
                 Condições exclusivas para você realizar o sonho do carro próprio sem comprometer o seu orçamento. Faça uma simulação!
               </p>
 
-              <div className="grid grid-cols-2 gap-x-1 gap-y-4">
-                <div className="flex items-center space-x-3">
+              <div className="flex flex-wrap gap-x-[3px] gap-y-3 items-center">
+                <div className="flex items-center space-x-2">
                   <div className="bg-red-600 p-2 rounded-full">
                     <CreditCard className="h-5 w-5" />
                   </div>
                   <span className="text-sm">Taxas a partir de 1,19%</span>
                 </div>
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-2">
                   <div className="bg-red-600 p-2 rounded-full">
                     <RefreshCw className="h-5 w-5" />
                   </div>
