@@ -134,7 +134,8 @@ body {
 .swiper-custom-nav {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  align-items: center;
+  gap: 1rem; /* espaço entre as setas */
   margin-top: 1rem;
   position: relative;
   z-index: 10;
