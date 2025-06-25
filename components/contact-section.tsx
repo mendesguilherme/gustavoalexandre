@@ -24,17 +24,35 @@ export function ContactSection() {
             <div>
               <h3 className="text-2xl font-semibold mb-6">Informações de Contato</h3>
               <div className="space-y-4">
-                <div className="flex items-start space-x-4">
-                  <MapPin className="h-6 w-6 text-red-500 mt-1" />
-                  <div>
-                    <h4 className="font-semibold">Endereço</h4>
-                    <p className="text-gray-300">
-                      Av. Pref. Pedro Paschoal, 798
-                      <br />
-                      Jardim Ciranda - Bebedouro-SP
+                <div>
+                  <h4 className="font-semibold mb-2 flex items-center gap-2">
+                    <MapPin className="h-6 w-6 text-red-500" />
+                    Endereço
+                  </h4>
+                  <div className="rounded-lg overflow-hidden border border-white/10">
+                    <a
+                      href="https://www.google.com/maps?q=Av.+Pref.+Pedro+Paschoal,+798+-+Bebedouro-SP"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block"
+                    >
+                      <iframe
+                        src="https://www.google.com/maps?q=Av.+Pref.+Pedro+Paschoal,+798+-+Bebedouro-SP&output=embed"
+                        width="100%"
+                        height="220"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        className="w-full"
+                      ></iframe>
+                    </a>
+                    <p className="text-gray-300 text-sm text-center mt-2">
+                      Av. Pref. Pedro Paschoal, 798<br />Jardim Ciranda - Bebedouro-SP
                     </p>
                   </div>
                 </div>
+
                 <div className="flex items-start space-x-4">
                   <Phone className="h-6 w-6 text-red-500 mt-1" />
                   <div>
@@ -42,6 +60,7 @@ export function ContactSection() {
                     <p className="text-gray-300">(17) 99123-7276</p>
                   </div>
                 </div>
+
                 <div className="flex items-start space-x-4">
                   <MessageCircle className="h-6 w-6 text-red-500 mt-1" />
                   <div>
@@ -49,6 +68,7 @@ export function ContactSection() {
                     <p className="text-gray-300">(17) 99123-7276</p>
                   </div>
                 </div>
+
                 <div className="flex items-start space-x-4">
                   <Clock className="h-6 w-6 text-red-500 mt-1" />
                   <div>
