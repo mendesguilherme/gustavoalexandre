@@ -14,8 +14,12 @@ import { Navigation, Autoplay, Pagination } from 'swiper/modules'
 import "swiper/css"
 import "swiper/css/pagination"
 import "swiper/css/navigation"
+import { SimulacaoModal } from "@/components/SimulacaoModal"
+import { useState } from "react"
+
 
 export function HeroSection() {
+  const [showSimulacaoModal, setShowSimulacaoModal] = useState(false)
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-black via-[#0c0e16] to-[#111827] text-white py-8 lg:py-12">
       {/* Background pattern */}
@@ -147,11 +151,13 @@ export function HeroSection() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/contato">
-                  <Button size="lg" className="bg-red-600 hover:bg-red-700 text-lg px-8 w-full sm:w-auto">
-                    Simular Agora
-                  </Button>
-                </Link>
+                <Button
+                  onClick={() => setShowSimulacaoModal(true)}
+                  size="lg"
+                  className="bg-red-600 hover:bg-red-700 text-lg px-8 w-full sm:w-auto"
+                >
+                  Simular Agora
+                </Button>
               </div>
             </div>
           </SwiperSlide>                   
@@ -192,6 +198,10 @@ export function HeroSection() {
           </Card>
         </div>
       </div>
+      <SimulacaoModal
+        isOpen={showSimulacaoModal}
+        onClose={() => setShowSimulacaoModal(false)}
+      />
     </section>
   )
 }
