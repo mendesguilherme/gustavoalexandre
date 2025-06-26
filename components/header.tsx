@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Phone, MapPin } from "lucide-react"
+import { Phone, MapPin, Facebook, Instagram, MessageCircle } from "lucide-react"
 import { Button } from "../components/ui/button"
 import { MobileMenu } from "../components/MobileMenu"
 import { MobileMenuButton } from "../components/MobileMenuButton"
@@ -21,8 +21,19 @@ export function Header() {
               <span>Av. Pref. Pedro Paschoal, 798 - Bebedouro-SP</span>
             </div>
           </div>
-          <div className="flex space-x-2">
+          <div className="flex items-center space-x-4">
             <span>@gustavoalexandremultimarcas</span>
+            <div className="flex space-x-3">
+              <a href="#" className="text-gray-300 hover:text-red-500 transition-colors">
+                <Facebook className="h-5 w-5" />
+              </a>
+              <a href="#" className="text-gray-300 hover:text-red-500 transition-colors">
+                <Instagram className="h-5 w-5" />
+              </a>
+              <a href="#" className="text-gray-300 hover:text-red-500 transition-colors">
+                <MessageCircle className="h-5 w-5" />
+              </a>
+            </div>
           </div>
         </div>
 
