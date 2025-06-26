@@ -37,9 +37,9 @@ export function Header() {
         </div>
 
         {/* Linha principal do header */}
-        <div className="flex items-center justify-center md:justify-between py-3 relative">
+        <div className="relative py-3 flex items-center justify-center md:justify-between">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
+          <Link href="/" className="flex-shrink-0 mx-auto md:mx-0">
             <Image
               src="/images/logo.png"
               alt="Logo"
@@ -48,6 +48,11 @@ export function Header() {
               className="object-contain"
             />
           </Link>
+
+          {/* Botão do menu mobile */}
+          <div className="absolute right-4 top-1/2 transform -translate-y-1/2 md:hidden">
+            <MobileMenuButton />
+          </div>          
 
           {/* Navegação desktop */}
           <div className="hidden md:flex items-center space-x-6">
@@ -69,11 +74,6 @@ export function Header() {
             <Button className="bg-red-600 hover:bg-red-700">
               Fale Conosco
             </Button>
-          </div>
-
-          {/* Botão do menu mobile fixado à direita */}
-          <div className="md:hidden absolute right-0">
-            <MobileMenuButton />
           </div>
           
           {/* Botão do menu mobile */}
