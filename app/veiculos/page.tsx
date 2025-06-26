@@ -198,7 +198,7 @@ export default function VeiculosPage() {
       {/* Modal */}
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 backdrop-blur-sm border border-white/10 rounded-lg w-full max-w-sm shadow-xl p-6 text-white">
+          <div className="bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 backdrop-blur-sm border border-white/10 rounded-lg w-full max-w-sm shadow-xl p-6 text-white">
             <h2 className="text-2xl font-bold mb-6 text-center">Encontre seu veículo ideal</h2>
       
             <form onSubmit={handleCustomVehicleSubmit} className="space-y-4">
