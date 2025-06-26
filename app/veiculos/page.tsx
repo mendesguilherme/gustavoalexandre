@@ -205,7 +205,12 @@ export default function VeiculosPage() {
               <Textarea placeholder="Algum detalhe extra?" name="details" rows={3} />
               <Button type="submit" className="w-full bg-red-600 hover:bg-red-700">Enviar</Button>
             </form>
-            <button onClick={() => setShowModal(false)} className="mt-4 text-sm text-gray-500 hover:underline">Fechar</button>
+            <button
+              onClick={() => setShowModal(false)}
+              className="mt-4 mx-auto text-sm text-gray-500 hover:underline"
+            >
+              Fechar
+            </button>
           </div>
         </div>
       )}
