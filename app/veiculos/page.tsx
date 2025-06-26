@@ -196,18 +196,20 @@ export default function VeiculosPage() {
       {/* Modal */}
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white p-6 rounded-lg w-full max-w-md shadow-xl">
-            <h2 className="text-xl font-semibold mb-4">Informe seu interesse</h2>
+          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg w-full max-w-sm shadow-xl p-6 text-white">
+            <h2 className="text-xl font-bold mb-6 text-center">Informe seu interesse</h2>
             <form onSubmit={handleCustomVehicleSubmit} className="space-y-4">
-              <Input placeholder="Seu nome completo" name="name" required />
-              <Input placeholder="WhatsApp para contato" name="phone" required />
-              <Input placeholder="Marca e modelo desejados" name="model" required />
-              <Textarea placeholder="Algum detalhe extra?" name="details" rows={3} />
-              <Button type="submit" className="w-full bg-red-600 hover:bg-red-700">Enviar</Button>
+              <Input placeholder="Seu nome completo" name="name" required className="bg-white/20 border-white/30 text-white placeholder:text-gray-300" />
+              <Input placeholder="WhatsApp para contato" name="phone" required className="bg-white/20 border-white/30 text-white placeholder:text-gray-300"/>
+              <Input placeholder="Marca e modelo desejados" name="model" required className="bg-white/20 border-white/30 text-white placeholder:text-gray-300"/>
+              <Textarea placeholder="Algum detalhe extra?" name="details" rows={3} className="bg-white/20 border-white/30 text-white placeholder:text-gray-300"/>
+              <Button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-lg py-3">
+                Enviar
+              </Button>
             </form>
             <button
               onClick={() => setShowModal(false)}
-              className="mt-4 mx-auto text-sm text-gray-500 hover:underline"
+              className="mt-4 mx-auto block text-sm text-gray-300 hover:underline"
             >
               Fechar
             </button>
