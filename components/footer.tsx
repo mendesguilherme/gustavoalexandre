@@ -2,7 +2,11 @@ import Image from "next/image"
 import Link from "next/link"
 import { Facebook, Instagram, MessageCircle } from "lucide-react"
 
-export function Footer() {
+type FooterProps = {
+  onOpenSimulacaoModal: () => void
+}
+
+export function Footer({ onOpenSimulacaoModal }: FooterProps) {
   return (
     <footer className="text-white py-12 bg-black">
       <div className="container mx-auto px-4">
@@ -15,7 +19,6 @@ export function Footer() {
                 alt="Gustavo Alexandre Multimarcas"
                 width={150}
                 height={75}
-                //className="h-24 w-auto mb-4 object-contain"
               />
             </Link>
             <p className="text-gray-300 mb-4 max-w-md">
@@ -50,9 +53,16 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/simulacao" className="text-gray-300 hover:text-red-500 transition-colors">
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    onOpenSimulacaoModal()
+                  }}
+                  className="text-gray-300 hover:text-red-500 transition-colors cursor-pointer"
+                >
                   Simulação
-                </Link>
+                </a>
               </li>
               <li>
                 <Link href="#servicos" className="text-gray-300 hover:text-red-500 transition-colors">
