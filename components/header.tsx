@@ -71,6 +71,11 @@ export function Header() {
             </Button>
           </div>
 
+          {/* Botão do menu mobile fixado à direita */}
+          <div className="md:hidden absolute right-0">
+            <MobileMenuButton />
+          </div>
+          
           {/* Botão do menu mobile */}
           <div className="md:hidden">
             <MobileMenuButton />
