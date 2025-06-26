@@ -84,7 +84,7 @@ export function Header() {
           </div>
 
           {/* Menu mobile abaixo do header */}
-          <MobileMenu />
+          <MobileMenu onOpenSimulacaoModal={() => setShowSimulacaoModal(true)} />
         </div>
       </header>
 
