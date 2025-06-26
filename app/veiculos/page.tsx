@@ -12,7 +12,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Calendar, Fuel, Settings, Search } from "lucide-react"
 import Link from "next/link"
 import { vehicles } from "@/data/vehicles"
-import { Textarea } from "@/components/ui/textarea"
 
 export default function VeiculosPage() {
   const [searchTerm, setSearchTerm] = useState("")
@@ -20,19 +19,6 @@ export default function VeiculosPage() {
   const [selectedYear, setSelectedYear] = useState("")
   const [selectedPrice, setSelectedPrice] = useState("")
   const [showModal, setShowModal] = useState(false)
-
-  const handleCustomVehicleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    const form = e.currentTarget
-    const data = {
-      name: form.name.value,
-      phone: form.phone.value,
-      model: form.model.value,
-      details: form.details.value,
-    }
-    console.log("Formulário enviado:", data)
-    setShowModal(false)
-  }
 
   const filteredVehicles = vehicles.filter((vehicle) => {
     return (
@@ -47,6 +33,20 @@ export default function VeiculosPage() {
         (selectedPrice === "acima-80k" && Number.parseInt(vehicle.price.replace(/\D/g, "")) > 80000))
     )
   })
+
+  const handleCustomVehicleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const formData = new FormData(e.currentTarget)
+    const data = {
+      name: formData.get("name"),
+      phone: formData.get("phone"),
+      model: formData.get("model"),
+      details: formData.get("details"),
+    }
+
+    console.log("Interesse recebido:", data)
+    setShowModal(false)
+  }
 
   return (
     <div>
@@ -132,7 +132,7 @@ export default function VeiculosPage() {
 
       {/* Vehicles Grid */}
       <section className="py-12 relative">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 pb-24">
           <div className="mb-8">
             <p className="text-gray-600">
               Mostrando {filteredVehicles.length} de {vehicles.length} veículos
@@ -188,16 +188,16 @@ export default function VeiculosPage() {
           )}
         </div>
 
-        {/* Botão flutuante dentro da área de veículos */}
+        {/* Botão flutuante */}
         <Button
           onClick={() => setShowModal(true)}
-          className="absolute bottom-6 right-6 bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded-full shadow-lg z-30"
+          className="fixed bottom-6 right-6 bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded-full shadow-lg z-50"
         >
-          🚗 Não encontrou seu veículo?
+          🚘 Não encontrou seu veículo?
         </Button>
       </section>
 
-      {/* Modal de interesse */}
+      {/* Modal */}
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white p-6 rounded-lg w-full max-w-md shadow-xl">
@@ -206,7 +206,12 @@ export default function VeiculosPage() {
               <Input placeholder="Seu nome completo" name="name" required />
               <Input placeholder="WhatsApp para contato" name="phone" required />
               <Input placeholder="Marca e modelo desejados" name="model" required />
-              <Textarea placeholder="Algum detalhe extra?" name="details" rows={3} />
+              <textarea
+                name="details"
+                placeholder="Algum detalhe extra?"
+                rows={3}
+                className="w-full border border-gray-300 p-2 rounded"
+              />
               <Button type="submit" className="w-full bg-red-600 hover:bg-red-700">Enviar</Button>
             </form>
             <button onClick={() => setShowModal(false)} className="mt-4 text-sm text-gray-500 hover:underline">Fechar</button>
