@@ -38,7 +38,7 @@ export default function VeiculosPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-black text-white py-20">
+      <section className="bg-black text-white py-15">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl lg:text-6xl font-bold mb-4">
             Nossos <span className="text-red-500">Veículos</span>
