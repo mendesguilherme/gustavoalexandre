@@ -13,9 +13,9 @@ export function Footer() {
               <Image
                 src="/images/logo.png"
                 alt="Gustavo Alexandre Multimarcas"
-                  width={150}
-				  height={75}
-				  //className="h-24 w-auto mb-4 object-contain"
+                width={150}
+                height={75}
+                //className="h-24 w-auto mb-4 object-contain"
               />
             </Link>
             <p className="text-gray-300 mb-4 max-w-md">
@@ -47,6 +47,11 @@ export function Footer() {
               <li>
                 <Link href="/veiculos" className="text-gray-300 hover:text-red-500 transition-colors">
                   Veículos
+                </Link>
+              </li>
+              <li>
+                <Link href="/simulacao" className="text-gray-300 hover:text-red-500 transition-colors">
+                  Simulação
                 </Link>
               </li>
               <li>
