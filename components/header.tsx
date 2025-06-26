@@ -75,11 +75,6 @@ export function Header() {
               Fale Conosco
             </Button>
           </div>
-          
-          {/* Botão do menu mobile */}
-          <div className="md:hidden">
-            <MobileMenuButton />
-          </div>
         </div>
 
         {/* Menu mobile abaixo do header */}
