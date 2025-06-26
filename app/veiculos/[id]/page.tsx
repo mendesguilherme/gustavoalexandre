@@ -103,15 +103,17 @@ export default function VehicleDetailsPage() {
                   href={`https://wa.me/5517991237276?text=Olá! Tenho interesse no ${vehicle.name}`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition text-sm"
                 >
-                  <Button className="bg-green-600 hover:bg-green-700">
-                    <MessageCircle className="h-4 w-4 mr-2" /> WhatsApp
-                  </Button>
+                  <MessageCircle className="h-4 w-4" />
+                  WhatsApp
                 </a>
-                <a href="tel:+5517991237276">
-                  <Button variant="outline">
-                    <Phone className="h-4 w-4 mr-2" /> Ligar
-                  </Button>
+                <a
+                  href="tel:+5517991237276"
+                  className="flex items-center gap-2 px-4 py-2 border border-gray-300 text-gray-800 rounded hover:bg-gray-100 transition text-sm"
+                >
+                  <Phone className="h-4 w-4" />
+                  Ligar
                 </a>
               </div>
             </div>
