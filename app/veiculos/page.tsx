@@ -171,6 +171,15 @@ export default function VeiculosPage() {
               <p className="text-gray-500 text-lg">Nenhum veículo encontrado com os filtros selecionados.</p>
             </div>
           )}
+
+          /* ✅ Adicione aqui o botão flutuante */
+          <Button
+            onClick={() => setShowModal(true)}
+            className="fixed bottom-6 right-6 bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded-full shadow-lg z-50"
+          >
+            🚗 Não encontrou seu veículo?
+          </Button>          
+          
         </div>
       </section>
 
