@@ -195,26 +195,77 @@ export default function VeiculosPage() {
 
       {/* Modal */}
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg w-full max-w-sm shadow-xl p-6 text-white">
-            <h2 className="text-xl font-bold mb-6 text-center">Informe seu interesse</h2>
-            <form onSubmit={handleCustomVehicleSubmit} className="space-y-4">
-              <Input placeholder="Seu nome completo" name="name" required className="bg-white/20 border-white/30 text-white placeholder:text-gray-300" />
-              <Input placeholder="WhatsApp para contato" name="phone" required className="bg-white/20 border-white/30 text-white placeholder:text-gray-300"/>
-              <Input placeholder="Marca e modelo desejados" name="model" required className="bg-white/20 border-white/30 text-white placeholder:text-gray-300"/>
-              <Textarea placeholder="Algum detalhe extra?" name="details" rows={3} className="bg-white/20 border-white/30 text-white placeholder:text-gray-300"/>
-              <Button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-lg py-3">
-                Enviar
-              </Button>
-            </form>
-            <button
-              onClick={() => setShowModal(false)}
-              className="mt-4 mx-auto block text-sm text-gray-300 hover:underline"
-            >
-              Fechar
-            </button>
-          </div>
+      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg w-full max-w-sm shadow-xl p-6 text-white">
+          <h2 className="text-2xl font-bold mb-6 text-center">Encontre seu veículo ideal</h2>
+    
+          <form onSubmit={handleCustomVehicleSubmit} className="space-y-4">
+            <div>
+              <label htmlFor="name" className="block text-sm font-semibold mb-1">Nome completo</label>
+              <Input
+                id="name"
+                name="name"
+                placeholder="Seu nome completo"
+                required
+                className="w-full bg-white/20 border-white/30 text-white placeholder:text-gray-300"
+              />
+            </div>
+    
+            <div>
+              <label htmlFor="phone" className="block text-sm font-semibold mb-1">WhatsApp</label>
+              <InputMask
+                id="phone"
+                name="phone"
+                mask="(99) 99999-9999"
+                placeholder="(17) 99999-9999"
+                required
+              >
+                {(inputProps: any) => (
+                  <Input
+                    {...inputProps}
+                    className="w-full bg-white/20 border-white/30 text-white placeholder:text-gray-300"
+                  />
+                )}
+              </InputMask>
+            </div>
+    
+            <div>
+              <label htmlFor="email" className="block text-sm font-semibold mb-1">E-mail</label>
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="seu@email.com"
+                required
+                className="w-full bg-white/20 border-white/30 text-white placeholder:text-gray-300"
+              />
+            </div>
+    
+            <div>
+              <label htmlFor="interest" className="block text-sm font-semibold mb-1">Interesse</label>
+              <Textarea
+                id="interest"
+                name="interest"
+                placeholder="Que tipo de veículo você procura?"
+                rows={3}
+                required
+                className="w-full bg-white/20 border-white/30 text-white placeholder:text-gray-300"
+              />
+            </div>
+    
+            <Button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-lg py-3">
+              Quero ser Contactado
+            </Button>
+          </form>
+    
+          <button
+            onClick={() => setShowModal(false)}
+            className="mt-4 mx-auto block text-sm text-gray-300 hover:underline"
+          >
+            Fechar
+          </button>
         </div>
+      </div>
       )}
 
       <Footer />
