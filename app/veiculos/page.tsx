@@ -13,6 +13,7 @@ import { Calendar, Fuel, Settings, Search } from "lucide-react"
 import Link from "next/link"
 import { vehicles } from "@/data/vehicles"
 import { Textarea } from "@/components/ui/textarea"
+import InputMask from "react-input-mask"
 
 export default function VeiculosPage() {
   const [searchTerm, setSearchTerm] = useState("")
@@ -39,6 +40,7 @@ export default function VeiculosPage() {
     e.preventDefault()
     const data = new FormData(e.target)
     console.log("Interesse enviado:", Object.fromEntries(data.entries()))
+    alert("Obrigado! Seu interesse foi enviado com sucesso.")
     setShowModal(false)
   }
 
