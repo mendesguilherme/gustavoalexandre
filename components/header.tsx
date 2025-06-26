@@ -21,8 +21,7 @@ export function Header() {
               <span>Av. Pref. Pedro Paschoal, 798 - Bebedouro-SP</span>
             </div>
           </div>
-          <div className="flex items-center space-x-4">
-            <span>@gustavoalexandremultimarcas</span>
+          <div className="flex items-center space-x-4">            
             <div className="flex space-x-3">
               <a href="#" className="text-gray-300 hover:text-red-500 transition-colors">
                 <Facebook className="h-5 w-5" />
