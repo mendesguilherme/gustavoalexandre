@@ -23,13 +23,13 @@ export function Header() {
           </div>
           <div className="flex items-center space-x-4">            
             <div className="flex space-x-3">
-              <a href="#" className="text-gray-300 hover:text-red-500 transition-colors">
+              <a href="https://www.facebook.com/gustavo.alexandre.518841" className="text-gray-300 hover:text-red-500 transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-red-500 transition-colors">
+              <a href="https://www.instagram.com/gustavoalexandremultimarcas/" className="text-gray-300 hover:text-red-500 transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-red-500 transition-colors">
+              <a href="https://wa.me/5517991237276" className="text-gray-300 hover:text-red-500 transition-colors">
                 <MessageCircle className="h-5 w-5" />
               </a>
             </div>
