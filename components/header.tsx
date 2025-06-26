@@ -1,11 +1,17 @@
+"use client"
+
+import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Phone, MapPin, Facebook, Instagram, MessageCircle } from "lucide-react"
 import { Button } from "../components/ui/button"
 import { MobileMenu } from "../components/MobileMenu"
 import { MobileMenuButton } from "../components/MobileMenuButton"
+import { SimulacaoModal } from "@/components/SimulacaoModal"
 
 export function Header() {
+  const [showSimulacaoModal, setShowSimulacaoModal] = useState(false)
+  
   return (
     <header className="bg-black text-white sticky top-0 z-50 w-full overflow-x-hidden">
       <div className="container mx-auto px-4">
@@ -63,9 +69,16 @@ export function Header() {
               <Link href="/veiculos" className="hover:text-red-500 transition-colors">
                 Veículos
               </Link>
-              <Link href="/simulacao" className="hover:text-red-500 transition-colors">
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault()
+                  setShowSimulacaoModal(true)
+                }}
+                className="hover:text-red-500 transition-colors cursor-pointer"
+              >
                 Simulação
-              </Link>
+              </a>
               <Link href="#servicos" className="hover:text-red-500 transition-colors">
                 Serviços
               </Link>
@@ -84,5 +97,10 @@ export function Header() {
         <MobileMenu />
       </div>
     </header>
+    
+    <SimulacaoModal
+        isOpen={showSimulacaoModal}
+        onClose={() => setShowSimulacaoModal(false)}
+    />
   )
 }
