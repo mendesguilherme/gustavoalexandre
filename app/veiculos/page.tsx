@@ -13,6 +13,7 @@ import { Calendar, Fuel, Settings, Search } from "lucide-react"
 import Link from "next/link"
 import { vehicles } from "@/data/vehicles"
 import { Textarea } from "@/components/ui/textarea"
+import { Label } from "@/components/ui/label"
 
 export default function VeiculosPage() {
   const [searchTerm, setSearchTerm] = useState("")
