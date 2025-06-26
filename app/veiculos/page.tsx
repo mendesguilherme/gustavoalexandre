@@ -198,55 +198,56 @@ export default function VeiculosPage() {
       {/* Modal */}
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-neutral-900 border border-neutral-700 rounded-lg w-full max-w-sm shadow-xl p-6 text-white">
+          <div className="bg-white border border-neutral-300 rounded-lg w-full max-w-sm shadow-2xl p-6 text-black">
             <h2 className="text-2xl font-bold mb-6 text-center">Encontre seu veículo ideal</h2>
       
             <form onSubmit={handleCustomVehicleSubmit} className="space-y-4">
               <div>
-                <Label htmlFor="name" className="text-white">Nome completo</Label>
-                <Input
-                  id="name"
-                  name="name"
-                  placeholder="Seu nome completo"
-                  required
-                  className="bg-white/20 border-white/30 text-white placeholder:text-gray-300"
-                />
-              </div>
-      
-              <div>
-                <Label htmlFor="phone" className="text-white">WhatsApp</Label>
-                <Input
-                  id="phone"
-                  name="phone"
-                  placeholder="(17) 99999-9999"
-                  required
-                  className="bg-white/20 border-white/30 text-white placeholder:text-gray-300"
-                />
-              </div>
-      
-              <div>
-                <Label htmlFor="email" className="text-white">E-mail</Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="seu@email.com"
-                  required
-                  className="bg-white/20 border-white/30 text-white placeholder:text-gray-300"
-                />
-              </div>
-      
-              <div>
-                <Label htmlFor="interest" className="text-white">Interesse</Label>
-                <Textarea
-                  id="interest"
-                  name="interest"
-                  placeholder="Que tipo de veículo você procura?"
-                  rows={3}
-                  required
-                  className="bg-white/20 border-white/30 text-white placeholder:text-gray-300"
-                />
-              </div>
+                <div>
+                  <Label htmlFor="name" className="text-black">Nome completo</Label>
+                  <Input
+                    id="name"
+                    name="name"
+                    placeholder="Seu nome completo"
+                    required
+                    className="bg-white border border-gray-300 text-black placeholder:text-gray-500"
+                  />
+                </div>
+                
+                <div>
+                  <Label htmlFor="phone" className="text-black">WhatsApp</Label>
+                  <Input
+                    id="phone"
+                    name="phone"
+                    placeholder="(17) 99999-9999"
+                    required
+                    className="bg-white border border-gray-300 text-black placeholder:text-gray-500"
+                  />
+                </div>
+                
+                <div>
+                  <Label htmlFor="email" className="text-black">E-mail</Label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="seu@email.com"
+                    required
+                    className="bg-white border border-gray-300 text-black placeholder:text-gray-500"
+                  />
+                </div>
+                
+                <div>
+                  <Label htmlFor="interest" className="text-black">Interesse</Label>
+                  <Textarea
+                    id="interest"
+                    name="interest"
+                    placeholder="Que tipo de veículo você procura?"
+                    rows={3}
+                    required
+                    className="bg-white border border-gray-300 text-black placeholder:text-gray-500"
+                  />
+                </div>
       
               <Button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-lg py-3">
                 Quero ser Contactado
