@@ -84,6 +84,7 @@ export function Footer({ onOpenSimulacaoModal }: FooterProps) {
               <li>Compra de Veículos</li>
               <li>Venda com Garantia</li>
               <li>Troca Facilitada</li>
+              <li>Consignação de Veículos</li>          
               <li>Financiamento</li>
             </ul>
           </div>
