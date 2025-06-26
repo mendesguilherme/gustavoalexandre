@@ -116,7 +116,7 @@ export default function VeiculosPage() {
       </section>
 
       {/* Vehicles Grid */}
-      <section className="py-12">
+      <section className="py-12" relative>
         <div className="container mx-auto px-4">
           <div className="mb-8">
             <p className="text-gray-600">
@@ -166,23 +166,21 @@ export default function VeiculosPage() {
             ))}
           </div>
 
+          {/* botão flutuante posicionado dentro da área de veículos */}
+          <Button
+            onClick={() => setShowModal(true)}
+            className="absolute bottom-0 right-0 mb-6 mr-4 bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded-full shadow-lg z-30"
+          >
+            🚗 Não encontrou seu veículo?
+          </Button>
+
           {filteredVehicles.length === 0 && (
             <div className="text-center py-12">
               <p className="text-gray-500 text-lg">Nenhum veículo encontrado com os filtros selecionados.</p>
             </div>
-          )}
-
-          /* ✅ Adicione aqui o botão flutuante */
-          <Button
-            onClick={() => setShowModal(true)}
-            className="fixed bottom-6 right-6 bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded-full shadow-lg z-50"
-          >
-            🚗 Não encontrou seu veículo?
-          </Button>          
-          
+          )}          
         </div>
       </section>
-
       <Footer />
     </div>
   )
