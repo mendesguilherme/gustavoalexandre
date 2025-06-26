@@ -92,7 +92,7 @@ export function ContactSection() {
             </div>
           </div>
 
-          <div className="flex flex-col justify-end h-full">
+          <div id="contato-footer" className="flex flex-col justify-end h-full">
             <Card className="bg-white text-gray-900">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-semibold mb-6">Envie sua Mensagem</h3>
