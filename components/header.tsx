@@ -11,96 +11,88 @@ import { SimulacaoModal } from "@/components/SimulacaoModal"
 
 export function Header() {
   const [showSimulacaoModal, setShowSimulacaoModal] = useState(false)
-  
+
   return (
-    <header className="bg-black text-white sticky top-0 z-50 w-full overflow-x-hidden">
-      <div className="container mx-auto px-4">
-        {/* Top bar */}
-        <div className="hidden md:flex justify-between items-center py-2 text-sm border-b border-gray-800">
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-1">
-              <Phone className="h-4 w-4 text-red-500" />
-              <span>(17) 99123-7276</span>
+    <>
+      <header className="bg-black text-white sticky top-0 z-50 w-full overflow-x-hidden">
+        <div className="container mx-auto px-4">
+          {/* Top bar */}
+          <div className="hidden md:flex justify-between items-center py-2 text-sm border-b border-gray-800">
+            <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-1">
+                <Phone className="h-4 w-4 text-red-500" />
+                <span>(17) 99123-7276</span>
+              </div>
+              <div className="flex items-center space-x-1">
+                <MapPin className="h-4 w-4 text-red-500" />
+                <span>Av. Pref. Pedro Paschoal, 798 - Bebedouro-SP</span>
+              </div>
             </div>
-            <div className="flex items-center space-x-1">
-              <MapPin className="h-4 w-4 text-red-500" />
-              <span>Av. Pref. Pedro Paschoal, 798 - Bebedouro-SP</span>
+            <div className="flex items-center space-x-4">
+              <div className="flex space-x-3">
+                <a href="https://www.facebook.com/gustavo.alexandre.518841" className="text-gray-300 hover:text-red-500 transition-colors">
+                  <Facebook className="h-5 w-5" />
+                </a>
+                <a href="https://www.instagram.com/gustavoalexandremultimarcas/" className="text-gray-300 hover:text-red-500 transition-colors">
+                  <Instagram className="h-5 w-5" />
+                </a>
+                <a href="https://wa.me/5517991237276" className="text-gray-300 hover:text-red-500 transition-colors">
+                  <MessageCircle className="h-5 w-5" />
+                </a>
+              </div>
             </div>
           </div>
-          <div className="flex items-center space-x-4">
-            <div className="flex space-x-3">
-              <a href="https://www.facebook.com/gustavo.alexandre.518841" className="text-gray-300 hover:text-red-500 transition-colors">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="https://www.instagram.com/gustavoalexandremultimarcas/" className="text-gray-300 hover:text-red-500 transition-colors">
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a href="https://wa.me/5517991237276" className="text-gray-300 hover:text-red-500 transition-colors">
-                <MessageCircle className="h-5 w-5" />
-              </a>
+
+          {/* Linha principal do header */}
+          <div className="relative py-3 flex items-center justify-center md:justify-between">
+            {/* Logo */}
+            <Link href="/" className="flex-shrink-0 mx-auto md:mx-0">
+              <Image
+                src="/images/logo.png"
+                alt="Logo"
+                width={160}
+                height={48}
+                className="object-contain"
+              />
+            </Link>
+
+            {/* Botão do menu mobile */}
+            <div className="absolute right-4 top-1/2 transform -translate-y-1/2 md:hidden">
+              <MobileMenuButton />
+            </div>
+
+            {/* Navegação desktop */}
+            <div className="hidden md:flex items-center space-x-6">
+              <nav className="flex space-x-6">
+                <Link href="/" className="hover:text-red-500 transition-colors">Início</Link>
+                <Link href="/veiculos" className="hover:text-red-500 transition-colors">Veículos</Link>
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    setShowSimulacaoModal(true)
+                  }}
+                  className="hover:text-red-500 transition-colors cursor-pointer"
+                >
+                  Simulação
+                </a>
+                <Link href="#servicos" className="hover:text-red-500 transition-colors">Serviços</Link>
+                <Link href="#contato" className="hover:text-red-500 transition-colors">Contato</Link>
+              </nav>
+              <Button className="bg-red-600 hover:bg-red-700">Fale Conosco</Button>
             </div>
           </div>
+
+          {/* Menu mobile abaixo do header */}
+          <MobileMenu />
         </div>
+      </header>
 
-        {/* Linha principal do header */}
-        <div className="relative py-3 flex items-center justify-center md:justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex-shrink-0 mx-auto md:mx-0">
-            <Image
-              src="/images/logo.png"
-              alt="Logo"
-              width={160}
-              height={48}
-              className="object-contain"
-            />
-          </Link>
-
-          {/* Botão do menu mobile */}
-          <div className="absolute right-4 top-1/2 transform -translate-y-1/2 md:hidden">
-            <MobileMenuButton />
-          </div>
-
-          {/* Navegação desktop */}
-          <div className="hidden md:flex items-center space-x-6">
-            <nav className="flex space-x-6">
-              <Link href="/" className="hover:text-red-500 transition-colors">
-                Início
-              </Link>
-              <Link href="/veiculos" className="hover:text-red-500 transition-colors">
-                Veículos
-              </Link>
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault()
-                  setShowSimulacaoModal(true)
-                }}
-                className="hover:text-red-500 transition-colors cursor-pointer"
-              >
-                Simulação
-              </a>
-              <Link href="#servicos" className="hover:text-red-500 transition-colors">
-                Serviços
-              </Link>
-              <Link href="#contato" className="hover:text-red-500 transition-colors">
-                Contato
-              </Link>
-            </nav>
-
-            <Button className="bg-red-600 hover:bg-red-700">
-              Fale Conosco
-            </Button>
-          </div>
-        </div>
-
-        {/* Menu mobile abaixo do header */}
-        <MobileMenu />
-      </div>
-    </header>
-    
-    <SimulacaoModal
+      {/* Modal fora do header, mas dentro do React Fragment */}
+      <SimulacaoModal
         isOpen={showSimulacaoModal}
         onClose={() => setShowSimulacaoModal(false)}
-    />
+      />
+    </>
   )
 }
