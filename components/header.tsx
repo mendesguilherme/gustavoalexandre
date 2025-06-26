@@ -8,6 +8,7 @@ import { Button } from "../components/ui/button"
 import { MobileMenu } from "../components/MobileMenu"
 import { MobileMenuButton } from "../components/MobileMenuButton"
 import { SimulacaoModal } from "@/components/SimulacaoModal"
+import { Button } from "@/components/ui/button"
 
 export function Header() {
   const [showSimulacaoModal, setShowSimulacaoModal] = useState(false)
@@ -79,7 +80,17 @@ export function Header() {
                 <Link href="#servicos" className="hover:text-red-500 transition-colors">Serviços</Link>
                 <Link href="#contato" className="hover:text-red-500 transition-colors">Contato</Link>
               </nav>
-              <Button className="bg-red-600 hover:bg-red-700">Fale Conosco</Button>
+              <Button
+                onClick={() => {
+                  const el = document.getElementById("contato-footer")
+                  if (el) {
+                    el.scrollIntoView({ behavior: "smooth" })
+                  }
+                }}
+                className="bg-red-600 hover:bg-red-700"
+              >
+                Fale Conosco
+              </Button>
             </div>
           </div>
 
