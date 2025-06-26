@@ -44,7 +44,7 @@ export function HeroSection() {
         </div>
       </div>
       
-    <div className="hero-wrapper">
+    <div className="w-full max-w-[1400px] mx-auto hero-wrapper">
       <div className="banner-swiper">        
         <Swiper
           modules={[Navigation, Autoplay]}
@@ -171,7 +171,7 @@ export function HeroSection() {
       </div>   
 
         {/* Right side - Lead Form */}
-        <div className="hero-form flex justify-center px-4 mt-6">
+        <div className="hero-form flex justify-center w-full max-w-[480px] mt-6">
           <Card className="bg-white/10 backdrop-blur-sm border-white/20">
             <CardContent className="p-6">
               <h3 className="text-2xl font-bold mb-6 text-center text-white">Encontre seu veículo ideal</h3>
