@@ -37,7 +37,7 @@ export function Header() {
         </div>
 
         {/* Linha principal do header */}
-        <div className="flex items-center justify-between py-3">
+        <div className="flex items-center justify-center md:justify-between py-3 relative">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image
