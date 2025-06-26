@@ -17,6 +17,9 @@ export function MobileMenu() {
         <Link href="/veiculos" className="hover:text-red-500 transition-colors">
           Veículos
         </Link>
+        <Link href="/simulacao" className="hover:text-red-500 transition-colors">
+          Simulação
+        </Link>
         <Link href="#servicos" className="hover:text-red-500 transition-colors">
           Serviços
         </Link>
