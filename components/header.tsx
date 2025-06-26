@@ -8,7 +8,6 @@ import { Button } from "../components/ui/button"
 import { MobileMenu } from "../components/MobileMenu"
 import { MobileMenuButton } from "../components/MobileMenuButton"
 import { SimulacaoModal } from "@/components/SimulacaoModal"
-import { Button } from "@/components/ui/button"
 
 export function Header() {
   const [showSimulacaoModal, setShowSimulacaoModal] = useState(false)
