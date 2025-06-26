@@ -21,7 +21,7 @@ export function Header() {
               <span>Av. Pref. Pedro Paschoal, 798 - Bebedouro-SP</span>
             </div>
           </div>
-          <div className="flex items-center space-x-4">            
+          <div className="flex items-center space-x-4">
             <div className="flex space-x-3">
               <a href="https://www.facebook.com/gustavo.alexandre.518841" className="text-gray-300 hover:text-red-500 transition-colors">
                 <Facebook className="h-5 w-5" />
@@ -52,7 +52,7 @@ export function Header() {
           {/* Botão do menu mobile */}
           <div className="absolute right-4 top-1/2 transform -translate-y-1/2 md:hidden">
             <MobileMenuButton />
-          </div>          
+          </div>
 
           {/* Navegação desktop */}
           <div className="hidden md:flex items-center space-x-6">
@@ -62,6 +62,9 @@ export function Header() {
               </Link>
               <Link href="/veiculos" className="hover:text-red-500 transition-colors">
                 Veículos
+              </Link>
+              <Link href="/simulacao" className="hover:text-red-500 transition-colors">
+                Simulação
               </Link>
               <Link href="#servicos" className="hover:text-red-500 transition-colors">
                 Serviços
