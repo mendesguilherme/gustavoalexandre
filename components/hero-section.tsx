@@ -70,7 +70,7 @@ export function HeroSection() {
                 <div className="flex flex-wrap gap-2 text-lg font-semibold">
                   <span className="bg-red-600 px-4 py-2 rounded-full">COMPRA</span>
                   <span className="bg-red-600 px-4 py-2 rounded-full">VENDA</span>
-                  <span className="bg-red-600 px-4 py-2 rounded-full">TROCA</span>
+                  <span className="bg-red-600 px-4 py-2 rounded-full">TROCA</span>                  
                   <span className="bg-red-600 px-4 py-2 rounded-full">FINANCIA</span>
                 </div>
               </div>
