@@ -128,7 +128,7 @@ export default function VeiculosPage() {
 
       {/* Vehicles Grid */}
       <section className="py-12 relative">
-        <div className="container mx-auto px-4 pb-28"> {/* padding bottom aumentado */}
+        <div className="container mx-auto px-4 pb-28">
           <div className="mb-8">
             <p className="text-gray-600">
               Mostrando {filteredVehicles.length} de {vehicles.length} veículos
@@ -177,7 +177,6 @@ export default function VeiculosPage() {
             ))}
           </div>
 
-          {/* Botão flutuante com posição correta */}
           <div className="absolute right-4 bottom-8 md:bottom-12">
             <Button
               onClick={() => setShowModal(true)}
@@ -195,74 +194,37 @@ export default function VeiculosPage() {
         </div>
       </section>
 
-      {/* Modal */}
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white border border-neutral-300 rounded-lg w-full max-w-sm shadow-2xl p-6 text-black">
             <h2 className="text-2xl font-bold mb-6 text-center">Encontre seu veículo ideal</h2>
-      
             <form onSubmit={handleCustomVehicleSubmit} className="space-y-4">
               <div>
-                <div>
-                  <Label htmlFor="name" className="text-black">Nome completo</Label>
-                  <Input
-                    id="name"
-                    name="name"
-                    placeholder="Seu nome completo"
-                    required
-                    className="bg-white border border-gray-300 text-black placeholder:text-gray-500"
-                  />
-                </div>
-                
-                <div>
-                  <Label htmlFor="phone" className="text-black">WhatsApp</Label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    placeholder="(17) 99999-9999"
-                    required
-                    className="bg-white border border-gray-300 text-black placeholder:text-gray-500"
-                  />
-                </div>
-                
-                <div>
-                  <Label htmlFor="email" className="text-black">E-mail</Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="seu@email.com"
-                    required
-                    className="bg-white border border-gray-300 text-black placeholder:text-gray-500"
-                  />
-                </div>
-                
-                <div>
-                  <Label htmlFor="interest" className="text-black">Interesse</Label>
-                  <Textarea
-                    id="interest"
-                    name="interest"
-                    placeholder="Que tipo de veículo você procura?"
-                    rows={3}
-                    required
-                    className="bg-white border border-gray-300 text-black placeholder:text-gray-500"
-                  />
-                </div>
-      
+                <Label htmlFor="name" className="text-black">Nome completo</Label>
+                <Input id="name" name="name" placeholder="Seu nome completo" required className="bg-white border border-gray-300 text-black placeholder:text-gray-500" />
+              </div>
+              <div>
+                <Label htmlFor="phone" className="text-black">WhatsApp</Label>
+                <Input id="phone" name="phone" placeholder="(17) 99999-9999" required className="bg-white border border-gray-300 text-black placeholder:text-gray-500" />
+              </div>
+              <div>
+                <Label htmlFor="email" className="text-black">E-mail</Label>
+                <Input id="email" name="email" type="email" placeholder="seu@email.com" required className="bg-white border border-gray-300 text-black placeholder:text-gray-500" />
+              </div>
+              <div>
+                <Label htmlFor="interest" className="text-black">Interesse</Label>
+                <Textarea id="interest" name="interest" placeholder="Que tipo de veículo você procura?" rows={3} required className="bg-white border border-gray-300 text-black placeholder:text-gray-500" />
+              </div>
               <Button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-lg py-3">
                 Quero ser Contactado
               </Button>
             </form>
-      
-            <button
-              onClick={() => setShowModal(false)}
-              className="mt-4 mx-auto block text-sm text-gray-300 hover:underline"
-            >
+            <button onClick={() => setShowModal(false)} className="mt-4 mx-auto block text-sm text-gray-500 hover:underline">
               Fechar
             </button>
           </div>
         </div>
-      )}    
+      )}
 
       <Footer />
     </div>
