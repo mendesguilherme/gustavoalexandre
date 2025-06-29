@@ -92,7 +92,7 @@ body {
     @apply bg-background text-foreground;
   }
 
-.hero-wrapper {
+  .hero-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -108,11 +108,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 
 .custom-swiper {
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 .swiper-custom-nav {
@@ -127,7 +129,7 @@ body {
 
 .swiper-prev,
 .swiper-next {
-  background-color: red;
+  background-color: #DC2626;
   color: white;
   width: 36px;
   height: 36px;
@@ -147,5 +149,9 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+.swiper-slide {
+  overflow: hidden; /* 🔧 Adicionado via CSS global se possível */
+}  
 
 }
