@@ -187,7 +187,9 @@ body {
     .banner-swiper {
       width: 100%;
     }
+  }
 
+  @media (max-width: 768px) {
     .swiper-slide {
       min-height: unset;
       max-height: 500px;
