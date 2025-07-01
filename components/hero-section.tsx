@@ -137,10 +137,12 @@ export function HeroSection() {
                   <span className="text-white">EM ATÉ</span><br />
                   <span className="text-red-500">60X</span>
                 </h1>
-                <div className="hero-buttons-sm text-lg font-semibold">
+                
+                <div className="hero-buttons-sm text-lg font-semibold flex flex-wrap gap-2">
                   <span className="bg-red-600 px-4 py-2 rounded-full hero-badge-sm">TAXAS REDUZIDAS</span>
                   <span className="bg-red-600 px-4 py-2 rounded-full hero-badge-sm">CRÉDITO RÁPIDO</span>
                 </div>
+                
               </div>
 
               <p className="text-base text-gray-300 w-full sm:max-w-lg text-left sm:text-left px-2">
