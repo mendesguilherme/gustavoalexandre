@@ -3,9 +3,9 @@
 import { Car, Shield, CreditCard, RefreshCw } from "lucide-react"
 import { Card, CardContent } from "../components/ui/card"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Pagination, Autoplay } from "swiper/modules"
+import { Navigation, Autoplay } from "swiper/modules"
 import "swiper/css"
-import "swiper/css/pagination"
+import "swiper/css/navigation"
 
 export function ServicesSection() {
   const services = [
@@ -34,51 +34,62 @@ export function ServicesSection() {
   return (
     <section id="servicos" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Nossos Serviços</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Oferecemos soluções completas para todas as suas necessidades automotivas
           </p>
         </div>
 
-        {/* Swiper apenas no mobile */}
-        <div className="block md:hidden">
+        {/* Swiper Mobile */}
+        <div className="block md:hidden relative">
           <Swiper
-            modules={[Pagination, Autoplay]}
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 4000 }}
-            loop
+            modules={[Navigation, Autoplay]}
+            navigation={{
+              nextEl: ".services-next",
+              prevEl: ".services-prev",
+            }}
+            autoplay={{ delay: 6000 }}
             spaceBetween={16}
-            slidesPerView={1.2}
+            slidesPerView={1.1}
+            loop
             centeredSlides
-            className="!px-4"
+            className="!px-6"
           >
             {services.map((service, index) => (
               <SwiperSlide key={index}>
-                <Card className="text-center hover:shadow-lg transition-shadow">
-                  <CardContent className="p-8">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-6">
+                <Card className="text-center h-[300px] w-full shadow-md flex items-center justify-center">
+                  <CardContent className="p-6 flex flex-col items-center justify-center h-full">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-4">
                       <service.icon className="h-8 w-8 text-red-600" />
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">{service.title}</h3>
-                    <p className="text-gray-600">{service.description}</p>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{service.title}</h3>
+                    <p className="text-sm text-gray-600 text-center">{service.description}</p>
                   </CardContent>
                 </Card>
               </SwiperSlide>
             ))}
+
+            {/* Botões de navegação */}
+            <button className="services-prev absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-md rounded-full p-2">
+              <span className="text-xl">←</span>
+            </button>
+            <button className="services-next absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-md rounded-full p-2">
+              <span className="text-xl">→</span>
+            </button>
           </Swiper>
         </div>
 
-        {/* Grade tradicional no desktop */}
+        {/* Grid Desktop */}
         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="p-8">
+            <Card key={index} className="text-center hover:shadow-lg transition-shadow h-[300px]">
+              <CardContent className="p-8 flex flex-col items-center justify-center h-full">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-6">
                   <service.icon className="h-8 w-8 text-red-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
+                <p className="text-gray-600 text-sm text-center">{service.description}</p>
               </CardContent>
             </Card>
           ))}
