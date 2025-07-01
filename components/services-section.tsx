@@ -41,41 +41,48 @@ export function ServicesSection() {
           </p>
         </div>
 
-        {/* Mobile: Carrossel com paginação */}
-        <div className="block lg:hidden">
+        {/* Mobile - Carousel */}
+        <div className="lg:hidden">
           <Swiper
             modules={[Pagination]}
             pagination={{ clickable: true }}
-            spaceBetween={16}
-            slidesPerView={1.1}
-            centeredSlides={true}
+            spaceBetween={20}
+            slidesPerView={1.2}
             className="pb-10"
           >
             {services.map((service, index) => (
               <SwiperSlide key={index}>
-                <Card className="text-center hover:shadow-lg transition-shadow h-full">
-                  <CardContent className="p-8 flex flex-col items-center justify-start h-full gap-3">
-                    <div className="flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-2">
+                <Card className="text-center hover:shadow-lg transition-shadow h-[320px]">
+                  <CardContent className="p-8 flex flex-col justify-start items-center h-full">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-6">
                       <service.icon className="h-8 w-8 text-red-600" />
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900">{service.title}</h3>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">{service.title}</h3>
                     <p className="text-gray-600">{service.description}</p>
                   </CardContent>
                 </Card>
               </SwiperSlide>
             ))}
           </Swiper>
+
+          {/* Ajuste do pagination mais abaixo */}
+          <style jsx global>{`
+            .swiper-pagination {
+              margin-top: 10px;
+              position: relative;
+            }
+          `}</style>
         </div>
 
-        {/* Desktop: Grid fixo */}
+        {/* Desktop - Grid padrão */}
         <div className="hidden lg:grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="p-8 flex flex-col items-center justify-start h-full gap-3">
-                <div className="flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-2">
+            <Card key={index} className="text-center hover:shadow-lg transition-shadow h-[320px]">
+              <CardContent className="p-8 flex flex-col justify-start items-center h-full">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-6">
                   <service.icon className="h-8 w-8 text-red-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900">{service.title}</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">{service.title}</h3>
                 <p className="text-gray-600">{service.description}</p>
               </CardContent>
             </Card>
