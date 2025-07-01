@@ -41,23 +41,24 @@ export function ServicesSection() {
           </p>
         </div>
 
-        {/* Mobile - Swiper */}
+        {/* Mobile: Carrossel com paginação */}
         <div className="block lg:hidden">
           <Swiper
             modules={[Pagination]}
             pagination={{ clickable: true }}
-            spaceBetween={24}
+            spaceBetween={16}
             slidesPerView={1.1}
-            className="pb-8"
+            centeredSlides={true}
+            className="pb-10"
           >
             {services.map((service, index) => (
               <SwiperSlide key={index}>
-                <Card className="text-center hover:shadow-lg transition-shadow">
-                  <CardContent className="p-8 flex flex-col items-center justify-center">
-                    <div className="flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-4">
+                <Card className="text-center hover:shadow-lg transition-shadow h-full">
+                  <CardContent className="p-8 flex flex-col items-center justify-start h-full gap-3">
+                    <div className="flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-2">
                       <service.icon className="h-8 w-8 text-red-600" />
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">{service.title}</h3>
+                    <h3 className="text-xl font-semibold text-gray-900">{service.title}</h3>
                     <p className="text-gray-600">{service.description}</p>
                   </CardContent>
                 </Card>
@@ -66,15 +67,15 @@ export function ServicesSection() {
           </Swiper>
         </div>
 
-        {/* Desktop - Grid */}
-        <div className="hidden lg:grid grid-cols-4 gap-8">
+        {/* Desktop: Grid fixo */}
+        <div className="hidden lg:grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="p-8 flex flex-col items-center justify-center h-full">
-                <div className="flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-4">
+              <CardContent className="p-8 flex flex-col items-center justify-start h-full gap-3">
+                <div className="flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-2">
                   <service.icon className="h-8 w-8 text-red-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{service.title}</h3>
+                <h3 className="text-xl font-semibold text-gray-900">{service.title}</h3>
                 <p className="text-gray-600">{service.description}</p>
               </CardContent>
             </Card>
