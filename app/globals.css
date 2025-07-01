@@ -256,8 +256,8 @@ body {
 
 @media (max-width: 768px) {
   .hero-buttons-sm span {
-    font-size: 0.75rem; /* menor fonte */
-    padding: 0.25rem 0.75rem; /* menos padding */
+    font-size: 0.85rem; /* menor fonte */
+    padding: 0.35rem 0.85rem; /* menos padding */
     border-radius: 9999px; /* mantém arredondado */
   }
 }  
