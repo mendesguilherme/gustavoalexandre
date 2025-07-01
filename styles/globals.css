@@ -206,4 +206,37 @@ body {
       max-height: 300px;
     }
   }
+  
+@media (max-width: 768px) {
+  /* Títulos principais */
+  h1, .hero-title {
+    font-size: 1.5rem; /* reduzido para melhor leitura em telas pequenas */
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+    text-align: left;
+  }
+
+  /* Subtítulos */
+  .hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  /* Botões grandes como "COMPRA", "VENDA", etc */
+  .hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .hero-buttons button {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+  }
+}
+  
 }
