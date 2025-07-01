@@ -27,7 +27,7 @@ export function HeroSection() {
         <img
           src="/images/Fundobanner.jpg" // substitua pelo caminho correto da imagem
           alt="Banner de veículo esportivo"
-          className="w-full h-[300px] sm:h-[600px] object-cover"
+          className="w-full h-[400px] sm:h-[700px] object-cover"
         />
         {/* Overlay escuro opcional */}
         <div className="absolute inset-0 bg-black/40" />
@@ -76,7 +76,7 @@ export function HeroSection() {
                   <span className="text-red-500">GARANTIA</span>
                 </h1>
                 
-                <div className="hero-buttons text-lg font-semibold flex flex-wrap gap-2">
+                <div className="hero-buttons-sm text-lg font-semibold flex flex-wrap gap-2">
                   <span className="bg-red-600 px-4 py-2 rounded-full hero-badge-sm">COMPRA</span>
                   <span className="bg-red-600 px-4 py-2 rounded-full hero-badge-sm">VENDA</span>
                   <span className="bg-red-600 px-4 py-2 rounded-full hero-badge-sm">TROCA</span>
@@ -137,7 +137,7 @@ export function HeroSection() {
                   <span className="text-white">EM ATÉ</span><br />
                   <span className="text-red-500">60X</span>
                 </h1>
-                <div className="flex flex-wrap gap-2 text-lg font-semibold">
+                <div className="hero-buttons-sm text-lg font-semibold">
                   <span className="bg-red-600 px-4 py-2 rounded-full hero-badge-sm">TAXAS REDUZIDAS</span>
                   <span className="bg-red-600 px-4 py-2 rounded-full hero-badge-sm">CRÉDITO RÁPIDO</span>
                 </div>
