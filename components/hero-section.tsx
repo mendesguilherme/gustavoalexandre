@@ -21,15 +21,10 @@ import { useState } from "react"
 export function HeroSection() {
   const [showSimulacaoModal, setShowSimulacaoModal] = useState(false)
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-black via-[#0c0e16] to-[#111827] text-white py-8 lg:py-12">
-      {/* Background pattern */}
-      {/*<div className="absolute inset-0 z-0">
-        <img
-          src="/images/Fundobanner.jpg"
-          alt="Fundo Esportivo"
-          className="w-full h-full object-cover opacity-10"
-        />
-      </div>*/}
+    <section className="relative overflow-hidden text-white py-8 lg:py-12 bg-[url('/images/Fundobanner.jpg')] bg-cover bg-center bg-no-repeat">
+
+      {/* Overlay escuro por cima do fundo */}
+      <div className="absolute inset-0 bg-black opacity-10 z-0" />
 
       {/* Decorative arrows */}
       <div className="absolute top-5 right-10 hidden lg:block">
