@@ -21,7 +21,7 @@ import { useState } from "react"
 export function HeroSection() {
   const [showSimulacaoModal, setShowSimulacaoModal] = useState(false)
   return (
-    <section className="relative w-full overflow-hidden text-white bg-black">
+    <section className="relative w-full overflow-hidden text-white">
       {/* Imagem de fundo responsiva */}
       <div className="absolute inset-0 z-[-1]">
         <img
