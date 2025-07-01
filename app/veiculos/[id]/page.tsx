@@ -15,6 +15,8 @@ import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
+import InnerImageZoom from "react-inner-image-zoom"
+import "react-inner-image-zoom/lib/InnerImageZoom/styles.css"
 
 import {
   Calendar,
@@ -42,6 +44,8 @@ export default function VehicleDetailsPage() {
     email: "",
     message: "",
   })
+
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   if (!vehicle) {
     return (
@@ -126,7 +130,8 @@ export default function VehicleDetailsPage() {
                     alt={`${vehicle.name} - imagem ${selectedImage + 1}`}
                     width={600}
                     height={400}
-                    className="w-full h-80 object-cover rounded-t-lg"
+                    className="w-full h-80 object-cover rounded-t-lg cursor-zoom-in"
+                    onClick={() => setIsModalOpen(true)}
                   />
                 </div>
                 {vehicle.images.length > 1 && (
@@ -151,8 +156,33 @@ export default function VehicleDetailsPage() {
                 </div>
               )}
             </CardContent>
-          </Card>
+            </Card>
 
+            {isModalOpen && (
+              <div
+                className="fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center px-4"
+                onClick={() => setIsModalOpen(false)}
+                role="dialog"
+                aria-modal="true"
+              >
+                <div className="relative max-w-4xl w-full" onClick={(e) => e.stopPropagation()}>
+                  <button
+                    onClick={() => setIsModalOpen(false)}
+                    className="absolute top-2 right-2 text-white text-2xl font-bold z-50"
+                  >
+                    &times;
+                  </button>
+                  <InnerImageZoom
+                    src={vehicle.images[selectedImage]}
+                    zoomSrc={vehicle.images[selectedImage]}
+                    alt="Imagem com zoom"
+                    zoomType="hover"
+                    zoomPreload
+                    className="rounded-lg"
+                  />
+                </div>
+              </div>
+            )}
 
             <Card>
               <CardContent className="p-6">
