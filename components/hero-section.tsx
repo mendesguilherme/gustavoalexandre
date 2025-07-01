@@ -27,7 +27,7 @@ export function HeroSection() {
         <img
           src="/images/Fundobanner.jpg" // substitua pelo caminho correto da imagem
           alt="Banner de veículo esportivo"
-          className="w-full h-[600px] sm:h-[900px] object-cover"
+          className="w-full h-[550px] sm:h-[850px] object-cover"
         />
         {/* Overlay escuro opcional */}
         <div className="absolute inset-0 bg-black/40" />
