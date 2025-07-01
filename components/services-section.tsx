@@ -1,5 +1,11 @@
+"use client"
+
 import { Car, Shield, CreditCard, RefreshCw } from "lucide-react"
 import { Card, CardContent } from "../components/ui/card"
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Pagination, Autoplay } from "swiper/modules"
+import "swiper/css"
+import "swiper/css/pagination"
 
 export function ServicesSection() {
   const services = [
@@ -35,7 +41,36 @@ export function ServicesSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Swiper apenas no mobile */}
+        <div className="block md:hidden">
+          <Swiper
+            modules={[Pagination, Autoplay]}
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 4000 }}
+            loop
+            spaceBetween={16}
+            slidesPerView={1.2}
+            centeredSlides
+            className="!px-4"
+          >
+            {services.map((service, index) => (
+              <SwiperSlide key={index}>
+                <Card className="text-center hover:shadow-lg transition-shadow">
+                  <CardContent className="p-8">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-6">
+                      <service.icon className="h-8 w-8 text-red-600" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">{service.title}</h3>
+                    <p className="text-gray-600">{service.description}</p>
+                  </CardContent>
+                </Card>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+
+        {/* Grade tradicional no desktop */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <Card key={index} className="text-center hover:shadow-lg transition-shadow">
               <CardContent className="p-8">
