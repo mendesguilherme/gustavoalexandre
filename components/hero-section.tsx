@@ -120,10 +120,10 @@ export function HeroSection() {
                 <Link href="/veiculos">
                   <Button
                     size="lg"
-                    className="bg-red-600 hover:bg-red-700 text-lg px-6 py-3 w-full max-w-[90%] mx-auto sm:w-auto sm:mx-0"
+                    className="bg-red-600 hover:bg-red-700 text-lg px-8 w-full sm:w-auto"
                   >
                     Ver Veículos Disponíveis
-                  </Button>
+                  </Button>                  
                 </Link>
               </div>
             </div>
