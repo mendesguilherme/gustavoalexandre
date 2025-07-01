@@ -74,9 +74,9 @@ export function ContactSection() {
                   <div>
                     <h4 className="font-semibold">Horário de Funcionamento</h4>
                     <p className="text-gray-300">
-                      Segunda a Sexta: 8h às 18h
+                      Segunda a Sexta: 9h às 18h
                       <br />
-                      Sábado: 8h às 12h
+                      Sábado: 8h às 13h
                     </p>
                   </div>
                 </div>
