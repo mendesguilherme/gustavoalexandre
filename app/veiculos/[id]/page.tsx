@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useParams } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
@@ -16,7 +16,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import InnerImageZoom from "react-inner-image-zoom"
-import "react-inner-image-zoom/style.css"
+import "react-inner-image-zoom/lib/InnerImageZoom/styles.css"
 
 import {
   Calendar,
@@ -46,6 +46,19 @@ export default function VehicleDetailsPage() {
   })
 
   const [isModalOpen, setIsModalOpen] = useState(false)
+
+  // Impede o scroll de fundo quando o modal estiver aberto
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = "auto"
+    }
+  
+    return () => {
+      document.body.style.overflow = "auto"
+    }
+  }, [isModalOpen])
 
   if (!vehicle) {
     return (
@@ -162,8 +175,6 @@ export default function VehicleDetailsPage() {
               <div
                 className="fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center px-4"
                 onClick={() => setIsModalOpen(false)}
-                role="dialog"
-                aria-modal="true"
               >
                 <div className="relative max-w-4xl w-full" onClick={(e) => e.stopPropagation()}>
                   <button
@@ -174,7 +185,7 @@ export default function VehicleDetailsPage() {
                   </button>
                   <InnerImageZoom
                     src={vehicle.images[selectedImage]}
-                    zoomSrc={vehicle.images[selectedImage]}
+                    zoomSrc={vehicle.images[selectedImage]} // pode ser a mesma imagem
                     alt="Imagem com zoom"
                     zoomType="hover"
                     zoomPreload
