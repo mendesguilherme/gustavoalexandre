@@ -169,4 +169,10 @@ body {
 .swiper-slide {
   overflow: hidden; /* 🔧 Adicionado via CSS global se possível */
 }  
+
+button.swiper-prev,
+button.swiper-next {
+  display: flex !important;
+}
+
 }
