@@ -108,7 +108,7 @@ export function HeroSection() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/veiculos">
-                  <Button size="lg" className="bg-red-600 hover:bg-red-700 text-lg px-8 w-full sm:w-auto">
+                  <Button size="lg" className="bg-red-600 hover:bg-red-700 text-lg px-8 w-full max-w-xs mx-auto sm:w-auto">
                     Ver Veículos Disponíveis
                   </Button>
                 </Link>
@@ -163,7 +163,7 @@ export function HeroSection() {
         </Swiper>   
 
         {/* Navegação abaixo do Swiper */}
-        <div className="swiper-custom-nav">
+        <div className="swiper-custom-nav flex justify-center items-center mt-4 gap-4 z-10 relative">
           <button className="swiper-prev">←</button>
           <button className="swiper-next">→</button>
         </div>
