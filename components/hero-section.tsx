@@ -23,13 +23,13 @@ export function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-black via-[#0c0e16] to-[#111827] text-white py-8 lg:py-12">
       {/* Background pattern */}
-      <div className="absolute inset-0 z-0">
+      {/*<div className="absolute inset-0 z-0">
         <img
           src="/images/Fundobanner.jpg"
           alt="Fundo Esportivo"
           className="w-full h-full object-cover opacity-10"
         />
-      </div>
+      </div>*/}
 
       {/* Decorative arrows */}
       <div className="absolute top-5 right-10 hidden lg:block">
