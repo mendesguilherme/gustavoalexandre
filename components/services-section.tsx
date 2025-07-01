@@ -64,10 +64,10 @@ export function ServicesSection() {
               </SwiperSlide>
             ))}
           </Swiper>
-          <div className="mt-4" /> {/* espaçamento abaixo do pagination */}
+          <div className="mt-4" />
         </div>
 
-        {/* Desktop - Grid padrão */}
+        {/* Desktop - Grid com ícones padronizados */}
         <div className="hidden lg:grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <Card key={index} className="text-center hover:shadow-lg transition-shadow h-[320px]">
