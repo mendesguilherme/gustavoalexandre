@@ -16,7 +16,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import InnerImageZoom from "react-inner-image-zoom"
-import "react-inner-image-zoom/lib/InnerImageZoom/styles.css"
+import "react-inner-image-zoom/style.css"
 
 import {
   Calendar,
