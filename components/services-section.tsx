@@ -3,9 +3,9 @@
 import { Car, Shield, CreditCard, RefreshCw } from "lucide-react"
 import { Card, CardContent } from "../components/ui/card"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Navigation, Autoplay } from "swiper/modules"
+import { Pagination, Autoplay } from "swiper/modules"
 import "swiper/css"
-import "swiper/css/navigation"
+import "swiper/css/pagination"
 
 export function ServicesSection() {
   const services = [
@@ -42,18 +42,14 @@ export function ServicesSection() {
         </div>
 
         {/* Swiper Mobile */}
-        <div className="block md:hidden relative">
+        <div className="block md:hidden">
           <Swiper
-            modules={[Navigation, Autoplay]}
-            navigation={{
-              nextEl: ".services-next",
-              prevEl: ".services-prev",
-            }}
+            modules={[Pagination, Autoplay]}
+            pagination={{ clickable: true }}
             autoplay={{ delay: 6000 }}
             spaceBetween={16}
-            slidesPerView={1.1}
+            slidesPerView={1}
             loop
-            centeredSlides
             className="!px-6"
           >
             {services.map((service, index) => (
@@ -69,14 +65,6 @@ export function ServicesSection() {
                 </Card>
               </SwiperSlide>
             ))}
-
-            {/* Botões de navegação */}
-            <button className="services-prev absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-md rounded-full p-2">
-              <span className="text-xl">←</span>
-            </button>
-            <button className="services-next absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-md rounded-full p-2">
-              <span className="text-xl">→</span>
-            </button>
           </Swiper>
         </div>
 
