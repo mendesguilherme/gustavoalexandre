@@ -134,7 +134,7 @@ export function HeroSection() {
               <div className="space-y-6">
                 <h1 className="hero-title-sm text-3xl lg:text-5xl font-bold leading-tight">
                   FINANCIAMENTO<br />
-                  <span className="text-white">EM ATÉ</span><br />
+                  <span className="text-white">EM ATÉ </span>
                   <span className="text-red-500">60X</span>
                 </h1>
                 
