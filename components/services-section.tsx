@@ -54,8 +54,8 @@ export function ServicesSection() {
               <SwiperSlide key={index}>
                 <Card className="text-center h-[320px]">
                   <CardContent className="p-8 flex flex-col justify-start items-center h-full">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-6">
-                      <service.icon className="h-8 w-8 text-red-600" />
+                    <div className="w-16 h-16 flex items-center justify-center bg-red-100 rounded-full mb-6 shrink-0">
+                      <service.icon className="w-8 h-8 text-red-600" />
                     </div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-4">{service.title}</h3>
                     <p className="text-gray-600">{service.description}</p>
@@ -64,16 +64,16 @@ export function ServicesSection() {
               </SwiperSlide>
             ))}
           </Swiper>
-          <div className="mt-4" />
+          <div className="mt-6" />
         </div>
 
-        {/* Desktop - Grid com ícones padronizados */}
+        {/* Desktop - Grid com ícones idênticos */}
         <div className="hidden lg:grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <Card key={index} className="text-center hover:shadow-lg transition-shadow h-[320px]">
               <CardContent className="p-8 flex flex-col justify-start items-center h-full">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-6">
-                  <service.icon className="h-8 w-8 text-red-600" />
+                <div className="w-16 h-16 flex items-center justify-center bg-red-100 rounded-full mb-6 shrink-0">
+                  <service.icon className="w-8 h-8 text-red-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">{service.title}</h3>
                 <p className="text-gray-600">{service.description}</p>
