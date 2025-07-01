@@ -21,7 +21,18 @@ import { useState } from "react"
 export function HeroSection() {
   const [showSimulacaoModal, setShowSimulacaoModal] = useState(false)
   return (
-    <section className="relative overflow-hidden text-white py-8 lg:py-12 bg-[url('/images/Fundobanner.jpg')] bg-cover bg-center bg-no-repeat min-h-[700px] sm:min-h-[600px]">
+    <section className="relative w-full overflow-hidden text-white">
+      {/* Imagem de fundo responsiva */}
+      <div className="absolute inset-0 z-[-1]">
+        <img
+          src="/images/Fundobanner.jpg" // substitua pelo caminho correto da imagem
+          alt="Banner de veículo esportivo"
+          className="w-full h-[300px] sm:h-[600px] object-cover"
+        />
+        {/* Overlay escuro opcional */}
+        <div className="absolute inset-0 bg-black/40" />
+      </div>
+      
       {/* Overlay escuro por cima do fundo */}
       <div className="absolute inset-0 bg-black opacity-10 z-0" />
 
