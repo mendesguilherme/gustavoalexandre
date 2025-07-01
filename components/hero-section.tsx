@@ -130,9 +130,9 @@ export function HeroSection() {
           </SwiperSlide>
 
           <SwiperSlide>
-            <div className="space-y-8">
+            <div className="space-y-8 min-h-[450px] flex flex-col justify-between">
               <div className="space-y-6">
-                <h1 className="text-3xl lg:text-5xl font-bold leading-tight hero-title-sm">
+                <h1 className="hero-title-sm text-3xl lg:text-5xl font-bold leading-tight">
                   FINANCIAMENTO<br />
                   <span className="text-white">EM ATÉ</span><br />
                   <span className="text-red-500">60X</span>
@@ -143,7 +143,7 @@ export function HeroSection() {
                 </div>
               </div>
 
-              <p className="text-lg text-gray-300 max-w-lg">
+              <p className="text-base text-gray-300 w-full sm:max-w-lg text-left sm:text-left px-2">
                 Condições exclusivas para você realizar o sonho do carro próprio sem comprometer o seu orçamento. Faça uma simulação!
               </p>
 
