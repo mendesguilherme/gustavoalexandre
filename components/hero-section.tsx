@@ -69,14 +69,14 @@ export function HeroSection() {
           <SwiperSlide>
             <div className="space-y-8 min-h-[450px] flex flex-col justify-between">
               <div className="space-y-6">
-                <h1 className="text-3xl lg:text-5xl font-bold leading-tight">
+                <h1 className="hero-title text-3xl lg:text-5xl font-bold leading-tight">
                   CARROS REVISADOS E<br />
                   <span className="text-white">PERICIADOS COM</span>
                   <br />
                   <span className="text-red-500">GARANTIA</span>
                 </h1>
-
-                <div className="flex flex-wrap gap-2 text-lg font-semibold">
+                
+                <div className="hero-buttons text-lg font-semibold">
                   <span className="bg-red-600 px-4 py-2 rounded-full">COMPRA</span>
                   <span className="bg-red-600 px-4 py-2 rounded-full">VENDA</span>
                   <span className="bg-red-600 px-4 py-2 rounded-full">TROCA</span>                  
