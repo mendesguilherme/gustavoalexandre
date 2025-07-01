@@ -182,7 +182,7 @@ export default function VeiculosPage() {
               onClick={() => setShowModal(true)}
               className="bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded-full shadow-lg"
             >
-              🚘 Não encontrou seu veículo?
+              Não encontrou seu veículo?
             </Button>
           </div>
 
