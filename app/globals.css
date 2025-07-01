@@ -238,5 +238,20 @@ body {
     border-radius: 999px;
   }
 }
+
+@media (max-width: 768px) {
+  .hero-title-sm {
+    font-size: 1.5rem; /* equivalente a text-2xl */
+    line-height: 2rem;
+  }
+
+  .hero-badge-sm {
+    font-size: 0.875rem; /* equivalente a text-sm */
+    padding-top: 0.25rem;  /* py-1 */
+    padding-bottom: 0.25rem;
+    padding-left: 0.75rem; /* px-3 */
+    padding-right: 0.75rem;
+  }
+}
   
 }
