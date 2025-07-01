@@ -23,8 +23,12 @@ export function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-black via-[#0c0e16] to-[#111827] text-white py-8 lg:py-12">
       {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5 flex justify-center overflow-hidden">
-        <div className="w-[150%] h-full bg-gradient-to-r from-transparent via-white to-transparent transform -skew-x-12"></div>
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/images/Fundobanner.jpg"
+          alt="Fundo Esportivo"
+          className="w-full h-full object-cover opacity-10"
+        />
       </div>
 
       {/* Decorative arrows */}
