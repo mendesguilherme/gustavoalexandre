@@ -185,7 +185,7 @@ export function HeroSection() {
       </div>   
 
         {/* Right side - Lead Form */}
-        <div className="hero-form flex justify-center w-full max-w-[480px] mt-6 mx-auto lg:mt-0 lg:ml-8">
+        <div className="hero-form flex justify-center w-full max-w-[480px] mt-6 mx-auto lg:mt-0 lg:ml-8 bg-black/40 rounded-xl p-2">
           <Card className="bg-black/40 backdrop-blur-sm border border-white/10">
             <CardContent className="p-6">
               <h3 className="text-2xl font-bold mb-6 text-center text-white">Encontre seu veículo ideal</h3>
