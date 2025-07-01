@@ -21,8 +21,7 @@ import { useState } from "react"
 export function HeroSection() {
   const [showSimulacaoModal, setShowSimulacaoModal] = useState(false)
   return (
-    <section className="relative overflow-hidden text-white py-8 lg:py-12 bg-[url('/images/Fundobanner.jpg')] bg-cover sm:bg-cover bg-no-repeat bg-center min-h-[auto] sm:min-h-[600px]">
-
+    <section className="relative overflow-hidden text-white py-8 lg:py-12 bg-[url('/images/Fundobanner.jpg')] bg-cover bg-center bg-no-repeat min-h-[700px] sm:min-h-[600px]">
       {/* Overlay escuro por cima do fundo */}
       <div className="absolute inset-0 bg-black opacity-10 z-0" />
 
@@ -57,7 +56,7 @@ export function HeroSection() {
           className="custom-swiper"
         >
           <SwiperSlide>
-            <div className="space-y-8">
+            <div className="space-y-8 min-h-[450px] flex flex-col justify-between">
               <div className="space-y-6">
                 <h1 className="text-3xl lg:text-5xl font-bold leading-tight">
                   CARROS REVISADOS E<br />
@@ -74,7 +73,7 @@ export function HeroSection() {
                 </div>
               </div>
 
-              <p className="text-lg text-gray-300 max-w-lg">
+              <p className="text-base text-gray-300 w-full sm:max-w-lg text-center sm:text-left px-2">
                 Na Gustavo Alexandre Multimarcas, você encontra os melhores veículos novos e seminovos com total garantia e
                 procedência. Facilitamos seu sonho com as melhores condições de financiamento.
               </p>
