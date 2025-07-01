@@ -41,18 +41,18 @@ export function ServicesSection() {
           </p>
         </div>
 
-        {/* Mobile - Carousel */}
+        {/* Mobile - Carrossel */}
         <div className="lg:hidden">
           <Swiper
             modules={[Pagination]}
             pagination={{ clickable: true }}
-            spaceBetween={20}
+            spaceBetween={16}
             slidesPerView={1.2}
-            className="pb-10"
+            centeredSlides={true}
           >
             {services.map((service, index) => (
               <SwiperSlide key={index}>
-                <Card className="text-center hover:shadow-lg transition-shadow h-[320px]">
+                <Card className="text-center h-[320px]">
                   <CardContent className="p-8 flex flex-col justify-start items-center h-full">
                     <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-6">
                       <service.icon className="h-8 w-8 text-red-600" />
@@ -64,14 +64,7 @@ export function ServicesSection() {
               </SwiperSlide>
             ))}
           </Swiper>
-
-          {/* Ajuste do pagination mais abaixo */}
-          <style jsx global>{`
-            .swiper-pagination {
-              margin-top: 10px;
-              position: relative;
-            }
-          `}</style>
+          <div className="mt-4" /> {/* espaçamento abaixo do pagination */}
         </div>
 
         {/* Desktop - Grid padrão */}
