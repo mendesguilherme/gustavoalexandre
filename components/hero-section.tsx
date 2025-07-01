@@ -21,7 +21,7 @@ import { useState } from "react"
 export function HeroSection() {
   const [showSimulacaoModal, setShowSimulacaoModal] = useState(false)
   return (
-    <section className="relative overflow-hidden text-white py-8 lg:py-12 bg-[url('/images/Fundobanner.jpg')] bg-cover bg-center bg-no-repeat">
+    <section className="relative overflow-hidden text-white py-8 lg:py-12 bg-[url('/images/Fundobanner.jpg')] bg-cover sm:bg-cover bg-no-repeat bg-center min-h-[auto] sm:min-h-[600px]">
 
       {/* Overlay escuro por cima do fundo */}
       <div className="absolute inset-0 bg-black opacity-10 z-0" />
@@ -43,7 +43,7 @@ export function HeroSection() {
         </div>
       </div>
       
-    <div className="w-full max-w-[1400px] mx-auto hero-wrapper flex flex-col lg:flex-row items-start gap-0">
+    <div className="w-full max-w-[1400px] mx-auto hero-wrapper px-4 flex flex-col lg:flex-row items-center lg:items-start gap-6 relative z-10">
       <div className="banner-swiper flex-1 mb-0">
         <Swiper
           modules={[Navigation, Autoplay]}
@@ -108,7 +108,10 @@ export function HeroSection() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/veiculos">
-                  <Button size="lg" className="bg-red-600 hover:bg-red-700 text-lg px-8 w-full max-w-xs mx-auto sm:w-auto">
+                  <Button
+                    size="lg"
+                    className="bg-red-600 hover:bg-red-700 text-lg px-6 py-3 w-full max-w-xs mx-auto sm:w-auto sm:mx-0"
+                  >
                     Ver Veículos Disponíveis
                   </Button>
                 </Link>
