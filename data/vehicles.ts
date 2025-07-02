@@ -440,7 +440,7 @@ export const vehicles = [
       "Vidros elétricos",
       "Travas elétricas"
     ],
-    images: ["/images/civic1.jpg", "/images/civic2.jpg", "/images/civic3.jpg"],
+    images: [],
   },
   {
     id: 18,
