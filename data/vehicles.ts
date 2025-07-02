@@ -41,7 +41,7 @@ export const vehicles = [
     km: "82.000 KM",
     color: "Branco",
     doors: "5",
-    badge: "",
+    badge: "Seminovo",
     description: "",
     features: [
       "Direção Elétrica",
@@ -68,7 +68,7 @@ export const vehicles = [
     km: "277.000 KM",
     color: "Prata",
     doors: "",
-    badge: "",
+    badge: "Seminovo",
     description: "",
     features: [
       "Ar condicionado",
@@ -89,7 +89,7 @@ export const vehicles = [
     km: "141.000 KM",
     color: "Preto",
     doors: "5",
-    badge: "",
+    badge: "Seminovo",
     description: "",
     features: [
       "Direção hidráulica",
@@ -113,7 +113,7 @@ export const vehicles = [
     km: "94.000 KM",
     color: "Prata",
     doors: "5",
-    badge: "",
+    badge: "Seminovo",
     description: "",
     features: [
       "Ar condicionado",
@@ -136,7 +136,7 @@ export const vehicles = [
     km: "",
     color: "",
     doors: "",
-    badge: "",
+    badge: "Seminovo",
     description: "",
     features: [
       "Bateria de lítio",
@@ -156,7 +156,7 @@ export const vehicles = [
     km: "",
     color: "",
     doors: "",
-    badge: "",
+    badge: "Seminovo",
     description: "",
     features: [
       "Bateria de lítio",
@@ -176,7 +176,7 @@ export const vehicles = [
     km: "140.000 KM",
     color: "",
     doors: "",
-    badge: "",
+    badge: "Seminovo",
     description: "",
     features: [
       "Ar condicionado",
@@ -208,7 +208,7 @@ export const vehicles = [
     km: "124.000 KM",
     color: "",
     doors: "",
-    badge: "",
+    badge: "Seminovo",
     description: "",
     features: [
       "Ar condicionado",
@@ -231,7 +231,7 @@ export const vehicles = [
     km: "116.000 KM",
     color: "",
     doors: "",
-    badge: "",
+    badge: "Seminovo",
     description: "",
     features: [
       "Airbags frontais e laterais",
@@ -268,7 +268,7 @@ export const vehicles = [
     km: "242.000 KM",
     color: "",
     doors: "",
-    badge: "",
+    badge: "Seminovo",
     description: "",
     features: [
       "Direção hidráulica",
@@ -289,7 +289,7 @@ export const vehicles = [
     km: "168.000 KM",
     color: "",
     doors: "",
-    badge: "",
+    badge: "Seminovo",
     description: "",
     features: [
       "Ar condicionado",
@@ -311,7 +311,7 @@ export const vehicles = [
     km: "179.000 KM",
     color: "",
     doors: "",
-    badge: "",
+    badge: "Seminovo",
     description: "",
     features: [
       "Direção hidráulica",
@@ -333,7 +333,7 @@ export const vehicles = [
     km: "96.000 KM",
     color: "",
     doors: "",
-    badge: "",
+    badge: "Seminovo",
     description: "",
     features: [
       "Injeção eletrônica",
@@ -353,7 +353,7 @@ export const vehicles = [
     km: "159.000 KM",
     color: "",
     doors: "",
-    badge: "",
+    badge: "Seminovo",
     description: "",
     features: [
       "Direção elétrica",
@@ -383,7 +383,7 @@ export const vehicles = [
     km: "82.000 KM",
     color: "",
     doors: "",
-    badge: "",
+    badge: "Seminovo",
     description: "",
     features: [
       "Direção Elétrica",
