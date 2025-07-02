@@ -61,13 +61,15 @@ export function Header() {
           <div className="relative py-3 flex items-center justify-center md:justify-between">
             {/* Logo */}
             <Link href="/" className="flex-shrink-0 mx-auto md:mx-0">
-              <Image
-                src="/images/logo.png"
-                alt="Logo"
-                width={160}
-                height={48}
-                className="object-contain"
-              />
+              <div className="h-12 md:h-14 overflow-hidden flex items-center">
+                <Image
+                  src="/images/logo.png"
+                  alt="Logo"
+                  width={200}
+                  height={80}
+                  className="object-contain"
+                />
+              </div>
             </Link>
 
             {/* Botão do menu mobile */}
