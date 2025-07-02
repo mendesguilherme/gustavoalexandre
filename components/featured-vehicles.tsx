@@ -6,40 +6,10 @@ import { Card, CardContent } from "../components/ui/card"
 import { Button } from "../components/ui/button"
 import { Badge } from "../components/ui/badge"
 import { Calendar, Fuel, Settings } from "lucide-react"
+import { vehicles as allVehicles } from "@/data/vehicles" // ajuste o path conforme seu projeto
 
 export function FeaturedVehicles() {
-  const vehicles = [
-    {
-      id: 1,
-      name: "Honda Civic 2022",
-      price: "R$ 89.900",
-      year: "2022",
-      fuel: "Flex",
-      transmission: "Automático",
-      image: "/placeholder.svg?height=300&width=400",
-      badge: "Seminovo",
-    },
-    {
-      id: 2,
-      name: "Chevrolet Onix 2023",
-      price: "R$ 65.900",
-      year: "2023",
-      fuel: "Flex",
-      transmission: "Manual",
-      image: "/placeholder.svg?height=300&width=400",
-      badge: "Novo",
-    },
-    {
-      id: 3,
-      name: "Nissan Kicks 2021",
-      price: "R$ 78.900",
-      year: "2021",
-      fuel: "Flex",
-      transmission: "CVT",
-      image: "/placeholder.svg?height=300&width=400",
-      badge: "Seminovo",
-    },
-  ]
+  const vehicles = allVehicles.filter((vehicle) => vehicle.spotlight)
 
   return (
     <section className="py-20 bg-white">
@@ -56,7 +26,7 @@ export function FeaturedVehicles() {
             <Card key={vehicle.id} className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="relative">
                 <Image
-                  src={vehicle.image || "/placeholder.svg"}
+                  src={vehicle.images[0] || "/placeholder.svg"}
                   alt={vehicle.name}
                   width={400}
                   height={300}
