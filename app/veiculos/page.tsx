@@ -24,6 +24,7 @@ export default function VeiculosPage() {
 
   const filteredVehicles = vehicles.filter((vehicle) => {
     return (
+      vehicle.available !== false &&
       vehicle.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
       (selectedBrand === "" || selectedBrand === "all" || vehicle.brand === selectedBrand) &&
       (selectedYear === "" || selectedYear === "all" || vehicle.year === selectedYear) &&
