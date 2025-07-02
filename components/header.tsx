@@ -61,7 +61,7 @@ export function Header() {
           <div className="relative py-2 md:py-3 flex items-center justify-between">
             {/* Logo centralizado no mobile e alinhado à esquerda no desktop */}
             <Link href="/" className="mx-auto md:mx-0">
-              <div className="h-[60px] md:h-[70px] flex items-center justify-center">
+              <div className="h-[60px] md:h-[64px] flex items-center md:items-start justify-center md:justify-start pt-0 md:pt-2">
                 <Image
                   src="/images/logo.png"
                   alt="Logo"
