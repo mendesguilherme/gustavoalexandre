@@ -13,6 +13,7 @@ export const vehicles = [
     badge: "Único dono",
     description: "",
     spotlight: false,
+    available: false,
     features: [
       "Direção elétrica",
       "Ar condicionado",
@@ -39,7 +40,8 @@ export const vehicles = [
       "/images/citroen-jumpy/07.webp",
       "/images/citroen-jumpy/08.webp",
       "/images/citroen-jumpy/09.webp",
-      "/images/citroen-jumpy/10.webp"],
+      "/images/citroen-jumpy/10.webp"
+    ]
   },
   {
     id: 2,
@@ -55,6 +57,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: false,
+    available: false,
     features: [
       "Direção Elétrica",
       "Ar condicionado",
@@ -67,7 +70,7 @@ export const vehicles = [
       "Porta malas elétrico",
       "Porta malas de 250 litros"
     ],
-    images: [],
+    images: []
   },
   {
     id: 3,
@@ -83,13 +86,14 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: false,
+    available: false,
     features: [
       "Ar condicionado",
       "Direção Hidráulica",
       "Vidros elétricos",
       "Travas elétricas"
     ],
-    images: [],
+    images: []
   },
   {
     id: 4,
@@ -105,6 +109,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: false,
+    available: false,
     features: [
       "Direção hidráulica",
       "Ar condicionado",
@@ -114,7 +119,7 @@ export const vehicles = [
       "Rodas de liga leve",
       "Porta malas de 430 litros"
     ],
-    images: [],
+    images: []
   },
   {
     id: 5,
@@ -130,6 +135,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: false,
+    available: false,
     features: [
       "Ar condicionado",
       "Direção hidráulica",
@@ -138,8 +144,8 @@ export const vehicles = [
       "Chave canivete",
       "Porta malas de 285 litros"
     ],
-    images: [],
-  },
+    images: []
+  }
 
   {
     id: 6,
@@ -155,12 +161,13 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: false,
+    available: false,
     features: [
       "Bateria de lítio",
       "Isenta de emplacamento e CNH",
       "Autonomia de até 40 KM"
     ],
-    images: [],
+    images: []
   },
   {
     id: 7,
@@ -176,12 +183,13 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: false,
+    available: false,
     features: [
       "Bateria de lítio",
       "Isenta de emplacamento e CNH",
       "Autonomia de até 40 KM"
     ],
-    images: [],
+    images: []
   },
   {
     id: 8,
@@ -197,6 +205,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: false,
+    available: false,
     features: [
       "Ar condicionado",
       "Freios ABS",
@@ -214,7 +223,7 @@ export const vehicles = [
       "Travas elétricas",
       "Vidros elétricos"
     ],
-    images: [],
+    images: []
   },
   {
     id: 9,
@@ -230,6 +239,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: false,
+    available: false,
     features: [
       "Ar condicionado",
       "Direção hidráulica",
@@ -238,7 +248,7 @@ export const vehicles = [
       "Alarme",
       "MP3 player"
     ],
-    images: [],
+    images: []
   },
   {
     id: 10,
@@ -254,6 +264,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: true,
+    available: false,
     features: [
       "Airbags frontais e laterais",
       "Ar condicionado",
@@ -276,9 +287,8 @@ export const vehicles = [
       "Volante com regulagem de altura",
       "Porta malas de 313 litros"
     ],
-    images: [],
+    images: []
   },
-
   {
     id: 11,
     name: "Palio Weekend 1.6 Trekking",
@@ -293,13 +303,14 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: false,
+    available: false,
     features: [
       "Direção hidráulica",
       "Ar condicionado",
       "Vidros elétricos",
       "Travas elétricas"
     ],
-    images: [],
+    images: []
   },
   {
     id: 12,
@@ -315,6 +326,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: false,
+    available: false,
     features: [
       "Ar condicionado",
       "Ar quente",
@@ -322,7 +334,7 @@ export const vehicles = [
       "Vidros elétricos",
       "Porta malas de 280 litros"
     ],
-    images: [],
+    images: []
   },
   {
     id: 13,
@@ -338,6 +350,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: false,
+    available: false,
     features: [
       "Direção hidráulica",
       "Ar condicionado",
@@ -345,7 +358,7 @@ export const vehicles = [
       "Travas elétricas",
       "MP3 player"
     ],
-    images: [],
+    images: []
   },
   {
     id: 14,
@@ -361,12 +374,13 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: false,
+    available: false,
     features: [
       "Injeção eletrônica",
       "Partida elétrica",
       "Freio a disco"
     ],
-    images: [],
+    images: []
   },
   {
     id: 15,
@@ -382,6 +396,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: true,
+    available: false,
     features: [
       "Direção elétrica",
       "Ar-condicionado digital (Dualzone)",
@@ -397,9 +412,8 @@ export const vehicles = [
       "Rodas de liga leve",
       "Rack de teto"
     ],
-    images: [],
+    images: []
   },
-
   {
     id: 16,
     name: "Ford Ka 1.5 SE",
@@ -414,6 +428,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: false,
+    available: false,
     features: [
       "Direção Elétrica",
       "Ar condicionado",
@@ -426,7 +441,7 @@ export const vehicles = [
       "Porta malas elétrico",
       "Porta malas de 250 litros"
     ],
-    images: [],
+    images: []
   },
   {
     id: 17,
@@ -442,6 +457,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "Veículo em excelente estado, revisado e com garantia.",
     spotlight: true,
+    available: false,
     features: [
       "Ar-condicionado",
       "Direção hidráulica",
@@ -450,7 +466,7 @@ export const vehicles = [
       "Vidros elétricos",
       "Travas elétricas"
     ],
-    images: [],
+    images: []
   },
   {
     id: 18,
@@ -466,13 +482,14 @@ export const vehicles = [
     badge: "Novo",
     description: "Veículo zero km com todas as garantias de fábrica.",
     spotlight: false,
+    available: false,
     features: [
       "Central multimídia",
       "Controle de estabilidade",
       "Assistente de partida em rampa",
       "Sensor de estacionamento"
     ],
-    images: ["/images/onix1.jpg", "/images/onix2.jpg"],
+    images: ["/images/onix1.jpg", "/images/onix2.jpg"]
   },
   {
     id: 19,
@@ -488,13 +505,14 @@ export const vehicles = [
     badge: "Seminovo",
     description: "SUV completo com baixa quilometragem e único dono.",
     spotlight: false,
+    available: false,
     features: [
       "Banco de couro",
       "Câmera de ré",
       "Piloto automático",
       "Sistema start-stop"
     ],
-    images: ["/images/kicks1.jpg", "/images/kicks2.jpg"],
+    images: ["/images/kicks1.jpg", "/images/kicks2.jpg"]
   },
   {
     id: 20,
@@ -510,15 +528,15 @@ export const vehicles = [
     badge: "Seminovo",
     description: "Sedan premium com manutenção em dia na concessionária.",
     spotlight: false,
+    available: false,
     features: [
       "Rodas de liga leve",
       "Ar digital",
       "Encosto traseiro bipartido",
       "Volante multifuncional"
     ],
-    images: ["/images/corolla1.jpg", "/images/corolla2.jpg"],
+    images: ["/images/corolla1.jpg", "/images/corolla2.jpg"]
   },
-
   {
     id: 21,
     name: "Volkswagen T-Cross 2022",
@@ -533,13 +551,14 @@ export const vehicles = [
     badge: "Seminovo",
     description: "SUV compacto ideal para cidade com baixo consumo.",
     spotlight: false,
+    available: false,
     features: [
       "Farol de LED",
       "Controle de tração",
       "Alerta de ponto cego",
       "Freio a disco nas quatro rodas"
     ],
-    images: ["/images/tcross1.jpg", "/images/tcross2.jpg"],
+    images: ["/images/tcross1.jpg", "/images/tcross2.jpg"]
   },
   {
     id: 22,
@@ -555,13 +574,14 @@ export const vehicles = [
     badge: "Seminovo",
     description: "Hatch econômico e confiável, perfeito para o dia a dia.",
     spotlight: false,
+    available: false,
     features: [
       "Computador de bordo",
       "Direção elétrica",
       "Comando de som no volante",
       "Sensor crepuscular"
     ],
-    images: ["/images/hb20-1.jpg", "/images/hb20-2.jpg"],
+    images: ["/images/hb20-1.jpg", "/images/hb20-2.jpg"]
   },
   {
     id: 23,
@@ -577,6 +597,7 @@ export const vehicles = [
     badge: "Único dono",
     description: "2012/2013 com direção hidráulica e alarme. Ótimo estado de conservação.",
     spotlight: false,
+    available: false,
     features: [
       "Direção hidráulica",
       "Alarme",
@@ -592,6 +613,7 @@ export const vehicles = [
       "/images/corsa-classic/06.webp",
       "/images/corsa-classic/07.webp",
       "/images/corsa-classic/08.webp"
-    ],
-  }
+    ]
+  } 
+
 ]
