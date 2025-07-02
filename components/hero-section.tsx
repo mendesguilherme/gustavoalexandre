@@ -25,7 +25,7 @@ export function HeroSection() {
       {/* Imagem de fundo responsiva */}
       <div className="absolute inset-0 z-[-1]">
         <img
-          src="/images/Fundobanner.jpg" // substitua pelo caminho correto da imagem
+          src="/images/Fundobanner.webp" // substitua pelo caminho correto da imagem
           alt="Banner de veículo esportivo"
           className="w-full h-[600px] sm:h-[900px] object-cover"
         />
