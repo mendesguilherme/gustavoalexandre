@@ -58,7 +58,7 @@ export function Header() {
           </div>
 
           {/* Main header line */}
-          <div className="relative py-2 md:py-3 flex items-center justify-between">
+          <div className="relative py-1 md:py-2 flex items-center justify-center md:justify-between">
             {/* Logo centralizado no mobile e alinhado à esquerda no desktop */}
             <Link href="/" className="mx-auto md:mx-0">
               <div className="flex items-center md:items-center justify-center md:justify-start">
