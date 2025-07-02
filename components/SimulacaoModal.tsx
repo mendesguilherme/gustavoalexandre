@@ -6,13 +6,15 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { vehicles } from "@/data/vehicles" // ajuste o caminho conforme sua estrutura
 
 export function SimulacaoModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const [possuiEntrada, setPossuiEntrada] = useState("nao")
+  const [veiculoSelecionado, setVeiculoSelecionado] = useState("")
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Aqui você pode lidar com o envio, como enviar os dados para uma API
+    // Aqui você pode manipular o envio
     onClose()
   }
 
@@ -26,35 +28,34 @@ export function SimulacaoModal({ isOpen, onClose }: { isOpen: boolean; onClose: 
 
           <div>
             <Label htmlFor="nome" className="text-gray-700">Nome completo</Label>
-            <Input
-              id="nome"
-              name="nome"
-              required
-              className="bg-white border-gray-300 text-black placeholder:text-gray-500"
-              placeholder="Digite seu nome"
-            />
+            <Input id="nome" name="nome" required className="bg-white border-gray-300 text-black placeholder:text-gray-500" placeholder="Digite seu nome" />
           </div>
 
           <div>
             <Label htmlFor="cpf" className="text-gray-700">CPF</Label>
-            <Input
-              id="cpf"
-              name="cpf"
-              required
-              className="bg-white border-gray-300 text-black placeholder:text-gray-500"
-              placeholder="000.000.000-00"
-            />
+            <Input id="cpf" name="cpf" required className="bg-white border-gray-300 text-black placeholder:text-gray-500" placeholder="000.000.000-00" />
           </div>
 
           <div>
             <Label htmlFor="dataNascimento" className="text-gray-700">Data de nascimento</Label>
-            <Input
-              id="dataNascimento"
-              name="dataNascimento"
-              type="date"
+            <Input id="dataNascimento" name="dataNascimento" type="date" required className="bg-white border-gray-300 text-black placeholder:text-gray-500" />
+          </div>
+
+          <div>
+            <Label htmlFor="veiculo" className="text-gray-700">Veículo de interesse</Label>
+            <select
+              id="veiculo"
+              name="veiculo"
+              value={veiculoSelecionado}
+              onChange={(e) => setVeiculoSelecionado(e.target.value)}
               required
-              className="bg-white border-gray-300 text-black placeholder:text-gray-500"
-            />
+              className="w-full px-4 py-2 bg-white border border-gray-300 rounded-md text-black"
+            >
+              <option value="">Selecione um veículo</option>
+              {vehicles.map((v) => (
+                <option key={v.id} value={v.name}>{v.name}</option>
+              ))}
+            </select>
           </div>
 
           <div>
@@ -73,12 +74,7 @@ export function SimulacaoModal({ isOpen, onClose }: { isOpen: boolean; onClose: 
 
           <div>
             <Label className="text-gray-700">Possui entrada?</Label>
-            <RadioGroup
-              name="possuiEntrada"
-              value={possuiEntrada}
-              onValueChange={setPossuiEntrada}
-              className="flex gap-4 mt-1"
-            >
+            <RadioGroup name="possuiEntrada" value={possuiEntrada} onValueChange={setPossuiEntrada} className="flex gap-4 mt-1">
               <div className="flex items-center gap-2">
                 <RadioGroupItem value="sim" id="entradaSim" />
                 <Label htmlFor="entradaSim" className="text-gray-700">Sim</Label>
@@ -97,9 +93,7 @@ export function SimulacaoModal({ isOpen, onClose }: { isOpen: boolean; onClose: 
               name="valorEntrada"
               placeholder="R$"
               disabled={possuiEntrada !== "sim"}
-              className={`bg-white border-gray-300 text-black placeholder:text-gray-500 ${
-                possuiEntrada !== "sim" ? "opacity-50 cursor-not-allowed" : ""
-              }`}
+              className={`bg-white border-gray-300 text-black placeholder:text-gray-500 ${possuiEntrada !== "sim" ? "opacity-50 cursor-not-allowed" : ""}`}
             />
           </div>
 
