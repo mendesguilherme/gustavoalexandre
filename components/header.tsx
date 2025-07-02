@@ -61,12 +61,12 @@ export function Header() {
           <div className="relative py-3 flex items-center justify-center md:justify-between">
             {/* Logo */}
             <Link href="/" className="flex-shrink-0 mx-auto md:mx-0">
-              <div className="h-12 md:h-14 overflow-hidden flex items-center">
+              <div className="h-13 md:h-15 overflow-hidden flex items-center">
                 <Image
                   src="/images/logo.png"
                   alt="Logo"
-                  width={200}
-                  height={80}
+                  width={210}
+                  height={90}
                   className="object-contain"
                 />
               </div>
