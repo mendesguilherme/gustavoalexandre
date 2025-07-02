@@ -12,6 +12,7 @@ export const vehicles = [
     doors: "",
     badge: "Único dono",
     description: "",
+    spotlight: false,
     features: [
       "Direção elétrica",
       "Ar condicionado",
@@ -43,6 +44,7 @@ export const vehicles = [
     doors: "5",
     badge: "Seminovo",
     description: "",
+    spotlight: false,
     features: [
       "Direção Elétrica",
       "Ar condicionado",
@@ -70,6 +72,7 @@ export const vehicles = [
     doors: "",
     badge: "Seminovo",
     description: "",
+    spotlight: false,
     features: [
       "Ar condicionado",
       "Direção Hidráulica",
@@ -91,6 +94,7 @@ export const vehicles = [
     doors: "5",
     badge: "Seminovo",
     description: "",
+    spotlight: false,
     features: [
       "Direção hidráulica",
       "Ar condicionado",
@@ -115,6 +119,7 @@ export const vehicles = [
     doors: "5",
     badge: "Seminovo",
     description: "",
+    spotlight: false,
     features: [
       "Ar condicionado",
       "Direção hidráulica",
@@ -125,6 +130,7 @@ export const vehicles = [
     ],
     images: [],
   },
+
   {
     id: 6,
     name: "Scooter elétrica 1000 watts",
@@ -138,6 +144,7 @@ export const vehicles = [
     doors: "",
     badge: "Seminovo",
     description: "",
+    spotlight: false,
     features: [
       "Bateria de lítio",
       "Isenta de emplacamento e CNH",
@@ -158,6 +165,7 @@ export const vehicles = [
     doors: "",
     badge: "Seminovo",
     description: "",
+    spotlight: false,
     features: [
       "Bateria de lítio",
       "Isenta de emplacamento e CNH",
@@ -178,6 +186,7 @@ export const vehicles = [
     doors: "",
     badge: "Seminovo",
     description: "",
+    spotlight: false,
     features: [
       "Ar condicionado",
       "Freios ABS",
@@ -210,6 +219,7 @@ export const vehicles = [
     doors: "",
     badge: "Seminovo",
     description: "",
+    spotlight: false,
     features: [
       "Ar condicionado",
       "Direção hidráulica",
@@ -233,6 +243,7 @@ export const vehicles = [
     doors: "",
     badge: "Seminovo",
     description: "",
+    spotlight: true,
     features: [
       "Airbags frontais e laterais",
       "Ar condicionado",
@@ -257,6 +268,7 @@ export const vehicles = [
     ],
     images: [],
   },
+
   {
     id: 11,
     name: "Palio Weekend 1.6 Trekking",
@@ -270,6 +282,7 @@ export const vehicles = [
     doors: "",
     badge: "Seminovo",
     description: "",
+    spotlight: false,
     features: [
       "Direção hidráulica",
       "Ar condicionado",
@@ -291,6 +304,7 @@ export const vehicles = [
     doors: "",
     badge: "Seminovo",
     description: "",
+    spotlight: false,
     features: [
       "Ar condicionado",
       "Ar quente",
@@ -313,6 +327,7 @@ export const vehicles = [
     doors: "",
     badge: "Seminovo",
     description: "",
+    spotlight: false,
     features: [
       "Direção hidráulica",
       "Ar condicionado",
@@ -335,6 +350,7 @@ export const vehicles = [
     doors: "",
     badge: "Seminovo",
     description: "",
+    spotlight: false,
     features: [
       "Injeção eletrônica",
       "Partida elétrica",
@@ -355,6 +371,7 @@ export const vehicles = [
     doors: "",
     badge: "Seminovo",
     description: "",
+    spotlight: true,
     features: [
       "Direção elétrica",
       "Ar-condicionado digital (Dualzone)",
@@ -372,6 +389,7 @@ export const vehicles = [
     ],
     images: [],
   },
+
   {
     id: 16,
     name: "Ford Ka 1.5 SE",
@@ -385,6 +403,7 @@ export const vehicles = [
     doors: "",
     badge: "Seminovo",
     description: "",
+    spotlight: false,
     features: [
       "Direção Elétrica",
       "Ar condicionado",
@@ -412,6 +431,7 @@ export const vehicles = [
     doors: "4",
     badge: "Seminovo",
     description: "Veículo em excelente estado, revisado e com garantia.",
+    spotlight: true,
     features: [
       "Ar-condicionado",
       "Direção hidráulica",
@@ -435,6 +455,7 @@ export const vehicles = [
     doors: "4",
     badge: "Novo",
     description: "Veículo zero km com todas as garantias de fábrica.",
+    spotlight: false,
     features: [
       "Central multimídia",
       "Controle de estabilidade",
@@ -456,6 +477,7 @@ export const vehicles = [
     doors: "4",
     badge: "Seminovo",
     description: "SUV completo com baixa quilometragem e único dono.",
+    spotlight: false,
     features: [
       "Banco de couro",
       "Câmera de ré",
@@ -477,6 +499,7 @@ export const vehicles = [
     doors: "4",
     badge: "Seminovo",
     description: "Sedan premium com manutenção em dia na concessionária.",
+    spotlight: false,
     features: [
       "Rodas de liga leve",
       "Ar digital",
@@ -485,6 +508,7 @@ export const vehicles = [
     ],
     images: ["/images/corolla1.jpg", "/images/corolla2.jpg"],
   },
+
   {
     id: 21,
     name: "Volkswagen T-Cross 2022",
@@ -498,6 +522,7 @@ export const vehicles = [
     doors: "4",
     badge: "Seminovo",
     description: "SUV compacto ideal para cidade com baixo consumo.",
+    spotlight: false,
     features: [
       "Farol de LED",
       "Controle de tração",
@@ -519,6 +544,7 @@ export const vehicles = [
     doors: "4",
     badge: "Seminovo",
     description: "Hatch econômico e confiável, perfeito para o dia a dia.",
+    spotlight: false,
     features: [
       "Computador de bordo",
       "Direção elétrica",
@@ -540,6 +566,7 @@ export const vehicles = [
     doors: "4",
     badge: "Único dono",
     description: "2012/2013 com direção hidráulica e alarme. Ótimo estado de conservação.",
+    spotlight: false,
     features: [
       "Direção hidráulica",
       "Alarme",
@@ -556,7 +583,5 @@ export const vehicles = [
       "/images/corsa-classic/07.webp",
       "/images/corsa-classic/08.webp"
     ],
-  },
-
-
-];
+  }
+]
