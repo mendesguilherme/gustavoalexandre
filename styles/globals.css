@@ -238,5 +238,34 @@ body {
     border-radius: 999px;
   }
 }
+
+@media (max-width: 768px) {
+  .hero-title-sm {
+    font-size: 1.0rem; /* equivalente a text-2xl */
+    line-height: 2rem;
+  }
+
+  .hero-badge-sm {
+    font-size: 0.675rem; /* equivalente a text-sm */
+    padding-top: 0.15rem;  /* py-1 */
+    padding-bottom: 0.15rem;
+    padding-left: 0.65rem; /* px-3 */
+    padding-right: 0.65rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-buttons-sm span {
+    font-size: 0.85rem; /* menor fonte */
+    padding: 0.35rem 0.85rem; /* menos padding */
+    border-radius: 9999px; /* mantém arredondado */
+  }
+}  
+
+@layer utilities {
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+}  
   
 }
