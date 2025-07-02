@@ -1,9 +1,9 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
+import { usePathname, useRouter } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
-import { useRouter, usePathname } from "next/navigation"
 import { Phone, MapPin, Facebook, Instagram, MessageCircle } from "lucide-react"
 import { Button } from "../components/ui/button"
 import { MobileMenu } from "../components/MobileMenu"
@@ -12,19 +12,17 @@ import { SimulacaoModal } from "@/components/SimulacaoModal"
 
 export function Header() {
   const [showSimulacaoModal, setShowSimulacaoModal] = useState(false)
-
-  const router = useRouter()
   const pathname = usePathname()
+  const router = useRouter()
 
-  function handleAnchorClick(e: React.MouseEvent, targetId: string) {
-    e.preventDefault()
-    if (pathname === "/") {
-      const el = document.getElementById(targetId)
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" })
-      }
+  const handleAnchorNavigation = (id: string) => {
+    if (pathname !== "/") {
+      router.push(`/#${id}`)
     } else {
-      router.push(`/#${targetId}`)
+      const element = document.getElementById(id)
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" })
+      }
     }
   }
 
@@ -94,14 +92,20 @@ export function Header() {
                 </a>
                 <a
                   href="#servicos"
-                  onClick={(e) => handleAnchorClick(e, "servicos")}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    handleAnchorNavigation("servicos")
+                  }}
                   className="hover:text-red-500 transition-colors cursor-pointer"
                 >
                   Serviços
                 </a>
                 <a
                   href="#contato"
-                  onClick={(e) => handleAnchorClick(e, "contato")}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    handleAnchorNavigation("contato")
+                  }}
                   className="hover:text-red-500 transition-colors cursor-pointer"
                 >
                   Contato
@@ -112,6 +116,8 @@ export function Header() {
                   const el = document.getElementById("contato-footer")
                   if (el) {
                     el.scrollIntoView({ behavior: "smooth" })
+                  } else {
+                    router.push("/#contato-footer")
                   }
                 }}
                 className="bg-red-600 hover:bg-red-700"
@@ -122,4 +128,15 @@ export function Header() {
           </div>
 
           {/* Menu mobile abaixo do header */}
-          <MobileMenu onOpen
+          <MobileMenu onOpenSimulacaoModal={() => setShowSimulacaoModal(true)} />
+        </div>
+      </header>
+
+      {/* Modal de Simulação */}
+      <SimulacaoModal
+        isOpen={showSimulacaoModal}
+        onClose={() => setShowSimulacaoModal(false)}
+      />
+    </>
+  )
+}
