@@ -17,7 +17,7 @@ export function Header() {
 
   const handleAnchorNavigation = (id: string) => {
     if (pathname !== "/") {
-      router.push(/#${id})
+      router.push(`/#${id}`)
     } else {
       const element = document.getElementById(id)
       if (element) {
