@@ -30,8 +30,8 @@ export const vehicles = [
       "Manual + Chave reserva"
     ],
     images: [
-      "/images/citroen-jumpy/01.webp",
-      "/images/citroen-jumpy/02.webp",
+      "/images/citroen-jumpy/01.jpeg",
+      "/images/citroen-jumpy/02.jpeg",
       "/images/citroen-jumpy/03.webp",
       "/images/citroen-jumpy/04.webp",
       "/images/citroen-jumpy/05.webp",
