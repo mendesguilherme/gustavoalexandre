@@ -9,7 +9,9 @@ import { Calendar, Fuel, Settings } from "lucide-react"
 import { vehicles as allVehicles } from "@/data/vehicles" // ajuste o path conforme seu projeto
 
 export function FeaturedVehicles() {
-  const vehicles = allVehicles.filter((vehicle) => vehicle.spotlight)
+  const vehicles = allVehicles.filter(
+    (vehicle) => vehicle.spotlight && vehicle.available !== false
+  )
 
   return (
     <section className="py-20 bg-white">
