@@ -1,8 +1,9 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { useRouter, usePathname } from "next/navigation"
 import { Phone, MapPin, Facebook, Instagram, MessageCircle } from "lucide-react"
 import { Button } from "../components/ui/button"
 import { MobileMenu } from "../components/MobileMenu"
@@ -11,6 +12,21 @@ import { SimulacaoModal } from "@/components/SimulacaoModal"
 
 export function Header() {
   const [showSimulacaoModal, setShowSimulacaoModal] = useState(false)
+
+  const router = useRouter()
+  const pathname = usePathname()
+
+  function handleAnchorClick(e: React.MouseEvent, targetId: string) {
+    e.preventDefault()
+    if (pathname === "/") {
+      const el = document.getElementById(targetId)
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" })
+      }
+    } else {
+      router.push(`/#${targetId}`)
+    }
+  }
 
   return (
     <>
@@ -76,8 +92,20 @@ export function Header() {
                 >
                   Simulação
                 </a>
-                <Link href="#servicos" className="hover:text-red-500 transition-colors">Serviços</Link>
-                <Link href="#contato" className="hover:text-red-500 transition-colors">Contato</Link>
+                <a
+                  href="#servicos"
+                  onClick={(e) => handleAnchorClick(e, "servicos")}
+                  className="hover:text-red-500 transition-colors cursor-pointer"
+                >
+                  Serviços
+                </a>
+                <a
+                  href="#contato"
+                  onClick={(e) => handleAnchorClick(e, "contato")}
+                  className="hover:text-red-500 transition-colors cursor-pointer"
+                >
+                  Contato
+                </a>
               </nav>
               <Button
                 onClick={() => {
@@ -94,15 +122,4 @@ export function Header() {
           </div>
 
           {/* Menu mobile abaixo do header */}
-          <MobileMenu onOpenSimulacaoModal={() => setShowSimulacaoModal(true)} />
-        </div>
-      </header>
-
-      {/* Modal fora do header, mas dentro do React Fragment */}
-      <SimulacaoModal
-        isOpen={showSimulacaoModal}
-        onClose={() => setShowSimulacaoModal(false)}
-      />
-    </>
-  )
-}
+          <MobileMenu onOpen
