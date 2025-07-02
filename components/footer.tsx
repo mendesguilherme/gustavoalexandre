@@ -30,13 +30,17 @@ export function Footer({ onOpenSimulacaoModal }: FooterProps) {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Logo and Description */}
           <div className="md:col-span-2">
-            <Link href="/">
-              <Image
-                src="/images/logo.png"
-                alt="Gustavo Alexandre Multimarcas"
-                width={150}
-                height={75}
-              />
+            <Link href="/" className="flex-shrink-0 mx-auto md:mx-0">
+              <div className="h-[100px] overflow-hidden flex items-center">
+                <Image
+                  src="/images/logo.png"
+                  alt="Logo"
+                  width={250} // Pode ser 600, 700... o importante é a proporção
+                  height={500}
+                  className="object-contain max-h-[500px]"
+                  priority
+                />
+              </div>
             </Link>
             <p className="text-gray-300 mb-4 max-w-md">
               Há anos no mercado automotivo, oferecemos veículos revisados e periciados com total garantia e as melhores condições de financiamento.
