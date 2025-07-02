@@ -58,16 +58,17 @@ export function Header() {
           </div>
 
           {/* Linha principal do header */}
-          <div className="relative py-3 flex items-center justify-center md:justify-between">
+          <div className="relative py-3 md:py-2 flex items-center justify-center md:justify-between">
             {/* Logo */}
             <Link href="/" className="flex-shrink-0 mx-auto md:mx-0">
-              <div className="h-12 md:h-14 overflow-hidden flex items-center">
+              <div className="h-[100px] overflow-hidden flex items-center">
                 <Image
                   src="/images/logo.png"
                   alt="Logo"
-                  width={200}
-                  height={80}
-                  className="object-contain"
+                  width={250} // Pode ser 600, 700... o importante é a proporção
+                  height={500}
+                  className="object-contain max-h-[500px]"
+                  priority
                 />
               </div>
             </Link>
