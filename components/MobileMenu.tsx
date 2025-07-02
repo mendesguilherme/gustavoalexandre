@@ -1,5 +1,7 @@
 "use client"
+
 import Link from "next/link"
+import { usePathname, useRouter } from "next/navigation"
 import { Button } from "../components/ui/button"
 import { useMobileMenu } from "../context/MobileMenuContext"
 
@@ -9,8 +11,21 @@ type MobileMenuProps = {
 
 export function MobileMenu({ onOpenSimulacaoModal }: MobileMenuProps) {
   const { isOpen } = useMobileMenu()
+  const pathname = usePathname()
+  const router = useRouter()
 
   if (!isOpen) return null
+
+  const handleAnchorNavigation = (id: string) => {
+    if (pathname !== "/") {
+      router.push(`/#${id}`)
+    } else {
+      const element = document.getElementById(id)
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" })
+      }
+    }
+  }
 
   return (
     <nav className="py-4 border-t border-gray-800 mt-2">
@@ -29,10 +44,41 @@ export function MobileMenu({ onOpenSimulacaoModal }: MobileMenuProps) {
           Simulação
         </a>
 
-        <Link href="#servicos" className="hover:text-red-500 transition-colors">Serviços</Link>
-        <Link href="#contato" className="hover:text-red-500 transition-colors">Contato</Link>
+        <a
+          href="#servicos"
+          onClick={(e) => {
+            e.preventDefault()
+            handleAnchorNavigation("servicos")
+          }}
+          className="hover:text-red-500 transition-colors cursor-pointer"
+        >
+          Serviços
+        </a>
 
-        <Button className="bg-red-600 hover:bg-red-700 w-fit">Fale Conosco</Button>
+        <a
+          href="#contato"
+          onClick={(e) => {
+            e.preventDefault()
+            handleAnchorNavigation("contato")
+          }}
+          className="hover:text-red-500 transition-colors cursor-pointer"
+        >
+          Contato
+        </a>
+
+        <Button
+          onClick={() => {
+            const el = document.getElementById("contato-footer")
+            if (el) {
+              el.scrollIntoView({ behavior: "smooth" })
+            } else {
+              router.push("/#contato-footer")
+            }
+          }}
+          className="bg-red-600 hover:bg-red-700 w-fit"
+        >
+          Fale Conosco
+        </Button>
       </div>
     </nav>
   )
