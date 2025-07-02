@@ -84,7 +84,7 @@ export function HeroSection() {
                 </div>
               </div>
 
-              <p className="text-base text-gray-100 w-full sm:max-w-lg text-left sm:text-left px-2">
+              <p className="text-base text-gray-50 w-full sm:max-w-lg text-left sm:text-left px-2">
                 Na Gustavo Alexandre Multimarcas, você encontra os melhores veículos novos e seminovos com total garantia e
                 procedência. Facilitamos seu sonho com as melhores condições de financiamento.
               </p>
@@ -145,7 +145,7 @@ export function HeroSection() {
                 
               </div>
 
-              <p className="text-base text-gray-300 w-full sm:max-w-lg text-left sm:text-left px-2">
+              <p className="text-base text-gray-50 w-full sm:max-w-lg text-left sm:text-left px-2">
                 Condições exclusivas para você realizar o sonho do carro próprio sem comprometer o seu orçamento. Faça uma simulação!
               </p>
 
