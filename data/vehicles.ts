@@ -29,7 +29,17 @@ export const vehicles = [
       "Freio a disco nas 4 rodas",
       "Manual + Chave reserva"
     ],
-    images: [],
+    images: [
+      "/images/citroen-jumpy/01.webp",
+      "/images/citroen-jumpy/02.webp",
+      "/images/citroen-jumpy/03.webp",
+      "/images/citroen-jumpy/04.webp",
+      "/images/citroen-jumpy/05.webp",
+      "/images/citroen-jumpy/06.webp",
+      "/images/citroen-jumpy/07.webp",
+      "/images/citroen-jumpy/08.webp",
+      "/images/citroen-jumpy/09.webp",
+      "/images/citroen-jumpy/10.webp"],
   },
   {
     id: 2,
