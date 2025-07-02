@@ -132,7 +132,7 @@ export default function VeiculosPage() {
         <div className="container mx-auto px-4 pb-28">
           <div className="mb-8">
             <p className="text-gray-600">
-              Mostrando {filteredVehicles.length} de {vehicles.length} veículos
+              Mostrando {filteredVehicles.length} de {vehicles.filter(v => v.available !== false).length} veículos
             </p>
           </div>
 
