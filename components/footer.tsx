@@ -1,5 +1,8 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
+import { usePathname, useRouter } from "next/navigation"
 import { Facebook, Instagram, MessageCircle } from "lucide-react"
 
 type FooterProps = {
@@ -7,6 +10,20 @@ type FooterProps = {
 }
 
 export function Footer({ onOpenSimulacaoModal }: FooterProps) {
+  const pathname = usePathname()
+  const router = useRouter()
+
+  const handleAnchorNavigation = (id: string) => {
+    if (pathname !== "/") {
+      router.push(`/#${id}`)
+    } else {
+      const element = document.getElementById(id)
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" })
+      }
+    }
+  }
+
   return (
     <footer className="text-white py-12 bg-black">
       <div className="container mx-auto px-4">
@@ -22,8 +39,7 @@ export function Footer({ onOpenSimulacaoModal }: FooterProps) {
               />
             </Link>
             <p className="text-gray-300 mb-4 max-w-md">
-              Há anos no mercado automotivo, oferecemos veículos revisados e periciados com total garantia e as melhores
-              condições de financiamento.
+              Há anos no mercado automotivo, oferecemos veículos revisados e periciados com total garantia e as melhores condições de financiamento.
             </p>
             <div className="flex space-x-4">
               <a href="https://www.facebook.com/gustavo.alexandre.518841" className="text-gray-300 hover:text-red-500 transition-colors">
@@ -65,14 +81,28 @@ export function Footer({ onOpenSimulacaoModal }: FooterProps) {
                 </a>
               </li>
               <li>
-                <Link href="#servicos" className="text-gray-300 hover:text-red-500 transition-colors">
+                <a
+                  href="#servicos"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    handleAnchorNavigation("servicos")
+                  }}
+                  className="text-gray-300 hover:text-red-500 transition-colors cursor-pointer"
+                >
                   Serviços
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#contato" className="text-gray-300 hover:text-red-500 transition-colors">
+                <a
+                  href="#contato"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    handleAnchorNavigation("contato")
+                  }}
+                  className="text-gray-300 hover:text-red-500 transition-colors cursor-pointer"
+                >
                   Contato
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -84,7 +114,7 @@ export function Footer({ onOpenSimulacaoModal }: FooterProps) {
               <li>Compra de Veículos</li>
               <li>Venda com Garantia</li>
               <li>Troca Facilitada</li>
-              <li>Consignação de Veículos</li>          
+              <li>Consignação de Veículos</li>
               <li>Financiamento</li>
             </ul>
           </div>
