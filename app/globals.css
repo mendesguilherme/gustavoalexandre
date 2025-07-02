@@ -261,5 +261,11 @@ body {
     border-radius: 9999px; /* mantém arredondado */
   }
 }  
+
+@layer utilities {
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+}  
   
 }
