@@ -17,7 +17,7 @@ export function Header() {
 
   const handleAnchorNavigation = (id: string) => {
     if (pathname !== "/") {
-      router.push(/#${id})
+      router.push(`/#${id}`)
     } else {
       const element = document.getElementById(id)
       if (element) {
@@ -28,7 +28,7 @@ export function Header() {
 
   return (
     <>
-      <header className="bg-black text-white sticky top-0 z-50 w-full overflow-x-hidden pt-safe">
+      <header className="bg-black text-white sticky top-0 z-50 w-full overflow-x-hidden">
         <div className="container mx-auto px-4">
           {/* Top bar */}
           <div className="hidden md:flex justify-between items-center py-2 text-sm border-b border-gray-800">
@@ -57,22 +57,23 @@ export function Header() {
             </div>
           </div>
 
-          {/* Linha principal do header */}
-          <div className="relative py-3 flex items-center justify-center md:justify-between">
-            {/* Logo */}
-            <Link href="/" className="flex-shrink-0 mx-auto md:mx-0">
-              <div className="h-12 md:h-14 overflow-hidden flex items-center">
+          {/* Main header line */}
+          <div className="relative py-2 md:py-3 flex items-center justify-between">
+            {/* Logo centralizado no mobile e alinhado à esquerda no desktop */}
+            <Link href="/" className="mx-auto md:mx-0">
+              <div className="h-[60px] md:h-[70px] flex items-center justify-center">
                 <Image
                   src="/images/logo.png"
                   alt="Logo"
                   width={200}
                   height={80}
                   className="object-contain"
+                  priority
                 />
               </div>
             </Link>
 
-            {/* Botão do menu mobile */}
+            {/* Botão menu mobile */}
             <div className="absolute right-4 top-1/2 transform -translate-y-1/2 md:hidden">
               <MobileMenuButton />
             </div>
