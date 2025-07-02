@@ -145,8 +145,7 @@ export const vehicles = [
       "Porta malas de 285 litros"
     ],
     images: []
-  }
-
+  },
   {
     id: 6,
     name: "Scooter elétrica 1000 watts",
@@ -614,6 +613,5 @@ export const vehicles = [
       "/images/corsa-classic/07.webp",
       "/images/corsa-classic/08.webp"
     ]
-  } 
-
+  }
 ]
