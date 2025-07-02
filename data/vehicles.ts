@@ -57,7 +57,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: false,
-    available: false,
+    available: true,
     features: [
       "Direção Elétrica",
       "Ar condicionado",
@@ -86,7 +86,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: false,
-    available: false,
+    available: true,
     features: [
       "Ar condicionado",
       "Direção Hidráulica",
@@ -109,7 +109,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: false,
-    available: false,
+    available: true,
     features: [
       "Direção hidráulica",
       "Ar condicionado",
@@ -135,7 +135,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: false,
-    available: false,
+    available: true,
     features: [
       "Ar condicionado",
       "Direção hidráulica",
@@ -160,7 +160,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: false,
-    available: false,
+    available: true,
     features: [
       "Bateria de lítio",
       "Isenta de emplacamento e CNH",
@@ -182,7 +182,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: false,
-    available: false,
+    available: true,
     features: [
       "Bateria de lítio",
       "Isenta de emplacamento e CNH",
@@ -204,7 +204,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: false,
-    available: false,
+    available: true,
     features: [
       "Ar condicionado",
       "Freios ABS",
@@ -238,7 +238,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: false,
-    available: false,
+    available: true,
     features: [
       "Ar condicionado",
       "Direção hidráulica",
@@ -263,7 +263,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: true,
-    available: false,
+    available: true,
     features: [
       "Airbags frontais e laterais",
       "Ar condicionado",
@@ -302,7 +302,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: false,
-    available: false,
+    available: true,
     features: [
       "Direção hidráulica",
       "Ar condicionado",
@@ -325,7 +325,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: false,
-    available: false,
+    available: true,
     features: [
       "Ar condicionado",
       "Ar quente",
@@ -349,7 +349,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: false,
-    available: false,
+    available: true,
     features: [
       "Direção hidráulica",
       "Ar condicionado",
@@ -373,7 +373,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: false,
-    available: false,
+    available: true,
     features: [
       "Injeção eletrônica",
       "Partida elétrica",
@@ -395,7 +395,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: true,
-    available: false,
+    available: true,
     features: [
       "Direção elétrica",
       "Ar-condicionado digital (Dualzone)",
@@ -427,7 +427,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: false,
-    available: false,
+    available: true,
     features: [
       "Direção Elétrica",
       "Ar condicionado",
@@ -456,7 +456,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "Veículo em excelente estado, revisado e com garantia.",
     spotlight: true,
-    available: false,
+    available: true,
     features: [
       "Ar-condicionado",
       "Direção hidráulica",
@@ -481,7 +481,7 @@ export const vehicles = [
     badge: "Novo",
     description: "Veículo zero km com todas as garantias de fábrica.",
     spotlight: false,
-    available: false,
+    available: true,
     features: [
       "Central multimídia",
       "Controle de estabilidade",
@@ -504,7 +504,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "SUV completo com baixa quilometragem e único dono.",
     spotlight: false,
-    available: false,
+    available: true,
     features: [
       "Banco de couro",
       "Câmera de ré",
@@ -527,7 +527,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "Sedan premium com manutenção em dia na concessionária.",
     spotlight: false,
-    available: false,
+    available: true,
     features: [
       "Rodas de liga leve",
       "Ar digital",
@@ -550,7 +550,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "SUV compacto ideal para cidade com baixo consumo.",
     spotlight: false,
-    available: false,
+    available: true,
     features: [
       "Farol de LED",
       "Controle de tração",
@@ -573,7 +573,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "Hatch econômico e confiável, perfeito para o dia a dia.",
     spotlight: false,
-    available: false,
+    available: true,
     features: [
       "Computador de bordo",
       "Direção elétrica",
