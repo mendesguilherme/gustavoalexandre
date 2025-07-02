@@ -206,7 +206,7 @@ export function HeroSection() {
                   <Label htmlFor="interest" className="text-white">Interesse</Label>
                   <Textarea id="interest" placeholder="Que tipo de veículo você procura?" className="bg-white/20 border-white/30 text-white placeholder:text-gray-300" rows={3} />
                 </div>
-                <Button className="w-full bg-red-600 hover:bg-red-700 text-lg py-3">Quero ser Contactado</Button>
+                <Button className="w-full bg-red-600 hover:bg-red-700 text-lg py-3">Solicitar atendimento</Button>
               </form>
             </CardContent>
           </Card>
