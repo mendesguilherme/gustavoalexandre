@@ -41,11 +41,11 @@ export function ServicesSection() {
           </p>
         </div>
 
-        {/* Mobile - Carrossel */}
+        {/* Mobile - Carrossel */}  
         <div className="lg:hidden">
           <Swiper
             modules={[Pagination]}
-            pagination={{ clickable: true }}
+            pagination={{ clickable: true, el: ".custom-pagination" }}
             spaceBetween={16}
             slidesPerView={1.2}
             centeredSlides={true}
@@ -64,7 +64,9 @@ export function ServicesSection() {
               </SwiperSlide>
             ))}
           </Swiper>
-          <div className="mt-6" />
+
+          {/* PAGINAÇÃO FORA DO CARD */}
+          <div className="custom-pagination mt-4 flex justify-center" />
         </div>
 
         {/* Desktop - Grid com ícones idênticos */}
