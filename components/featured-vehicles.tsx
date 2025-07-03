@@ -28,11 +28,11 @@ export function FeaturedVehicles() {
             <Card key={vehicle.id} className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="relative">
                 <Image
-                  src={vehicle.images[0] || "/placeholder.svg"}
+                  src={vehicle.images?.[0] || "/images/placeholder.jpeg"}
                   alt={vehicle.name}
                   width={400}
                   height={300}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-48 object-cover rounded"
                 />
                 <Badge className="absolute top-4 left-4 bg-red-600">{vehicle.badge}</Badge>
               </div>
