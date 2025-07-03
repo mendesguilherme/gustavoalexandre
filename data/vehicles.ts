@@ -56,7 +56,7 @@ export const vehicles = [
     doors: "5",
     badge: "Seminovo",
     description: "",
-    spotlight: false,
+    spotlight: true,
     available: true,
     features: [
       "Direção Elétrica",
@@ -104,7 +104,17 @@ export const vehicles = [
       "Vidros elétricos",
       "Travas elétricas"
     ],
-    images: []
+    images: [
+      "/images/golf-prata/01.jpeg",
+      "/images/golf-prata/02.jpeg",
+      "/images/golf-prata/03.jpeg",
+      "/images/golf-prata/04.jpeg",
+      "/images/golf-prata/05.jpeg",
+      "/images/golf-prata/06.jpeg",
+      "/images/golf-prata/07.jpeg",
+      "/images/golf-prata/08.jpeg",
+      "/images/golf-prata/09.jpeg"      
+    ]
   },
   {
     id: 4,
@@ -130,7 +140,18 @@ export const vehicles = [
       "Rodas de liga leve",
       "Porta malas de 430 litros"
     ],
-    images: []
+    images: [
+      "/images/spacefox-preto/01.jpeg",
+      "/images/spacefox-preto/02.jpeg",
+      "/images/spacefox-preto/03.jpeg",
+      "/images/spacefox-preto/04.jpeg",
+      "/images/spacefox-preto/05.jpeg",
+      "/images/spacefox-preto/06.jpeg",
+      "/images/spacefox-preto/07.jpeg",
+      "/images/spacefox-preto/08.jpeg",
+      "/images/spacefox-preto/09.jpeg",
+      "/images/spacefox-preto/10.jpeg"      
+    ]
   },
   {
     id: 5,
@@ -146,7 +167,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: false,
-    available: true,
+    available: false,
     features: [
       "Ar condicionado",
       "Direção hidráulica",
@@ -171,7 +192,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: false,
-    available: true,
+    available: false,
     features: [
       "Bateria de lítio",
       "Isenta de emplacamento e CNH",
@@ -193,7 +214,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: false,
-    available: true,
+    available: false,
     features: [
       "Bateria de lítio",
       "Isenta de emplacamento e CNH",
@@ -214,7 +235,7 @@ export const vehicles = [
     doors: "",
     badge: "Seminovo",
     description: "",
-    spotlight: false,
+    spotlight: true,
     available: true,
     features: [
       "Ar condicionado",
@@ -233,7 +254,16 @@ export const vehicles = [
       "Travas elétricas",
       "Vidros elétricos"
     ],
-    images: []
+    images: [
+      "/images/toyota-etios/01.jpeg",
+      "/images/toyota-etios/02.jpeg",
+      "/images/toyota-etios/03.webp",
+      "/images/toyota-etios/04.webp",
+      "/images/toyota-etios/05.webp",
+      "/images/toyota-etios/06.webp",
+      "/images/toyota-etios/07.webp",
+      "/images/toyota-etios/08.webp"  
+    ]
   },
   {
     id: 9,
@@ -244,7 +274,7 @@ export const vehicles = [
     fuel: "Flex",
     transmission: "Manual",
     km: "124.000 KM",
-    color: "",
+    color: "Prata",
     doors: "",
     badge: "Seminovo",
     description: "",
@@ -258,7 +288,19 @@ export const vehicles = [
       "Alarme",
       "MP3 player"
     ],
-    images: []
+    images: [
+      "/images/ford-ka-prata/01.jpeg",
+      "/images/ford-ka-prata/02.jpeg",
+      "/images/ford-ka-prata/03.jpeg",
+      "/images/ford-ka-prata/04.jpeg",
+      "/images/ford-ka-prata/05.jpeg",
+      "/images/ford-ka-prata/06.jpeg",
+      "/images/ford-ka-prata/07.jpeg",
+      "/images/ford-ka-prata/08.jpeg",
+      "/images/ford-ka-prata/09.jpeg",
+      "/images/ford-ka-prata/10.jpeg",
+      "/images/ford-ka-prata/11.jpeg"
+    ]
   },
   {
     id: 10,
@@ -319,7 +361,7 @@ export const vehicles = [
     fuel: "Flex",
     transmission: "Manual",
     km: "242.000 KM",
-    color: "",
+    color: "Branco",
     doors: "",
     badge: "Seminovo",
     description: "",
@@ -331,7 +373,18 @@ export const vehicles = [
       "Vidros elétricos",
       "Travas elétricas"
     ],
-    images: []
+    images: [
+      "/images/fiat-palio-weekend/01.jpeg",
+      "/images/fiat-palio-weekend/02.jpeg",
+      "/images/fiat-palio-weekend/03.jpeg",
+      "/images/fiat-palio-weekend/04.jpeg",
+      "/images/fiat-palio-weekend/05.jpeg",
+      "/images/fiat-palio-weekend/06.jpeg",
+      "/images/fiat-palio-weekend/07.jpeg",
+      "/images/fiat-palio-weekend/08.jpeg",
+      "/images/fiat-palio-weekend/09.jpeg",
+      "/images/fiat-palio-weekend/10.jpeg"      
+    ]
   },
   {
     id: 12,
@@ -342,7 +395,7 @@ export const vehicles = [
     fuel: "Flex",
     transmission: "Manual",
     km: "168.000 KM",
-    color: "",
+    color: "Preto",
     doors: "",
     badge: "Seminovo",
     description: "",
@@ -355,7 +408,18 @@ export const vehicles = [
       "Vidros elétricos",
       "Porta malas de 280 litros"
     ],
-    images: []
+    images: [
+      "/images/ford-fiesta/01.jpeg",
+      "/images/ford-fiesta/02.jpeg",
+      "/images/ford-fiesta/03.jpeg",
+      "/images/ford-fiesta/04.jpeg",
+      "/images/ford-fiesta/05.jpeg",
+      "/images/ford-fiesta/06.jpeg",
+      "/images/ford-fiesta/07.jpeg",
+      "/images/ford-fiesta/08.jpeg",
+      "/images/ford-fiesta/09.jpeg",
+      "/images/ford-fiesta/10.jpeg"      
+    ]
   },
   {
     id: 13,
@@ -366,7 +430,7 @@ export const vehicles = [
     fuel: "Flex",
     transmission: "Manual",
     km: "179.000 KM",
-    color: "",
+    color: "Preto",
     doors: "",
     badge: "Seminovo",
     description: "",
@@ -379,7 +443,18 @@ export const vehicles = [
       "Travas elétricas",
       "MP3 player"
     ],
-    images: []
+    images: [
+      "/images/gm-meriva/01.jpeg",
+      "/images/gm-meriva/02.jpeg",
+      "/images/gm-meriva/03.jpeg",
+      "/images/gm-meriva/04.jpeg",
+      "/images/gm-meriva/05.jpeg",
+      "/images/gm-meriva/06.jpeg",
+      "/images/gm-meriva/07.jpeg",
+      "/images/gm-meriva/08.jpeg",
+      "/images/gm-meriva/09.jpeg",
+      "/images/gm-meriva/10.jpeg"
+    ]
   },
   {
     id: 14,
@@ -390,7 +465,7 @@ export const vehicles = [
     fuel: "Flex",
     transmission: "Manual",
     km: "96.000 KM",
-    color: "",
+    color: "Vinho",
     doors: "",
     badge: "Seminovo",
     description: "",
@@ -401,7 +476,14 @@ export const vehicles = [
       "Partida elétrica",
       "Freio a disco"
     ],
-    images: []
+    images: [
+      "/images/honda-fan/01.jpeg",
+      "/images/honda-fan/02.jpeg",
+      "/images/honda-fan/03.jpeg",
+      "/images/honda-fan/04.jpeg",
+      "/images/honda-fan/05.jpeg",
+      "/images/honda-fan/06.jpeg"
+    ]
   },
   {
     id: 15,
@@ -458,7 +540,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "",
     spotlight: false,
-    available: true,
+    available: false,
     features: [
       "Direção Elétrica",
       "Ar condicionado",
@@ -483,7 +565,7 @@ export const vehicles = [
     transmission: "Automático",
     km: "25.000 km",
     color: "Prata",
-    doors: "4",
+    doors: "5",
     badge: "Seminovo",
     description: "Veículo em excelente estado, revisado e com garantia.",
     spotlight: true,
@@ -517,11 +599,11 @@ export const vehicles = [
     transmission: "Manual",
     km: "15.000 km",
     color: "Branco",
-    doors: "4",
+    doors: "5",
     badge: "Novo",
     description: "Veículo zero km com todas as garantias de fábrica.",
     spotlight: false,
-    available: true,
+    available: false,
     features: [
       "Central multimídia",
       "Controle de estabilidade",
@@ -540,11 +622,11 @@ export const vehicles = [
     transmission: "CVT",
     km: "35.000 km",
     color: "Cinza",
-    doors: "4",
+    doors: "5",
     badge: "Seminovo",
     description: "SUV completo com baixa quilometragem e único dono.",
     spotlight: false,
-    available: true,
+    available: false,
     features: [
       "Banco de couro",
       "Câmera de ré",
@@ -563,11 +645,11 @@ export const vehicles = [
     transmission: "Automático",
     km: "40.000 km",
     color: "Preto",
-    doors: "4",
+    doors: "5",
     badge: "Seminovo",
     description: "Sedan premium com manutenção em dia na concessionária.",
     spotlight: false,
-    available: true,
+    available: false,
     features: [
       "Rodas de liga leve",
       "Ar digital",
@@ -586,11 +668,11 @@ export const vehicles = [
     transmission: "Automático",
     km: "20.000 km",
     color: "Azul",
-    doors: "4",
+    doors: "5",
     badge: "Seminovo",
     description: "SUV compacto ideal para cidade com baixo consumo.",
     spotlight: false,
-    available: true,
+    available: false,
     features: [
       "Farol de LED",
       "Controle de tração",
@@ -609,11 +691,11 @@ export const vehicles = [
     transmission: "Manual",
     km: "8.000 km",
     color: "Vermelho",
-    doors: "4",
+    doors: "5",
     badge: "Seminovo",
     description: "Hatch econômico e confiável, perfeito para o dia a dia.",
     spotlight: false,
-    available: true,
+    available: false,
     features: [
       "Computador de bordo",
       "Direção elétrica",
@@ -632,7 +714,7 @@ export const vehicles = [
     transmission: "Manual",
     km: "154.000 km",
     color: "Prata",
-    doors: "4",
+    doors: "5",
     badge: "Único dono",
     description: "2012/2013 com direção hidráulica e alarme. Ótimo estado de conservação.",
     spotlight: false,
@@ -652,6 +734,44 @@ export const vehicles = [
       "/images/corsa-classic/06.webp",
       "/images/corsa-classic/07.webp",
       "/images/corsa-classic/08.webp"
+    ]
+  },
+  {
+    id: 23,
+    name: "Citroën C3 GLX 1.4",
+    brand: "Citroën",
+    price: "R$ 27.900,00",
+    year: "2011",
+    fuel: "Flex",
+    transmission: "Manual",
+    km: "191.000 KM",
+    color: "Vermelho",
+    doors: "5",
+    badge: "Seminovo",
+    description: "Veículo em bom estado de conservação, ideal para uso urbano, com todos os itens de conforto e segurança.",
+    spotlight: false,
+    available: true,
+    features: [
+      "Alarme",
+      "Ar quente",
+      "Ar condicionado",
+      "Direção hidráulica",
+      "Encosto de cabeça traseiro",
+      "Porta-copos",
+      "Retrovisores elétricos",
+      "Travas elétricas",
+      "Vidros elétricos"
+    ],
+    images: [
+      "/images/citroen-c3-vermelho/01.jpeg",
+      "/images/citroen-c3-vermelho/02.jpeg",
+      "/images/citroen-c3-vermelho/03.jpeg",
+      "/images/citroen-c3-vermelho/04.jpeg",
+      "/images/citroen-c3-vermelho/05.jpeg",
+      "/images/citroen-c3-vermelho/06.jpeg",
+      "/images/citroen-c3-vermelho/07.jpeg",
+      "/images/citroen-c3-vermelho/08.jpeg",
+      "/images/citroen-c3-vermelho/09.jpeg"      
     ]
   }
 ]
