@@ -23,7 +23,7 @@ export function FeaturedVehicles() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="flex flex-wrap justify-center gap-8 mb-12">
           {vehicles.map((vehicle) => (
             <Card key={vehicle.id} className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="relative">
