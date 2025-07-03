@@ -70,7 +70,18 @@ export const vehicles = [
       "Porta malas elétrico",
       "Porta malas de 250 litros"
     ],
-    images: []
+    images: [
+      "/images/ford-ka/01.jpeg",
+      "/images/ford-ka/02.jpeg",
+      "/images/ford-ka/03.jpeg",
+      "/images/ford-ka/04.jpeg",
+      "/images/ford-ka/05.jpeg",
+      "/images/ford-ka/06.jpeg",
+      "/images/ford-ka/07.jpeg",
+      "/images/ford-ka/08.jpeg",
+      "/images/ford-ka/09.jpeg",
+      "/images/ford-ka/10.jpeg"
+    ]
   },
   {
     id: 3,
@@ -422,7 +433,16 @@ export const vehicles = [
       "Rodas de liga leve",
       "Rack de teto"
     ],
-    images: []
+    images: [
+      "/images/fiat-toro/01.jpeg",
+      "/images/fiat-toro/02.jpeg",
+      "/images/fiat-toro/03.jpeg",
+      "/images/fiat-toro/04.jpeg",
+      "/images/fiat-toro/05.jpeg",
+      "/images/fiat-toro/06.jpeg",
+      "/images/fiat-toro/07.jpeg",
+      "/images/fiat-toro/08.jpeg"
+    ]
   },
   {
     id: 16,
@@ -467,7 +487,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "Veículo em excelente estado, revisado e com garantia.",
     spotlight: true,
-    available: true,
+    available: false,
     features: [
       "Ar-condicionado",
       "Direção hidráulica",
@@ -476,7 +496,16 @@ export const vehicles = [
       "Vidros elétricos",
       "Travas elétricas"
     ],
-    images: []
+    images: [
+      "/images/fiat-toro/01.jpeg",
+      "/images/fiat-toro/02.jpeg",
+      "/images/fiat-toro/03.jpeg",
+      "/images/fiat-toro/04.jpeg",
+      "/images/fiat-toro/05.jpeg",
+      "/images/fiat-toro/06.jpeg",
+      "/images/fiat-toro/07.jpeg",
+      "/images/fiat-toro/08.jpeg"
+    ]
   },
   {
     id: 18,
