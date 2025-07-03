@@ -142,15 +142,15 @@ export const vehicles = [
     ],
     images: [
       "/images/spacefox-preto/01.webp",
-      "/images/spacefox-preto/02.jpeg",
-      "/images/spacefox-preto/03.jpeg",
-      "/images/spacefox-preto/04.jpeg",
-      "/images/spacefox-preto/05.jpeg",
-      "/images/spacefox-preto/06.jpeg",
-      "/images/spacefox-preto/07.jpeg",
-      "/images/spacefox-preto/08.jpeg",
-      "/images/spacefox-preto/09.jpeg",
-      "/images/spacefox-preto/10.jpeg"      
+      "/images/spacefox-preto/02.webp",
+      "/images/spacefox-preto/03.webp",
+      "/images/spacefox-preto/04.webp",
+      "/images/spacefox-preto/05.webp",
+      "/images/spacefox-preto/06.webp",
+      "/images/spacefox-preto/07.webp",
+      "/images/spacefox-preto/08.webp",
+      "/images/spacefox-preto/09.webp",
+      "/images/spacefox-preto/10.webp"      
     ]
   },
   {
