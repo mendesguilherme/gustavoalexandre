@@ -51,11 +51,11 @@ export default function VeiculosPage() {
 
       {/* Hero Section */}
       <section className="bg-black text-white py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold mb-4">
+        <div className="container mx-auto px-4 flex flex-col items-center text-center">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
             Nossos <span className="text-red-500">Veículos</span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl">
             Encontre o veículo perfeito para você com garantia e as melhores condições
           </p>
         </div>
@@ -183,7 +183,7 @@ export default function VeiculosPage() {
               onClick={() => setShowModal(true)}
               className="bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded-full shadow-lg"
             >
-              Não encontrou seu veículo?
+              NÃO ENCONTROU O VEÍCULO IDEAL?
             </Button>
           </div>
 
