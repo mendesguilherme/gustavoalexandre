@@ -32,13 +32,11 @@ import {
   CheckCircle,
 } from "lucide-react"
 
-export default function VeiculosPage() {
-  const [showModal, setShowModal] = useState(false)
-
 export default function VehicleDetailsPage() {
   const params = useParams()
   const vehicleId = params?.id
   const vehicle = vehicles.find((v) => String(v.id) === String(vehicleId))
+  const [showModal, setShowModal] = useState(false)
 
   const [selectedImage, setSelectedImage] = useState(0)
   const [formData, setFormData] = useState({
