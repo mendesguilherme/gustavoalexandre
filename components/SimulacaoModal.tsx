@@ -70,9 +70,12 @@ export function SimulacaoModal({ isOpen, onClose }: { isOpen: boolean; onClose: 
                 className="w-full px-4 py-2 bg-white border border-gray-300 rounded-md text-black"
               >
                 <option value="">Selecione um veículo</option>
-                {vehicles.map((v) => (
-                  <option key={v.id} value={v.name}>{v.name}</option>
-                ))}
+                {vehicles
+                  .filter(v => v.available !== false)
+                  .sort((a, b) => a.name.localeCompare(b.name))
+                  .map((v) => (
+                    <option key={v.id} value={v.name}>{v.name}</option>
+                  ))}
               </select>
             </div>
 
