@@ -43,7 +43,7 @@ export function Footer({ onOpenSimulacaoModal }: FooterProps) {
               </div>
             </Link>
             <p className="text-gray-300 mb-4 max-w-md">
-              Há anos no mercado automotivo, oferecemos veículos revisados e periciados com total garantia e as melhores condições de financiamento.
+              Bem-vindo à Gustavo Alexandre Multimarcas! Oferecemos uma ampla variedade de veículos seminovos com garantia, procedência e condições que se encaixam no seu perfil.
             </p>
             <div className="flex space-x-4">
               <a href="https://www.facebook.com/gustavo.alexandre.518841" className="text-gray-300 hover:text-red-500 transition-colors">
