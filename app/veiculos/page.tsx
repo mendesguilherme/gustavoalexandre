@@ -139,13 +139,13 @@ export default function VeiculosPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredVehicles.map((vehicle) => (
               <Card key={vehicle.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="relative">
+                <div className="w-full aspect-[4/3] relative overflow-hidden">
                   <Image
                     src={vehicle.images?.[0] || "/images/placeholder.jpeg"}
                     alt={vehicle.name}
-                    width={400}
-                    height={300}
-                    className="w-full h-48 object-cover rounded"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 33vw"
                   />
                   <Badge className="absolute top-4 left-4 bg-red-600">{vehicle.badge}</Badge>
                 </div>

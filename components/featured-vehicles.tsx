@@ -32,7 +32,7 @@ export function FeaturedVehicles() {
                   alt={vehicle.name}
                   width={400}
                   height={300}
-                  className="w-full h-48 object-cover rounded"
+                  className="w-full h-48 object-cover"
                 />
                 <Badge className="absolute top-4 left-4 bg-red-600">{vehicle.badge}</Badge>
               </div>
