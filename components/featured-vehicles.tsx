@@ -25,7 +25,7 @@ export function FeaturedVehicles() {
 
         <div className="flex flex-wrap justify-center gap-8 mb-12">
           {vehicles.map((vehicle) => (
-            <div key={vehicle.id} className="w-full md:w-[300px] h-[520px] flex">
+            <div key={vehicle.id} className="w-full md:w-[330px] h-[500x] flex">
               <Card className="overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col justify-between w-full">
                 <div className="w-full aspect-[4/3] relative overflow-hidden">
                   <Image
