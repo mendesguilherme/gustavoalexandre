@@ -32,6 +32,9 @@ import {
   CheckCircle,
 } from "lucide-react"
 
+export default function VeiculosPage() {
+  const [showModal, setShowModal] = useState(false)
+
 export default function VehicleDetailsPage() {
   const params = useParams()
   const vehicleId = params?.id
@@ -67,7 +70,7 @@ export default function VehicleDetailsPage() {
         <div className="container mx-auto px-4 py-12 text-center text-xl text-red-600">
           Veículo não encontrado.
         </div>
-        <Footer />
+        <Footer onOpenSimulacaoModal={() => setShowModal(true)} />
       </div>
     )
   }
@@ -273,7 +276,7 @@ export default function VehicleDetailsPage() {
         </div>
       </div>
 
-      <Footer />
+      <Footer onOpenSimulacaoModal={() => setShowModal(true)} />
     </div>
   )
 }
