@@ -25,11 +25,9 @@ import {
   ArrowLeft,
   Phone,
   MessageCircle,
-  Car,
   Gauge,
   MapPin,
   Shield,
-  CheckCircle,
 } from "lucide-react"
 
 export default function VehicleDetailsPage() {
@@ -39,23 +37,11 @@ export default function VehicleDetailsPage() {
   const [showModal, setShowModal] = useState(false)
 
   const [selectedImage, setSelectedImage] = useState(0)
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    message: "",
-  })
-
+  const [formData, setFormData] = useState({ name: "", phone: "", email: "", message: "" })
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  // Impede o scroll de fundo quando o modal estiver aberto
   useEffect(() => {
-    if (isModalOpen) {
-      document.body.style.overflow = "hidden"
-    } else {
-      document.body.style.overflow = "auto"
-    }
-  
+    document.body.style.overflow = isModalOpen ? "hidden" : "auto"
     return () => {
       document.body.style.overflow = "auto"
     }
@@ -74,10 +60,7 @@ export default function VehicleDetailsPage() {
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
+    setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -89,7 +72,6 @@ export default function VehicleDetailsPage() {
   return (
     <div>
       <Header />
-
       <div className="container mx-auto px-4 py-8">
         <div className="flex items-center space-x-2 text-sm text-gray-600 mb-6">
           <Link href="/" className="hover:text-red-600">Início</Link>
@@ -110,9 +92,7 @@ export default function VehicleDetailsPage() {
               <div>
                 <div className="flex flex-wrap items-center gap-3 mb-2">
                   <h1 className="text-3xl font-bold text-gray-900">{vehicle.name}</h1>
-                  <div className="shrink-0">
-                    <Badge className="bg-red-600">{vehicle.badge}</Badge>
-                  </div>
+                  <Badge className="bg-red-600">{vehicle.badge}</Badge>
                 </div>
                 <div className="text-3xl font-bold text-red-600">{vehicle.price}</div>
               </div>
@@ -140,54 +120,49 @@ export default function VehicleDetailsPage() {
               <CardContent className="p-0">
                 <div className="relative">
                   <Image
-                    src={vehicle.images[selectedImage] || "/placeholder.svg"}
+                    src={vehicle.images[selectedImage] || "/images/placeholder.webp"}
                     alt={`${vehicle.name} - imagem ${selectedImage + 1}`}
                     width={600}
                     height={400}
                     className="w-full h-80 object-cover rounded-t-lg cursor-zoom-in"
                     onClick={() => setIsModalOpen(true)}
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = "/images/placeholder.webp"
+                    }}
                   />
                 </div>
                 {vehicle.images.length > 1 && (
                   <div className="grid grid-cols-4 gap-2 p-4">
-                  {vehicle.images.map((img, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setSelectedImage(idx)}
-                      className={`relative rounded-lg overflow-hidden ${
-                        selectedImage === idx ? "ring-2 ring-red-600" : ""
-                      }`}
-                    >
-                      <Image
-                        src={img}
-                        alt={`${vehicle.name} miniatura ${idx + 1}`}
-                        width={150}
-                        height={100}
-                        className="w-full h-20 object-cover"
-                      />
-                    </button>
-                  ))}
-                </div>
-              )}
-            </CardContent>
+                    {vehicle.images.map((img, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setSelectedImage(idx)}
+                        className={`relative rounded-lg overflow-hidden ${selectedImage === idx ? "ring-2 ring-red-600" : ""}`}
+                      >
+                        <Image
+                          src={img}
+                          alt={`${vehicle.name} miniatura ${idx + 1}`}
+                          width={150}
+                          height={100}
+                          className="w-full h-20 object-cover"
+                          onError={(e) => {
+                            (e.target as HTMLImageElement).src = "/images/placeholder.webp"
+                          }}
+                        />
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </CardContent>
             </Card>
 
             {isModalOpen && (
-              <div
-                className="fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center px-4"
-                onClick={() => setIsModalOpen(false)}
-              >
+              <div className="fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center px-4" onClick={() => setIsModalOpen(false)}>
                 <div className="relative max-w-4xl w-full" onClick={(e) => e.stopPropagation()}>
-                  <button
-                    onClick={() => setIsModalOpen(false)}
-                    className="absolute top-2 right-2 text-white text-2xl font-bold z-50"
-                  >
-                    &times;
-                  </button>
+                  <button onClick={() => setIsModalOpen(false)} className="absolute top-2 right-2 text-white text-2xl font-bold z-50">&times;</button>
                   <InnerImageZoom
                     src={vehicle.images[selectedImage]}
-                    zoomSrc={vehicle.images[selectedImage]} // pode ser a mesma imagem
-                    alt="Imagem com zoom"
+                    zoomSrc={vehicle.images[selectedImage]}
                     zoomType="hover"
                     zoomPreload
                     className="rounded-lg"
@@ -226,18 +201,9 @@ export default function VehicleDetailsPage() {
                   <InputField label="E-mail" name="email" type="email" value={formData.email} onChange={handleInputChange} />
                   <div>
                     <Label htmlFor="message">Mensagem</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      placeholder="Gostaria de agendar um test drive..."
-                      rows={4}
-                    />
+                    <Textarea id="message" name="message" value={formData.message} onChange={handleInputChange} placeholder="Gostaria de agendar um test drive..." rows={4} />
                   </div>
-                  <Button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-lg py-3">
-                    Enviar Interesse
-                  </Button>
+                  <Button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-lg py-3">Enviar Interesse</Button>
                 </form>
               </CardContent>
             </Card>

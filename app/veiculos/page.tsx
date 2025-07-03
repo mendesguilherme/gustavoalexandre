@@ -141,11 +141,13 @@ export default function VeiculosPage() {
               <Card key={vehicle.id} className="overflow-hidden hover:shadow-lg transition-shadow">
                 <div className="w-full aspect-[4/3] relative overflow-hidden">
                   <Image
-                    src={vehicle.images?.[0] || "/images/placeholder.jpeg"}
+                    src={vehicle.images?.[0] || "/images/placeholder.webp"}
                     alt={vehicle.name}
                     fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    priority
+                    quality={85}
+                    className="object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   <Badge className="absolute top-4 left-4 bg-red-600">{vehicle.badge}</Badge>
                 </div>
@@ -183,7 +185,7 @@ export default function VeiculosPage() {
               onClick={() => setShowModal(true)}
               className="bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded-full shadow-lg"
             >
-              NÃO ENCONTROU O VEÍCULO IDEAL?
+              Não encontrou o veículo ideal?
             </Button>
           </div>
 

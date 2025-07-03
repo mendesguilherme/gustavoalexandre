@@ -33,13 +33,24 @@ export function FeaturedVehicles() {
             <div key={vehicle.id} className="w-full md:w-[330px] h-[500px] flex">
               <Card className="overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col justify-between w-full">
                 <div className="w-full aspect-[4/3] relative overflow-hidden">
-                  <Image
-                    src={vehicle.images?.[0] || "/images/placeholder.jpeg"}
-                    alt={vehicle.name}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
+                  {vehicle.images?.[0]?.endsWith(".svg") ? (
+                    <img
+                      src={vehicle.images[0]}
+                      alt={vehicle.name}
+                      className="w-full h-full object-contain bg-white"
+                      onError={(e) => {
+                        e.currentTarget.src = "/images/placeholder.webp"
+                      }}
+                    />
+                  ) : (
+                    <Image
+                      src={vehicle.images?.[0] || "/images/placeholder.webp"}
+                      alt={vehicle.name}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  )}
                   <Badge className="absolute top-4 left-4 bg-red-600">{vehicle.badge}</Badge>
                 </div>
                 <CardContent className="p-6 flex flex-col justify-between flex-grow">
@@ -86,12 +97,23 @@ export function FeaturedVehicles() {
                 <div className="w-full h-[500px] flex">
                   <Card className="overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col justify-between w-full">
                     <div className="w-full aspect-[4/3] relative overflow-hidden">
-                      <Image
-                        src={vehicle.images?.[0] || "/images/placeholder.jpeg"}
-                        alt={vehicle.name}
-                        fill
-                        className="object-cover"
-                      />
+                      {vehicle.images?.[0]?.endsWith(".svg") ? (
+                        <img
+                          src={vehicle.images[0]}
+                          alt={vehicle.name}
+                          className="w-full h-full object-contain bg-white"
+                          onError={(e) => {
+                            e.currentTarget.src = "/images/placeholder.webp"
+                          }}
+                        />
+                      ) : (
+                        <Image
+                          src={vehicle.images?.[0] || "/images/placeholder.webp"}
+                          alt={vehicle.name}
+                          fill
+                          className="object-cover"
+                        />
+                      )}
                       <Badge className="absolute top-4 left-4 bg-red-600">{vehicle.badge}</Badge>
                     </div>
                     <CardContent className="p-6 flex flex-col justify-between flex-grow">

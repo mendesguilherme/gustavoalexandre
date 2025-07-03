@@ -141,7 +141,7 @@ export const vehicles = [
       "Porta malas de 430 litros"
     ],
     images: [
-      "/images/spacefox-preto/01.jpeg",
+      "/images/spacefox-preto/01.webp",
       "/images/spacefox-preto/02.jpeg",
       "/images/spacefox-preto/03.jpeg",
       "/images/spacefox-preto/04.jpeg",
