@@ -738,7 +738,7 @@ export const vehicles = [
     ]
   },
   {
-    id: 23,
+    id: 24,
     name: "Citroën C3 GLX 1.4",
     brand: "Citroën",
     price: "R$ 27.900,00",
@@ -749,7 +749,7 @@ export const vehicles = [
     color: "Vermelho",
     doors: "5",
     badge: "Seminovo",
-    description: "Veículo em bom estado de conservação, ideal para uso urbano, com todos os itens de conforto e segurança.",
+    description: "Citroën C3 GLX 1.4 2011, com 191.000 KM, motor Flex e câmbio manual: economia e praticidade para o dia a dia. Equipado com ar-condicionado, direção hidráulica, travas e vidros elétricos, oferece conforto e comodidade ao volante. Conta ainda com retrovisores elétricos, encosto de cabeça traseiro e porta-copos, ideal para quem busca funcionalidade. Ótima opção urbana com custo acessível. Agende sua visita e confira de perto este compacto completo.",
     spotlight: false,
     available: true,
     features: [

@@ -154,7 +154,9 @@ export default function VeiculosPage() {
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">{vehicle.name}</h3>
                   <div className="text-2xl font-bold text-red-600 mb-2">{vehicle.price}</div>
-                  <p className="text-gray-600 text-sm mb-4">{vehicle.description}</p>
+                  <p className="text-gray-600 text-sm mb-4 truncate">
+                    {vehicle.description}
+                  </p>
                   <div className="grid grid-cols-2 gap-2 text-sm text-gray-600 mb-4">
                     <div className="flex items-center space-x-1">
                       <Calendar className="h-4 w-4" />
