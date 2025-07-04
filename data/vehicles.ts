@@ -71,16 +71,16 @@ export const vehicles = [
       "Porta malas de 250 litros"
     ],
     images: [
-      "/images/ford-ka/01.jpeg",
-      "/images/ford-ka/02.jpeg",
-      "/images/ford-ka/03.jpeg",
-      "/images/ford-ka/04.jpeg",
-      "/images/ford-ka/05.jpeg",
-      "/images/ford-ka/06.jpeg",
-      "/images/ford-ka/07.jpeg",
-      "/images/ford-ka/08.jpeg",
-      "/images/ford-ka/09.jpeg",
-      "/images/ford-ka/10.jpeg"
+      "/images/ford-ka/01.webp",
+      "/images/ford-ka/02.webp",
+      "/images/ford-ka/03.webp",
+      "/images/ford-ka/04.webp",
+      "/images/ford-ka/05.webp",
+      "/images/ford-ka/06.webp",
+      "/images/ford-ka/07.webp",
+      "/images/ford-ka/08.webp",
+      "/images/ford-ka/09.webp",
+      "/images/ford-ka/10.webp"
     ]
   },
   {
@@ -105,15 +105,15 @@ export const vehicles = [
       "Travas elétricas"
     ],
     images: [
-      "/images/golf-prata/01.jpeg",
-      "/images/golf-prata/02.jpeg",
-      "/images/golf-prata/03.jpeg",
-      "/images/golf-prata/04.jpeg",
-      "/images/golf-prata/05.jpeg",
-      "/images/golf-prata/06.jpeg",
-      "/images/golf-prata/07.jpeg",
-      "/images/golf-prata/08.jpeg",
-      "/images/golf-prata/09.jpeg"      
+      "/images/golf-prata/01.webp",
+      "/images/golf-prata/02.webp",
+      "/images/golf-prata/03.webp",
+      "/images/golf-prata/04.webp",
+      "/images/golf-prata/05.webp",
+      "/images/golf-prata/06.webp",
+      "/images/golf-prata/07.webp",
+      "/images/golf-prata/08.webp",
+      "/images/golf-prata/09.webp"      
     ]
   },
   {
@@ -255,14 +255,15 @@ export const vehicles = [
       "Vidros elétricos"
     ],
     images: [
-      "/images/toyota-etios/01.jpeg",
-      "/images/toyota-etios/02.jpeg",
+      "/images/toyota-etios/01.webp",
+      "/images/toyota-etios/02.webp",
       "/images/toyota-etios/03.webp",
       "/images/toyota-etios/04.webp",
       "/images/toyota-etios/05.webp",
       "/images/toyota-etios/06.webp",
       "/images/toyota-etios/07.webp",
-      "/images/toyota-etios/08.webp"  
+      "/images/toyota-etios/08.webp",
+      "/images/toyota-etios/09.webp"
     ]
   },
   {
@@ -289,17 +290,17 @@ export const vehicles = [
       "MP3 player"
     ],
     images: [
-      "/images/ford-ka-prata/01.jpeg",
-      "/images/ford-ka-prata/02.jpeg",
-      "/images/ford-ka-prata/03.jpeg",
-      "/images/ford-ka-prata/04.jpeg",
-      "/images/ford-ka-prata/05.jpeg",
-      "/images/ford-ka-prata/06.jpeg",
-      "/images/ford-ka-prata/07.jpeg",
-      "/images/ford-ka-prata/08.jpeg",
-      "/images/ford-ka-prata/09.jpeg",
-      "/images/ford-ka-prata/10.jpeg",
-      "/images/ford-ka-prata/11.jpeg"
+      "/images/ford-ka-prata/01.webp",
+      "/images/ford-ka-prata/02.webp",
+      "/images/ford-ka-prata/03.webp",
+      "/images/ford-ka-prata/04.webp",
+      "/images/ford-ka-prata/05.webp",
+      "/images/ford-ka-prata/06.webp",
+      "/images/ford-ka-prata/07.webp",
+      "/images/ford-ka-prata/08.webp",
+      "/images/ford-ka-prata/09.webp",
+      "/images/ford-ka-prata/10.webp",
+      "/images/ford-ka-prata/11.webp"
     ]
   },
   {
@@ -340,16 +341,16 @@ export const vehicles = [
       "Porta malas de 313 litros"
     ],
     images: [
-      "/images/vw-golf-branco/01.jpeg",
-      "/images/vw-golf-branco/02.jpeg",
-      "/images/vw-golf-branco/03.jpeg",
-      "/images/vw-golf-branco/04.jpeg",
-      "/images/vw-golf-branco/05.jpeg",
-      "/images/vw-golf-branco/06.jpeg",
-      "/images/vw-golf-branco/07.jpeg",
-      "/images/vw-golf-branco/08.jpeg",
-      "/images/vw-golf-branco/09.jpeg",
-      "/images/vw-golf-branco/10.jpeg"
+      "/images/vw-golf-branco/01.webp",
+      "/images/vw-golf-branco/02.webp",
+      "/images/vw-golf-branco/03.webp",
+      "/images/vw-golf-branco/04.webp",
+      "/images/vw-golf-branco/05.webp",
+      "/images/vw-golf-branco/06.webp",
+      "/images/vw-golf-branco/07.webp",
+      "/images/vw-golf-branco/08.webp",
+      "/images/vw-golf-branco/09.webp",
+      "/images/vw-golf-branco/10.webp"
       ]
   },
   {
@@ -374,16 +375,16 @@ export const vehicles = [
       "Travas elétricas"
     ],
     images: [
-      "/images/fiat-palio-weekend/01.jpeg",
-      "/images/fiat-palio-weekend/02.jpeg",
-      "/images/fiat-palio-weekend/03.jpeg",
-      "/images/fiat-palio-weekend/04.jpeg",
-      "/images/fiat-palio-weekend/05.jpeg",
-      "/images/fiat-palio-weekend/06.jpeg",
-      "/images/fiat-palio-weekend/07.jpeg",
-      "/images/fiat-palio-weekend/08.jpeg",
-      "/images/fiat-palio-weekend/09.jpeg",
-      "/images/fiat-palio-weekend/10.jpeg"      
+      "/images/fiat-palio-weekend/01.webp",
+      "/images/fiat-palio-weekend/02.webp",
+      "/images/fiat-palio-weekend/03.webp",
+      "/images/fiat-palio-weekend/04.webp",
+      "/images/fiat-palio-weekend/05.webp",
+      "/images/fiat-palio-weekend/06.webp",
+      "/images/fiat-palio-weekend/07.webp",
+      "/images/fiat-palio-weekend/08.webp",
+      "/images/fiat-palio-weekend/09.webp",
+      "/images/fiat-palio-weekend/10.webp"      
     ]
   },
   {
@@ -409,16 +410,16 @@ export const vehicles = [
       "Porta malas de 280 litros"
     ],
     images: [
-      "/images/ford-fiesta/01.jpeg",
-      "/images/ford-fiesta/02.jpeg",
-      "/images/ford-fiesta/03.jpeg",
-      "/images/ford-fiesta/04.jpeg",
-      "/images/ford-fiesta/05.jpeg",
-      "/images/ford-fiesta/06.jpeg",
-      "/images/ford-fiesta/07.jpeg",
-      "/images/ford-fiesta/08.jpeg",
-      "/images/ford-fiesta/09.jpeg",
-      "/images/ford-fiesta/10.jpeg"      
+      "/images/ford-fiesta/01.webp",
+      "/images/ford-fiesta/02.webp",
+      "/images/ford-fiesta/03.webp",
+      "/images/ford-fiesta/04.webp",
+      "/images/ford-fiesta/05.webp",
+      "/images/ford-fiesta/06.webp",
+      "/images/ford-fiesta/07.webp",
+      "/images/ford-fiesta/08.webp",
+      "/images/ford-fiesta/09.webp",
+      "/images/ford-fiesta/10.webp"      
     ]
   },
   {
@@ -444,16 +445,16 @@ export const vehicles = [
       "MP3 player"
     ],
     images: [
-      "/images/gm-meriva/01.jpeg",
-      "/images/gm-meriva/02.jpeg",
-      "/images/gm-meriva/03.jpeg",
-      "/images/gm-meriva/04.jpeg",
-      "/images/gm-meriva/05.jpeg",
-      "/images/gm-meriva/06.jpeg",
-      "/images/gm-meriva/07.jpeg",
-      "/images/gm-meriva/08.jpeg",
-      "/images/gm-meriva/09.jpeg",
-      "/images/gm-meriva/10.jpeg"
+      "/images/gm-meriva/01.webp",
+      "/images/gm-meriva/02.webp",
+      "/images/gm-meriva/03.webp",
+      "/images/gm-meriva/04.webp",
+      "/images/gm-meriva/05.webp",
+      "/images/gm-meriva/06.webp",
+      "/images/gm-meriva/07.webp",
+      "/images/gm-meriva/08.webp",
+      "/images/gm-meriva/09.webp",
+      "/images/gm-meriva/10.webp"
     ]
   },
   {
@@ -477,12 +478,12 @@ export const vehicles = [
       "Freio a disco"
     ],
     images: [
-      "/images/honda-fan/01.jpeg",
-      "/images/honda-fan/02.jpeg",
-      "/images/honda-fan/03.jpeg",
-      "/images/honda-fan/04.jpeg",
-      "/images/honda-fan/05.jpeg",
-      "/images/honda-fan/06.jpeg"
+      "/images/honda-fan/01.webp",
+      "/images/honda-fan/02.webp",
+      "/images/honda-fan/03.webp",
+      "/images/honda-fan/04.webp",
+      "/images/honda-fan/05.webp",
+      "/images/honda-fan/06.webp"
     ]
   },
   {
@@ -516,14 +517,14 @@ export const vehicles = [
       "Rack de teto"
     ],
     images: [
-      "/images/fiat-toro/01.jpeg",
-      "/images/fiat-toro/02.jpeg",
-      "/images/fiat-toro/03.jpeg",
-      "/images/fiat-toro/04.jpeg",
-      "/images/fiat-toro/05.jpeg",
-      "/images/fiat-toro/06.jpeg",
-      "/images/fiat-toro/07.jpeg",
-      "/images/fiat-toro/08.jpeg"
+      "/images/fiat-toro/01.webp",
+      "/images/fiat-toro/02.webp",
+      "/images/fiat-toro/03.webp",
+      "/images/fiat-toro/04.webp",
+      "/images/fiat-toro/05.webp",
+      "/images/fiat-toro/06.webp",
+      "/images/fiat-toro/07.webp",
+      "/images/fiat-toro/08.webp"
     ]
   },
   {
@@ -763,15 +764,15 @@ export const vehicles = [
       "Vidros elétricos"
     ],
     images: [
-      "/images/citroen-c3-vermelho/01.jpeg",
-      "/images/citroen-c3-vermelho/02.jpeg",
-      "/images/citroen-c3-vermelho/03.jpeg",
-      "/images/citroen-c3-vermelho/04.jpeg",
-      "/images/citroen-c3-vermelho/05.jpeg",
-      "/images/citroen-c3-vermelho/06.jpeg",
-      "/images/citroen-c3-vermelho/07.jpeg",
-      "/images/citroen-c3-vermelho/08.jpeg",
-      "/images/citroen-c3-vermelho/09.jpeg"      
+      "/images/citroen-c3-vermelho/01.webp",
+      "/images/citroen-c3-vermelho/02.webp",
+      "/images/citroen-c3-vermelho/03.webp",
+      "/images/citroen-c3-vermelho/04.webp",
+      "/images/citroen-c3-vermelho/05.webp",
+      "/images/citroen-c3-vermelho/06.webp",
+      "/images/citroen-c3-vermelho/07.webp",
+      "/images/citroen-c3-vermelho/08.webp",
+      "/images/citroen-c3-vermelho/09.webp"      
     ]
   }
 ]
