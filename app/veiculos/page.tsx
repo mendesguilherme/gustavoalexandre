@@ -219,7 +219,7 @@ export default function VeiculosPage() {
                 <Textarea id="interest" name="interest" placeholder="Que tipo de veículo você procura?" rows={3} required className="bg-white border border-gray-300 text-black placeholder:text-gray-500" />
               </div>
               <Button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-lg py-3">
-                Quero ser Contactado
+                Solicitar atendimento
               </Button>
             </form>
             <button onClick={() => setShowModal(false)} className="mt-4 mx-auto block text-sm text-gray-500 hover:underline">
