@@ -6,22 +6,59 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { vehicles } from "@/data/vehicles" // ajuste o caminho conforme necessário
+import { vehicles } from "@/data/vehicles"
 
 export function SimulacaoModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const [possuiEntrada, setPossuiEntrada] = useState("nao")
   const [veiculoSelecionado, setVeiculoSelecionado] = useState("")
-  const [formEnviado, setFormEnviado] = useState(false)
+  const [feedback, setFeedback] = useState<{ type: "success" | "error"; message: string } | null>(null)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setFormEnviado(true)
 
-    // Simula tempo de resposta ou pode ser integrado com API
-    setTimeout(() => {
-      onClose()
-      setFormEnviado(false)
-    }, 4000)
+    const formData = new FormData(e.currentTarget)
+    const data = Object.fromEntries(formData.entries())
+
+    const payload = {
+      tipoFormulario: data.tipoFormulario,
+      nome: data.nome,
+      cpf: data.cpf,
+      telefone: data.telefone,
+      dataNascimento: data.dataNascimento,
+      veiculo: data.veiculo,
+      cnh: data.cnh,
+      possuiEntrada: data.possuiEntrada,
+      valorEntrada: data.valorEntrada
+    }
+
+    try {
+      const response = await fetch("https://automacao.nexii.com.br/webhook-test/71072222-86bc-433e-9bbc-3d48422e3fdc", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer 123456789abc"
+        },
+        body: JSON.stringify(payload)
+      })
+
+      if (response.ok) {
+        setFeedback({
+          type: "success",
+          message: "Simulação enviada com sucesso! Em breve nossa equipe entrará em contato."
+        })
+      } else {
+        const errorText = await response.text()
+        setFeedback({
+          type: "error",
+          message: "Erro ao enviar a simulação. Por favor, tente novamente mais tarde."
+        })
+      }
+    } catch (error) {
+      setFeedback({
+        type: "error",
+        message: "Erro de rede ao tentar enviar a simulação. Verifique sua conexão e tente novamente."
+      })
+    }
   }
 
   if (!isOpen) return null
@@ -31,13 +68,9 @@ export function SimulacaoModal({ isOpen, onClose }: { isOpen: boolean; onClose: 
       <div className="bg-white rounded-lg p-6 max-w-md w-full shadow-xl">
         <h2 className="text-2xl font-semibold mb-4 text-gray-800">Simulação de Financiamento</h2>
 
-        {formEnviado ? (
-          <div className="text-center text-green-600 font-medium text-lg">
-            Simulação enviada com sucesso!<br />
-            Em breve nossa equipe entrará em contato.
-          </div>
-        ) : (
+        {!feedback ? (
           <form onSubmit={handleSubmit} className="space-y-4">
+            <input type="hidden" name="tipoFormulario" value="simulacao_financiamento" />
 
             <div>
               <Label htmlFor="nome" className="text-gray-700">Nome completo</Label>
@@ -125,6 +158,24 @@ export function SimulacaoModal({ isOpen, onClose }: { isOpen: boolean; onClose: 
               Cancelar
             </button>
           </form>
+        ) : (
+          <div className="text-center">
+            <h3 className={`text-xl font-semibold mb-4 ${feedback.type === "success" ? "text-green-600" : "text-red-600"}`}>
+              {feedback.type === "success" ? "Sucesso" : "Erro"}
+            </h3>
+            <p className="text-gray-700 mb-6">{feedback.message}</p>
+            <button
+              onClick={() => {
+                setFeedback(null)
+                if (feedback.type === "success") {
+                  onClose()
+                }
+              }}
+              className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded"
+            >
+              OK
+            </button>
+          </div>
         )}
       </div>
     </div>
