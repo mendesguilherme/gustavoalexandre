@@ -1,50 +1,6 @@
-export const vehicles = [
+export const vehicles = [  
   {
     id: 1,
-    name: "Citroen Jumpy Cargo 1.5 Turbo",
-    brand: "Citroen",
-    price: "R$ 129.000,00",
-    year: "2022",
-    fuel: "Diesel",
-    transmission: "Manual",
-    km: "134.000 KM",
-    color: "Prata",
-    doors: "",
-    badge: "Único dono",
-    description: "",
-    spotlight: false,
-    available: false,
-    features: [
-      "Direção elétrica",
-      "Ar condicionado",
-      "Vidros elétricos",
-      "Travas elétricas",
-      "Retrovisores elétricos",
-      "Alarme",
-      "Banco com ajuste de altura",
-      "Computador de bordo",
-      "MP3 player",
-      "Limitador de velocidade",
-      "Controle de estabilidade",
-      "Freios ABS",
-      "Freio a disco nas 4 rodas",
-      "Manual + Chave reserva"
-    ],
-    images: [
-      "/images/citroen-jumpy/01.jpeg",
-      "/images/citroen-jumpy/02.jpeg",
-      "/images/citroen-jumpy/03.webp",
-      "/images/citroen-jumpy/04.webp",
-      "/images/citroen-jumpy/05.webp",
-      "/images/citroen-jumpy/06.webp",
-      "/images/citroen-jumpy/07.webp",
-      "/images/citroen-jumpy/08.webp",
-      "/images/citroen-jumpy/09.webp",
-      "/images/citroen-jumpy/10.webp"
-    ]
-  },
-  {
-    id: 2,
     name: "Ford Ka 1.0 SE",
     brand: "Ford",
     price: "R$ 45.900,00",
@@ -55,7 +11,7 @@ export const vehicles = [
     color: "Branco",
     doors: "5",
     badge: "Seminovo",
-    description: "",
+    description: "Ford Ka 1.0 SE 2017/2018 com 82.000 km, câmbio manual e motor flex, equipado com direção elétrica, ar-condicionado, vidros e travas elétricas, freios ABS e porta-malas de 250L, perfeito para o dia a dia com economia e conforto. Agende sua visita e venha conferir de perto!",
     spotlight: true,
     available: true,
     features: [
@@ -84,7 +40,7 @@ export const vehicles = [
     ]
   },
   {
-    id: 3,
+    id: 2,
     name: "VW Golf 1.6",
     brand: "Volkswagen",
     price: "R$ 27.900,00",
@@ -95,7 +51,7 @@ export const vehicles = [
     color: "Prata",
     doors: "",
     badge: "Seminovo",
-    description: "",
+    description: "VW Golf 1.6 2000/2001 com direção hidráulica, ar-condicionado e conjunto elétrico completo, uma opção acessível e confiável para o dia a dia. Aproveite essa oportunidade e agende sua visita!",
     spotlight: false,
     available: true,
     features: [
@@ -117,7 +73,7 @@ export const vehicles = [
     ]
   },
   {
-    id: 4,
+    id: 3,
     name: "VW SpaceFox Highline 1.6",
     brand: "Volkswagen",
     price: "R$ 44.900,00",
@@ -128,7 +84,7 @@ export const vehicles = [
     color: "Preto",
     doors: "5",
     badge: "Seminovo",
-    description: "",
+    description: "VW SpaceFox Highline 1.6 2013/2014 com ar-condicionado, direção hidráulica, rodas de liga leve e porta-malas espaçoso de 430L, ideal para quem busca conforto e versatilidade. Confira pessoalmente e surpreenda-se!",
     spotlight: false,
     available: true,
     features: [
@@ -152,78 +108,9 @@ export const vehicles = [
       "/images/spacefox-preto/09.webp",
       "/images/spacefox-preto/10.webp"      
     ]
-  },
+  },      
   {
-    id: 5,
-    name: "VW Gol 1.0 Trend",
-    brand: "Volkswagen",
-    price: "R$ 29.900,00",
-    year: "2009",
-    fuel: "Flex",
-    transmission: "Manual",
-    km: "94.000 KM",
-    color: "Prata",
-    doors: "5",
-    badge: "Seminovo",
-    description: "",
-    spotlight: false,
-    available: false,
-    features: [
-      "Ar condicionado",
-      "Direção hidráulica",
-      "Vidros dianteiros elétricos",
-      "Travas elétricas",
-      "Chave canivete",
-      "Porta malas de 285 litros"
-    ],
-    images: []
-  },
-  {
-    id: 6,
-    name: "Scooter elétrica 1000 watts",
-    brand: "",
-    price: "R$ 9.500,00",
-    year: "",
-    fuel: "",
-    transmission: "",
-    km: "",
-    color: "",
-    doors: "",
-    badge: "Seminovo",
-    description: "",
-    spotlight: false,
-    available: false,
-    features: [
-      "Bateria de lítio",
-      "Isenta de emplacamento e CNH",
-      "Autonomia de até 40 KM"
-    ],
-    images: []
-  },
-  {
-    id: 7,
-    name: "Scooter elétrica 1000 watts",
-    brand: "",
-    price: "R$ 9.200,00",
-    year: "",
-    fuel: "",
-    transmission: "",
-    km: "",
-    color: "",
-    doors: "",
-    badge: "Seminovo",
-    description: "",
-    spotlight: false,
-    available: false,
-    features: [
-      "Bateria de lítio",
-      "Isenta de emplacamento e CNH",
-      "Autonomia de até 40 KM"
-    ],
-    images: []
-  },
-  {
-    id: 8,
+    id: 4,
     name: "Toyota Etios Sedan 1.5 Platinum",
     brand: "Toyota",
     price: "R$ 45.900,00",
@@ -234,7 +121,7 @@ export const vehicles = [
     color: "",
     doors: "",
     badge: "Seminovo",
-    description: "",
+    description: "Toyota Etios Sedan 1.5 Platinum 2015/2016 com bancos em couro, central multimídia com GPS e sensores de estacionamento, oferecendo conforto, conectividade e economia. Fale com um consultor e saiba mais!",
     spotlight: true,
     available: true,
     features: [
@@ -267,7 +154,7 @@ export const vehicles = [
     ]
   },
   {
-    id: 9,
+    id: 5,
     name: "Ford Ka 1.0",
     brand: "Ford",
     price: "R$ 25.900,00",
@@ -278,7 +165,7 @@ export const vehicles = [
     color: "Prata",
     doors: "",
     badge: "Seminovo",
-    description: "",
+    description: "Ford Ka 1.0 2010/2011 com ar-condicionado, direção hidráulica e itens elétricos para mais praticidade e economia no dia a dia. Aproveite e venha fazer um test drive!",
     spotlight: false,
     available: true,
     features: [
@@ -304,7 +191,7 @@ export const vehicles = [
     ]
   },
   {
-    id: 10,
+    id: 6,
     name: "Golf Comfortline 1.4 TSI",
     brand: "Volkswagen",
     price: "R$ 75.900,00",
@@ -315,7 +202,7 @@ export const vehicles = [
     color: "",
     doors: "",
     badge: "Seminovo",
-    description: "",
+    description: "Golf Comfortline 1.4 TSI 2014/2015 com câmbio automático, sensores de estacionamento, piloto automático e central multimídia para mais conforto e praticidade. Completo, com 116 mil km e pronto para você – agende sua visita e confira de perto!",
     spotlight: true,
     available: true,
     features: [
@@ -354,7 +241,7 @@ export const vehicles = [
       ]
   },
   {
-    id: 11,
+    id: 7,
     name: "Palio Weekend 1.6 Trekking",
     brand: "Fiat",
     price: "R$ 31.900,00",
@@ -365,7 +252,7 @@ export const vehicles = [
     color: "Branco",
     doors: "",
     badge: "Seminovo",
-    description: "",
+    description: "Palio Weekend Trekking 1.6 2013/2014 com direção hidráulica, ar-condicionado e conjunto elétrico completo, perfeita para quem precisa de espaço e versatilidade no dia a dia. Venha conferir de perto!",
     spotlight: false,
     available: true,
     features: [
@@ -388,7 +275,7 @@ export const vehicles = [
     ]
   },
   {
-    id: 12,
+    id: 8,
     name: "Ford Fiesta Hatch SE 1.6",
     brand: "Ford",
     price: "R$ 33.900,00",
@@ -399,7 +286,7 @@ export const vehicles = [
     color: "Preto",
     doors: "",
     badge: "Seminovo",
-    description: "",
+    description: "Ford Fiesta Hatch SE 1.6 2012 com direção hidráulica, ar-condicionado e vidros elétricos, ideal para quem busca economia com conforto e bom espaço interno. Consulte agora e tire suas dúvidas!",
     spotlight: false,
     available: true,
     features: [
@@ -423,7 +310,7 @@ export const vehicles = [
     ]
   },
   {
-    id: 13,
+    id: 9,
     name: "Chevrolet Meriva Maxx 1.8",
     brand: "Chevrolet",
     price: "R$ 29.900,00",
@@ -434,7 +321,7 @@ export const vehicles = [
     color: "Preto",
     doors: "",
     badge: "Seminovo",
-    description: "",
+    description: "Chevrolet Meriva Maxx 1.8 2008 com ar-condicionado, direção hidráulica e vidros elétricos para mais conforto no uso urbano ou familiar. Visite a loja e confira essa oportunidade!",
     spotlight: false,
     available: true,
     features: [
@@ -458,7 +345,7 @@ export const vehicles = [
     ]
   },
   {
-    id: 14,
+    id: 10,
     name: "Honda CG FAN 150 ESDI",
     brand: "Honda",
     price: "R$ 11.500,00",
@@ -469,7 +356,7 @@ export const vehicles = [
     color: "Vinho",
     doors: "",
     badge: "Seminovo",
-    description: "",
+    description: "Honda CG Fan 150 ESDi 2011/2012 com partida elétrica, injeção eletrônica e freio a disco para mais segurança e praticidade no dia a dia. Aproveite e faça uma simulação sem compromisso!",
     spotlight: false,
     available: true,
     features: [
@@ -487,7 +374,7 @@ export const vehicles = [
     ]
   },
   {
-    id: 15,
+    id: 11,
     name: "Fiat Toro Freedom 1.8",
     brand: "Fiat",
     price: "R$ 85.900,00",
@@ -498,7 +385,7 @@ export const vehicles = [
     color: "",
     doors: "",
     badge: "Seminovo",
-    description: "",
+    description: "Fiat Toro Freedom 1.8 2016/2017 com câmbio automático, ar digital dual zone e central multimídia com GPS para mais conforto e conectividade, além de sensor de estacionamento, capota marítima e rodas de liga leve. Agende sua visita e conheça de perto!",
     spotlight: true,
     available: true,
     features: [
@@ -526,219 +413,9 @@ export const vehicles = [
       "/images/fiat-toro/07.webp",
       "/images/fiat-toro/08.webp"
     ]
-  },
+  },              
   {
-    id: 16,
-    name: "Ford Ka 1.5 SE",
-    brand: "Ford",
-    price: "R$ 45.900,00",
-    year: "2018",
-    fuel: "Flex",
-    transmission: "Manual",
-    km: "82.000 KM",
-    color: "",
-    doors: "",
-    badge: "Seminovo",
-    description: "",
-    spotlight: false,
-    available: false,
-    features: [
-      "Direção Elétrica",
-      "Ar condicionado",
-      "Airbag",
-      "Ar quente",
-      "Freio ABS",
-      "Limpador traseiro",
-      "Travas elétricas",
-      "Vidros elétricos",
-      "Porta malas elétrico",
-      "Porta malas de 250 litros"
-    ],
-    images: []
-  },
-  {
-    id: 17,
-    name: "Honda Civic 2022",
-    brand: "Honda",
-    price: "R$ 89.900",
-    year: "2022",
-    fuel: "Flex",
-    transmission: "Automático",
-    km: "25.000 km",
-    color: "Prata",
-    doors: "5",
-    badge: "Seminovo",
-    description: "Veículo em excelente estado, revisado e com garantia.",
-    spotlight: true,
-    available: false,
-    features: [
-      "Ar-condicionado",
-      "Direção hidráulica",
-      "Freios ABS",
-      "Airbags frontais",
-      "Vidros elétricos",
-      "Travas elétricas"
-    ],
-    images: [
-      "/images/fiat-toro/01.jpeg",
-      "/images/fiat-toro/02.jpeg",
-      "/images/fiat-toro/03.jpeg",
-      "/images/fiat-toro/04.jpeg",
-      "/images/fiat-toro/05.jpeg",
-      "/images/fiat-toro/06.jpeg",
-      "/images/fiat-toro/07.jpeg",
-      "/images/fiat-toro/08.jpeg"
-    ]
-  },
-  {
-    id: 18,
-    name: "Chevrolet Onix 2023",
-    brand: "Chevrolet",
-    price: "R$ 65.900",
-    year: "2023",
-    fuel: "Flex",
-    transmission: "Manual",
-    km: "15.000 km",
-    color: "Branco",
-    doors: "5",
-    badge: "Novo",
-    description: "Veículo zero km com todas as garantias de fábrica.",
-    spotlight: false,
-    available: false,
-    features: [
-      "Central multimídia",
-      "Controle de estabilidade",
-      "Assistente de partida em rampa",
-      "Sensor de estacionamento"
-    ],
-    images: ["/images/onix1.jpg", "/images/onix2.jpg"]
-  },
-  {
-    id: 19,
-    name: "Nissan Kicks 2021",
-    brand: "Nissan",
-    price: "R$ 78.900",
-    year: "2021",
-    fuel: "Flex",
-    transmission: "CVT",
-    km: "35.000 km",
-    color: "Cinza",
-    doors: "5",
-    badge: "Seminovo",
-    description: "SUV completo com baixa quilometragem e único dono.",
-    spotlight: false,
-    available: false,
-    features: [
-      "Banco de couro",
-      "Câmera de ré",
-      "Piloto automático",
-      "Sistema start-stop"
-    ],
-    images: ["/images/kicks1.jpg", "/images/kicks2.jpg"]
-  },
-  {
-    id: 20,
-    name: "Toyota Corolla 2020",
-    brand: "Toyota",
-    price: "R$ 95.900",
-    year: "2020",
-    fuel: "Flex",
-    transmission: "Automático",
-    km: "40.000 km",
-    color: "Preto",
-    doors: "5",
-    badge: "Seminovo",
-    description: "Sedan premium com manutenção em dia na concessionária.",
-    spotlight: false,
-    available: false,
-    features: [
-      "Rodas de liga leve",
-      "Ar digital",
-      "Encosto traseiro bipartido",
-      "Volante multifuncional"
-    ],
-    images: ["/images/corolla1.jpg", "/images/corolla2.jpg"]
-  },
-  {
-    id: 21,
-    name: "Volkswagen T-Cross 2022",
-    brand: "Volkswagen",
-    price: "R$ 82.900",
-    year: "2022",
-    fuel: "Flex",
-    transmission: "Automático",
-    km: "20.000 km",
-    color: "Azul",
-    doors: "5",
-    badge: "Seminovo",
-    description: "SUV compacto ideal para cidade com baixo consumo.",
-    spotlight: false,
-    available: false,
-    features: [
-      "Farol de LED",
-      "Controle de tração",
-      "Alerta de ponto cego",
-      "Freio a disco nas quatro rodas"
-    ],
-    images: ["/images/tcross1.jpg", "/images/tcross2.jpg"]
-  },
-  {
-    id: 22,
-    name: "Hyundai HB20 2023",
-    brand: "Hyundai",
-    price: "R$ 58.900",
-    year: "2023",
-    fuel: "Flex",
-    transmission: "Manual",
-    km: "8.000 km",
-    color: "Vermelho",
-    doors: "5",
-    badge: "Seminovo",
-    description: "Hatch econômico e confiável, perfeito para o dia a dia.",
-    spotlight: false,
-    available: false,
-    features: [
-      "Computador de bordo",
-      "Direção elétrica",
-      "Comando de som no volante",
-      "Sensor crepuscular"
-    ],
-    images: ["/images/hb20-1.jpg", "/images/hb20-2.jpg"]
-  },
-  {
-    id: 23,
-    name: "Chevrolet Corsa Classic 1.0 LS",
-    brand: "Chevrolet",
-    price: "R$ 29.000",
-    year: "2013",
-    fuel: "Flex",
-    transmission: "Manual",
-    km: "154.000 km",
-    color: "Prata",
-    doors: "5",
-    badge: "Único dono",
-    description: "2012/2013 com direção hidráulica e alarme. Ótimo estado de conservação.",
-    spotlight: false,
-    available: false,
-    features: [
-      "Direção hidráulica",
-      "Alarme",
-      "Vidros dianteiros elétricos",
-      "Desembaçador traseiro"
-    ],
-    images: [
-      "/images/corsa-classic/01.webp",
-      "/images/corsa-classic/02.webp",
-      "/images/corsa-classic/03.webp",
-      "/images/corsa-classic/04.webp",
-      "/images/corsa-classic/05.webp",
-      "/images/corsa-classic/06.webp",
-      "/images/corsa-classic/07.webp",
-      "/images/corsa-classic/08.webp"
-    ]
-  },
-  {
-    id: 24,
+    id: 12,
     name: "Citroën C3 GLX 1.4",
     brand: "Citroën",
     price: "R$ 27.900,00",

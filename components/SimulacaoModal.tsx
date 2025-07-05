@@ -32,11 +32,11 @@ export function SimulacaoModal({ isOpen, onClose }: { isOpen: boolean; onClose: 
     }
 
     try {
-      const response = await fetch("https://automacao.nexii.com.br/webhook-test/71072222-86bc-433e-9bbc-3d48422e3fdc", {
+      const response = await fetch("https://webhook.nexii.com.br/webhook/b4660e0e-976d-47bc-8f73-a89ee50f3f32", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Bearer 123456789abc"
+          "Authorization": "__n8n_BLANK_VALUE_e5362baf-c777-4d57-a609-6eaf1f9e87f6"
         },
         body: JSON.stringify(payload)
       })
@@ -50,14 +50,17 @@ export function SimulacaoModal({ isOpen, onClose }: { isOpen: boolean; onClose: 
         const errorText = await response.text()
         setFeedback({
           type: "error",
-          message: "Erro ao enviar a simulação. Por favor, tente novamente mais tarde."
+          message: `Erro ao enviar a simulação: ${errorText || "Resposta inesperada do servidor."}`
         })
+        console.error("Erro na resposta da API:", response.status, errorText)
       }
-    } catch (error) {
+
+        } catch (error: any) {
       setFeedback({
         type: "error",
-        message: "Erro de rede ao tentar enviar a simulação. Verifique sua conexão e tente novamente."
+        message: `Erro de rede ou execução: ${error?.message || "Erro desconhecido"}`
       })
+      console.error("Erro de rede ou execução:", error)
     }
   }
 
