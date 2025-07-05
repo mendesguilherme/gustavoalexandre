@@ -68,7 +68,7 @@ export function SimulacaoModal({ isOpen, onClose }: { isOpen: boolean; onClose: 
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
-      <div className="bg-white rounded-lg p-6 max-w-md w-full shadow-xl">
+      <div className="bg-white rounded-lg p-4 sm:p-6 max-w-md w-full shadow-xl">
         <h2 className="w-full text-center text-2xl font-semibold mb-4 text-gray-800">Simulação de Financiamento</h2>
 
         {!feedback ? (
