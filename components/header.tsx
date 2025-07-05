@@ -102,25 +102,15 @@ export function Header() {
                   className="hover:text-red-500 transition-colors cursor-pointer"
                 >
                   Serviços
-                </a>
-                <a
-                  href="#contato"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    handleAnchorNavigation("contato")
-                  }}
-                  className="hover:text-red-500 transition-colors cursor-pointer"
-                >
-                  Contato
-                </a>
+                </a>              
               </nav>
               <Button
                 onClick={() => {
-                  const el = document.getElementById("contato-footer")
+                  const el = document.getElementById("contato")
                   if (el) {
                     el.scrollIntoView({ behavior: "smooth" })
                   } else {
-                    router.push("/#contato-footer")
+                    router.push("/#contato")
                   }
                 }}
                 className="bg-red-600 hover:bg-red-700"

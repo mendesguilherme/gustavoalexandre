@@ -1,7 +1,9 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
+import Link from "next/link"
+
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Card, CardContent } from "@/components/ui/card"
@@ -9,19 +11,91 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Calendar, Fuel, Settings, Search } from "lucide-react"
-import Link from "next/link"
-import { vehicles } from "@/data/vehicles"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
+import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+
+import { Calendar, Fuel, Settings, Search } from "lucide-react"
+import { vehicles } from "@/data/vehicles"
+import { WEBHOOK_URL } from "@/lib/config"
 
 export default function VeiculosPage() {
+  const [nomeModal, setNomeModal] = useState("")
+  const [telefoneModal, setTelefoneModal] = useState("")
+  const [emailModal, setEmailModal] = useState("")
+  const [interesseModal, setInteresseModal] = useState("")
+
+  const [showModal, setShowModal] = useState(false)
+  const [showFeedbackModal, setShowFeedbackModal] = useState(false)
+  const [feedback, setFeedback] = useState<{ type: "success" | "error"; message: string } | null>(null)
   const [searchTerm, setSearchTerm] = useState("")
   const [selectedBrand, setSelectedBrand] = useState("")
   const [selectedYear, setSelectedYear] = useState("")
   const [selectedPrice, setSelectedPrice] = useState("")
-  const [showModal, setShowModal] = useState(false)
 
+  const formatTelefone = (value: string) => {
+    return value
+      .replace(/\D/g, "")
+      .replace(/^(\d{2})(\d)/, "($1) $2")
+      .replace(/(\d{5})(\d)/, "$1-$2")
+      .slice(0, 15)
+  }
+
+  useEffect(() => {
+    if (/\d/.test(nomeModal)) {
+      setNomeModal(nomeModal.replace(/\d/g, ""))
+    }
+  }, [nomeModal])
+
+  const handleCustomVehicleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    const payload = {
+      origem: "interesse_veiculo",
+      tipoFormulario: "veiculo_ideal",
+      nome: nomeModal,
+      telefone: telefoneModal,
+      email: emailModal,
+      interesse: interesseModal
+    }  
+
+    try {
+      const response = await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "__n8n_BLANK_VALUE_e5362baf-c777-4d57-a609-6eaf1f9e87f6"
+        },
+        body: JSON.stringify(payload)
+      })
+
+      if (response.ok) {
+        setFeedback({
+          type: "success",
+          message: "Solicitação enviada com sucesso! Em breve nossa equipe entrará em contato."
+        })
+        // limpa campos após sucesso
+        setNomeModal("")
+        setTelefoneModal("")
+        setEmailModal("")
+        setInteresseModal("")
+      } else {
+        const errorText = await response.text()
+        setFeedback({
+          type: "error",
+          message: `Erro ao enviar: ${errorText || "Resposta inesperada do servidor."}`
+        })
+      }
+    } catch (error: any) {
+      setFeedback({
+        type: "error",
+        message: `Erro de rede ou execução: ${error?.message || "Erro desconhecido"}`
+      })
+    } finally {
+      setShowFeedbackModal(true)
+    }
+  }    
+  
   const filteredVehicles = vehicles.filter((vehicle) => {
     return (
       vehicle.available !== false &&
@@ -35,15 +109,7 @@ export default function VeiculosPage() {
           Number.parseInt(vehicle.price.replace(/\D/g, "")) <= 80000) ||
         (selectedPrice === "acima-80k" && Number.parseInt(vehicle.price.replace(/\D/g, "")) > 80000))
     )
-  })
-
-  const handleCustomVehicleSubmit = (e: any) => {
-    e.preventDefault()
-    const data = new FormData(e.target)
-    console.log("Interesse enviado:", Object.fromEntries(data.entries()))
-    alert("Obrigado! Seu interesse foi enviado com sucesso.")
-    setShowModal(false)
-  }
+  }) 
 
   return (
     <div>
@@ -200,36 +266,94 @@ export default function VeiculosPage() {
       </section>
 
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white border border-neutral-300 rounded-lg w-full max-w-sm shadow-2xl p-6 text-black">
-            <h2 className="text-2xl font-bold mb-6 text-center">Encontre seu veículo ideal</h2>
-            <form onSubmit={handleCustomVehicleSubmit} className="space-y-4">
-              <div>
-                <Label htmlFor="name" className="text-black">Nome completo</Label>
-                <Input id="name" name="name" placeholder="Seu nome completo" required className="bg-white border border-gray-300 text-black placeholder:text-gray-500" />
-              </div>
-              <div>
-                <Label htmlFor="phone" className="text-black">WhatsApp</Label>
-                <Input id="phone" name="phone" placeholder="(17) 99999-9999" required className="bg-white border border-gray-300 text-black placeholder:text-gray-500" />
-              </div>
-              <div>
-                <Label htmlFor="email" className="text-black">E-mail</Label>
-                <Input id="email" name="email" type="email" placeholder="seu@email.com" required className="bg-white border border-gray-300 text-black placeholder:text-gray-500" />
-              </div>
-              <div>
-                <Label htmlFor="interest" className="text-black">Interesse</Label>
-                <Textarea id="interest" name="interest" placeholder="Que tipo de veículo você procura?" rows={3} required className="bg-white border border-gray-300 text-black placeholder:text-gray-500" />
-              </div>
-              <Button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-lg py-3">
-                Solicitar atendimento
-              </Button>
-            </form>
-            <button onClick={() => setShowModal(false)} className="mt-4 mx-auto block text-sm text-gray-500 hover:underline">
-              Fechar
-            </button>
-          </div>
+      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div className="bg-white border border-neutral-300 rounded-lg w-full max-w-sm shadow-2xl p-6 text-black">
+          <h2 className="text-2xl font-bold mb-6 text-center">Encontre seu veículo ideal</h2>
+          <form onSubmit={handleCustomVehicleSubmit} className="space-y-4">
+            <div>
+              <Label htmlFor="name" className="text-black">Nome completo</Label>
+              <Input
+                id="name"
+                name="name"
+                value={nomeModal}
+                onChange={(e) => setNomeModal(e.target.value)}
+                placeholder="Seu nome completo"
+                required
+                className="bg-white border border-gray-300 text-black placeholder:text-gray-500"
+              />
+            </div>
+            <div>
+              <Label htmlFor="phone" className="text-black">WhatsApp</Label>
+              <Input
+                id="phone"
+                name="phone"
+                value={telefoneModal}
+                onChange={(e) => setTelefoneModal(formatTelefone(e.target.value))}
+                placeholder="(17) 99999-9999"
+                required
+                className="bg-white border border-gray-300 text-black placeholder:text-gray-500"
+              />
+            </div>
+            <div>
+              <Label htmlFor="email" className="text-black">E-mail</Label>
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                value={emailModal}
+                onChange={(e) => setEmailModal(e.target.value)}
+                placeholder="seu@email.com"
+                required
+                className="bg-white border border-gray-300 text-black placeholder:text-gray-500"
+              />
+            </div>
+            <div>
+              <Label htmlFor="interest" className="text-black">Interesse</Label>
+              <Textarea
+                id="interest"
+                name="interest"
+                value={interesseModal}
+                onChange={(e) => setInteresseModal(e.target.value)}
+                placeholder="Que tipo de veículo você procura?"
+                rows={3}
+                required
+                className="bg-white border border-gray-300 text-black placeholder:text-gray-500"
+              />
+            </div>
+            <Button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-lg py-3">
+              Solicitar atendimento
+            </Button>
+          </form>
+          <button
+            onClick={() => setShowModal(false)}
+            className="mt-4 mx-auto block text-sm text-gray-500 hover:underline"
+          >
+            Fechar
+          </button>
         </div>
-      )}
+      </div>
+    )}
+
+      <Dialog open={showFeedbackModal} onOpenChange={setShowFeedbackModal}>
+        <DialogContent className="max-w-sm w-full text-center px-6 py-4 rounded-lg [&>button]:hidden">
+          <DialogHeader className="items-center">
+            <DialogTitle className="text-xl font-semibold text-gray-900 text-center w-full">
+              Solicitação de atendimento
+            </DialogTitle>
+          </DialogHeader>
+
+          <p className="text-gray-700 text-base my-4">{feedback?.message}</p>
+
+          <div className="w-full flex justify-center">
+            <Button
+              onClick={() => setShowFeedbackModal(false)}
+              className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded"
+            >
+              OK
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
 
       <Footer onOpenSimulacaoModal={() => setShowModal(true)} />
     </div>

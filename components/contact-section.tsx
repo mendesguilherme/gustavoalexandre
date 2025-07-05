@@ -6,8 +6,68 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { MapPin, Phone, Clock, MessageCircle } from "lucide-react"
+import { useState, useEffect } from "react"
+import { WEBHOOK_URL } from "@/lib/config"
 
 export function ContactSection() {
+  const [contactName, setContactName] = useState("")
+  const [contactPhone, setContactPhone] = useState("")
+  const [contactEmail, setContactEmail] = useState("")
+  const [contactSubject, setContactSubject] = useState("")
+  const [contactMessage, setContactMessage] = useState("")
+  const [feedback, setFeedback] = useState<{ type: "success" | "error"; message: string } | null>(null)
+
+  const formatTelefone = (value: string) => {
+    return value
+      .replace(/\D/g, "")
+      .replace(/^(\d{2})(\d)/, "($1) $2")
+      .replace(/(\d{5})(\d)/, "$1-$2")
+      .slice(0, 15)
+  }
+
+  useEffect(() => {
+    if (/\d/.test(contactName)) {
+      setContactName(contactName.replace(/\d/g, ""))
+    }
+  }, [contactName])
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const payload = {
+      tipoFormulario: "contato_geral",
+      nome: contactName,
+      telefone: contactPhone,
+      email: contactEmail,
+      assunto: contactSubject,
+      mensagem: contactMessage
+    }
+
+    try {
+      const response = await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "__n8n_BLANK_VALUE_e5362baf-c777-4d57-a609-6eaf1f9e87f6"
+        },
+        body: JSON.stringify(payload)
+      })
+
+      if (response.ok) {
+        setFeedback({ type: "success", message: "Mensagem enviada com sucesso! Em breve entraremos em contato." })
+        setContactName("")
+        setContactPhone("")
+        setContactEmail("")
+        setContactSubject("")
+        setContactMessage("")
+      } else {
+        const errorText = await response.text()
+        setFeedback({ type: "error", message: `Erro: ${errorText || "Resposta inesperada do servidor."}` })
+      }
+    } catch (error: any) {
+      setFeedback({ type: "error", message: `Erro de rede: ${error?.message || "Erro desconhecido"}` })
+    }
+  }
+
   return (
     <section id="contato" className="py-20 text-white bg-black">
       <div className="container mx-auto px-4">
@@ -96,30 +156,69 @@ export function ContactSection() {
             <Card className="bg-white text-gray-900">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-semibold mb-6">Envie sua Mensagem</h3>
-                <form className="space-y-4">
+                {feedback ? (
+                  <p className={`mb-4 ${feedback.type === "success" ? "text-green-600" : "text-red-600"}`}>
+                    {feedback.message}
+                  </p>
+                ) : null}
+                <form className="space-y-4" onSubmit={handleSubmit}>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="contact-name">Nome</Label>
-                      <Input id="contact-name" placeholder="Seu nome" />
+                      <Input
+                        id="contact-name"
+                        placeholder="Seu nome"
+                        value={contactName}
+                        onChange={(e) => setContactName(e.target.value)}
+                        required
+                      />
                     </div>
                     <div>
                       <Label htmlFor="contact-phone">Telefone</Label>
-                      <Input id="contact-phone" placeholder="(17) 99999-9999" />
+                      <Input
+                        id="contact-phone"
+                        placeholder="(17) 99999-9999"
+                        value={contactPhone}
+                        onChange={(e) => setContactPhone(formatTelefone(e.target.value))}
+                        required
+                      />
                     </div>
                   </div>
                   <div>
                     <Label htmlFor="contact-email">E-mail</Label>
-                    <Input id="contact-email" type="email" placeholder="seu@email.com" />
+                    <Input
+                      id="contact-email"
+                      type="email"
+                      placeholder="seu@email.com"
+                      value={contactEmail}
+                      onChange={(e) => setContactEmail(e.target.value)}
+                      required
+                    />
                   </div>
                   <div>
                     <Label htmlFor="contact-subject">Assunto</Label>
-                    <Input id="contact-subject" placeholder="Como podemos ajudar?" />
+                    <Input
+                      id="contact-subject"
+                      placeholder="Como podemos ajudar?"
+                      value={contactSubject}
+                      onChange={(e) => setContactSubject(e.target.value)}
+                      required
+                    />
                   </div>
                   <div>
                     <Label htmlFor="contact-message">Mensagem</Label>
-                    <Textarea id="contact-message" placeholder="Descreva sua necessidade ou dúvida..." rows={4} />
+                    <Textarea
+                      id="contact-message"
+                      placeholder="Descreva sua necessidade ou dúvida..."
+                      rows={4}
+                      value={contactMessage}
+                      onChange={(e) => setContactMessage(e.target.value)}
+                      required
+                    />
                   </div>
-                  <Button className="w-full bg-red-600 hover:bg-red-700 text-lg py-3">Enviar Mensagem</Button>
+                  <Button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-lg py-3">
+                    Enviar Mensagem
+                  </Button>
                 </form>
               </CardContent>
             </Card>

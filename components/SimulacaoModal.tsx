@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { vehicles } from "@/data/vehicles"
+import { WEBHOOK_URL } from "@/lib/config"
 
 export function SimulacaoModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const [veiculoSelecionado, setVeiculoSelecionado] = useState("")
@@ -54,7 +55,7 @@ export function SimulacaoModal({ isOpen, onClose }: { isOpen: boolean; onClose: 
     }
 
     try {
-      const response = await fetch("https://automacao.nexii.com.br/webhook-test/b4660e0e-976d-47bc-8f73-a89ee50f3f32", {
+      const response = await fetch(WEBHOOK_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

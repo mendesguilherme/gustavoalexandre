@@ -16,10 +16,84 @@ import "swiper/css/pagination"
 import "swiper/css/navigation"
 import { SimulacaoModal } from "@/components/SimulacaoModal"
 import { useState } from "react"
-
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter
+} from "@/components/ui/dialog"
+import { WEBHOOK_URL } from "@/lib/config"
 
 export function HeroSection() {
   const [showSimulacaoModal, setShowSimulacaoModal] = useState(false)
+  const [showFeedbackModal, setShowFeedbackModal] = useState(false)
+  const [feedback, setFeedback] = useState<{ type: "success" | "error"; message: string } | null>(null)
+
+  const [nomeLead, setNomeLead] = useState("")
+  const [telefoneLead, setTelefoneLead] = useState("")
+  const [emailLead, setEmailLead] = useState("")
+  const [interesseLead, setInteresseLead] = useState("")
+
+  const formatTelefone = (value: string) => {
+    const digits = value.replace(/\D/g, "").slice(0, 11)
+    return digits
+      .replace(/(\d{2})(\d)/, "($1) $2")
+      .replace(/(\d{5})(\d)/, "$1-$2")
+  }
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const payload = {
+      origem: "interesse_home",
+      tipoFormulario: "veiculo_ideal",
+      nome: nomeLead,
+      telefone: telefoneLead,
+      email: emailLead,
+      interesse: interesseLead      
+    }
+
+    try {
+      const response = await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "__n8n_BLANK_VALUE_e5362baf-c777-4d57-a609-6eaf1f9e87f6"
+        },
+        body: JSON.stringify(payload)
+      })
+
+      if (response.ok) {
+        setFeedback({
+          type: "success",
+          message: "Interesse enviado com sucesso! Em breve nossa equipe entrará em contato."
+        })
+
+        // Limpa os campos do formulário
+        setNomeLead("")
+        setTelefoneLead("")
+        setEmailLead("")
+        setInteresseLead("")
+
+      } else {
+        const errorText = await response.text()
+        setFeedback({
+          type: "error",
+          message: `Erro ao enviar a interesse: ${errorText || "Resposta inesperada do servidor."}`
+        })
+        console.error("Erro na resposta da API:", response.status, errorText)
+      }
+    } catch (error: any) {
+      setFeedback({
+        type: "error",
+        message: `Erro de rede ou execução: ${error?.message || "Erro desconhecido"}`
+      })
+      console.error("Erro de rede ou execução:", error)
+    } finally {
+      setShowFeedbackModal(true)
+    }
+  }
+
   return (
     <section className="relative w-full overflow-hidden text-white">
       {/* Imagem de fundo responsiva */}
@@ -189,22 +263,56 @@ export function HeroSection() {
           <Card className="bg-black/40 backdrop-blur-sm border border-white/10">
             <CardContent className="p-6">
               <h3 className="text-2xl font-bold mb-6 text-center text-white">Encontre seu veículo ideal</h3>
-              <form className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <Label htmlFor="name" className="text-white">Nome completo</Label>
-                  <Input id="name" placeholder="Seu nome completo" className="bg-white/20 border-white/30 text-white placeholder:text-gray-300" />
+                  <Input
+                    id="name"
+                    name="name"
+                    required
+                    value={nomeLead}
+                    onChange={(e) => setNomeLead(e.target.value.replace(/[^A-Za-zÀ-ÿ\s]/g, ""))}
+                    className="bg-white/20 border-white/30 text-white placeholder:text-gray-300"
+                    placeholder="Seu nome completo"
+                  />
                 </div>
                 <div>
                   <Label htmlFor="phone" className="text-white">WhatsApp</Label>
-                  <Input id="phone" placeholder="(17) 99999-9999" className="bg-white/20 border-white/30 text-white placeholder:text-gray-300" />
+                  <Input
+                    id="phone"
+                    name="phone"
+                    required
+                    value={telefoneLead}
+                    onChange={(e) => setTelefoneLead(formatTelefone(e.target.value))}
+                    placeholder="(00) 00000-0000"
+                    className="bg-white/20 border-white/30 text-white placeholder:text-gray-300"
+                  />
                 </div>
                 <div>
                   <Label htmlFor="email" className="text-white">E-mail</Label>
-                  <Input id="email" type="email" placeholder="seu@email.com" className="bg-white/20 border-white/30 text-white placeholder:text-gray-300" />
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    value={emailLead}
+                    onChange={(e) => setEmailLead(e.target.value)}
+                    placeholder="seu@email.com"
+                    className="bg-white/20 border-white/30 text-white placeholder:text-gray-300"
+                  />
                 </div>
                 <div>
                   <Label htmlFor="interest" className="text-white">Interesse</Label>
-                  <Textarea id="interest" placeholder="Que tipo de veículo você procura?" className="bg-white/20 border-white/30 text-white placeholder:text-gray-300" rows={3} />
+                  <Textarea
+                    id="interest"
+                    name="interest"
+                    required
+                    value={interesseLead}
+                    onChange={(e) => setInteresseLead(e.target.value)}
+                    placeholder="Que tipo de veículo você procura?"
+                    className="bg-white/20 border-white/30 text-white placeholder:text-gray-300"
+                    rows={3}
+                  />
                 </div>
                 <Button className="w-full bg-red-600 hover:bg-red-700 text-lg py-3">Solicitar atendimento</Button>
               </form>
@@ -216,6 +324,28 @@ export function HeroSection() {
         isOpen={showSimulacaoModal}
         onClose={() => setShowSimulacaoModal(false)}
       />
+      
+      <Dialog open={showFeedbackModal} onOpenChange={setShowFeedbackModal}>
+        <DialogContent className="max-w-sm w-full text-center px-6 py-4 rounded-lg [&>button]:hidden">
+          <DialogHeader className="items-center"> {/* centraliza o conteúdo */}
+            <DialogTitle className="text-xl font-semibold text-gray-900 text-center w-full">
+              Solicitação de atendimento
+            </DialogTitle>
+          </DialogHeader>
+
+          <p className="text-gray-700 text-base my-4">{feedback?.message}</p>
+
+          <DialogFooter className="flex justify-center">
+            <Button
+              onClick={() => setShowFeedbackModal(false)}
+              className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded"
+            >
+              OK
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
     </section>
   )
 }

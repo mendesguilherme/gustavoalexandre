@@ -97,7 +97,7 @@ export function Footer({ onOpenSimulacaoModal }: FooterProps) {
                   }}
                   className="text-gray-300 hover:text-red-500 transition-colors cursor-pointer"
                 >
-                  Contato
+                  Fale Conosco
                 </a>
               </li>
             </ul>
