@@ -162,10 +162,7 @@ export function SimulacaoModal({ isOpen, onClose }: { isOpen: boolean; onClose: 
             </button>
           </form>
         ) : (
-          <div className="text-center">
-            <h3 className={`text-xl font-semibold mb-4 ${feedback.type === "success" ? "text-green-600" : "text-red-600"}`}>
-              {feedback.type === "success" ? "Sucesso" : "Erro"}
-            </h3>
+          <div className="text-center">           
             <p className="text-gray-700 mb-6">{feedback.message}</p>
             <button
               onClick={() => {
