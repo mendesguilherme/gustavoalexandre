@@ -32,7 +32,7 @@ export function SimulacaoModal({ isOpen, onClose }: { isOpen: boolean; onClose: 
     }
 
     try {
-      const response = await fetch("https://webhook.nexii.com.br/webhook/b4660e0e-976d-47bc-8f73-a89ee50f3f32", {
+      const response = await fetch("https://automacao.nexii.com.br/webhook-test/b4660e0e-976d-47bc-8f73-a89ee50f3f32", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
