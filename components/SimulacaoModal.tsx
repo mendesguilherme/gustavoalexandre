@@ -3,19 +3,42 @@
 import { useState } from "react"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { vehicles } from "@/data/vehicles"
 
 export function SimulacaoModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
-  const [possuiEntrada, setPossuiEntrada] = useState("nao")
   const [veiculoSelecionado, setVeiculoSelecionado] = useState("")
   const [feedback, setFeedback] = useState<{ type: "success" | "error"; message: string } | null>(null)
+  const [valorEntrada, setValorEntrada] = useState("R$ 0,00")
+  const [cpf, setCpf] = useState("")
+  const [nome, setNome] = useState("")
+
+  const formatCurrency = (value: string) => {
+    const numericValue = value.replace(/\D/g, "")
+    const floatValue = (parseInt(numericValue, 10) || 0) / 100
+    return floatValue.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
+  }
+
+  const formatCpf = (value: string) => {
+    const digits = value.replace(/\D/g, "").slice(0, 11)
+    return digits
+      .replace(/(\d{3})(\d)/, "$1.$2")
+      .replace(/(\d{3})(\d)/, "$1.$2")
+      .replace(/(\d{3})(\d{1,2})$/, "$1-$2")
+  }
+
+  const [telefone, setTelefone] = useState("")
+
+  const formatTelefone = (value: string) => {
+  const digits = value.replace(/\D/g, "").slice(0, 11)
+  return digits
+    .replace(/(\d{2})(\d)/, "($1) $2")
+    .replace(/(\d{5})(\d)/, "$1-$2")
+}
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-
     const formData = new FormData(e.currentTarget)
     const data = Object.fromEntries(formData.entries())
 
@@ -27,7 +50,6 @@ export function SimulacaoModal({ isOpen, onClose }: { isOpen: boolean; onClose: 
       dataNascimento: data.dataNascimento,
       veiculo: data.veiculo,
       cnh: data.cnh,
-      possuiEntrada: data.possuiEntrada,
       valorEntrada: data.valorEntrada
     }
 
@@ -54,8 +76,7 @@ export function SimulacaoModal({ isOpen, onClose }: { isOpen: boolean; onClose: 
         })
         console.error("Erro na resposta da API:", response.status, errorText)
       }
-
-        } catch (error: any) {
+    } catch (error: any) {
       setFeedback({
         type: "error",
         message: `Erro de rede ou execução: ${error?.message || "Erro desconhecido"}`
@@ -77,22 +98,55 @@ export function SimulacaoModal({ isOpen, onClose }: { isOpen: boolean; onClose: 
 
             <div>
               <Label htmlFor="nome" className="text-gray-700">Nome completo</Label>
-              <Input id="nome" name="nome" required className="bg-white border-gray-300 text-black placeholder:text-gray-500" placeholder="Digite seu nome" />
+              <Input
+                id="nome"
+                name="nome"
+                required
+                value={nome}
+                onChange={(e) => {
+                  const letras = e.target.value.replace(/[^A-Za-zÀ-ÿ\s]/g, "")
+                  setNome(letras)
+                }}
+                className="bg-white border-gray-300 text-black placeholder:text-gray-500"
+                placeholder="Digite seu nome"
+              />
             </div>
 
             <div>
               <Label htmlFor="cpf" className="text-gray-700">CPF</Label>
-              <Input id="cpf" name="cpf" required className="bg-white border-gray-300 text-black placeholder:text-gray-500" placeholder="000.000.000-00" />
+              <Input
+                id="cpf"
+                name="cpf"
+                value={cpf}
+                onChange={(e) => setCpf(formatCpf(e.target.value))}
+                required
+                className="bg-white border-gray-300 text-black placeholder:text-gray-500"
+                placeholder="000.000.000-00"
+              />
             </div>
 
             <div>
               <Label htmlFor="telefone" className="text-gray-700">Número de contato</Label>
-              <Input id="telefone" name="telefone" required className="bg-white border-gray-300 text-black placeholder:text-gray-500" placeholder="(00) 00000-0000" />
+              <Input
+                id="telefone"
+                name="telefone"
+                value={telefone}
+                onChange={(e) => setTelefone(formatTelefone(e.target.value))}
+                required
+                className="bg-white border-gray-300 text-black placeholder:text-gray-500"
+                placeholder="(00) 00000-0000"
+              />
             </div>
 
             <div>
               <Label htmlFor="dataNascimento" className="text-gray-700">Data de nascimento</Label>
-              <Input id="dataNascimento" name="dataNascimento" type="date" required className="bg-white border-gray-300 text-black placeholder:text-gray-500" />
+              <Input
+                id="dataNascimento"
+                name="dataNascimento"
+                type="date"
+                required
+                className="bg-white border-gray-300 text-black placeholder:text-gray-500"
+              />
             </div>
 
             <div>
@@ -130,27 +184,13 @@ export function SimulacaoModal({ isOpen, onClose }: { isOpen: boolean; onClose: 
             </div>
 
             <div>
-              <Label className="text-gray-700">Possui entrada?</Label>
-              <RadioGroup name="possuiEntrada" value={possuiEntrada} onValueChange={setPossuiEntrada} className="flex gap-4 mt-1">
-                <div className="flex items-center gap-2">
-                  <RadioGroupItem value="sim" id="entradaSim" />
-                  <Label htmlFor="entradaSim" className="text-gray-700">Sim</Label>
-                </div>
-                <div className="flex items-center gap-2">
-                  <RadioGroupItem value="nao" id="entradaNao" />
-                  <Label htmlFor="entradaNao" className="text-gray-700">Não</Label>
-                </div>
-              </RadioGroup>
-            </div>
-
-            <div>
               <Label htmlFor="valorEntrada" className="text-gray-700">Valor da entrada (R$)</Label>
               <Input
                 id="valorEntrada"
                 name="valorEntrada"
-                placeholder="R$"
-                disabled={possuiEntrada !== "sim"}
-                className={`bg-white border-gray-300 text-black placeholder:text-gray-500 ${possuiEntrada !== "sim" ? "opacity-50 cursor-not-allowed" : ""}`}
+                value={valorEntrada}
+                onChange={(e) => setValorEntrada(formatCurrency(e.target.value))}
+                className="bg-white border-gray-300 text-black placeholder:text-gray-500"
               />
             </div>
 
@@ -162,7 +202,7 @@ export function SimulacaoModal({ isOpen, onClose }: { isOpen: boolean; onClose: 
             </button>
           </form>
         ) : (
-          <div className="text-center">           
+          <div className="text-center">
             <p className="text-gray-700 mb-6">{feedback.message}</p>
             <button
               onClick={() => {
