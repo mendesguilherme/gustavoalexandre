@@ -171,18 +171,18 @@ export function SimulacaoModal({ isOpen, onClose }: { isOpen: boolean; onClose: 
 
             <div>
               <Label className="text-gray-700">Possui CNH?</Label>
-              <RadioGroup name="cnh" defaultValue="sim" className="flex gap-4 mt-1">
+              <RadioGroup name="cnh" defaultValue="Sim" className="flex gap-4 mt-1">
                 <div className="flex items-center gap-2">
-                  <RadioGroupItem value="sim" id="cnhSim" />
+                  <RadioGroupItem value="Sim" id="cnhSim" />
                   <Label htmlFor="cnhSim" className="text-gray-700">Sim</Label>
                 </div>
                 <div className="flex items-center gap-2">
-                  <RadioGroupItem value="nao" id="cnhNao" />
+                  <RadioGroupItem value="Não" id="cnhNao" />
                   <Label htmlFor="cnhNao" className="text-gray-700">Não</Label>
                 </div>
               </RadioGroup>
             </div>
-
+            
             <div>
               <Label htmlFor="valorEntrada" className="text-gray-700">Valor da entrada (R$)</Label>
               <Input
