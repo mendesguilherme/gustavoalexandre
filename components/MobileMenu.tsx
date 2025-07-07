@@ -7,9 +7,10 @@ import { useMobileMenu } from "../context/MobileMenuContext"
 
 type MobileMenuProps = {
   onOpenSimulacaoModal: () => void
+  onOpenConsignarModal: () => void
 }
 
-export function MobileMenu({ onOpenSimulacaoModal }: MobileMenuProps) {
+export function MobileMenu({ onOpenSimulacaoModal, onOpenConsignarModal }: MobileMenuProps) {
   const { isOpen } = useMobileMenu()
   const pathname = usePathname()
   const router = useRouter()
@@ -42,6 +43,17 @@ export function MobileMenu({ onOpenSimulacaoModal }: MobileMenuProps) {
           className="hover:text-red-500 transition-colors cursor-pointer"
         >
           Simulação
+        </a>
+
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault()
+            onOpenConsignarModal()
+          }}
+          className="hover:text-red-500 transition-colors cursor-pointer"
+        >
+          Consignação
         </a>
 
         <a

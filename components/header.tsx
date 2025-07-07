@@ -9,9 +9,11 @@ import { Button } from "../components/ui/button"
 import { MobileMenu } from "../components/MobileMenu"
 import { MobileMenuButton } from "../components/MobileMenuButton"
 import { SimulacaoModal } from "@/components/SimulacaoModal"
+import { ConsignarVeiculoForm } from "@/components/consignacao-veiculos"
 
 export function Header() {
   const [showSimulacaoModal, setShowSimulacaoModal] = useState(false)
+  const [showConsignarModal, setShowConsignarModal] = useState(false)
   const pathname = usePathname()
   const router = useRouter()
 
@@ -94,6 +96,16 @@ export function Header() {
                   Simulação
                 </a>
                 <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    setShowConsignarModal(true)
+                  }}
+                  className="hover:text-red-500 transition-colors cursor-pointer"
+                >
+                  Consignação
+                </a>
+                <a
                   href="#servicos"
                   onClick={(e) => {
                     e.preventDefault()
@@ -121,7 +133,11 @@ export function Header() {
           </div>
 
           {/* Menu mobile abaixo do header */}
-          <MobileMenu onOpenSimulacaoModal={() => setShowSimulacaoModal(true)} />
+          <MobileMenu 
+            onOpenSimulacaoModal={() => setShowSimulacaoModal(true)} 
+            onOpenConsignarModal={() => setShowConsignarModal(true)}
+          />
+            
         </div>
       </header>
 
@@ -129,6 +145,11 @@ export function Header() {
       <SimulacaoModal
         isOpen={showSimulacaoModal}
         onClose={() => setShowSimulacaoModal(false)}
+      />
+
+      <ConsignarVeiculoForm
+        isOpen={showConsignarModal}
+        onClose={() => setShowConsignarModal(false)}
       />
     </>
   )
