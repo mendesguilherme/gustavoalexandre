@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { MapPin, Phone, Clock, MessageCircle } from "lucide-react"
+import { MapPin, Phone, MessageCircle, Clock, Mail } from "lucide-react"
 import { useState, useEffect } from "react"
 import { WEBHOOK_URL } from "@/lib/config"
 
@@ -111,21 +111,21 @@ export function ContactSection() {
                       Av. Pref. Pedro Paschoal, 798<br />Jardim Ciranda - Bebedouro-SP
                     </p>
                   </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <Phone className="h-6 w-6 text-red-500 mt-1" />
-                  <div>
-                    <h4 className="font-semibold">Telefone</h4>
-                    <p className="text-gray-300">(17) 99123-7276</p>
-                  </div>
-                </div>
+                </div>                
 
                 <div className="flex items-start space-x-4">
                   <MessageCircle className="h-6 w-6 text-red-500 mt-1" />
                   <div>
                     <h4 className="font-semibold">WhatsApp</h4>
                     <p className="text-gray-300">(17) 99123-7276</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <Mail className="h-6 w-6 text-red-500 mt-1" />
+                  <div>
+                    <h4 className="font-semibold">Email</h4>
+                    <p className="text-gray-300">Gustavoalexandremultimarcas@outlook.com</p>
                   </div>
                 </div>
 
@@ -139,15 +139,7 @@ export function ContactSection() {
                       Sábado: 8h às 13h
                     </p>
                   </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <MessageCircle className="h-6 w-6 text-red-500 mt-1" />
-                  <div>
-                    <h4 className="font-semibold">Email</h4>
-                    <p className="text-gray-300">gustavoalexandremultimarcas@outlook.com</p>
-                  </div>
-                </div>
+                </div>                
               </div>
             </div>
 
