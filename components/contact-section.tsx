@@ -141,7 +141,6 @@ export function ContactSection() {
                       Domingos e Feriados: Atendimento com hora marcada
                     </p>
                   </div>
-                </div>
                 </div>                
               </div>
             </div>
