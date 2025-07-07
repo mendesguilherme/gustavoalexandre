@@ -125,7 +125,7 @@ export function ContactSection() {
                   <Mail className="h-6 w-6 text-red-500 mt-1" />
                   <div>
                     <h4 className="font-semibold">Email</h4>
-                    <p className="text-gray-300">Gustavoalexandremultimarcas@outlook.com</p>
+                    <p className="text-gray-300">gustavoalexandremultimarcas@outlook.com</p>
                   </div>
                 </div>
 
