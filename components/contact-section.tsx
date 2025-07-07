@@ -140,6 +140,14 @@ export function ContactSection() {
                     </p>
                   </div>
                 </div>
+
+                <div className="flex items-start space-x-4">
+                  <MessageCircle className="h-6 w-6 text-red-500 mt-1" />
+                  <div>
+                    <h4 className="font-semibold">Email</h4>
+                    <p className="text-gray-300">gustavoalexandremultimarcas@outlook.com</p>
+                  </div>
+                </div>
               </div>
             </div>
 
