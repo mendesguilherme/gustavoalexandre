@@ -137,8 +137,11 @@ export function ContactSection() {
                       Segunda a Sexta: 9h às 18h
                       <br />
                       Sábado: 8h às 13h
+                      <br />
+                      Domingos e Feriados: Atendimento com hora marcada
                     </p>
                   </div>
+                </div>
                 </div>                
               </div>
             </div>
