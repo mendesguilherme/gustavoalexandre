@@ -7,9 +7,10 @@ import { Facebook, Instagram, MessageCircle } from "lucide-react"
 
 type FooterProps = {
   onOpenSimulacaoModal: () => void
+  onOpenConsignarModal: () => void
 }
 
-export function Footer({ onOpenSimulacaoModal }: FooterProps) {
+export function Footer({ onOpenSimulacaoModal, onOpenConsignarModal }: FooterProps) {
   const pathname = usePathname()
   const router = useRouter()
 
@@ -74,6 +75,18 @@ export function Footer({ onOpenSimulacaoModal }: FooterProps) {
                   className="text-gray-300 hover:text-red-500 transition-colors cursor-pointer"
                 >
                   Simulação
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    onOpenConsignarModal()
+                  }}
+                  className="text-gray-300 hover:text-red-500 transition-colors cursor-pointer"
+                >
+                  Consignação
                 </a>
               </li>
               <li>
