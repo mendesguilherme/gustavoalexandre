@@ -51,6 +51,19 @@ export function ConsignarVeiculoForm({ isOpen, onClose }: { isOpen: boolean; onC
       })
 
       if (response.ok) {
+        // limpa os campos
+        setNome("")
+        setCpf("")
+        setTelefone("")
+        setVeiculo("")
+        setPlaca("")
+        setAno("")
+        setAnexo(null)
+
+        // limpa o input de arquivo visualmente (opcional)
+        const fileInput = document.getElementById("anexo") as HTMLInputElement
+        if (fileInput) fileInput.value = ""     
+           
         setFeedback({ type: "success", message: "Solicitação enviada com sucesso! Em breve entraremos em contato." })
       } else {
         const errorText = await response.text()
@@ -154,14 +167,22 @@ export function ConsignarVeiculoForm({ isOpen, onClose }: { isOpen: boolean; onC
                 id="anexo"
                 name="anexo"
                 type="file"
-                accept="image/*,application/pdf"
+                accept="image/*"
                 onChange={(e) => {
                   const file = e.target.files?.[0]
-                  if (file && file.size <= 50 * 1024 * 1024) {
-                    setAnexo(file)
-                  } else {
-                    e.target.value = ""
-                    alert("O arquivo deve ter no máximo 50MB.")
+                  if (file) {
+                    if (!file.type.startsWith("image/")) {
+                      alert("Apenas arquivos de imagem são permitidos.")
+                      e.target.value = ""
+                      return
+                    }
+
+                    if (file.size <= 50 * 1024 * 1024) {
+                      setAnexo(file)
+                    } else {
+                      alert("O arquivo deve ter no máximo 50MB.")
+                      e.target.value = ""
+                    }
                   }
                 }}
                 className="bg-white border-gray-300 text-black placeholder:text-gray-500"

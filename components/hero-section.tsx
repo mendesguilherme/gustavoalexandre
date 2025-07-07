@@ -15,6 +15,7 @@ import "swiper/css"
 import "swiper/css/pagination"
 import "swiper/css/navigation"
 import { SimulacaoModal } from "@/components/SimulacaoModal"
+
 import { useState } from "react"
 import {
   Dialog,

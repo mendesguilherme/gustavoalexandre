@@ -8,9 +8,11 @@ import { FeaturedVehicles } from "@/components/featured-vehicles"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 import { SimulacaoModal } from "@/components/SimulacaoModal"
+import { ConsignarVeiculoForm } from "@/components/consignacao-veiculos"
 
 export default function Home() {
   const [showSimulacaoModal, setShowSimulacaoModal] = useState(false)
+  const [showConsignarModal, setShowConsignarModal] = useState(false)
 
   return (
     <main>
@@ -19,10 +21,17 @@ export default function Home() {
       <FeaturedVehicles />
       <ServicesSection />
       <ContactSection />
-      <Footer onOpenSimulacaoModal={() => setShowSimulacaoModal(true)} />
+      <Footer
+        onOpenSimulacaoModal={() => setShowSimulacaoModal(true)}
+        onOpenConsignarModal={() => setShowConsignarModal(true)} 
+      />
       <SimulacaoModal
         isOpen={showSimulacaoModal}
         onClose={() => setShowSimulacaoModal(false)}
+      />
+      <ConsignarVeiculoForm
+        isOpen={showConsignarModal}
+        onClose={() => setShowConsignarModal(false)}
       />
     </main>
   )
