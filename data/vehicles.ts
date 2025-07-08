@@ -451,5 +451,32 @@ export const vehicles = [
       "/images/citroen-c3-vermelho/08.webp",
       "/images/citroen-c3-vermelho/09.webp"      
     ]
-  }
+  },
+{
+  id: 13,
+  name: "Honda Biz 125 EX",
+  brand: "Honda",
+  price: "R$ 12.900,00",
+  year: "2013/2013",
+  fuel: "Flex",
+  transmission: "Manual",
+  km: "37.000 KM",
+  color: "Preto",
+  doors: "0",
+  badge: "Seminovo",
+  description: "Honda Biz 125 EX 2013/2013, com 37.000 KM, motor Flex e câmbio manual: economia e praticidade sobre duas rodas. Equipada com partida elétrica e rodas de liga leve, oferece funcionalidade para o dia a dia com o estilo e confiabilidade da marca Honda. Ideal para quem busca mobilidade urbana com baixo custo de manutenção. Agende uma visita e conheça essa moto versátil.",
+  spotlight: false,
+  available: true,
+  features: [
+    "Partida elétrica",
+    "Rodas de liga leve"
+  ],
+  images: [
+    "/images/honda-biz/01.webp",
+    "/images/honda-biz/02.webp",
+    "/images/honda-biz/03.webp",
+    "/images/honda-biz/04.webp",
+    "/images/honda-biz/05.webp"
+  ]
+}
 ]
