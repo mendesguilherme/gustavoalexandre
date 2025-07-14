@@ -86,7 +86,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "VW SpaceFox Highline 1.6 2013/2014 com ar-condicionado, direção hidráulica, rodas de liga leve e porta-malas espaçoso de 430L, ideal para quem busca conforto e versatilidade. Confira pessoalmente e surpreenda-se!",
     spotlight: false,
-    available: true,
+    available: false,
     features: [
       "Direção hidráulica",
       "Ar condicionado",
