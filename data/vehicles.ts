@@ -466,7 +466,7 @@ export const vehicles = [
   badge: "Seminovo",
   description: "Honda Biz 125 EX 2013/2013, com 37.000 KM, motor Flex e câmbio manual: economia e praticidade sobre duas rodas. Equipada com partida elétrica e rodas de liga leve, oferece funcionalidade para o dia a dia com o estilo e confiabilidade da marca Honda. Ideal para quem busca mobilidade urbana com baixo custo de manutenção. Agende uma visita e conheça essa moto versátil.",
   spotlight: false,
-  available: true,
+  available: false,
   features: [
     "Partida elétrica",
     "Rodas de liga leve"
