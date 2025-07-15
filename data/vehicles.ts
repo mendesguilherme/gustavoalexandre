@@ -13,7 +13,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "Ford Ka 1.0 SE 2017/2018 com 82.000 km, câmbio manual e motor flex, equipado com direção elétrica, ar-condicionado, vidros e travas elétricas, freios ABS e porta-malas de 250L, perfeito para o dia a dia com economia e conforto. Agende sua visita e venha conferir de perto!",
     spotlight: true,
-    available: true,
+    available: false,
     features: [
       "Direção Elétrica",
       "Ar condicionado",
