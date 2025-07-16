@@ -428,7 +428,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "Citroën C3 GLX 1.4 2011, com 191.000 KM, motor Flex e câmbio manual: economia e praticidade para o dia a dia. Equipado com ar-condicionado, direção hidráulica, travas e vidros elétricos, oferece conforto e comodidade ao volante. Conta ainda com retrovisores elétricos, encosto de cabeça traseiro e porta-copos, ideal para quem busca funcionalidade. Ótima opção urbana com custo acessível. Agende sua visita e confira de perto este compacto completo.",
     spotlight: false,
-    available: true,
+    available: false,
     features: [
       "Alarme",
       "Ar quente",
