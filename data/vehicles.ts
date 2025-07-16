@@ -288,7 +288,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "Ford Fiesta Hatch SE 1.6 2012 com direção hidráulica, ar-condicionado e vidros elétricos, ideal para quem busca economia com conforto e bom espaço interno. Consulte agora e tire suas dúvidas!",
     spotlight: false,
-    available: true,
+    available: false,
     features: [
       "Ar condicionado",
       "Ar quente",
