@@ -478,5 +478,43 @@ export const vehicles = [
     "/images/honda-biz/04.webp",
     "/images/honda-biz/05.webp"
   ]
+}, 
+{
+  id: 14,
+  name: "Chevrolet Astra Advantage 2.0",
+  brand: "Chevrolet",
+  price: "R$ 33.900,00",
+  year: "2007",
+  fuel: "Flex",
+  transmission: "Manual",
+  km: "164.000 KM",
+  color: "Prata",
+  doors: "4",
+  badge: "Seminovo",
+  description: "Chevrolet Astra Advantage 2.0 2007 com 164.000 KM, motor Flex e câmbio manual. Um clássico com ótimo desempenho e conforto. Equipado com ar-condicionado, direção hidráulica, travas e vidros elétricos, farol de neblina, alarme, DVD, rodas de liga leve e retrovisores elétricos. Excelente escolha para quem busca robustez e custo-benefício. Venha conferir de perto!",
+  spotlight: false,
+  available: true,
+  features: [
+    "Alarme",
+    "Ar condicionado",
+    "Direção hidráulica",
+    "DVD",
+    "Farol de neblina",
+    "Retrovisores elétricos",
+    "Rodas de liga leve",
+    "Travas elétricas",
+    "Vidros elétricos"
+  ],
+  images: [
+    "/images/chevrolet-astra-prata/01.webp",
+    "/images/chevrolet-astra-prata/02.webp",
+    "/images/chevrolet-astra-prata/03.webp",
+    "/images/chevrolet-astra-prata/04.webp",
+    "/images/chevrolet-astra-prata/05.webp",
+    "/images/chevrolet-astra-prata/06.webp",
+    "/images/chevrolet-astra-prata/07.webp",
+    "/images/chevrolet-astra-prata/08.webp",
+    "/images/chevrolet-astra-prata/09.webp"
+  ]
 }
 ]
