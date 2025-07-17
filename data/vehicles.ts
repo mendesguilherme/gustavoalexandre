@@ -552,7 +552,8 @@ export const vehicles = [
     "/images/ford-ka-prata/06.webp",
     "/images/ford-ka-prata/07.webp",
     "/images/ford-ka-prata/08.webp",
-    "/images/ford-ka-prata/09.webp"
+    "/images/ford-ka-prata/09.webp",
+    "/images/ford-ka-prata/10.webp"
   ]
 }
 ]
