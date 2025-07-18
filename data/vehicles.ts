@@ -531,7 +531,7 @@ export const vehicles = [
   badge: "Seminovo",
   description: "Ford Ka 1.0 2018, com 149.000 KM, motor Flex e câmbio manual. Compacto econômico com direção elétrica e ar-condicionado, ideal para o dia a dia. Conta com airbag, freios ABS, ar quente, limpador traseiro, travas e vidros elétricos, além de porta-malas elétrico com capacidade de 250 litros. Um seminovo prático, confortável e seguro para rodar na cidade ou estrada.",
   spotlight: false,
-  available: true,
+  available: false,
   features: [
     "Direção elétrica",
     "Ar condicionado",
