@@ -167,7 +167,7 @@ export const vehicles = [
     badge: "Seminovo",
     description: "Ford Ka 1.0 2010/2011 com ar-condicionado, direção hidráulica e itens elétricos para mais praticidade e economia no dia a dia. Aproveite e venha fazer um test drive!",
     spotlight: false,
-    available: true,
+    available: false,
     features: [
       "Ar condicionado",
       "Direção hidráulica",
