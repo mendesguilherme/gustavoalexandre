@@ -480,7 +480,7 @@ export const vehicles = [
   ]
 },
 {
-  id: 13,
+  id: 20,
   name: "Ford Ka 1.0",
   brand: "Ford",
   price: "R$ 25.900,00",
@@ -513,6 +513,43 @@ export const vehicles = [
     "/images/ford-ka-2011-prata/08.webp",
     "/images/ford-ka-2011-prata/09.webp",
     "/images/ford-ka-2011-prata/10.webp"
+  ]
+},
+{
+   id: 21,
+  name: "Scooter Elétrica X12",
+  brand: "X12",
+  price: "R$ 12.000,00",
+  year: "2025",
+  fuel: "Elétrico",
+  transmission: "Automático",
+  km: "0 KM",
+  color: "Preto, Branco, Vermelho",
+  doors: "0",
+  badge: "Zero km",
+  description: "Scooter Elétrica X12, modelo moderno e confortável, ideal para o dia a dia e momentos de lazer. Equipada com motor de 1.000W e bateria de lítio 60V removível, oferece autonomia de até 45 km e velocidade máxima de 32 km/h. Conta com banco com encosto, suspensão dupla, rodas aro 10” em liga leve, freio a disco hidráulico, painel digital e farol Full LED. Suporta até 180 kg. Carregamento rápido em até 5 horas em tomada comum (110/220V). Não requer CNH ou emplacamento. Recomenda-se montagem em oficina.",
+  spotlight: false,
+  available: true,
+  features: [
+    "Banco com encosto",
+    "Suspensão dupla",
+    "Motor 1.000W",
+    "Bateria de lítio 60V removível",
+    "Autonomia até 45 km",
+    "Velocidade máxima 32 km/h",
+    "Rodas aro 10” liga leve",
+    "Freio a disco hidráulico",
+    "Painel digital",
+    "Farol Full LED",
+    "Suporta até 180 kg",
+    "Carregamento em até 5h",
+    "Não requer CNH",
+    "Não requer emplacamento"
+  ],
+  images: [
+    "/images/scooter-gtm-x12/01.webp",
+    "/images/scooter-gtm-x12/02.webp",
+    "/images/scooter-gtm-x12/03.webp",    
   ]
 }
 
