@@ -437,7 +437,8 @@ export const vehicles = [
     "/images/ford-fiesta-branco-02/06.webp",
     "/images/ford-fiesta-branco-02/07.webp",
     "/images/ford-fiesta-branco-02/08.webp",
-    "/images/ford-fiesta-branco-02/09.webp"
+    "/images/ford-fiesta-branco-02/09.webp",
+    "/images/ford-fiesta-branco-02/10.webp"
   ]
 },
 {
