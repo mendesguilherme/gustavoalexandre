@@ -403,5 +403,81 @@ export const vehicles = [
     "/images/vw-fox-prata/08.webp",
     "/images/vw-fox-prata/09.webp"
   ]
+}, 
+{
+  id: 18,
+  name: "Ford Fiesta Hatch 1.6",
+  brand: "Ford",
+  price: "R$ 31.900,00",
+  year: "2013",
+  fuel: "Flex",
+  transmission: "Manual",
+  km: "120.000 KM",
+  color: "Branco",
+  doors: "4",
+  badge: "Seminovo",
+  description: "Ford Fiesta Hatch 1.6 2013, com 120.000 KM, motor Flex e câmbio manual: potência e economia em um compacto versátil. Equipado com ar-condicionado, ar quente, direção hidráulica, airbag, travas e vidros elétricos, oferece segurança e conforto no dia a dia. Conta com porta-malas de 280 litros, ideal para o uso urbano e pequenas viagens. Excelente oportunidade para quem busca desempenho com praticidade.",
+  spotlight: false,
+  available: true,
+  features: [
+    "Ar condicionado",
+    "Ar quente",
+    "Airbag",
+    "Direção hidráulica",
+    "Travas elétricas",
+    "Vidros elétricos",
+    "Porta-malas de 280 litros"
+  ],
+  images: [
+    "/images/ford-fiesta-branco-02/01.webp",
+    "/images/ford-fiesta-branco-02/02.webp",
+    "/images/ford-fiesta-branco-02/03.webp",
+    "/images/ford-fiesta-branco-02/04.webp",
+    "/images/ford-fiesta-branco-02/05.webp",
+    "/images/ford-fiesta-branco-02/06.webp",
+    "/images/ford-fiesta-branco-02/07.webp",
+    "/images/ford-fiesta-branco-02/08.webp",
+    "/images/ford-fiesta-branco-02/09.webp"
+  ]
+},
+{
+  id: 19,
+  name: "Ford Ka 1.0",
+  brand: "Ford",
+  price: "R$ 44.900,00",
+  year: "2018",
+  fuel: "Flex",
+  transmission: "Manual",
+  km: "149.000 KM",
+  color: "Prata",
+  doors: "5",
+  badge: "Seminovo",
+  description: "Ford Ka 1.0 2018, com 149.000 KM, motor Flex e câmbio manual. Compacto econômico com direção elétrica e ar-condicionado, ideal para o dia a dia. Conta com airbag, freios ABS, ar quente, limpador traseiro, travas e vidros elétricos, além de porta-malas elétrico com capacidade de 250 litros. Um seminovo prático, confortável e seguro para rodar na cidade ou estrada.",
+  spotlight: false,
+  available: true,
+  features: [
+    "Direção elétrica",
+    "Ar condicionado",
+    "Airbag",
+    "Ar quente",
+    "Freio ABS",
+    "Limpador traseiro",
+    "Travas elétricas",
+    "Vidros elétricos",
+    "Porta-malas elétrico"
+  ],
+  images: [
+    "/images/ford-ka-2018-prata/01.webp",
+    "/images/ford-ka-2018-prata/02.webp",
+    "/images/ford-ka-2018-prata/03.webp",
+    "/images/ford-ka-2018-prata/04.webp",
+    "/images/ford-ka-2018-prata/05.webp",
+    "/images/ford-ka-2018-prata/06.webp",
+    "/images/ford-ka-2018-prata/07.webp",
+    "/images/ford-ka-2018-prata/08.webp",
+    "/images/ford-ka-2018-prata/09.webp",
+    "/images/ford-ka-2018-prata/10.webp"
+  ]
 }
+
 ]
