@@ -1,44 +1,4 @@
-export const vehicles = [  
-  {
-    id: 1,
-    name: "Ford Ka 1.0 SE",
-    brand: "Ford",
-    price: "R$ 45.900,00",
-    year: "2018",
-    fuel: "Flex",
-    transmission: "Manual",
-    km: "82.000 KM",
-    color: "Branco",
-    doors: "5",
-    badge: "Seminovo",
-    description: "Ford Ka 1.0 SE 2017/2018 com 82.000 km, câmbio manual e motor flex, equipado com direção elétrica, ar-condicionado, vidros e travas elétricas, freios ABS e porta-malas de 250L, perfeito para o dia a dia com economia e conforto. Agende sua visita e venha conferir de perto!",
-    spotlight: true,
-    available: false,
-    features: [
-      "Direção Elétrica",
-      "Ar condicionado",
-      "Airbag",
-      "Ar quente",
-      "Freio ABS",
-      "Limpador traseiro",
-      "Travas elétricas",
-      "Vidros elétricos",
-      "Porta malas elétrico",
-      "Porta malas de 250 litros"
-    ],
-    images: [
-      "/images/ford-ka/01.webp",
-      "/images/ford-ka/02.webp",
-      "/images/ford-ka/03.webp",
-      "/images/ford-ka/04.webp",
-      "/images/ford-ka/05.webp",
-      "/images/ford-ka/06.webp",
-      "/images/ford-ka/07.webp",
-      "/images/ford-ka/08.webp",
-      "/images/ford-ka/09.webp",
-      "/images/ford-ka/10.webp"
-    ]
-  },
+export const vehicles = [   
   {
     id: 2,
     name: "VW Golf 1.6",
@@ -71,44 +31,7 @@ export const vehicles = [
       "/images/golf-prata/08.webp",
       "/images/golf-prata/09.webp"      
     ]
-  },
-  {
-    id: 3,
-    name: "VW SpaceFox Highline 1.6",
-    brand: "Volkswagen",
-    price: "R$ 44.900,00",
-    year: "2014",
-    fuel: "Flex",
-    transmission: "Manual",
-    km: "141.000 KM",
-    color: "Preto",
-    doors: "5",
-    badge: "Seminovo",
-    description: "VW SpaceFox Highline 1.6 2013/2014 com ar-condicionado, direção hidráulica, rodas de liga leve e porta-malas espaçoso de 430L, ideal para quem busca conforto e versatilidade. Confira pessoalmente e surpreenda-se!",
-    spotlight: false,
-    available: false,
-    features: [
-      "Direção hidráulica",
-      "Ar condicionado",
-      "Vidros, travas e retrovisores elétricos",
-      "Computador de bordo",
-      "Banco com regulagem de altura",
-      "Rodas de liga leve",
-      "Porta malas de 430 litros"
-    ],
-    images: [
-      "/images/spacefox-preto/01.webp",
-      "/images/spacefox-preto/02.webp",
-      "/images/spacefox-preto/03.webp",
-      "/images/spacefox-preto/04.webp",
-      "/images/spacefox-preto/05.webp",
-      "/images/spacefox-preto/06.webp",
-      "/images/spacefox-preto/07.webp",
-      "/images/spacefox-preto/08.webp",
-      "/images/spacefox-preto/09.webp",
-      "/images/spacefox-preto/10.webp"      
-    ]
-  },      
+  },        
   {
     id: 4,
     name: "Toyota Etios Sedan 1.5 Platinum",
@@ -152,44 +75,7 @@ export const vehicles = [
       "/images/toyota-etios/08.webp",
       "/images/toyota-etios/09.webp"
     ]
-  },
-  {
-    id: 5,
-    name: "Ford Ka 1.0",
-    brand: "Ford",
-    price: "R$ 25.900,00",
-    year: "2011",
-    fuel: "Flex",
-    transmission: "Manual",
-    km: "124.000 KM",
-    color: "Prata",
-    doors: "",
-    badge: "Seminovo",
-    description: "Ford Ka 1.0 2010/2011 com ar-condicionado, direção hidráulica e itens elétricos para mais praticidade e economia no dia a dia. Aproveite e venha fazer um test drive!",
-    spotlight: false,
-    available: false,
-    features: [
-      "Ar condicionado",
-      "Direção hidráulica",
-      "Vidros elétricos",
-      "Travas elétricas",
-      "Alarme",
-      "MP3 player"
-    ],
-    images: [
-      "/images/ford-ka-prata/01.webp",
-      "/images/ford-ka-prata/02.webp",
-      "/images/ford-ka-prata/03.webp",
-      "/images/ford-ka-prata/04.webp",
-      "/images/ford-ka-prata/05.webp",
-      "/images/ford-ka-prata/06.webp",
-      "/images/ford-ka-prata/07.webp",
-      "/images/ford-ka-prata/08.webp",
-      "/images/ford-ka-prata/09.webp",
-      "/images/ford-ka-prata/10.webp",
-      "/images/ford-ka-prata/11.webp"
-    ]
-  },
+  },  
   {
     id: 6,
     name: "Golf Comfortline 1.4 TSI",
@@ -273,42 +159,7 @@ export const vehicles = [
       "/images/fiat-palio-weekend/09.webp",
       "/images/fiat-palio-weekend/10.webp"      
     ]
-  },
-  {
-    id: 8,
-    name: "Ford Fiesta Hatch SE 1.6",
-    brand: "Ford",
-    price: "R$ 33.900,00",
-    year: "2012",
-    fuel: "Flex",
-    transmission: "Manual",
-    km: "168.000 KM",
-    color: "Preto",
-    doors: "",
-    badge: "Seminovo",
-    description: "Ford Fiesta Hatch SE 1.6 2012 com direção hidráulica, ar-condicionado e vidros elétricos, ideal para quem busca economia com conforto e bom espaço interno. Consulte agora e tire suas dúvidas!",
-    spotlight: false,
-    available: false,
-    features: [
-      "Ar condicionado",
-      "Ar quente",
-      "Direção Hidráulica",
-      "Vidros elétricos",
-      "Porta malas de 280 litros"
-    ],
-    images: [
-      "/images/ford-fiesta/01.webp",
-      "/images/ford-fiesta/02.webp",
-      "/images/ford-fiesta/03.webp",
-      "/images/ford-fiesta/04.webp",
-      "/images/ford-fiesta/05.webp",
-      "/images/ford-fiesta/06.webp",
-      "/images/ford-fiesta/07.webp",
-      "/images/ford-fiesta/08.webp",
-      "/images/ford-fiesta/09.webp",
-      "/images/ford-fiesta/10.webp"      
-    ]
-  },
+  }, 
   {
     id: 9,
     name: "Chevrolet Meriva Maxx 1.8",
@@ -413,72 +264,7 @@ export const vehicles = [
       "/images/fiat-toro/07.webp",
       "/images/fiat-toro/08.webp"
     ]
-  },              
-  {
-    id: 12,
-    name: "Citroën C3 GLX 1.4",
-    brand: "Citroën",
-    price: "R$ 27.900,00",
-    year: "2011",
-    fuel: "Flex",
-    transmission: "Manual",
-    km: "191.000 KM",
-    color: "Vermelho",
-    doors: "5",
-    badge: "Seminovo",
-    description: "Citroën C3 GLX 1.4 2011, com 191.000 KM, motor Flex e câmbio manual: economia e praticidade para o dia a dia. Equipado com ar-condicionado, direção hidráulica, travas e vidros elétricos, oferece conforto e comodidade ao volante. Conta ainda com retrovisores elétricos, encosto de cabeça traseiro e porta-copos, ideal para quem busca funcionalidade. Ótima opção urbana com custo acessível. Agende sua visita e confira de perto este compacto completo.",
-    spotlight: false,
-    available: false,
-    features: [
-      "Alarme",
-      "Ar quente",
-      "Ar condicionado",
-      "Direção hidráulica",
-      "Encosto de cabeça traseiro",
-      "Porta-copos",
-      "Retrovisores elétricos",
-      "Travas elétricas",
-      "Vidros elétricos"
-    ],
-    images: [
-      "/images/citroen-c3-vermelho/01.webp",
-      "/images/citroen-c3-vermelho/02.webp",
-      "/images/citroen-c3-vermelho/03.webp",
-      "/images/citroen-c3-vermelho/04.webp",
-      "/images/citroen-c3-vermelho/05.webp",
-      "/images/citroen-c3-vermelho/06.webp",
-      "/images/citroen-c3-vermelho/07.webp",
-      "/images/citroen-c3-vermelho/08.webp",
-      "/images/citroen-c3-vermelho/09.webp"      
-    ]
-  },
-{
-  id: 13,
-  name: "Honda Biz 125 EX",
-  brand: "Honda",
-  price: "R$ 12.900,00",
-  year: "2013/2013",
-  fuel: "Flex",
-  transmission: "Manual",
-  km: "37.000 KM",
-  color: "Preto",
-  doors: "0",
-  badge: "Seminovo",
-  description: "Honda Biz 125 EX 2013/2013, com 37.000 KM, motor Flex e câmbio manual: economia e praticidade sobre duas rodas. Equipada com partida elétrica e rodas de liga leve, oferece funcionalidade para o dia a dia com o estilo e confiabilidade da marca Honda. Ideal para quem busca mobilidade urbana com baixo custo de manutenção. Agende uma visita e conheça essa moto versátil.",
-  spotlight: false,
-  available: false,
-  features: [
-    "Partida elétrica",
-    "Rodas de liga leve"
-  ],
-  images: [
-    "/images/honda-biz/01.webp",
-    "/images/honda-biz/02.webp",
-    "/images/honda-biz/03.webp",
-    "/images/honda-biz/04.webp",
-    "/images/honda-biz/05.webp"
-  ]
-}, 
+  },                
 {
   id: 14,
   name: "Chevrolet Astra Advantage 2.0",
