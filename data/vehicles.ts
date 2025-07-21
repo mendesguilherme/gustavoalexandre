@@ -583,5 +583,39 @@ export const vehicles = [
     "/images/chevrolet-prisma-preto/08.webp",
     "/images/chevrolet-prisma-preto/09.webp"
   ]
+}, 
+{
+  id: 17,
+  name: "VW Fox 1.0",
+  brand: "Volkswagen",
+  price: "R$ 24.000,00",
+  year: "2003",
+  fuel: "Flex",
+  transmission: "Manual",
+  km: "225.000 KM",
+  color: "Prata",
+  doors: "4",
+  badge: "Seminovo",
+  description: "Volkswagen Fox 1.0 2003, com 225.000 KM, motor Flex e câmbio manual: ideal para quem busca economia e robustez no dia a dia. Equipado com ar-condicionado, direção hidráulica, vidros e travas elétricas, além de desembaçador traseiro, proporciona conforto e praticidade. Uma excelente opção urbana com ótimo custo-benefício. Não perca a oportunidade de conhecer este compacto versátil.",
+  spotlight: false,
+  available: true,
+  features: [
+    "Ar condicionado",
+    "Direção hidráulica",
+    "Vidros elétricos",
+    "Travas elétricas",
+    "Desembaçador traseiro"
+  ],
+  images: [
+    "/images/vw-fox-prata/01.webp",
+    "/images/vw-fox-prata/02.webp",
+    "/images/vw-fox-prata/03.webp",
+    "/images/vw-fox-prata/04.webp",
+    "/images/vw-fox-prata/05.webp",
+    "/images/vw-fox-prata/06.webp",
+    "/images/vw-fox-prata/07.webp",
+    "/images/vw-fox-prata/08.webp",
+    "/images/vw-fox-prata/09.webp"
+  ]
 }
 ]
