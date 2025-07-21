@@ -437,8 +437,7 @@ export const vehicles = [
     "/images/ford-fiesta-branco-02/06.webp",
     "/images/ford-fiesta-branco-02/07.webp",
     "/images/ford-fiesta-branco-02/08.webp",
-    "/images/ford-fiesta-branco-02/09.webp",
-    "/images/ford-fiesta-branco-02/10.webp"
+    "/images/ford-fiesta-branco-02/09.webp"
   ]
 },
 {
@@ -478,6 +477,42 @@ export const vehicles = [
     "/images/ford-ka-2018-prata/08.webp",
     "/images/ford-ka-2018-prata/09.webp",
     "/images/ford-ka-2018-prata/10.webp"
+  ]
+},
+{
+  id: 13,
+  name: "Ford Ka 1.0",
+  brand: "Ford",
+  price: "R$ 25.900,00",
+  year: "2010/2011",
+  fuel: "Flex",
+  transmission: "Manual",
+  km: "124.000 KM",
+  color: "Prata",
+  doors: "2",
+  badge: "Seminovo",
+  description: "Ford Ka 1.0 2010/2011, com 124.000 KM, motor Flex e câmbio manual: ideal para o dia a dia com economia e eficiência. Equipado com ar-condicionado, direção hidráulica, vidros e travas elétricas, alarme e MP3 player, oferecendo praticidade e conforto. Compacto, funcional e com ótimo custo-benefício. Agende sua visita e confira de perto essa excelente opção urbana.",
+  spotlight: false,
+  available: true,
+  features: [
+    "Ar condicionado",
+    "Direção hidráulica",
+    "Vidros elétricos",
+    "Travas elétricas",
+    "Alarme",
+    "MP3 player"
+  ],
+  images: [
+    "/images/ford-ka-2011-prata/01.webp",
+    "/images/ford-ka-2011-prata/02.webp",
+    "/images/ford-ka-2011-prata/03.webp",
+    "/images/ford-ka-2011-prata/04.webp",
+    "/images/ford-ka-2011-prata/05.webp",
+    "/images/ford-ka-2011-prata/06.webp",
+    "/images/ford-ka-2011-prata/07.webp",
+    "/images/ford-ka-2011-prata/08.webp",
+    "/images/ford-ka-2011-prata/09.webp",
+    "/images/ford-ka-2011-prata/10.webp"
   ]
 }
 
