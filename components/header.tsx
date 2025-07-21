@@ -85,6 +85,10 @@ export function Header() {
               <nav className="flex space-x-6">
                 <Link href="/" className="hover:text-red-500 transition-colors">Início</Link>
                 <Link href="/veiculos" className="hover:text-red-500 transition-colors">Veículos</Link>
+                <Link href="/veiculos?electric=true" className="hover:text-red-500 transition-colors">
+                  Elétricos
+                </Link>                
+
                 <a
                   href="#"
                   onClick={(e) => {

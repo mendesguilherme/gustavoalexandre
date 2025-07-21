@@ -7,7 +7,7 @@ import { Facebook, Instagram, MessageCircle } from "lucide-react"
 
 type FooterProps = {
   onOpenSimulacaoModal: () => void
-  onOpenConsignarModal: () => void
+  onOpenConsignarModal?: () => void
 }
 
 export function Footer({ onOpenSimulacaoModal, onOpenConsignarModal }: FooterProps) {
@@ -82,7 +82,9 @@ export function Footer({ onOpenSimulacaoModal, onOpenConsignarModal }: FooterPro
                   href="#"
                   onClick={(e) => {
                     e.preventDefault()
-                    onOpenConsignarModal()
+                    if (onOpenConsignarModal) {
+                      onOpenConsignarModal();
+                    }                    
                   }}
                   className="text-gray-300 hover:text-red-500 transition-colors cursor-pointer"
                 >

@@ -33,6 +33,9 @@ export function MobileMenu({ onOpenSimulacaoModal, onOpenConsignarModal }: Mobil
       <div className="flex flex-col space-y-4">
         <Link href="/" className="hover:text-red-500 transition-colors">Início</Link>
         <Link href="/veiculos" className="hover:text-red-500 transition-colors">Veículos</Link>
+        <Link href="/veiculos?electric=true" className="hover:text-red-500 transition-colors">
+          Elétricos
+        </Link>
 
         <a
           href="#"

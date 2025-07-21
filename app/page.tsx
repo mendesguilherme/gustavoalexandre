@@ -18,8 +18,7 @@ export default function Home() {
   return (
     <main>
       <Header />
-      <HeroSection />
-      <EletricosVeiculos/>
+      <HeroSection />      
       <FeaturedVehicles />
       <ServicesSection />
       <ContactSection />

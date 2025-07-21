@@ -18,8 +18,12 @@ import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from "
 import { Calendar, Fuel, Settings, Search } from "lucide-react"
 import { vehicles } from "@/data/vehicles"
 import { WEBHOOK_URL } from "@/lib/config"
+import { useSearchParams } from "next/navigation"
 
 export default function VeiculosPage() {
+  const searchParams = useSearchParams()
+  const isElectricOnly = searchParams.get("electric") === "true"
+
   const [nomeModal, setNomeModal] = useState("")
   const [telefoneModal, setTelefoneModal] = useState("")
   const [emailModal, setEmailModal] = useState("")
@@ -97,7 +101,10 @@ export default function VeiculosPage() {
   }    
   
   const filteredVehicles = vehicles.filter((vehicle) => {
+    const matchesElectric = !isElectricOnly || vehicle.electric === true
+
     return (
+      matchesElectric &&
       vehicle.available !== false &&
       vehicle.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
       (selectedBrand === "" || selectedBrand === "all" || vehicle.brand === selectedBrand) &&
