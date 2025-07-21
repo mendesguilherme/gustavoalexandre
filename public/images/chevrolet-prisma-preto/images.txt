@@ -1,0 +1,44 @@
+
+  id: 14,
+  name: "Chevrolet Prisma 1.4 Joy",
+  brand: "Chevrolet",
+  price: "R$ 23.900,00",
+  year: "2008",
+  fuel: "Flex",
+  transmission: "Manual",
+  km: "147.000 KM",
+  color: "Preto",
+  doors: "4",
+  badge: "Seminovo",
+  description: "Chevrolet Prisma 1.4 Joy 2008, com 147.000 KM, motor Flex e câmbio manual: perfeito para quem busca um veículo acessível e funcional. Versão básica, com mecânica confiável e ideal para o uso diário. Uma excelente escolha para quem valoriza economia na manutenção e bom desempenho. Confira essa oportunidade de ter um sedã compacto por um ótimo preço.",
+  spotlight: false,
+  available: true,
+  features: [],
+  images: [
+    "/images/chevrolet-prisma-preto/01.webp",
+    "/images/chevrolet-prisma-preto/02.webp",
+    "/images/chevrolet-prisma-preto/03.webp",
+    "/images/chevrolet-prisma-preto/04.webp",
+    "/images/chevrolet-prisma-preto/05.webp",
+    "/images/chevrolet-prisma-preto/06.webp",
+    "/images/chevrolet-prisma-preto/07.webp",
+    "/images/chevrolet-prisma-preto/08.webp",
+    "/images/chevrolet-prisma-preto/09.webp"
+  ]
+
+
+
+
+
+
+images: [
+    "/images/13-novo-cv-prisma/01.webp", 
+    "/images/13-novo-cv-prisma/02.webp", 
+    "/images/13-novo-cv-prisma/03.webp", 
+    "/images/13-novo-cv-prisma/04.webp", 
+    "/images/13-novo-cv-prisma/05.webp", 
+    "/images/13-novo-cv-prisma/06.webp", 
+    "/images/13-novo-cv-prisma/07.webp", 
+    "/images/13-novo-cv-prisma/08.webp", 
+    "/images/13-novo-cv-prisma/09.webp" 
+] 
