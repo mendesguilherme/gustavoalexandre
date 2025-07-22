@@ -310,7 +310,7 @@ export const vehicles = [
 }, 
 {
   id: 15,
-  name: "Ford Ka 1.0",
+  name: "Ford Ka 1.0 Novo",
   brand: "Ford",
   price: "R$ 44.900,00",
   year: "2018",
