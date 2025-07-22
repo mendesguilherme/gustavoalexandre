@@ -42,6 +42,7 @@ export function SimulacaoModal({ isOpen, onClose }: { isOpen: boolean; onClose: 
     e.preventDefault()
     const formData = new FormData(e.currentTarget)
     const data = Object.fromEntries(formData.entries())
+    const veiculo = vehicles.find(v => v.name === veiculoSelecionado)
 
     const payload = {
       tipoFormulario: data.tipoFormulario,
@@ -51,7 +52,8 @@ export function SimulacaoModal({ isOpen, onClose }: { isOpen: boolean; onClose: 
       dataNascimento: data.dataNascimento,
       veiculo: data.veiculo,
       cnh: data.cnh,
-      valorEntrada: data.valorEntrada
+      valorEntrada: data.valorEntrada,
+      placa: veiculo?.placa || ""
     }
 
     try {
