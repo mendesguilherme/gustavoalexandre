@@ -489,7 +489,7 @@ export const vehicles = [
   id: 21,
   name: "Scooter Elétrica X12",
   brand: "X12",
-  price: "R$ 12.000,00",
+  price: "R$ 10.500,00",
   year: "2025",
   fuel: "Elétrico",
   transmission: "Automático",
