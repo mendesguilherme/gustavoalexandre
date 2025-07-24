@@ -372,46 +372,6 @@ export const vehicles = [
   ]
 },
 {
-  id: 19,
-  name: "Ford Ka 1.0 Novo",
-  brand: "Ford",
-  price: "R$ 44.900,00",
-  year: "2018",
-  fuel: "Flex",
-  transmission: "Manual",
-  km: "149.000 KM",
-  color: "Prata",
-  placa: "QOC6A90",
-  doors: "5",
-  badge: "Seminovo",
-  description: "Ford Ka 1.0 2018, com 149.000 KM, motor Flex e câmbio manual. Compacto econômico com direção elétrica e ar-condicionado, ideal para o dia a dia. Conta com airbag, freios ABS, ar quente, limpador traseiro, travas e vidros elétricos, além de porta-malas elétrico com capacidade de 250 litros. Um seminovo prático, confortável e seguro para rodar na cidade ou estrada.",
-  spotlight: false,
-  available: true,
-  features: [
-    "Direção elétrica",
-    "Ar condicionado",
-    "Airbag",
-    "Ar quente",
-    "Freio ABS",
-    "Limpador traseiro",
-    "Travas elétricas",
-    "Vidros elétricos",
-    "Porta-malas elétrico"
-  ],
-  images: [
-    "/images/ford-ka-2018-prata/01.webp",
-    "/images/ford-ka-2018-prata/02.webp",
-    "/images/ford-ka-2018-prata/03.webp",
-    "/images/ford-ka-2018-prata/04.webp",
-    "/images/ford-ka-2018-prata/05.webp",
-    "/images/ford-ka-2018-prata/06.webp",
-    "/images/ford-ka-2018-prata/07.webp",
-    "/images/ford-ka-2018-prata/08.webp",
-    "/images/ford-ka-2018-prata/09.webp",
-    "/images/ford-ka-2018-prata/10.webp"
-  ]
-},
-{
   id: 20,
   name: "Ford Ka 1.0",
   brand: "Ford",
