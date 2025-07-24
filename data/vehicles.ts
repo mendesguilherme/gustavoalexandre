@@ -381,7 +381,7 @@ export const vehicles = [
   doors: "0",
   badge: "Zero km",
   description: "Scooter Elétrica X12, modelo moderno e confortável, ideal para o dia a dia e momentos de lazer. Equipada com motor de 1.000W e bateria de lítio 60V removível, oferece autonomia de até 45 km e velocidade máxima de 32 km/h. Conta com banco com encosto, suspensão dupla, rodas aro 10” em liga leve, freio a disco hidráulico, painel digital e farol Full LED. Suporta até 180 kg. Carregamento rápido em até 5 horas em tomada comum (110/220V). Não requer CNH ou emplacamento.",
-  spotlight: false,
+  spotlight: true,
   available: true,
   electric: true, 
   features: [
