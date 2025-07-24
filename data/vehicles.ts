@@ -405,6 +405,49 @@ export const vehicles = [
     "/images/scooter-gtm-x12/02.webp",
     "/images/scooter-gtm-x12/03.webp",    
   ]
+},
+{ 
+id: 22,
+  name: "VW Fox Xtreme MB 1.6",
+  brand: "Volkswagen",
+  price: "R$ 64.900,00",
+  year: "2018/2019",
+  fuel: "Flex",
+  transmission: "Manual",
+  km: "92.000 KM",
+  color: "Prata",
+  placa: "",
+  doors: "5",
+  badge: "Seminovo",
+  description: "VW Fox Xtreme MB 1.6 2018/2019, com 92.000 KM, motor Flex e câmbio manual. Ideal para quem busca um hatch robusto e moderno, conta com direção elétrica e ar-condicionado para maior conforto. Equipado com multimídia, sensor de estacionamento, faróis de neblina e rodas de liga leve, oferece praticidade e estilo. Segurança garantida com alarme, travas e vidros elétricos. Espelhos elétricos e computador de bordo complementam os recursos. Ótima opção urbana com desempenho eficiente.",
+  spotlight: true,
+  available: true,
+  electric: false, 
+  features: [
+    "Ar condicionado",
+    "Direção elétrica",
+    "Travas elétricas",
+    "Vidros elétricos",
+    "Multimídia",
+    "Sensor de estacionamento",
+    "Farol de neblina",
+    "Rodas de liga leve",
+    "Alarme",
+    "Computador de bordo",
+    "Espelhos elétricos"
+  ],
+  images: [
+    "/images/vw-fox-xtreme-prata/01.webp",
+    "/images/vw-fox-xtreme-prata/02.webp",
+    "/images/vw-fox-xtreme-prata/03.webp",
+    "/images/vw-fox-xtreme-prata/04.webp",
+    "/images/vw-fox-xtreme-prata/05.webp",
+    "/images/vw-fox-xtreme-prata/06.webp",
+    "/images/vw-fox-xtreme-prata/07.webp",
+    "/images/vw-fox-xtreme-prata/08.webp",
+    "/images/vw-fox-xtreme-prata/09.webp", 
+    "/images/vw-fox-xtreme-prata/10.webp"
+  ]
 }
 
 ]
