@@ -228,47 +228,6 @@ export const vehicles = [
       "/images/honda-fan/05.webp",
       "/images/honda-fan/06.webp"
     ]
-  },
-  {
-    id: 11,
-    name: "Fiat Toro Freedom 1.8",
-    brand: "Fiat",
-    price: "R$ 85.900,00",
-    year: "2017",
-    fuel: "Flex",
-    transmission: "Automático",
-    km: "159.000 KM",
-    color: "",
-    doors: "",
-    badge: "Seminovo",
-    description: "Fiat Toro Freedom 1.8 2016/2017 com câmbio automático, ar digital dual zone e central multimídia com GPS para mais conforto e conectividade, além de sensor de estacionamento, capota marítima e rodas de liga leve. Agende sua visita e conheça de perto!",
-    spotlight: true,
-    available: true,
-    features: [
-      "Direção elétrica",
-      "Ar-condicionado digital (Dualzone)",
-      "Vidros elétricos",
-      "Retrovisor elétrico",
-      "Repetidor de seta lateral",
-      "Kit Multimídia",
-      "Entrada AUX | USB | Bluetooth",
-      "GPS",
-      "Sensor de estacionamento",
-      "Capota marítima",
-      "LED Diurno",
-      "Rodas de liga leve",
-      "Rack de teto"
-    ],
-    images: [
-      "/images/fiat-toro/01.webp",
-      "/images/fiat-toro/02.webp",
-      "/images/fiat-toro/03.webp",
-      "/images/fiat-toro/04.webp",
-      "/images/fiat-toro/05.webp",
-      "/images/fiat-toro/06.webp",
-      "/images/fiat-toro/07.webp",
-      "/images/fiat-toro/08.webp"
-    ]
   },                
 {
   id: 14,
