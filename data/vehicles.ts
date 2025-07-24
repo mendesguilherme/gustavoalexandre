@@ -370,43 +370,6 @@ export const vehicles = [
     "/images/vw-fox-prata/08.webp",
     "/images/vw-fox-prata/09.webp"
   ]
-}, 
-{
-  id: 18,
-  name: "Ford Fiesta Hatch 1.6",
-  brand: "Ford",
-  price: "R$ 31.900,00",
-  year: "2013",
-  fuel: "Flex",
-  transmission: "Manual",
-  km: "120.000 KM",
-  color: "Branco",
-  placa: "FVC0E47",
-  doors: "4",
-  badge: "Seminovo",
-  description: "Ford Fiesta Hatch 1.6 2013, com 120.000 KM, motor Flex e câmbio manual: potência e economia em um compacto versátil. Equipado com ar-condicionado, ar quente, direção hidráulica, airbag, travas e vidros elétricos, oferece segurança e conforto no dia a dia. Conta com porta-malas de 280 litros, ideal para o uso urbano e pequenas viagens. Excelente oportunidade para quem busca desempenho com praticidade.",
-  spotlight: false,
-  available: true,
-  features: [
-    "Ar condicionado",
-    "Ar quente",
-    "Airbag",
-    "Direção hidráulica",
-    "Travas elétricas",
-    "Vidros elétricos",
-    "Porta-malas de 280 litros"
-  ],
-  images: [
-    "/images/ford-fiesta-branco-02/01.webp",
-    "/images/ford-fiesta-branco-02/02.webp",
-    "/images/ford-fiesta-branco-02/03.webp",
-    "/images/ford-fiesta-branco-02/04.webp",
-    "/images/ford-fiesta-branco-02/05.webp",
-    "/images/ford-fiesta-branco-02/06.webp",
-    "/images/ford-fiesta-branco-02/07.webp",
-    "/images/ford-fiesta-branco-02/08.webp",
-    "/images/ford-fiesta-branco-02/09.webp"
-  ]
 },
 {
   id: 19,
