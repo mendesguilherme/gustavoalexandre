@@ -199,36 +199,7 @@ export const vehicles = [
       "/images/gm-meriva/09.webp",
       "/images/gm-meriva/10.webp"
     ]
-  },
-  {
-    id: 10,
-    name: "Honda CG FAN 150 ESDI",
-    brand: "Honda",
-    price: "R$ 11.500,00",
-    year: "2012",
-    fuel: "Flex",
-    transmission: "Manual",
-    km: "96.000 KM",
-    color: "Vinho",
-    doors: "",
-    badge: "Seminovo",
-    description: "Honda CG Fan 150 ESDi 2011/2012 com partida elétrica, injeção eletrônica e freio a disco para mais segurança e praticidade no dia a dia. Aproveite e faça uma simulação sem compromisso!",
-    spotlight: false,
-    available: true,
-    features: [
-      "Injeção eletrônica",
-      "Partida elétrica",
-      "Freio a disco"
-    ],
-    images: [
-      "/images/honda-fan/01.webp",
-      "/images/honda-fan/02.webp",
-      "/images/honda-fan/03.webp",
-      "/images/honda-fan/04.webp",
-      "/images/honda-fan/05.webp",
-      "/images/honda-fan/06.webp"
-    ]
-  },                
+  },                 
 {
   id: 14,
   name: "Chevrolet Astra Advantage 2.0",
