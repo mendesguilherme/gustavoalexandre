@@ -506,7 +506,7 @@ id: 23,
   placa: "DUP0481",
   doors: "4",
   badge: "Seminovo",
-  description: "",
+  description: "Volkswagen Gol G4 1.0 Trend 2008/2009, com 208.000 KM, motor Flex e câmbio manual: perfeito para quem busca economia com confiabilidade. Veículo completo, ideal para o uso urbano e do dia a dia, entrega conforto e praticidade em um modelo consagrado. Aproveite essa oportunidade e agende sua visita.",
   spotlight: false,
   available: true,
   features: [
