@@ -524,9 +524,7 @@ id: 23,
   description: "Chevrolet Classic 1.0 2008, com 121.000 KM, motor Flex e câmbio manual. Veículo básico ideal para quem busca economia e funcionalidade no dia a dia. Ótima opção para uso urbano com baixo custo de manutenção. Aproveite esta oportunidade acessível e confiável.",
   spotlight: false,
   available: true,
-  features: [
-    "Ar quente"
-  ],
+  features: [],
   images: [
     "/images/gm-corsa-classic-preto/01.webp",
     "/images/gm-corsa-classic-preto/02.webp",
