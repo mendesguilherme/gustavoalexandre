@@ -507,5 +507,37 @@ id: 23,
     "/images/ford-ecosport-prata/09.webp",
     "/images/ford-ecosport-prata/10.webp"
   ]
+}, 
+{
+  id: 25,
+  name: "Chevrolet Classic 1.0",
+  brand: "Chevrolet",
+  price: "R$ 21.900,00",
+  year: "2008",
+  fuel: "Flex",
+  transmission: "Manual",
+  km: "121.000 KM",
+  color: "Cinza",
+  placa: "DWQ0130",
+  doors: "4",
+  badge: "Usado",
+  description: "Chevrolet Classic 1.0 2008, com 121.000 KM, motor Flex e câmbio manual. Veículo básico ideal para quem busca economia e funcionalidade no dia a dia. Ótima opção para uso urbano com baixo custo de manutenção. Aproveite esta oportunidade acessível e confiável.",
+  spotlight: false,
+  available: true,
+  features: [
+    "Ar quente"
+  ],
+  images: [
+    "/images/gm-corsa-classic-preto/01.webp",
+    "/images/gm-corsa-classic-preto/02.webp",
+    "/images/gm-corsa-classic-preto/03.webp",
+    "/images/gm-corsa-classic-preto/04.webp",
+    "/images/gm-corsa-classic-preto/05.webp",
+    "/images/gm-corsa-classic-preto/06.webp",
+    "/images/gm-corsa-classic-preto/07.webp",
+    "/images/gm-corsa-classic-preto/08.webp",
+    "/images/gm-corsa-classic-preto/09.webp",
+    "/images/gm-corsa-classic-preto/10.webp"    
+  ]
 }
 ]
