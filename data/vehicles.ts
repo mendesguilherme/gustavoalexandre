@@ -537,5 +537,43 @@ id: 23,
     "/images/gm-corsa-classic-preto/09.webp",
     "/images/gm-corsa-classic-preto/10.webp"    
   ]
+},
+{
+  id: 26,
+  name: "Peugeot 207 Passion XR 1.4",
+  brand: "Peugeot",
+  price: "R$ 23.900,00",
+  year: "2011/2012",
+  fuel: "Flex",
+  transmission: "Manual",
+  km: "191.000 KM",
+  color: "Preto",
+  placa: "EZI5A78",
+  doors: "4",
+  badge: "Seminovo",
+  description: "Peugeot 207 Passion XR 1.4 2011/2012 com 191.000 KM, motor Flex e câmbio manual. Equipado com ar-condicionado, direção hidráulica, vidros e travas elétricas, garantindo conforto e praticidade. Conta ainda com alarme, desembaçador traseiro e bancos em couro, ideal para quem busca um sedã completo com ótimo custo-benefício. Aproveite esta oportunidade e agende já sua visita!",
+  spotlight: false,
+  available: true,
+  features: [
+    "Alarme",
+    "Ar condicionado",
+    "Direção hidráulica",
+    "Vidros elétricos",
+    "Travas elétricas",
+    "Desembaçador traseiro",
+    "Bancos em couro"
+  ],
+  images: [
+    "/images/peugeot-207-preto/01.webp",
+    "/images/peugeot-207-preto/02.webp",
+    "/images/peugeot-207-preto/03.webp",
+    "/images/peugeot-207-preto/04.webp",
+    "/images/peugeot-207-preto/05.webp",
+    "/images/peugeot-207-preto/06.webp",
+    "/images/peugeot-207-preto/07.webp",
+    "/images/peugeot-207-preto/08.webp",
+    "/images/peugeot-207-preto/09.webp",
+    "/images/peugeot-207-preto/10.webp"
+  ]
 }
 ]
