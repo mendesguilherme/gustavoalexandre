@@ -163,43 +163,7 @@ export const vehicles = [
       "/images/fiat-palio-weekend/09.webp",
       "/images/fiat-palio-weekend/10.webp"      
     ]
-  }, 
-  {
-    id: 9,
-    name: "Chevrolet Meriva Maxx 1.8",
-    brand: "Chevrolet",
-    price: "R$ 29.900,00",
-    year: "2008",
-    fuel: "Flex",
-    transmission: "Manual",
-    km: "179.000 KM",
-    color: "Preto",
-    placa: "EGF0C37",
-    doors: "",
-    badge: "Seminovo",
-    description: "Chevrolet Meriva Maxx 1.8 2008 com ar-condicionado, direção hidráulica e vidros elétricos para mais conforto no uso urbano ou familiar. Visite a loja e confira essa oportunidade!",
-    spotlight: false,
-    available: true,
-    features: [
-      "Direção hidráulica",
-      "Ar condicionado",
-      "Vidros elétricos",
-      "Travas elétricas",
-      "MP3 player"
-    ],
-    images: [
-      "/images/gm-meriva/01.webp",
-      "/images/gm-meriva/02.webp",
-      "/images/gm-meriva/03.webp",
-      "/images/gm-meriva/04.webp",
-      "/images/gm-meriva/05.webp",
-      "/images/gm-meriva/06.webp",
-      "/images/gm-meriva/07.webp",
-      "/images/gm-meriva/08.webp",
-      "/images/gm-meriva/09.webp",
-      "/images/gm-meriva/10.webp"
-    ]
-  },                 
+  },                   
 {
   id: 14,
   name: "Chevrolet Astra Advantage 2.0",
