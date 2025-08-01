@@ -32,52 +32,7 @@ export const vehicles = [
       "/images/golf-prata/08.webp",
       "/images/golf-prata/09.webp"      
     ]
-  },        
-  {
-    id: 4,
-    name: "Toyota Etios Sedan 1.5 Platinum",
-    brand: "Toyota",
-    price: "R$ 45.900,00",
-    year: "2016",
-    fuel: "Flex",
-    transmission: "Manual",
-    km: "140.000 KM",
-    color: "",
-    placa: "PWV6F59",
-    doors: "",
-    badge: "Seminovo",
-    description: "Toyota Etios Sedan 1.5 Platinum 2015/2016 com bancos em couro, central multimídia com GPS e sensores de estacionamento, oferecendo conforto, conectividade e economia. Fale com um consultor e saiba mais!",
-    spotlight: true,
-    available: true,
-    features: [
-      "Ar condicionado",
-      "Freios ABS",
-      "Direção elétrica",
-      "Airbags Frontais",
-      "Bancos em couro",
-      "Volante multifuncional",
-      "Ajuste do volante em altura",
-      "Sensores de estacionamento traseiro",
-      "Multimídia original com Bluetooth, USB e GPS",
-      "Banco do motorista com ajuste de altura",
-      "Seta nos retrovisores",
-      "Rodas de liga leve",
-      "Faróis de neblina",
-      "Travas elétricas",
-      "Vidros elétricos"
-    ],
-    images: [
-      "/images/toyota-etios/01.webp",
-      "/images/toyota-etios/02.webp",
-      "/images/toyota-etios/03.webp",
-      "/images/toyota-etios/04.webp",
-      "/images/toyota-etios/05.webp",
-      "/images/toyota-etios/06.webp",
-      "/images/toyota-etios/07.webp",
-      "/images/toyota-etios/08.webp",
-      "/images/toyota-etios/09.webp"
-    ]
-  },  
+  },            
   {
     id: 6,
     name: "Golf Comfortline 1.4 TSI",
