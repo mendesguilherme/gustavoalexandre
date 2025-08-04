@@ -1,38 +1,4 @@
-export const vehicles = [   
-  {
-    id: 2,
-    name: "VW Golf 1.6",
-    brand: "Volkswagen",
-    price: "R$ 27.900,00",
-    year: "2001",
-    fuel: "Gasolina",
-    transmission: "Manual",
-    km: "277.000 KM",
-    color: "Prata",
-    placa: "MEN7G10",
-    doors: "",
-    badge: "Seminovo",
-    description: "VW Golf 1.6 2000/2001 com direção hidráulica, ar-condicionado e conjunto elétrico completo, uma opção acessível e confiável para o dia a dia. Aproveite essa oportunidade e agende sua visita!",
-    spotlight: false,
-    available: true,
-    features: [
-      "Ar condicionado",
-      "Direção Hidráulica",
-      "Vidros elétricos",
-      "Travas elétricas"
-    ],
-    images: [
-      "/images/golf-prata/01.webp",
-      "/images/golf-prata/02.webp",
-      "/images/golf-prata/03.webp",
-      "/images/golf-prata/04.webp",
-      "/images/golf-prata/05.webp",
-      "/images/golf-prata/06.webp",
-      "/images/golf-prata/07.webp",
-      "/images/golf-prata/08.webp",
-      "/images/golf-prata/09.webp"      
-    ]
-  },            
+export const vehicles = [                 
   {
     id: 6,
     name: "Golf Comfortline 1.4 TSI",
