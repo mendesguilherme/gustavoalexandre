@@ -422,5 +422,36 @@ id: 23,
     "/images/peugeot-207-preto/09.webp",
     "/images/peugeot-207-preto/10.webp"
   ]
+}, 
+{
+  id: 27,
+  name: "Chevrolet Celta 1.0 Life",
+  brand: "Chevrolet",
+  price: "R$ 26.900,00",
+  year: "2007",
+  fuel: "Flex",
+  transmission: "Manual",
+  km: "167.000 KM",
+  color: "Prata",
+  placa: "HHT0614",
+  doors: "4",
+  badge: "Seminovo",
+  description: "Chevrolet Celta 1.0 Life 2007, com 167.000 KM, motor Flex e câmbio manual. Econômico e confiável, é ideal para o uso diário. Conta com ar-condicionado e vidros elétricos dianteiros, oferecendo conforto e praticidade ao dirigir. Veículo compacto, acessível e pronto para rodar. Aproveite essa oportunidade.",
+  spotlight: false,
+  available: true,
+  features: [
+    "Ar condicionado",
+    "Vidros elétricos dianteiros"
+  ],
+  images: [
+    "/images/gm-celta-prata-life/01.webp",
+    "/images/gm-celta-prata-life/02.webp",
+    "/images/gm-celta-prata-life/03.webp",
+    "/images/gm-celta-prata-life/04.webp",
+    "/images/gm-celta-prata-life/05.webp",
+    "/images/gm-celta-prata-life/06.webp",
+    "/images/gm-celta-prata-life/07.webp",
+    "/images/gm-celta-prata-life/08.webp"
+  ]
 }
 ]
