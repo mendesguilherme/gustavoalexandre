@@ -478,7 +478,7 @@ id: 23,
 }, 
 {
   id: 30,
-  name: "Scooter Elétrica 1000W (Banco e Suspensão Dupla) - X10 GTM",
+  name: "Scooter Elétrica 1000W (Banco e Suspensão Dupla) - X12 GTM",
   brand: "Não informado",
   price: "R$ 11.200,00",
   year: "Não informado",
@@ -507,9 +507,9 @@ id: 23,
     "Carregamento em até 5h em tomada comum"
   ],
   images: [
-    "/images/scooter-eletrica-1000w-x10/01.webp",
-    "/images/scooter-eletrica-1000w-x10/02.webp",
-    "/images/scooter-eletrica-1000w-x10/03.webp"
+    "/images/scooter-eletrica-1000w-x12-preto/01.webp",
+    "/images/scooter-eletrica-1000w-x12-preto/02.webp",
+    "/images/scooter-eletrica-1000w-x12-preto/03.webp"
   ]
 }, 
 {
@@ -543,11 +543,11 @@ id: 23,
     "Carregamento em até 5h em tomada comum"
   ],
   images: [
-    "/images/scooter-eletrica-1000w-x12/01.webp",
-    "/images/scooter-eletrica-1000w-x12/02.webp",
-    "/images/scooter-eletrica-1000w-x12/03.webp",
-    "/images/scooter-eletrica-1000w-x12/04.webp",
-    "/images/scooter-eletrica-1000w-x12/05.webp"
+    "/images/scooter-eletrica-1000w-x12-vermelho/01.webp",
+    "/images/scooter-eletrica-1000w-x12-vermelho/02.webp",
+    "/images/scooter-eletrica-1000w-x12-vermelho/03.webp",
+    "/images/scooter-eletrica-1000w-x12-vermelho/04.webp",
+    "/images/scooter-eletrica-1000w-x12-vermelho/05.webp"
   ]
 }
 ]
