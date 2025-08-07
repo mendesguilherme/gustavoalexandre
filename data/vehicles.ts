@@ -549,5 +549,34 @@ id: 23,
     "/images/scooter-eletrica-1000w-x12-vermelho/04.webp",
     "/images/scooter-eletrica-1000w-x12-vermelho/05.webp"
   ]
+}, 
+{
+  id: 32,
+  name: "Honda Biz 125 KS",
+  brand: "Honda",
+  price: "R$ 10.500,00",
+  year: "2012",
+  fuel: "Flex",
+  transmission: "Manual",
+  km: "65.000 KM",
+  color: "Preta", 
+  placa: "",
+  doors: "0",
+  badge: "Seminovo",
+  description: "Honda Biz 125 KS 2012, com 65.000 KM, motor Flex e câmbio manual. Motocicleta econômica, prática e perfeita para o uso diário. Ideal para quem busca agilidade no trânsito urbano com baixo consumo de combustível. Disponível na Gustavo Alexandre Multimarcas em Bebedouro-SP. Agende sua visita!",
+  spotlight: false,
+  available: true,
+  features: [
+    "Partida elétrica",
+    "Injeção eletrônica",
+    "Baixo consumo",
+    "Porta-capacete"
+  ],
+  images: [
+    "/images/honda-biz-125-preta/01.webp",
+    "/images/honda-biz-125-preta/02.webp",
+    "/images/honda-biz-125-preta/03.webp",
+    "/images/honda-biz-125-preta/04.webp"
+  ]
 }
 ]
