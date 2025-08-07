@@ -578,5 +578,36 @@ id: 23,
     "/images/honda-biz-125-preta/03.webp",
     "/images/honda-biz-125-preta/04.webp"
   ]
+}, 
+{
+  id: 33,
+  name: "Honda CB 300R",
+  brand: "Honda",
+  price: "R$ 15.500,00",
+  year: "2015",
+  fuel: "Flex",
+  transmission: "Manual",
+  km: "61.000 KM",
+  color: "Vermelho",
+  placa: "",
+  doors: "0",
+  badge: "Seminovo",
+  description: "Honda CB 300R 2015, com 61.000 KM, motor Flex e câmbio manual. Ideal para quem busca agilidade no trânsito e economia no dia a dia. Motocicleta em excelente estado, perfeita para uso urbano e estradeiro. Aproveite essa oportunidade com ótimo custo-benefício. Visite Gustavo Alexandre Multimarcas em Bebedouro-SP e confira de perto.",
+  spotlight: false,
+  available: true,
+  features: [
+    "Freios a disco",
+    "Painel digital",
+    "Partida elétrica",
+    "Injeção eletrônica"
+  ],
+  images: [
+    "/images/honda-cb300r-vermelha/01.webp",
+    "/images/honda-cb300r-vermelha/02.webp",
+    "/images/honda-cb300r-vermelha/03.webp",
+    "/images/honda-cb300r-vermelha/04.webp",
+    "/images/honda-cb300r-vermelha/05.webp",
+    "/images/honda-cb300r-vermelha/06.webp"
+  ]
 }
 ]
