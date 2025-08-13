@@ -580,35 +580,6 @@ id: 23,
   ]
 }, 
 {
-    id: 34,
-    name: "Honda CG 160 Fan",
-    brand: "Honda",
-    price: "R$ 13.000,00",
-    year: "2019",
-    fuel: "Flex",
-    transmission: "Manual",
-    km: "44.000 KM",
-    color: "Vinho",
-    placa:"ESP7H70",
-    doors: "0",
-    badge: "Seminovo",
-    description: "Honda CG 160 Fan 2019, com 44.000 KM, motor Flex e câmbio manual. Uma moto robusta, confiável e econômica, ideal para o dia a dia e deslocamentos urbanos. Possui ótimo custo-benefício e manutenção acessível, perfeita para quem busca praticidade e desempenho. Venha conferir esta oportunidade na Gustavo Alexandre Multimarcas, em Bebedouro/SP.",
-    spotlight: false,
-    available: true,
-    features: [
-      "Partida elétrica",
-      "Freio a disco dianteiro",
-      "Injeção eletrônica",
-      "Painel digital"
-    ],
-    images: [
-      "/images/honda-fan-160-vinho/01.webp",
-      "/images/honda-fan-160-vinho/02.webp",
-      "/images/honda-fan-160-vinho/03.webp",
-      "/images/honda-fan-160-vinho/04.webp"
-    ]
-},
-{
   id: 35,
   name: "Nissan Kicks S 1.6",
   brand: "Nissan",
