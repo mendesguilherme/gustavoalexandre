@@ -446,37 +446,6 @@ id: 23,
   ]
 }, 
 {
-  id: 29,
-  name: "Scooter Elétrica 1000W - Yala",
-  brand: "Não informado",
-  price: "R$ 8.900,00",
-  year: "Não informado",
-  fuel: "Elétrico",
-  transmission: "Automático",
-  km: "0 KM",
-  color: "Azul",
-  doors: "0",
-  badge: "Seminovo",
-  description: "Scooter elétrica seminova com motor de 1000 watts e bateria de lítio, oferece autonomia de até 40 KM. Dispensa emplacamento e CNH, sendo ideal para deslocamentos urbanos com praticidade e economia. Perfeita para quem busca mobilidade sustentável com baixo custo de manutenção.",
-  spotlight: false,
-  available: true,
-  electric: true, 
-  features: [
-    "Bateria de lítio",
-    "Isenta de emplacamento",
-    "Não exige CNH",
-    "Autonomia de até 40 KM",
-    "Mobilidade urbana"
-  ],
-  images: [
-    "/images/scooter-eletrica-1000w-yala/01.webp",
-    "/images/scooter-eletrica-1000w-yala/02.webp",
-    "/images/scooter-eletrica-1000w-yala/03.webp",
-    "/images/scooter-eletrica-1000w-yala/04.webp",
-    "/images/scooter-eletrica-1000w-yala/05.webp"
-  ]
-}, 
-{
   id: 30,
   name: "Scooter Elétrica 1000W (Banco e Suspensão Dupla) - X12 GTM",
   brand: "Não informado",
@@ -609,5 +578,76 @@ id: 23,
     "/images/honda-cb300r-vermelha/05.webp",
     "/images/honda-cb300r-vermelha/06.webp"
   ]
+}, 
+{
+    id: 34,
+    name: "Honda CG 160 Fan",
+    brand: "Honda",
+    price: "R$ 13.000,00",
+    year: "2019",
+    fuel: "Flex",
+    transmission: "Manual",
+    km: "44.000 KM",
+    color: "Vinho",
+    placa:"ESP7H70",
+    doors: "0",
+    badge: "Seminovo",
+    description: "Honda CG 160 Fan 2019, com 44.000 KM, motor Flex e câmbio manual. Uma moto robusta, confiável e econômica, ideal para o dia a dia e deslocamentos urbanos. Possui ótimo custo-benefício e manutenção acessível, perfeita para quem busca praticidade e desempenho. Venha conferir esta oportunidade na Gustavo Alexandre Multimarcas, em Bebedouro/SP.",
+    spotlight: false,
+    available: true,
+    features: [
+      "Partida elétrica",
+      "Freio a disco dianteiro",
+      "Injeção eletrônica",
+      "Painel digital"
+    ],
+    images: [
+      "/images/honda-fan-160-vinho/01.webp",
+      "/images/honda-fan-160-vinho/02.webp",
+      "/images/honda-fan-160-vinho/03.webp",
+      "/images/honda-fan-160-vinho/04.webp"
+    ]
+},
+{
+  id: 35,
+  name: "Nissan Kicks S 1.6",
+  brand: "Nissan",
+  price: "R$ 75.000,00",
+  year: "2018",
+  fuel: "Flex",
+  transmission: "Automático",
+  km: "98.000 KM",
+  color: "Branco", 
+  placa: "FWP4F09",
+  doors: "4",
+  badge: "Seminovo",
+  description: "Nissan Kicks S 1.6 2018 com 98.000 KM, motor Flex e câmbio automático, ideal para quem busca conforto e tecnologia no dia a dia. Equipado com direção elétrica, airbags, vidros elétricos, tração dianteira e ar-condicionado para maior comodidade. Conta com central multimídia, câmera de ré, volante multifuncional e rodas de liga leve. Porta-malas de 432 litros, perfeito para viagens e uso urbano. Ótima opção para quem procura um SUV econômico e versátil. Disponível na Gustavo Alexandre Multimarcas em Bebedouro-SP.",
+  spotlight: false,
+  available: true,
+  features: [
+    "Direção elétrica",
+    "Airbags",
+    "Vidros elétricos",
+    "Tração dianteira",
+    "Ar condicionado",
+    "Multimídia",
+    "Porta malas 432 litros",
+    "Travas elétricas",
+    "Câmera de ré",
+    "Volante multifuncional",
+    "Rodas de liga leve"
+  ],
+  images: [
+    "/images/nissan-kicks-branco/01.webp",
+    "/images/nissan-kicks-branco/02.webp",
+    "/images/nissan-kicks-branco/03.webp",
+    "/images/nissan-kicks-branco/04.webp",
+    "/images/nissan-kicks-branco/05.webp",
+    "/images/nissan-kicks-branco/06.webp",
+    "/images/nissan-kicks-branco/07.webp",
+    "/images/nissan-kicks-branco/08.webp",
+    "/images/nissan-kicks-branco/09.webp"
+  ]
 }
+
 ]
