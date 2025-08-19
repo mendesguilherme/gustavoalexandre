@@ -527,11 +527,11 @@ id: 22,
     "Rodas de liga leve"
   ],
   images: [
-    "/images/honda-cb300r-preto/01.webp",
-    "/images/honda-cb300r-preto/02.webp",
-    "/images/honda-cb300r-preto/03.webp",
-    "/images/honda-cb300r-preto/04.webp",
-    "/images/honda-cb300r-preto/05.webp"
+    "/images/honda-cb300r-preta/01.webp",
+    "/images/honda-cb300r-preta/02.webp",
+    "/images/honda-cb300r-preta/03.webp",
+    "/images/honda-cb300r-preta/04.webp",
+    "/images/honda-cb300r-preta/05.webp"
   ]
 },
 {
