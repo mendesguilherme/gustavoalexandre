@@ -533,5 +533,77 @@ id: 22,
     "/images/honda-cb300r-preta/04.webp",
     "/images/honda-cb300r-preta/05.webp"
   ]
+},
+{
+  id: 37,
+  name: "Chevrolet Montana 1.4 LS",
+  brand: "Chevrolet",
+  price: "R$ 44.900,00",
+  year: "2014",
+  fuel: "Flex",
+  transmission: "Manual",
+  km: "225.000 KM",
+  color: "Prata",
+  placa:"FWN6988",
+  doors: "2",
+  badge: "Usado",
+  description: "Chevrolet Montana 1.4 LS 2014, com 225.000 KM, motor Flex e câmbio manual. Uma picape robusta, econômica e confiável, ideal para o trabalho ou uso urbano. Equipada com ar-condicionado, direção hidráulica, airbag, freios ABS, travas e vidros elétricos, proporcionando segurança e conforto ao dirigir. Excelente opção para quem busca praticidade e versatilidade em uma utilitária compacta. Venha conferir esta oportunidade na Gustavo Alexandre Multimarcas.",
+  spotlight: false,
+  available: true,
+  features: [
+    "Ar condicionado",
+    "Air bag",
+    "Direção hidráulica",
+    "Freios ABS",
+    "Trava elétrica",
+    "Vidros elétricos"
+  ],
+  images: [
+    "/images/chevrolet-montana-prata/01.webp",
+    "/images/chevrolet-montana-prata/02.webp",
+    "/images/chevrolet-montana-prata/03.webp",
+    "/images/chevrolet-montana-prata/04.webp",
+    "/images/chevrolet-montana-prata/05.webp",
+    "/images/chevrolet-montana-prata/06.webp",
+    "/images/chevrolet-montana-prata/07.webp",
+    "/images/chevrolet-montana-prata/08.webp"     
+  ]
+},
+{
+  id: 38,
+  name: "Peugeot 206 Allure 1.6",
+  brand: "Peugeot",
+  price: "R$ 17.900,00",
+  year: "2008",
+  fuel: "Flex",
+  transmission: "Manual",
+  km: "243.000 KM",
+  color: "preto",
+  placa:"EBB5102",
+  doors: "4",
+  badge: "Usado",
+  description: "Peugeot 206 Allure 1.6 2008, com 243.000 KM, motor Flex e câmbio manual. Compacto estiloso e econômico, ideal para o dia a dia urbano. Equipado com ar-condicionado, direção hidráulica, faróis de neblina, rodas de liga leve aro 15, travas e vidros elétricos nas quatro portas, oferecendo praticidade e conforto. Excelente custo-benefício para quem busca um hatch completo e versátil. Venha conhecer e aproveite esta oportunidade.",
+  spotlight: false,
+  available: true,
+  features: [
+    "Ar condicionado",
+    "Direção hidráulica",
+    "Farol de neblina",
+    "Rodas de liga leve 15”",
+    "Travas elétricas",
+    "Vidros elétricos nas 4 portas"
+  ],
+  images: [
+    "/images/peugeot-206-preto/01.webp",
+    "/images/peugeot-206-preto/02.webp",
+    "/images/peugeot-206-preto/03.webp",
+    "/images/peugeot-206-preto/04.webp",
+    "/images/peugeot-206-preto/05.webp",
+    "/images/peugeot-206-preto/06.webp",
+    "/images/peugeot-206-preto/07.webp",
+    "/images/peugeot-206-preto/08.webp",
+    "/images/peugeot-206-preto/09.webp",
+    "/images/peugeot-206-preto/10.webp"
+  ]
 }
 ]
