@@ -404,7 +404,7 @@ export const vehicles = [
   doors: "4",
   badge: "Seminovo",
   description: "Nissan Kicks S 1.6 2018 com 98.000 KM, motor Flex e câmbio automático, ideal para quem busca conforto e tecnologia no dia a dia. Equipado com direção elétrica, airbags, vidros elétricos, tração dianteira e ar-condicionado para maior comodidade. Conta com central multimídia, câmera de ré, volante multifuncional e rodas de liga leve. Porta-malas de 432 litros, perfeito para viagens e uso urbano. Ótima opção para quem procura um SUV econômico e versátil. Disponível na Gustavo Alexandre Multimarcas em Bebedouro-SP.",
-  spotlight: false,
+  spotlight: true,
   available: true,
   features: [
     "Direção elétrica",
@@ -445,7 +445,7 @@ export const vehicles = [
   doors: "0",
   badge: "Seminovo",
   description: "Honda CB 300R 2011, com 83.000 KM, motor Flex e câmbio manual: desempenho e economia em uma moto versátil para o dia a dia e viagens. Com design esportivo, conforto e excelente dirigibilidade, é ideal para quem busca estilo e praticidade em duas rodas. Aproveite esta oportunidade de ter uma Honda confiável e pronta para rodar. Agende sua visita e confira de perto.",
-  spotlight: false,
+  spotlight: true,
   available: true,
   electric:false,
   features: [
