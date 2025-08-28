@@ -84,35 +84,7 @@ export const vehicles = [
       "/images/fiat-palio-weekend/09.webp",
       "/images/fiat-palio-weekend/10.webp"      
     ]
-  },                    
-{
-  id: 16,
-  name: "Chevrolet Prisma 1.4 Joy",
-  brand: "Chevrolet",
-  price: "R$ 23.900,00",
-  year: "2008",
-  fuel: "Flex",
-  transmission: "Manual",
-  km: "147.000 KM",
-  color: "Preto",
-  doors: "4",
-  badge: "Seminovo",
-  description: "Chevrolet Prisma 1.4 Joy 2008, com 147.000 KM, motor Flex e câmbio manual: perfeito para quem busca um veículo acessível e funcional. Versão básica, com mecânica confiável e ideal para o uso diário. Uma excelente escolha para quem valoriza economia na manutenção e bom desempenho. Confira essa oportunidade de ter um sedã compacto por um ótimo preço.",
-  spotlight: false,
-  available: true,
-  features: [],
-  images: [
-    "/images/chevrolet-prisma-preto/01.webp",
-    "/images/chevrolet-prisma-preto/02.webp",
-    "/images/chevrolet-prisma-preto/03.webp",
-    "/images/chevrolet-prisma-preto/04.webp",
-    "/images/chevrolet-prisma-preto/05.webp",
-    "/images/chevrolet-prisma-preto/06.webp",
-    "/images/chevrolet-prisma-preto/07.webp",
-    "/images/chevrolet-prisma-preto/08.webp",
-    "/images/chevrolet-prisma-preto/09.webp"
-  ]
-}, 
+  },                     
 {
   id: 17,
   name: "VW Fox 1.0",
@@ -183,49 +155,6 @@ export const vehicles = [
     "/images/ford-ka-2011-prata/08.webp",
     "/images/ford-ka-2011-prata/09.webp",
     "/images/ford-ka-2011-prata/10.webp"
-  ]
-},
-{ 
-id: 22,
-  name: "VW Fox Xtreme MB 1.6",
-  brand: "Volkswagen",
-  price: "R$ 64.900,00",
-  year: "2018/2019",
-  fuel: "Flex",
-  transmission: "Manual",
-  km: "92.000 KM",
-  color: "Prata",
-  placa: "FWZ5I55",
-  doors: "5",
-  badge: "Seminovo",
-  description: "VW Fox Xtreme MB 1.6 2018/2019, com 92.000 KM, motor Flex e câmbio manual. Ideal para quem busca um hatch robusto e moderno, conta com direção elétrica e ar-condicionado para maior conforto. Equipado com multimídia, sensor de estacionamento, faróis de neblina e rodas de liga leve, oferece praticidade e estilo. Segurança garantida com alarme, travas e vidros elétricos. Espelhos elétricos e computador de bordo complementam os recursos. Ótima opção urbana com desempenho eficiente.",
-  spotlight: true,
-  available: true,
-  electric: false, 
-  features: [
-    "Ar condicionado",
-    "Direção elétrica",
-    "Travas elétricas",
-    "Vidros elétricos",
-    "Multimídia",
-    "Sensor de estacionamento",
-    "Farol de neblina",
-    "Rodas de liga leve",
-    "Alarme",
-    "Computador de bordo",
-    "Espelhos elétricos"
-  ],
-  images: [
-    "/images/vw-fox-xtreme-prata/01.webp",
-    "/images/vw-fox-xtreme-prata/02.webp",
-    "/images/vw-fox-xtreme-prata/03.webp",
-    "/images/vw-fox-xtreme-prata/04.webp",
-    "/images/vw-fox-xtreme-prata/05.webp",
-    "/images/vw-fox-xtreme-prata/06.webp",
-    "/images/vw-fox-xtreme-prata/07.webp",
-    "/images/vw-fox-xtreme-prata/08.webp",
-    "/images/vw-fox-xtreme-prata/09.webp", 
-    "/images/vw-fox-xtreme-prata/10.webp"
   ]
 }, 
 {
