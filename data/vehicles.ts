@@ -296,7 +296,7 @@ export const vehicles = [
   id: 31,
   name: "Scooter Elétrica 1000W (Banco e Suspensão Dupla) - X12 GTM",
   brand: "Não informado",
-  price: "R$ 11.200,00",
+  price: "R$ 12.000,00",
   year: "Não informado",
   fuel: "Elétrico",
   transmission: "Automático",
