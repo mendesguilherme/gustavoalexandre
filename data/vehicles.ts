@@ -49,42 +49,7 @@ export const vehicles = [
       "/images/vw-golf-branco/09.webp",
       "/images/vw-golf-branco/10.webp"
       ]
-  },
-  {
-    id: 7,
-    name: "Palio Weekend 1.6 Trekking",
-    brand: "Fiat",
-    price: "R$ 31.900,00",
-    year: "2014",
-    fuel: "Flex",
-    transmission: "Manual",
-    km: "242.000 KM",
-    color: "Branco",
-    placa: "MLI4E17",
-    doors: "",
-    badge: "Seminovo",
-    description: "Palio Weekend Trekking 1.6 2013/2014 com direção hidráulica, ar-condicionado e conjunto elétrico completo, perfeita para quem precisa de espaço e versatilidade no dia a dia. Venha conferir de perto!",
-    spotlight: false,
-    available: true,
-    features: [
-      "Direção hidráulica",
-      "Ar condicionado",
-      "Vidros elétricos",
-      "Travas elétricas"
-    ],
-    images: [
-      "/images/fiat-palio-weekend/01.webp",
-      "/images/fiat-palio-weekend/02.webp",
-      "/images/fiat-palio-weekend/03.webp",
-      "/images/fiat-palio-weekend/04.webp",
-      "/images/fiat-palio-weekend/05.webp",
-      "/images/fiat-palio-weekend/06.webp",
-      "/images/fiat-palio-weekend/07.webp",
-      "/images/fiat-palio-weekend/08.webp",
-      "/images/fiat-palio-weekend/09.webp",
-      "/images/fiat-palio-weekend/10.webp"      
-    ]
-  },                     
+  },                       
 {
   id: 17,
   name: "VW Fox 1.0",
@@ -120,43 +85,6 @@ export const vehicles = [
     "/images/vw-fox-prata/09.webp"
   ]
 },
-{
-  id: 20,
-  name: "Ford Ka 1.0",
-  brand: "Ford",
-  price: "R$ 25.900,00",
-  year: "2010/2011",
-  fuel: "Flex",
-  transmission: "Manual",
-  km: "124.000 KM",
-  color: "Prata",
-  placa: "ERJ2061",
-  doors: "2",
-  badge: "Seminovo",
-  description: "Ford Ka 1.0 2010/2011, com 124.000 KM, motor Flex e câmbio manual: ideal para o dia a dia com economia e eficiência. Equipado com ar-condicionado, direção hidráulica, vidros e travas elétricas, alarme e MP3 player, oferecendo praticidade e conforto. Compacto, funcional e com ótimo custo-benefício. Agende sua visita e confira de perto essa excelente opção urbana.",
-  spotlight: false,
-  available: true,
-  features: [
-    "Ar condicionado",
-    "Direção hidráulica",
-    "Vidros elétricos",
-    "Travas elétricas",
-    "Alarme",
-    "MP3 player"
-  ],
-  images: [
-    "/images/ford-ka-2011-prata/01.webp",
-    "/images/ford-ka-2011-prata/02.webp",
-    "/images/ford-ka-2011-prata/03.webp",
-    "/images/ford-ka-2011-prata/04.webp",
-    "/images/ford-ka-2011-prata/05.webp",
-    "/images/ford-ka-2011-prata/06.webp",
-    "/images/ford-ka-2011-prata/07.webp",
-    "/images/ford-ka-2011-prata/08.webp",
-    "/images/ford-ka-2011-prata/09.webp",
-    "/images/ford-ka-2011-prata/10.webp"
-  ]
-}, 
 {
   id: 26,
   name: "Peugeot 207 Passion XR 1.4",
@@ -391,47 +319,6 @@ export const vehicles = [
   ]
 }, 
 {
-  id: 35,
-  name: "Nissan Kicks S 1.6",
-  brand: "Nissan",
-  price: "R$ 75.000,00",
-  year: "2018",
-  fuel: "Flex",
-  transmission: "Automático",
-  km: "98.000 KM",
-  color: "Branco", 
-  placa: "FWP4F09",
-  doors: "4",
-  badge: "Seminovo",
-  description: "Nissan Kicks S 1.6 2018 com 98.000 KM, motor Flex e câmbio automático, ideal para quem busca conforto e tecnologia no dia a dia. Equipado com direção elétrica, airbags, vidros elétricos, tração dianteira e ar-condicionado para maior comodidade. Conta com central multimídia, câmera de ré, volante multifuncional e rodas de liga leve. Porta-malas de 432 litros, perfeito para viagens e uso urbano. Ótima opção para quem procura um SUV econômico e versátil. Disponível na Gustavo Alexandre Multimarcas em Bebedouro-SP.",
-  spotlight: true,
-  available: true,
-  features: [
-    "Direção elétrica",
-    "Airbags",
-    "Vidros elétricos",
-    "Tração dianteira",
-    "Ar condicionado",
-    "Multimídia",
-    "Porta malas 432 litros",
-    "Travas elétricas",
-    "Câmera de ré",
-    "Volante multifuncional",
-    "Rodas de liga leve"
-  ],
-  images: [
-    "/images/nissan-kicks-branco/01.webp",
-    "/images/nissan-kicks-branco/02.webp",
-    "/images/nissan-kicks-branco/03.webp",
-    "/images/nissan-kicks-branco/04.webp",
-    "/images/nissan-kicks-branco/05.webp",
-    "/images/nissan-kicks-branco/06.webp",
-    "/images/nissan-kicks-branco/07.webp",
-    "/images/nissan-kicks-branco/08.webp",
-    "/images/nissan-kicks-branco/09.webp"
-  ]
-},
-{
   id: 36,
   name: "Honda CB 300R",
   brand: "Honda",
@@ -496,43 +383,6 @@ export const vehicles = [
     "/images/chevrolet-montana-prata/06.webp",
     "/images/chevrolet-montana-prata/07.webp",
     "/images/chevrolet-montana-prata/08.webp"     
-  ]
-},
-{
-  id: 38,
-  name: "Peugeot 206 Allure 1.6",
-  brand: "Peugeot",
-  price: "R$ 17.900,00",
-  year: "2008",
-  fuel: "Flex",
-  transmission: "Manual",
-  km: "243.000 KM",
-  color: "preto",
-  placa:"EBB5102",
-  doors: "4",
-  badge: "Usado",
-  description: "Peugeot 206 Allure 1.6 2008, com 243.000 KM, motor Flex e câmbio manual. Compacto estiloso e econômico, ideal para o dia a dia urbano. Equipado com ar-condicionado, direção hidráulica, faróis de neblina, rodas de liga leve aro 15, travas e vidros elétricos nas quatro portas, oferecendo praticidade e conforto. Excelente custo-benefício para quem busca um hatch completo e versátil. Venha conhecer e aproveite esta oportunidade.",
-  spotlight: false,
-  available: true,
-  features: [
-    "Ar condicionado",
-    "Direção hidráulica",
-    "Farol de neblina",
-    "Rodas de liga leve 15”",
-    "Travas elétricas",
-    "Vidros elétricos nas 4 portas"
-  ],
-  images: [
-    "/images/peugeot-206-preto/01.webp",
-    "/images/peugeot-206-preto/02.webp",
-    "/images/peugeot-206-preto/03.webp",
-    "/images/peugeot-206-preto/04.webp",
-    "/images/peugeot-206-preto/05.webp",
-    "/images/peugeot-206-preto/06.webp",
-    "/images/peugeot-206-preto/07.webp",
-    "/images/peugeot-206-preto/08.webp",
-    "/images/peugeot-206-preto/09.webp",
-    "/images/peugeot-206-preto/10.webp"
   ]
 }
 ]
