@@ -899,7 +899,7 @@ export const vehicles = [
   doors: "4",
   badge: "Único Dono",
   description: "Chevrolet Tracker 1.0 Turbo 2021/2021, com apenas 49.000 KM, motor Flex e câmbio automático: moderno, confortável e completo. Revisado na concessionária, com garantia de fábrica ativa, manual e chave reserva. Equipado com direção elétrica, ar-condicionado, multimídia com Android Auto e Apple CarPlay, câmera de ré, rodas de liga leve e comandos de som no volante. Uma ótima oportunidade para quem busca tecnologia, segurança e conforto em um SUV compacto. Disponível na Gustavo Alexandre Multimarcas, em Bebedouro/SP.",
-  spotlight: false,
+  spotlight: true,
   available: true,
   features: [
     "Direção elétrica",
