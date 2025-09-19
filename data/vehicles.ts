@@ -603,7 +603,7 @@ export const vehicles = [
   id: 44,
   name: "Hyundai Sonata GLS 2.4",
   brand: "Hyundai",
-  price: "R$ 0,00",
+  price: "R$ 64.900,00",
   year: "2011/2012",
   fuel: "Gasolina",
   transmission: "Automático",
