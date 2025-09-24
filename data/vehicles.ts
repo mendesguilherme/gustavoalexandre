@@ -127,7 +127,7 @@ export const vehicles = [
   km: "0 KM",
   color: "Preto",
   doors: "0",
-  badge: "Novo",
+  badge: "Seminovo",
   description: "Scooter elétrica seminova com motor de 1000 watts e bateria de lítio, oferece autonomia de até 40 KM. Dispensa emplacamento e CNH, sendo ideal para deslocamentos urbanos com praticidade e economia. Perfeita para quem busca mobilidade sustentável com baixo custo de manutenção.",
   spotlight: false,
   available: true,
@@ -157,7 +157,7 @@ export const vehicles = [
   km: "0 KM",
   color: "Preto",
   doors: "0",
-  badge: "Seminovo",
+  badge: "Novo",
   description: "Scooter elétrica seminova moderna, confortável e ideal para o dia a dia e momentos de lazer. Equipada com banco com encosto, suspensão dupla e design estiloso. Possui motor de 1000W, bateria de lítio 60V removível, autonomia de até 45 km e velocidade máxima de 32 km/h. Conta com rodas aro 10” em liga leve, freio a disco hidráulico, painel digital, farol Full LED e suporta até 180 kg. Carregamento em até 5 horas em tomada comum (110/220V).",
   spotlight: false,
   available: true,
@@ -248,38 +248,7 @@ export const vehicles = [
     "/images/honda-biz-125-preta/03.webp",
     "/images/honda-biz-125-preta/04.webp"
   ]
-}, 
-{
-  id: 33,
-  name: "Honda CB 300R",
-  brand: "Honda",
-  price: "R$ 15.500,00",
-  year: "2015",
-  fuel: "Flex",
-  transmission: "Manual",
-  km: "61.000 KM",
-  color: "Vermelho",
-  placa: "FNM7H06",
-  doors: "0",
-  badge: "Seminovo",
-  description: "Honda CB 300R 2015, com 61.000 KM, motor Flex e câmbio manual. Ideal para quem busca agilidade no trânsito e economia no dia a dia. Motocicleta em excelente estado, perfeita para uso urbano e estradeiro. Aproveite essa oportunidade com ótimo custo-benefício. Visite Gustavo Alexandre Multimarcas em Bebedouro-SP e confira de perto.",
-  spotlight: false,
-  available: true,
-  features: [
-    "Freios a disco",
-    "Painel digital",
-    "Partida elétrica",
-    "Injeção eletrônica"
-  ],
-  images: [
-    "/images/honda-cb300r-vermelha/01.webp",
-    "/images/honda-cb300r-vermelha/02.webp",
-    "/images/honda-cb300r-vermelha/03.webp",
-    "/images/honda-cb300r-vermelha/04.webp",
-    "/images/honda-cb300r-vermelha/05.webp",
-    "/images/honda-cb300r-vermelha/06.webp"
-  ]
-}, 
+},  
 {
   id: 36,
   name: "Honda CB 300R",
@@ -624,37 +593,6 @@ export const vehicles = [
     "/images/chevrolet-cruze-2014/08.webp",
     "/images/chevrolet-cruze-2014/09.webp",
     "/images/chevrolet-cruze-2014/09.webp",
-  ]
-},
-{
-  id: 46,
-  name: "Ford Fiesta 1.0 Hatch",
-  brand: "Ford",
-  price: "R$ 22.900,00",
-  year: "2008/2008",
-  fuel: "Flex",
-  transmission: "Manual",
-  km: "172.000 KM",
-  color: "Prateado",
-  placa:"NKM8352",
-  doors: "4",
-  badge: "Seminovo",
-  description: "Ford Fiesta 1.0 Hatch 2008/2008, com 172.000 KM, motor Flex e câmbio manual: um compacto econômico, prático e acessível. Equipado com ar-condicionado e vidros elétricos dianteiros, garante conforto e praticidade para o dia a dia. Boa opção para quem busca economia de combustível e manutenção simples, aliado ao espaço interno de um hatch confiável. Disponível na Gustavo Alexandre Multimarcas, em Bebedouro/SP.",
-  spotlight: false,
-  available: true,
-  features: [
-    "Ar condicionado",
-    "Vidros elétricos dianteiros"
-  ],
-  images: [
-    "/images/ford-fiesta-prateado-2008/01.webp",
-    "/images/ford-fiesta-prateado-2008/02.webp",
-    "/images/ford-fiesta-prateado-2008/03.webp",
-    "/images/ford-fiesta-prateado-2008/04.webp",
-    "/images/ford-fiesta-prateado-2008/05.webp",
-    "/images/ford-fiesta-prateado-2008/06.webp",
-    "/images/ford-fiesta-prateado-2008/07.webp",
-    "/images/ford-fiesta-prateado-2008/08.webp"
   ]
 },
 {
