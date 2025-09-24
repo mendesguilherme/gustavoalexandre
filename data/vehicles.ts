@@ -84,44 +84,6 @@ export const vehicles = [
     "/images/vw-fox-prata/08.webp",
     "/images/vw-fox-prata/09.webp"
   ]
-},
-{
-  id: 26,
-  name: "Peugeot 207 Passion XR 1.4",
-  brand: "Peugeot",
-  price: "R$ 23.900,00",
-  year: "2011/2012",
-  fuel: "Flex",
-  transmission: "Manual",
-  km: "191.000 KM",
-  color: "Preto",
-  placa: "EZI5A78",
-  doors: "4",
-  badge: "Seminovo",
-  description: "Peugeot 207 Passion XR 1.4 2011/2012 com 191.000 KM, motor Flex e câmbio manual. Equipado com ar-condicionado, direção hidráulica, vidros e travas elétricas, garantindo conforto e praticidade. Conta ainda com alarme, desembaçador traseiro e bancos em couro, ideal para quem busca um sedã completo com ótimo custo-benefício. Aproveite esta oportunidade e agende já sua visita!",
-  spotlight: false,
-  available: true,
-  features: [
-    "Alarme",
-    "Ar condicionado",
-    "Direção hidráulica",
-    "Vidros elétricos",
-    "Travas elétricas",
-    "Desembaçador traseiro",
-    "Bancos em couro"
-  ],
-  images: [
-    "/images/peugeot-207-preto/01.webp",
-    "/images/peugeot-207-preto/02.webp",
-    "/images/peugeot-207-preto/03.webp",
-    "/images/peugeot-207-preto/04.webp",
-    "/images/peugeot-207-preto/05.webp",
-    "/images/peugeot-207-preto/06.webp",
-    "/images/peugeot-207-preto/07.webp",
-    "/images/peugeot-207-preto/08.webp",
-    "/images/peugeot-207-preto/09.webp",
-    "/images/peugeot-207-preto/10.webp"
-  ]
 }, 
 {
   id: 27,
@@ -195,7 +157,7 @@ export const vehicles = [
   km: "0 KM",
   color: "Preto",
   doors: "0",
-  badge: "Novo",
+  badge: "Seminovo",
   description: "Scooter elétrica seminova moderna, confortável e ideal para o dia a dia e momentos de lazer. Equipada com banco com encosto, suspensão dupla e design estiloso. Possui motor de 1000W, bateria de lítio 60V removível, autonomia de até 45 km e velocidade máxima de 32 km/h. Conta com rodas aro 10” em liga leve, freio a disco hidráulico, painel digital, farol Full LED e suporta até 180 kg. Carregamento em até 5 horas em tomada comum (110/220V).",
   spotlight: false,
   available: true,
@@ -508,35 +470,6 @@ export const vehicles = [
     "/images/range-rover-evoque-branco/10.webp"
 ]
 },
-
-{
-  id: 41,
-  name: "Honda Fan 160",
-  brand: "Honda",
-  price: "R$ 17.900,00",
-  year: "2023",
-  fuel: "Flex",
-  transmission: "Manual",
-  km: "13.000 KM",
-  color: "Prata",
-  placa:"FYE5G31",
-  doors: "0",
-  badge: "Seminovo",
-  description: "Honda Fan 160 2023 com apenas 13.000 KM rodados, motor Flex e câmbio manual. Equipada com partida elétrica, rodas de liga leve e freio a disco, oferece praticidade, segurança e conforto no dia a dia. Uma ótima opção para quem busca economia e confiabilidade em duas rodas. Venha conferir pessoalmente e aproveite nossas condições especiais de financiamento.",
-  spotlight: false,
-  available: true,
-  features: [
-    "Partida elétrica",
-    "Rodas de liga leve",
-    "Freio a disco"
-  ],
-  images: [
-    "/images/honda-fan-160-prata/01.webp",
-    "/images/honda-fan-160-prata/02.webp",
-    "/images/honda-fan-160-prata/03.webp",
-    "/images/honda-fan-160-prata/04.webp"
-  ]
-}, 
 {
   id: 42,
   name: "VW Gol G4 1.0",
@@ -725,40 +658,6 @@ export const vehicles = [
   ]
 },
 {
-  id: 47,
-  name: "Ford Fiesta 1.0 Hatch",
-  brand: "Ford",
-  price: "R$ 28.900,00",
-  year: "2011/2012",
-  fuel: "Flex",
-  transmission: "Manual",
-  km: "46.000 KM",
-  color: "Vermelho",
-  placa:"EZB8D06",
-  doors: "4",
-  badge: "Seminovo",
-  description: "Ford Fiesta 1.0 Hatch 2011/2012, com apenas 46.000 KM, motor Flex e câmbio manual: ótimo custo-benefício e economia para o dia a dia. Equipado com ar-condicionado, direção hidráulica, vidros e travas elétricas, garante conforto e praticidade ao dirigir. Ideal para quem busca um hatch compacto, econômico e bem conservado. Venha conferir na Gustavo Alexandre Multimarcas, em Bebedouro/SP.",
-  spotlight: false,
-  available: true,
-  features: [
-    "Ar condicionado",
-    "Direção hidráulica",
-    "Vidros elétricos",
-    "Travas elétricas"
-  ],
-  images: [
-    "/images/ford-fiesta-vermelho-2012/01.webp",
-    "/images/ford-fiesta-vermelho-2012/02.webp",
-    "/images/ford-fiesta-vermelho-2012/03.webp",
-    "/images/ford-fiesta-vermelho-2012/04.webp",
-    "/images/ford-fiesta-vermelho-2012/05.webp",
-    "/images/ford-fiesta-vermelho-2012/06.webp",
-    "/images/ford-fiesta-vermelho-2012/07.webp",
-    "/images/ford-fiesta-vermelho-2012/08.webp",
-    "/images/ford-fiesta-vermelho-2012/09.webp"
-  ]
-},
-{
   id: 48,
   name: "VW Fox 1.0",
   brand: "Volkswagen",
@@ -884,43 +783,5 @@ export const vehicles = [
     "/images/renault-sandero-preto-2014/07.webp",
     "/images/renault-sandero-preto-2014/08.webp"    
 ]
-},
-{
-  id: 52,
-  name: "Chevrolet Tracker 1.0 Turbo",
-  brand: "Chevrolet",
-  price: "R$ 86.900,00",
-  year: "2021/2021",
-  fuel: "Flex",
-  transmission: "Automático",
-  km: "49.000 KM",
-  color: "BRANCO",
-  placa: "FUF6G25",
-  doors: "4",
-  badge: "Único Dono",
-  description: "Chevrolet Tracker 1.0 Turbo 2021/2021, com apenas 49.000 KM, motor Flex e câmbio automático: moderno, confortável e completo. Revisado na concessionária, com garantia de fábrica ativa, manual e chave reserva. Equipado com direção elétrica, ar-condicionado, multimídia com Android Auto e Apple CarPlay, câmera de ré, rodas de liga leve e comandos de som no volante. Uma ótima oportunidade para quem busca tecnologia, segurança e conforto em um SUV compacto. Disponível na Gustavo Alexandre Multimarcas, em Bebedouro/SP.",
-  spotlight: true,
-  available: true,
-  features: [
-    "Direção elétrica",
-    "Ar condicionado",
-    "Multimídia Android Auto e Apple CarPlay",
-    "Câmera de ré",
-    "Rodas de liga leve",
-    "Comandos de som no volante",
-    "Manual e chave reserva",
-    "Garantia de fábrica",
-    "Revisado na concessionária"
-  ],
-  images: [
-    "/images/chevrolet-tracker-2021/01.webp",
-    "/images/chevrolet-tracker-2021/02.webp",
-    "/images/chevrolet-tracker-2021/03.webp",
-    "/images/chevrolet-tracker-2021/04.webp",
-    "/images/chevrolet-tracker-2021/05.webp",
-    "/images/chevrolet-tracker-2021/06.webp",
-    "/images/chevrolet-tracker-2021/07.webp",
-    "/images/chevrolet-tracker-2021/08.webp"
-  ]
 }
 ]
