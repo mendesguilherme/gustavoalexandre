@@ -515,7 +515,7 @@ export const vehicles = [
   doors: "4",
   badge: "Seminovo",
   description: "Hyundai Sonata GLS 2.4 2011/2012, com 138.000 KM, movido a gasolina e equipado com câmbio automático. Um sedã sofisticado e completo, oferece conforto e tecnologia: ar-condicionado, direção hidráulica, bancos em couro com regulagem elétrica e teto solar panorâmico. Conta também com airbags frontais e laterais, freios ABS, piloto automático e volante multifuncional, garantindo segurança e comodidade. Equipado ainda com computador de bordo, entrada USB/Aux, retrovisores e vidros elétricos, além de rodas de liga leve e sensor de estacionamento traseiro. Um carro que une elegância, potência e praticidade.",
-  spotlight: false,
+  spotlight: true,
   available: true,
   features: [
     "Ar condicionado",
@@ -721,5 +721,84 @@ export const vehicles = [
     "/images/renault-sandero-preto-2014/07.webp",
     "/images/renault-sandero-preto-2014/08.webp"    
 ]
+},
+{
+  id: 52,
+  name: "Jeep Renegade Longitude 1.8",
+  brand: "Jeep",
+  price: "R$ 84.900,00",
+  year: "2020",
+  fuel: "Flex",
+  transmission: "Automático",
+  km: "83.000 KM",
+  color: "Cinza",
+  doors: "4",
+  badge: "Seminovo",
+  description: "Jeep Renegade Longitude 1.8 2020, com 83.000 KM, motor Flex e câmbio automático: robustez e tecnologia em um SUV moderno. Equipado com direção elétrica, ar-condicionado digital, multimídia com conectividade, câmera de ré e volante multifuncional, oferece praticidade e conforto. Conta com bancos de couro, rodas aro 18, faróis de LED e retrovisores elétricos com seta integrada, entregando sofisticação e estilo. Possui piloto automático e freio de mão elétrico para uma condução mais segura e prazerosa. Venha conferir na Gustavo Alexandre Multimarcas!",
+  spotlight: true,
+  available: true,
+  features: [
+    "Ar condicionado",
+    "Direção elétrica",
+    "Multimídia",
+    "Câmera de ré",
+    "Faróis de LED",
+    "Rodas aro 18",
+    "Freio de mão elétrico",
+    "Bancos de couro",
+    "Piloto automático",
+    "Retrovisores elétricos",
+    "Seta nos retrovisores",
+    "Volante multifuncional"
+  ],
+  images: [
+    "/images/jeep-renegade-longitude/01.webp",
+    "/images/jeep-renegade-longitude/02.webp",
+    "/images/jeep-renegade-longitude/03.webp",
+    "/images/jeep-renegade-longitude/04.webp",
+    "/images/jeep-renegade-longitude/05.webp",
+    "/images/jeep-renegade-longitude/06.webp",
+    "/images/jeep-renegade-longitude/07.webp",
+    "/images/jeep-renegade-longitude/08.webp",
+    "/images/jeep-renegade-longitude/09.webp",   
+    "/images/jeep-renegade-longitude/10.webp"
+  ]
+},
+{
+  id: 53,
+  name: "Ford New Fiesta 1.6 Titanium",
+  brand: "Ford",
+  price: "R$ 37.900,00",
+  year: "2014",
+  fuel: "Flex",
+  transmission: "Automático",
+  km: "127.000 KM",
+  color: "Branco",
+  doors: "4",
+  badge: "Seminovo",
+  description: "Ford New Fiesta 1.6 Titanium 2014, com 127.000 KM, motor Flex e câmbio automático: estilo, tecnologia e conforto em um só carro. Conta com direção elétrica, ar-condicionado, computador de bordo e comando de som no volante, proporcionando praticidade no dia a dia. Equipado com bancos de couro, rodas de liga leve e retrovisores elétricos, alia sofisticação e funcionalidade. Possui ainda sensor de estacionamento para mais segurança. Uma excelente opção para quem busca um hatch premium, moderno e acessível. Venha conhecer na Gustavo Alexandre Multimarcas!",
+  spotlight: false,
+  available: true,
+  features: [
+    "Direção elétrica",
+    "Ar condicionado",
+    "Computador de bordo",
+    "Vidros elétricos",
+    "Comando de som no volante",
+    "Retrovisores elétricos",
+    "Sensor de estacionamento",
+    "Rodas de liga leve",
+    "Banco de couro"
+  ],
+  images: [
+    "/images/ford-new-fiesta-titanium/01.webp",
+    "/images/ford-new-fiesta-titanium/02.webp",
+    "/images/ford-new-fiesta-titanium/03.webp",
+    "/images/ford-new-fiesta-titanium/04.webp",
+    "/images/ford-new-fiesta-titanium/05.webp",
+    "/images/ford-new-fiesta-titanium/06.webp",
+    "/images/ford-new-fiesta-titanium/07.webp",
+    "/images/ford-new-fiesta-titanium/08.webp"
+  ]
 }
 ]
