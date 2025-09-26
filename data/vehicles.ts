@@ -263,7 +263,7 @@ export const vehicles = [
   doors: "0",
   badge: "Seminovo",
   description: "Honda CB 300R 2011, com 83.000 KM, motor Flex e câmbio manual: desempenho e economia em uma moto versátil para o dia a dia e viagens. Com design esportivo, conforto e excelente dirigibilidade, é ideal para quem busca estilo e praticidade em duas rodas. Aproveite esta oportunidade de ter uma Honda confiável e pronta para rodar. Agende sua visita e confira de perto.",
-  spotlight: true,
+  spotlight: false,
   available: true,
   electric:false,
   features: [
