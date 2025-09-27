@@ -472,36 +472,6 @@ export const vehicles = [
   ]
 },
 {
-  id: 43,
-  name: "Yamaha MT-03 ABS",
-  brand: "Yamaha",
-  price: "R$ 20.500,00",
-  year: "2016/2017",
-  fuel: "Gasolina",
-  transmission: "Manual",
-  km: "48.000 KM",
-  color: "Preto",
-  placa:"GDZ8F90",
-  doors: "0",
-  badge: "Seminovo",
-  description: "Yamaha MT-03 ABS 2016/2017, com 48.000 KM, movida a gasolina e equipada com câmbio manual. Ideal para quem busca esportividade e performance, conta com sistema de freios ABS que garante mais segurança e estabilidade na pilotagem. Motocicleta robusta, versátil e pronta para encarar tanto a cidade quanto estradas. Excelente opção para quem deseja estilo e confiabilidade em duas rodas.",
-  spotlight: false,
-  available: true,
-  features: [
-    "Freios ABS",
-    "Injeção eletrônica",
-    "Partida elétrica",
-    "Painel digital",
-    "Rodas de liga leve"
-  ],
-  images: [
-    "/images/yamaha-mt03-2016/01.webp",
-    "/images/yamaha-mt03-2016/02.webp",
-    "/images/yamaha-mt03-2016/03.webp",
-    "/images/yamaha-mt03-2016/04.webp"    
-  ]
-},
-{
   id: 44,
   name: "Hyundai Sonata GLS 2.4",
   brand: "Hyundai",
