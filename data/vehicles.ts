@@ -54,7 +54,7 @@ export const vehicles = [
   id: 17,
   name: "VW Fox 1.0",
   brand: "Volkswagen",
-  price: "R$ 25.900,00",
+  price: "R$ 23.900,00",
   year: "2003",
   fuel: "Flex",
   transmission: "Manual",
@@ -769,6 +769,79 @@ export const vehicles = [
     "/images/ford-new-fiesta-titanium/06.webp",
     "/images/ford-new-fiesta-titanium/07.webp",
     "/images/ford-new-fiesta-titanium/08.webp"
+  ]
+},
+{
+  id: 54,
+  name: "Chevrolet Classic Life 1.0",
+  brand: "Chevrolet",
+  price: "R$ 23.900,00",
+  year: "2009/2010",
+  fuel: "Flex",
+  transmission: "Manual",
+  km: "135.000 KM",
+  color: "Preto",
+  doors: "4",
+  badge: "Seminovo",
+  description: "Chevrolet Classic Life 1.0 2009/2010, com 135.000 KM, motor Flex e câmbio manual. Modelo conhecido pela economia de combustível, baixo custo de manutenção e excelente dirigibilidade no dia a dia. Versão básica, ideal para quem busca praticidade e confiabilidade em um sedã compacto acessível. Ótima oportunidade disponível na Gustavo Alexandre Multimarcas.",
+  spotlight: false,
+  available: true,
+  features: [
+    "Versão básica"
+  ],
+  images: [
+    "/images/chevrolet-classic-2010/01.webp",
+    "/images/chevrolet-classic-2010/02.webp",
+    "/images/chevrolet-classic-2010/03.webp",
+    "/images/chevrolet-classic-2010/04.webp",
+    "/images/chevrolet-classic-2010/05.webp",
+    "/images/chevrolet-classic-2010/06.webp",
+    "/images/chevrolet-classic-2010/07.webp",
+    "/images/chevrolet-classic-2010/08.webp",
+    "/images/chevrolet-classic-2010/09.webp"
+  ]
+},
+{
+  id: 55,
+  name: "Ford EcoSport 4WD 2.0",
+  brand: "Ford",
+  price: "R$ 39.900,00",
+  year: "2011",
+  fuel: "Flex",
+  transmission: "Manual",
+  km: "189.000 KM",
+  color: "Prata",
+  doors: "5",
+  badge: "Seminovo",
+  description: "Ford EcoSport 4WD 2.0 2011, com 189.000 KM, motor Flex e câmbio manual. Equipado com sistema de tração integral (4x4), oferece desempenho robusto para diversas condições de terreno. Conta com ar-condicionado, direção hidráulica, airbag duplo e freios ABS, garantindo conforto e segurança. Inclui também rodas de liga leve, vidros, travas e retrovisores elétricos, computador de bordo, faróis de neblina, banco do motorista com ajuste de altura e rack de teto. Um SUV versátil para quem busca aventura e praticidade.",
+  spotlight: false,
+  available: true,
+  features: [
+    "Ar condicionado",
+    "Direção hidráulica",
+    "Airbag duplo",
+    "Freios ABS",
+    "Rodas de liga leve",
+    "Vidros elétricos",
+    "Travas elétricas",
+    "Retrovisores elétricos",
+    "Computador de bordo",
+    "Sistema 4x4 (tração integral)",
+    "Farol de neblina",
+    "Banco do motorista com ajuste de altura",
+    "Rack de teto"
+  ],
+  images: [
+    "/images/ford-ecosport-4wd-prata/01.webp",
+    "/images/ford-ecosport-4wd-prata/02.webp",
+    "/images/ford-ecosport-4wd-prata/03.webp",
+    "/images/ford-ecosport-4wd-prata/04.webp",
+    "/images/ford-ecosport-4wd-prata/05.webp",
+    "/images/ford-ecosport-4wd-prata/06.webp",
+    "/images/ford-ecosport-4wd-prata/07.webp",
+    "/images/ford-ecosport-4wd-prata/08.webp",
+    "/images/ford-ecosport-4wd-prata/09.webp",
+    "/images/ford-ecosport-4wd-prata/10.webp"
   ]
 }
 ]
