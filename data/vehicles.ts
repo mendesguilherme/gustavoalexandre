@@ -596,39 +596,6 @@ export const vehicles = [
   ]
 },
 {
-  id: 49,
-  name: "VW Gol 1.6 Power",
-  brand: "Volkswagen",
-  price: "R$ 28.900,00",
-  year: "2006",
-  fuel: "Flex",
-  transmission: "Manual",
-  km: "247.000 KM",
-  color: "Preto",
-  doors: "4",
-  badge: "Seminovo",
-  description: "VW Gol 1.6 Power 2006, com 247.000 KM, motor Flex e câmbio manual: robustez e confiabilidade para o dia a dia. Equipado com ar-condicionado, direção hidráulica, vidros e travas elétricas, oferece conforto e praticidade. Conta ainda com faróis de neblina, ideal para quem busca segurança e boa visibilidade em qualquer condição. Excelente opção para quem procura um veículo acessível e resistente. Venha conferir pessoalmente!",
-  spotlight: false,
-  available: true,
-  features: [
-    "Ar condicionado",
-    "Direção hidráulica",
-    "Vidros elétricos",
-    "Travas elétricas",
-    "Faróis de neblina"
-  ],
-  images: [
-    "/images/vw-gol-2006/01.webp",
-    "/images/vw-gol-2006/02.webp",
-    "/images/vw-gol-2006/03.webp",
-    "/images/vw-gol-2006/04.webp",
-    "/images/vw-gol-2006/05.webp",
-    "/images/vw-gol-2006/06.webp",
-    "/images/vw-gol-2006/07.webp",
-    "/images/vw-gol-2006/08.webp"
-  ]
-},
-{
   id: 50,
   name: "VW Golf 1.6",
   brand: "Volkswagen",
