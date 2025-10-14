@@ -3,6 +3,12 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+// importe do grid e do tipo (type-only import evita trazer valor)
+import { ImagesSortableGrid, type UiImage } from "./ImagesSortableGrid";
+
+const uid = () =>
+  (globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2));
+
 type VehicleFormProps = {
   vehicle?: any;
 };
@@ -17,53 +23,27 @@ export default function VehicleForm({ vehicle }: VehicleFormProps) {
     vehicle?.features?.map((f: any) => f.feature) || [""]
   );
 
-  // Images
-  const [images, setImages] = useState<{ url: string; meta: any; file?: File; id?: number }[]>(
-    vehicle?.images?.map((img: any, idx: number) => ({ 
-      id: idx, 
-      url: img.image_url, 
-      meta: img.image_meta 
-    })) || []
+  // Imagens (estado único: existentes + novas), já na ordem inicial vinda do banco
+  const [uiImages, setUiImages] = useState<UiImage[]>(
+    (vehicle?.images || []).map((img: any) => ({
+      id: img?.image_meta?.path || img?.image_url || uid(),
+      url: img?.image_url,
+      meta: img?.image_meta,
+      file: null,
+      isNew: false,
+    }))
   );
 
   function addFeature() {
     setFeatures([...features, ""]);
   }
-
   function removeFeature(index: number) {
     setFeatures(features.filter((_, i) => i !== index));
   }
-
   function updateFeature(index: number, value: string) {
     const newFeatures = [...features];
     newFeatures[index] = value;
     setFeatures(newFeatures);
-  }
-
-  async function handleImageUpload(e: React.ChangeEvent<HTMLInputElement>) {
-    const files = Array.from(e.target.files || []);
-    if (files.length + images.length > 10) {
-      alert("Máximo de 10 imagens permitidas");
-      return;
-    }
-
-    for (const file of files) {
-      if (!file.type.includes("image")) continue;
-      
-      const reader = new FileReader();
-      reader.onload = (evt) => {
-        setImages(prev => [...prev, { 
-          url: evt.target?.result as string, 
-          meta: null,
-          file 
-        }]);
-      };
-      reader.readAsDataURL(file);
-    }
-  }
-
-  function removeImage(index: number) {
-    setImages(images.filter((_, i) => i !== index));
   }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -71,38 +51,39 @@ export default function VehicleForm({ vehicle }: VehicleFormProps) {
     setSubmitting(true);
     setError(null);
 
-    const form = e.currentTarget;
+    const form = e.currentTarget as HTMLFormElement;
     const formData = new FormData(form);
 
-    // Adicionar features
-    const validFeatures = features.filter(f => f.trim());
+    // Features válidas
+    const validFeatures = features.filter((f) => f.trim());
     formData.set("features", JSON.stringify(validFeatures));
 
-    // Adicionar imagens existentes
-    const existingImages = images.filter(img => !img.file);
+    // Imagens EXISTENTES (sem file), NA ORDEM ATUAL DO GRID
+    const existingImages = uiImages
+      .filter((img) => !img.file) // <- mais robusto do que usar somente !isNew
+      .filter((img) => !!img.url) // segurança extra
+      .map((img) => ({
+        url: img.url,
+        meta: img.meta ?? null,
+      }));
     formData.set("existingImages", JSON.stringify(existingImages));
 
-    // Adicionar novas imagens
-    images.forEach((img, index) => {
+    // Imagens NOVAS (com file), na ordem do grid
+    let newIdx = 0;
+    uiImages.forEach((img) => {
       if (img.file) {
-        formData.append(`newImage_${index}`, img.file);
+        formData.append(`newImage_${newIdx++}`, img.file);
       }
     });
 
     try {
-      const url = vehicle?.id 
-        ? `/api/vehicles/${vehicle.id}`
-        : `/api/vehicles`;
-
+      const url = vehicle?.id ? `/api/vehicles/${vehicle.id}` : `/api/vehicles`;
       const method = vehicle?.id ? "PUT" : "POST";
 
-      const res = await fetch(url, {
-        method,
-        body: formData,
-      });
+      const res = await fetch(url, { method, body: formData });
 
       if (!res.ok) {
-        const data = await res.json();
+        const data = await res.json().catch(() => ({}));
         throw new Error(data.error || "Erro ao salvar veículo");
       }
 
@@ -115,7 +96,8 @@ export default function VehicleForm({ vehicle }: VehicleFormProps) {
     }
   }
 
-  const inputClass = "w-full h-11 rounded-xl border border-gray-300 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent";
+  const inputClass =
+    "w-full h-11 rounded-xl border border-gray-300 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent";
   const labelClass = "text-sm font-medium text-gray-700 mb-2 block";
 
   return (
@@ -128,7 +110,9 @@ export default function VehicleForm({ vehicle }: VehicleFormProps) {
 
       {/* Informações Básicas */}
       <div className="bg-white rounded-xl border shadow-sm p-6 space-y-5">
-        <h2 className="text-lg font-semibold text-gray-900 pb-2 border-b">Informações Básicas</h2>
+        <h2 className="text-lg font-semibold text-gray-900 pb-2 border-b">
+          Informações Básicas
+        </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="md:col-span-2">
@@ -174,7 +158,11 @@ export default function VehicleForm({ vehicle }: VehicleFormProps) {
 
           <div>
             <label className={labelClass}>Combustível</label>
-            <select name="fuel" defaultValue={vehicle?.fuel || ""} className={inputClass}>
+            <select
+              name="fuel"
+              defaultValue={vehicle?.fuel || ""}
+              className={inputClass}
+            >
               <option value="">Selecione</option>
               <option value="Gasolina">Gasolina</option>
               <option value="Álcool">Álcool</option>
@@ -188,7 +176,11 @@ export default function VehicleForm({ vehicle }: VehicleFormProps) {
 
           <div>
             <label className={labelClass}>Câmbio</label>
-            <select name="transmission" defaultValue={vehicle?.transmission || ""} className={inputClass}>
+            <select
+              name="transmission"
+              defaultValue={vehicle?.transmission || ""}
+              className={inputClass}
+            >
               <option value="">Selecione</option>
               <option value="Manual">Manual</option>
               <option value="Automático">Automático</option>
@@ -229,7 +221,11 @@ export default function VehicleForm({ vehicle }: VehicleFormProps) {
 
           <div>
             <label className={labelClass}>Portas</label>
-            <select name="doors" defaultValue={vehicle?.doors || ""} className={inputClass}>
+            <select
+              name="doors"
+              defaultValue={vehicle?.doors || ""}
+              className={inputClass}
+            >
               <option value="">Selecione</option>
               <option value="2">2 portas</option>
               <option value="4">4 portas</option>
@@ -267,7 +263,9 @@ export default function VehicleForm({ vehicle }: VehicleFormProps) {
               defaultChecked={vehicle?.available ?? true}
               className="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-2 focus:ring-blue-500"
             />
-            <span className="text-sm font-medium text-gray-700">Disponível para venda</span>
+            <span className="text-sm font-medium text-gray-700">
+              Disponível para venda
+            </span>
           </label>
 
           <label className="flex items-center gap-3 cursor-pointer">
@@ -277,14 +275,18 @@ export default function VehicleForm({ vehicle }: VehicleFormProps) {
               defaultChecked={vehicle?.spotlight ?? false}
               className="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-2 focus:ring-blue-500"
             />
-            <span className="text-sm font-medium text-gray-700">Destaque na página inicial</span>
+            <span className="text-sm font-medium text-gray-700">
+              Destaque na página inicial
+            </span>
           </label>
         </div>
       </div>
 
       {/* Características */}
       <div className="bg-white rounded-xl border shadow-sm p-6">
-        <h2 className="text-lg font-semibold text-gray-900 pb-2 border-b mb-4">Características do Veículo</h2>
+        <h2 className="text-lg font-semibold text-gray-900 pb-2 border-b mb-4">
+          Características do Veículo
+        </h2>
         <div className="space-y-3">
           {features.map((feature, index) => (
             <div key={index} className="flex gap-2">
@@ -313,54 +315,18 @@ export default function VehicleForm({ vehicle }: VehicleFormProps) {
         </div>
       </div>
 
-      {/* Imagens */}
+      {/* Imagens (com drag & drop) */}
       <div className="bg-white rounded-xl border shadow-sm p-6">
         <h2 className="text-lg font-semibold text-gray-900 pb-2 border-b mb-4">
           Imagens (máximo 10) - Formato .webp recomendado
         </h2>
-        
-        {images.length > 0 && (
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-4">
-            {images.map((img, index) => (
-              <div key={img.id || index} className="relative group">
-                <img
-                  src={img.url}
-                  alt={`Imagem ${index + 1}`}
-                  className="w-full h-32 object-cover rounded-lg border-2 border-gray-200"
-                />
-                <button
-                  type="button"
-                  onClick={() => removeImage(index)}
-                  className="absolute top-1 right-1 w-7 h-7 bg-red-600 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center font-bold"
-                >
-                  ✕
-                </button>
-                <div className="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-2 py-1 rounded">
-                  {index + 1}
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
 
-        {images.length < 10 && (
-          <label className="block">
-            <input
-              type="file"
-              accept="image/*"
-              multiple
-              onChange={handleImageUpload}
-              className="hidden"
-            />
-            <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center cursor-pointer hover:border-blue-500 hover:bg-blue-50 transition-colors">
-              <div className="text-gray-400 text-4xl mb-2">📷</div>
-              <p className="text-sm text-gray-600 font-medium">Clique para adicionar imagens</p>
-              <p className="text-xs text-gray-500 mt-1">
-                {images.length} de 10 imagens • Formatos: JPG, PNG, WEBP
-              </p>
-            </div>
-          </label>
-        )}
+        <ImagesSortableGrid
+          initialImages={vehicle?.images || []}
+          max={10}
+          onChange={(items) => setUiImages(items)} // mantém no estado a ordem atual
+          onFilesPicked={() => {}}                // opcional; o grid já faz o preview
+        />
       </div>
 
       {/* Botões de Ação */}
@@ -370,7 +336,11 @@ export default function VehicleForm({ vehicle }: VehicleFormProps) {
           disabled={submitting}
           className="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed font-medium transition-colors"
         >
-          {submitting ? "Salvando..." : vehicle?.id ? "Salvar Alterações" : "Criar Veículo"}
+          {submitting
+            ? "Salvando..."
+            : vehicle?.id
+            ? "Salvar Alterações"
+            : "Criar Veículo"}
         </button>
         <button
           type="button"

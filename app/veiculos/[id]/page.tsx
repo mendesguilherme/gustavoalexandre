@@ -1,12 +1,11 @@
 "use client"
 
 import type React from "react"
-import { useState, useEffect } from "react"
+import { useEffect, useMemo, useState, useCallback } from "react"
 import { useParams } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
 
-import { vehicles } from "@/data/vehicles"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Card, CardContent } from "@/components/ui/card"
@@ -20,34 +19,42 @@ import "react-inner-image-zoom/lib/InnerImageZoom/styles.css"
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { WEBHOOK_URL } from "@/lib/config"
 
-import {
-  Calendar,
-  Fuel,
-  Settings,
-  ArrowLeft,
-  Phone,
-  MessageCircle,
-  Gauge,
-  MapPin,
-  Shield,
-} from "lucide-react"
+import { Calendar, Fuel, Settings, ArrowLeft, Phone, MessageCircle, Gauge, MapPin, Shield } from "lucide-react"
+
+type PublicVehicle = {
+  id: number
+  name: string
+  brand: string | null
+  price: string | null
+  year: string | null
+  fuel: string | null
+  transmission: string | null
+  badge: string | null
+  description: string | null
+  available: boolean
+  spotlight: boolean
+  km?: string | null
+  first_image_url?: string | null
+  images?: string[]
+}
 
 function formatTelefone(value: string) {
   const cleaned = value.replace(/\D/g, "")
   const match = cleaned.match(/^(\d{0,2})(\d{0,5})(\d{0,4})$/)
   if (!match) return value
   const [, ddd, parte1, parte2] = match
-  return !parte2
-    ? `(${ddd}) ${parte1}`
-    : `(${ddd}) ${parte1}-${parte2}`
+  return !parte2 ? `(${ddd}) ${parte1}` : `(${ddd}) ${parte1}-${parte2}`
 }
 
 export default function VehicleDetailsPage() {
   const params = useParams()
-  const vehicleId = params?.id
-  const vehicle = vehicles.find((v) => String(v.id) === String(vehicleId))
+  const vehicleId = params?.id as string
+
+  const [vehicle, setVehicle] = useState<PublicVehicle | null>(null)
+  const [loading, setLoading] = useState(true)
+
   const [showModal, setShowModal] = useState(false)
-  const [selectedImage, setSelectedImage] = useState(0)  
+  const [selectedImage, setSelectedImage] = useState(0)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const [name, setName] = useState("")
@@ -58,6 +65,39 @@ export default function VehicleDetailsPage() {
   const [showFeedbackModal, setShowFeedbackModal] = useState(false)
   const [feedback, setFeedback] = useState<{ type: "success" | "error"; message: string } | null>(null)
 
+  // controla fallback da imagem principal caso a URL remota falhe
+  const [brokenIdx, setBrokenIdx] = useState<number | null>(null)
+  const safeSrc = useCallback(
+    (url: string | undefined) => (brokenIdx === selectedImage ? "/images/placeholder.webp" : (url || "/images/placeholder.webp")),
+    [brokenIdx, selectedImage]
+  )
+
+  useEffect(() => {
+    let active = true
+    ;(async () => {
+      try {
+        setLoading(true)
+        const res = await fetch(`/api/public/vehicles?id=${encodeURIComponent(String(vehicleId))}&withImages=1`, {
+          cache: "no-store",
+        })
+        const json = await res.json()
+        if (!active) return
+        const v = (json?.vehicles ?? [])[0] as PublicVehicle | undefined
+        setVehicle(v ?? null)
+        setSelectedImage(0)
+        setBrokenIdx(null)
+      } catch (e) {
+        console.error("Erro ao carregar veículo:", e)
+        setVehicle(null)
+      } finally {
+        if (active) setLoading(false)
+      }
+    })()
+    return () => {
+      active = false
+    }
+  }, [vehicleId])
+
   useEffect(() => {
     document.body.style.overflow = isModalOpen ? "hidden" : "auto"
     return () => {
@@ -65,7 +105,14 @@ export default function VehicleDetailsPage() {
     }
   }, [isModalOpen])
 
-  if (!vehicle) {
+  const images: string[] = useMemo(() => {
+    if (!vehicle) return []
+    if (vehicle.images && vehicle.images.length) return vehicle.images
+    if (vehicle.first_image_url) return [vehicle.first_image_url]
+    return []
+  }, [vehicle])
+
+  if (!loading && !vehicle) {
     return (
       <div>
         <Header />
@@ -75,51 +122,61 @@ export default function VehicleDetailsPage() {
         <Footer onOpenSimulacaoModal={() => setShowModal(true)} />
       </div>
     )
-  }  
+  }
+
+  if (loading || !vehicle) {
+    return (
+      <div>
+        <Header />
+        <div className="container mx-auto px-4 py-12">
+          <div className="h-8 w-48 bg-gray-100 animate-pulse rounded mb-6" />
+          <div className="grid lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2 space-y-6">
+              <div className="h-10 w-full bg-gray-100 animate-pulse rounded" />
+              <div className="h-[360px] bg-gray-100 animate-pulse rounded" />
+              <div className="h-40 bg-gray-100 animate-pulse rounded" />
+              <div className="h-40 bg-gray-100 animate-pulse rounded" />
+            </div>
+            <div className="space-y-6">
+              <div className="h-80 bg-gray-100 animate-pulse rounded" />
+              <div className="h-48 bg-gray-100 animate-pulse rounded" />
+              <div className="h-48 bg-gray-100 animate-pulse rounded" />
+            </div>
+          </div>
+        </div>
+        <Footer onOpenSimulacaoModal={() => setShowModal(true)} />
+      </div>
+    )
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-
-  const payload = {      
-    tipoFormulario: "veiculo_especifico",
-    nome: name,
-    telefone: phone,
-    email: email,
-    veiculo: vehicle.name,
-    mensagem: message
-  }
-
+    const payload = {
+      tipoFormulario: "veiculo_especifico",
+      nome: name,
+      telefone: phone,
+      email: email,
+      veiculo: vehicle.name,
+      mensagem: message,
+    }
     try {
       const response = await fetch(WEBHOOK_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: "__n8n_BLANK_VALUE_e5362baf-c777-4d57-a609-6eaf1f9e87f6"
+          Authorization: "__n8n_BLANK_VALUE_e5362baf-c777-4d57-a609-6eaf1f9e87f6",
         },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(payload),
       })
-
       if (response.ok) {
-        setFeedback({
-          type: "success",
-          message: "Interesse enviado com sucesso! Em breve entraremos em contato."
-        })
-        setName("")
-        setPhone("")
-        setEmail("")
-        setMessage("")
+        setFeedback({ type: "success", message: "Interesse enviado com sucesso! Em breve entraremos em contato." })
+        setName(""); setPhone(""); setEmail(""); setMessage("")
       } else {
         const errorText = await response.text()
-        setFeedback({
-          type: "error",
-          message: `Erro ao enviar: ${errorText || "Resposta inesperada do servidor."}`
-        })
+        setFeedback({ type: "error", message: `Erro ao enviar: ${errorText || "Resposta inesperada do servidor."}` })
       }
     } catch (error: any) {
-      setFeedback({
-        type: "error",
-        message: `Erro de rede ou execução: ${error?.message || "Erro desconhecido"}`
-      })
+      setFeedback({ type: "error", message: `Erro de rede ou execução: ${error?.message || "Erro desconhecido"}` })
     } finally {
       setShowFeedbackModal(true)
     }
@@ -148,9 +205,9 @@ export default function VehicleDetailsPage() {
               <div>
                 <div className="flex flex-wrap items-center gap-3 mb-2">
                   <h1 className="text-3xl font-bold text-gray-900">{vehicle.name}</h1>
-                  <Badge className="bg-red-600">{vehicle.badge}</Badge>
+                  {vehicle.badge && <Badge className="bg-red-600">{vehicle.badge}</Badge>}
                 </div>
-                <div className="text-3xl font-bold text-red-600">{vehicle.price}</div>
+                {vehicle.price && <div className="text-3xl font-bold text-red-600">{vehicle.price}</div>}
               </div>
               <div className="flex gap-2">
                 <a
@@ -176,33 +233,34 @@ export default function VehicleDetailsPage() {
               <CardContent className="p-0">
                 <div className="relative">
                   <Image
-                    src={vehicle.images[selectedImage] || "/images/placeholder.webp"}
+                    src={safeSrc(images[selectedImage])}
                     alt={`${vehicle.name} - imagem ${selectedImage + 1}`}
-                    width={600}
-                    height={400}
+                    width={1200}
+                    height={900}
+                    // IMPORTANTE: pular otimização para evitar falhas com arquivos antigos
+                    unoptimized
                     className="w-full h-80 object-cover rounded-t-lg cursor-zoom-in"
                     onClick={() => setIsModalOpen(true)}
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = "/images/placeholder.webp"
-                    }}
+                    onError={() => setBrokenIdx(selectedImage)}
                   />
                 </div>
-                {vehicle.images.length > 1 && (
+                {images.length > 1 && (
                   <div className="grid grid-cols-4 gap-2 p-4">
-                    {vehicle.images.map((img, idx) => (
+                    {images.map((img, idx) => (
                       <button
                         key={idx}
                         onClick={() => setSelectedImage(idx)}
                         className={`relative rounded-lg overflow-hidden ${selectedImage === idx ? "ring-2 ring-red-600" : ""}`}
                       >
                         <Image
-                          src={img}
+                          src={img || "/images/placeholder.webp"}
                           alt={`${vehicle.name} miniatura ${idx + 1}`}
-                          width={150}
-                          height={100}
+                          width={300}
+                          height={200}
+                          unoptimized
                           className="w-full h-20 object-cover"
                           onError={(e) => {
-                            (e.target as HTMLImageElement).src = "/images/placeholder.webp"
+                            (e.currentTarget as HTMLImageElement).src = "/images/placeholder.webp"
                           }}
                         />
                       </button>
@@ -212,17 +270,11 @@ export default function VehicleDetailsPage() {
               </CardContent>
             </Card>
 
-            {isModalOpen && (
+            {isModalOpen && images.length > 0 && (
               <div className="fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center px-4" onClick={() => setIsModalOpen(false)}>
                 <div className="relative max-w-4xl w-full" onClick={(e) => e.stopPropagation()}>
                   <button onClick={() => setIsModalOpen(false)} className="absolute top-2 right-2 text-white text-2xl font-bold z-50">&times;</button>
-                  <InnerImageZoom
-                    src={vehicle.images[selectedImage]}
-                    zoomSrc={vehicle.images[selectedImage]}
-                    zoomType="hover"
-                    zoomPreload
-                    className="rounded-lg"
-                  />
+                  <InnerImageZoom src={images[selectedImage]} zoomSrc={images[selectedImage]} zoomType="hover" zoomPreload className="rounded-lg" />
                 </div>
               </div>
             )}
@@ -231,83 +283,81 @@ export default function VehicleDetailsPage() {
               <CardContent className="p-6">
                 <h2 className="text-2xl font-semibold mb-4">Especificações</h2>
                 <div className="grid md:grid-cols-2 gap-4">
-                  <Item icon={<Calendar />} label="Ano" value={vehicle.year} />
-                  <Item icon={<Gauge />} label="Quilometragem" value={vehicle.km} />
-                  <Item icon={<Fuel />} label="Combustível" value={vehicle.fuel} />
-                  <Item icon={<Settings />} label="Transmissão" value={vehicle.transmission} />
+                  <Item icon={<Calendar />} label="Ano" value={vehicle.year ?? "—"} />
+                  <Item icon={<Gauge />} label="Quilometragem" value={vehicle.km ?? "—"} />
+                  <Item icon={<Fuel />} label="Combustível" value={vehicle.fuel ?? "—"} />
+                  <Item icon={<Settings />} label="Transmissão" value={vehicle.transmission ?? "—"} />
                 </div>
               </CardContent>
             </Card>
 
-            <Card>
-              <CardContent className="p-6">
-                <h2 className="text-2xl font-semibold mb-4">Descrição</h2>
-                <p className="text-gray-700 leading-relaxed">{vehicle.description}</p>
-              </CardContent>
-            </Card>
+            {vehicle.description && (
+              <Card>
+                <CardContent className="p-6">
+                  <h2 className="text-2xl font-semibold mb-4">Descrição</h2>
+                  <p className="text-gray-700 leading-relaxed">{vehicle.description}</p>
+                </CardContent>
+              </Card>
+            )}
           </div>
 
           <aside className="sticky top-4 space-y-6 h-fit">
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-2xl font-semibold mb-4">Tenho Interesse</h3>
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <div>
-                      <Label htmlFor="name" className="text-black">Nome completo</Label>
-                      <Input
-                        id="name"
-                        name="name"
-                        required
-                        value={name}
-                        onChange={(e) => setName(e.target.value.replace(/[^A-Za-zÀ-ÿ\s]/g, ""))}
-                        className="bg-white border border-gray-300 text-black placeholder:text-gray-500"
-                        placeholder="Seu nome completo"
-                      />
-                    </div>
-
-                    <div>
-                      <Label htmlFor="phone" className="text-black">WhatsApp</Label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        required
-                        value={phone}
-                        onChange={(e) => setPhone(formatTelefone(e.target.value))}
-                        placeholder="(00) 00000-0000"
-                        className="bg-white border border-gray-300 text-black placeholder:text-gray-500"
-                      />
-                    </div>
-
-                    <div>
-                      <Label htmlFor="email" className="text-black">E-mail</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        required
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="seu@email.com"
-                        className="bg-white border border-gray-300 text-black placeholder:text-gray-500"
-                      />
-                    </div>
-
-                    <div>
-                      <Label htmlFor="message" className="text-black">Mensagem</Label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        required
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
-                        placeholder="Gostaria de agendar um test drive..."
-                        className="bg-white border border-gray-300 text-black placeholder:text-gray-500"
-                        rows={3}
-                      />
-                    </div>
-
-                    <Button className="w-full bg-red-600 hover:bg-red-700 text-lg py-3">Enviar Interesse</Button>
-                  </form>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div>
+                    <Label htmlFor="name" className="text-black">Nome completo</Label>
+                    <Input
+                      id="name"
+                      name="name"
+                      required
+                      value={name}
+                      onChange={(e) => setName(e.target.value.replace(/[^A-Za-zÀ-ÿ\s]/g, ""))}
+                      className="bg-white border border-gray-300 text-black placeholder:text-gray-500"
+                      placeholder="Seu nome completo"
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="phone" className="text-black">WhatsApp</Label>
+                    <Input
+                      id="phone"
+                      name="phone"
+                      required
+                      value={phone}
+                      onChange={(e) => setPhone(formatTelefone(e.target.value))}
+                      placeholder="(00) 00000-0000"
+                      className="bg-white border border-gray-300 text-black placeholder:text-gray-500"
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="email" className="text-black">E-mail</Label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="seu@email.com"
+                      className="bg-white border border-gray-300 text-black placeholder:text-gray-500"
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="message" className="text-black">Mensagem</Label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      required
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      placeholder="Gostaria de agendar um test drive..."
+                      className="bg-white border border-gray-300 text-black placeholder:text-gray-500"
+                      rows={3}
+                    />
+                  </div>
+                  <Button className="w-full bg-red-600 hover:bg-red-700 text-lg py-3">Enviar Interesse</Button>
+                </form>
               </CardContent>
             </Card>
 
@@ -350,57 +400,28 @@ export default function VehicleDetailsPage() {
               Solicitação de atendimento
             </DialogTitle>
           </DialogHeader>
-
           <p className="text-gray-700 text-base my-4">{feedback?.message}</p>
-
           <DialogFooter className="w-full flex justify-center">
-            <Button
-              onClick={() => setShowFeedbackModal(false)}
-              className="mx-auto bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded"
-            >
+            <Button onClick={() => setShowFeedbackModal(false)} className="mx-auto bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded">
               OK
             </Button>
           </DialogFooter>
         </DialogContent>
-      </Dialog>      
+      </Dialog>
 
       <Footer onOpenSimulacaoModal={() => setShowModal(true)} />
-    </div>  
-      
-  )  
+    </div>
+  )
 }
 
-function Item({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
+function Item({ icon, label, value }: { icon: React.ReactNode; label: string; value: string | null | undefined }) {
   return (
     <div className="flex items-center space-x-3">
       <div className="text-red-600">{icon}</div>
       <div>
         <span className="text-sm text-gray-600">{label}</span>
-        <div className="font-semibold">{value}</div>
+        <div className="font-semibold">{value ?? "—"}</div>
       </div>
-    </div>
-  )
-}
-
-function InputField({
-  label,
-  name,
-  value,
-  onChange,
-  type = "text",
-  required = false,
-}: {
-  label: string
-  name: string
-  value: string
-  onChange: React.ChangeEventHandler<HTMLInputElement>
-  type?: string
-  required?: boolean
-}) {
-  return (
-    <div>
-      <Label htmlFor={name}>{label}</Label>
-      <Input id={name} name={name} type={type} value={value} onChange={onChange} required={required} />
     </div>
   )
 }

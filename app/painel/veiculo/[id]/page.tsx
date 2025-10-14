@@ -35,7 +35,7 @@ type VehicleData = {
 export default async function VehicleEditPage({
   params,
 }: {
-  params: Promise<{ id: string }>
+  params: Promise<{ id: string }>;
 }) {
   const session = await getServerSession(authOptions);
   if (!session) {
@@ -85,7 +85,10 @@ export default async function VehicleEditPage({
   return (
     <main className="mx-auto max-w-5xl p-6">
       <div className="mb-6">
-        <Link href="/painel" className="text-sm text-blue-600 hover:underline inline-flex items-center gap-1">
+        <Link
+          href="/painel"
+          className="text-sm text-blue-600 hover:underline inline-flex items-center gap-1"
+        >
           ← Voltar para listagem
         </Link>
       </div>
