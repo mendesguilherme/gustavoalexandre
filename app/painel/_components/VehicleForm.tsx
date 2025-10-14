@@ -320,13 +320,15 @@ export default function VehicleForm({ vehicle }: VehicleFormProps) {
         <h2 className="text-lg font-semibold text-gray-900 pb-2 border-b mb-4">
           Imagens (máximo 10) - Formato .webp recomendado
         </h2>
-
+        
         <ImagesSortableGrid
+          key={vehicle?.id ?? "novo"}   // <<<<<< ADICIONE ESTA LINHA
           initialImages={vehicle?.images || []}
           max={10}
-          onChange={(items) => setUiImages(items)} // mantém no estado a ordem atual
-          onFilesPicked={() => {}}                // opcional; o grid já faz o preview
+          onChange={(items) => setUiImages(items)}
+          onFilesPicked={() => {}}
         />
+
       </div>
 
       {/* Botões de Ação */}

@@ -38,7 +38,7 @@ type PublicVehicle = {
 const PLACEHOLDER = "/images/placeholder.webp"
 
 /** Imagem do card com fallback + key por src para forçar re-render seguro */
-function CardImage({ src, alt }: { src?: string | null; alt: string }) {
+function CardImage({ src, alt, badge }: { src?: string | null; alt: string; badge?: string | null }) {
   const [currentSrc, setCurrentSrc] = useState(src || PLACEHOLDER)
 
   useEffect(() => {
@@ -60,6 +60,7 @@ function CardImage({ src, alt }: { src?: string | null; alt: string }) {
         onError={() => setCurrentSrc(PLACEHOLDER)} // fallback se 404/erro
         priority={false}
       />
+      {badge && <Badge className="absolute top-4 left-4 bg-red-600">{badge}</Badge>}
     </div>
   )
 }
@@ -267,7 +268,7 @@ export default function VeiculosPage() {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredVehicles.map((vehicle) => (
                   <Card key={vehicle.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                    <CardImage src={vehicle.first_image_url} alt={vehicle.name} />
+                    <CardImage src={vehicle.first_image_url} alt={vehicle.name} badge={vehicle.badge} />
                     <CardContent className="p-6">
                       <h3 className="text-xl font-semibold text-gray-900 mb-2">{vehicle.name}</h3>
                       {vehicle.price && <div className="text-2xl font-bold text-red-600 mb-2">{vehicle.price}</div>}
@@ -282,7 +283,6 @@ export default function VeiculosPage() {
                         <Button className="w-full bg-red-600 hover:bg-red-700">Ver Detalhes</Button>
                       </Link>
                     </CardContent>
-                    {vehicle.badge && <Badge className="absolute top-4 left-4 bg-red-600">{vehicle.badge}</Badge>}
                   </Card>
                 ))}
               </div>

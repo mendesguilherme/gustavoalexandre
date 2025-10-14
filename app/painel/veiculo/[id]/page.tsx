@@ -97,7 +97,7 @@ export default async function VehicleEditPage({
         {isNew ? "Novo Veículo" : `Editar Veículo #${vehicle?.id}`}
       </h1>
 
-      <VehicleForm vehicle={vehicle} />
+      <VehicleForm key={isNew ? "novo" : String(vehicle!.id)} vehicle={vehicle} />
     </main>
   );
 }

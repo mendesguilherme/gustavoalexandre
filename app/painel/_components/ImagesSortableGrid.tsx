@@ -1,15 +1,25 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { DndContext, PointerSensor, useSensor, useSensors } from "@dnd-kit/core";
-import { SortableContext, rectSortingStrategy, arrayMove, useSortable } from "@dnd-kit/sortable";
+import {
+  DndContext,
+  PointerSensor,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core";
+import {
+  SortableContext,
+  rectSortingStrategy,
+  arrayMove,
+  useSortable,
+} from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 
-// ===== Tipos expostos =====
+/** ===== Tipos expostos ===== */
 export type UiImage = {
   id: string;          // id único p/ DnD (use path da meta ou a própria URL)
-  url: string;         // image_url público
+  url: string;         // image_url público ou blob: para preview
   meta?: any;          // image_meta (se existir)
   file?: File | null;  // se for imagem nova (ainda não enviada)
   isNew?: boolean;     // flag auxiliar
@@ -39,6 +49,8 @@ function SortableThumb({
     cursor: "grab",
   } as React.CSSProperties;
 
+  const isLocalPreview = !!item.file; // blob: (novo upload)
+
   return (
     <div
       ref={setNodeRef}
@@ -47,13 +59,26 @@ function SortableThumb({
       {...listeners}
       className="relative rounded-md overflow-hidden border bg-white"
     >
-      <Image
-        src={item.url || "/images/placeholder.webp"}
-        alt={`Imagem ${index + 1}`}
-        width={240}
-        height={160}
-        className="w-full h-40 object-cover"
-      />
+      {isLocalPreview ? (
+        <img
+          src={item.url}
+          alt={`Imagem ${index + 1}`}
+          width={240}
+          height={160}
+          className="w-full h-40 object-cover"
+          draggable={false}
+        />
+      ) : (
+        <Image
+          src={item.url || "/images/placeholder.webp"}
+          alt={`Imagem ${index + 1}`}
+          width={240}
+          height={160}
+          className="w-full h-40 object-cover"
+          draggable={false}
+        />
+      )}
+
       <span className="absolute left-1.5 bottom-1.5 inline-flex h-6 w-6 items-center justify-center rounded bg-black/70 text-white text-xs">
         {index + 1}
       </span>
@@ -85,8 +110,11 @@ export function ImagesSortableGrid({
   max?: number;
 }) {
   const [items, setItems] = useState<UiImage[]>([]);
+  const hydratedRef = useRef(false); // evita re-hidratar a cada re-render do pai
 
+  // Hidrata apenas UMA vez a partir de initialImages.
   useEffect(() => {
+    if (hydratedRef.current) return;
     const mapped = (initialImages || []).map((img) => ({
       id: (img.image_meta?.path as string) || img.image_url || uid(),
       url: img.image_url,
@@ -95,7 +123,22 @@ export function ImagesSortableGrid({
       isNew: false,
     }));
     setItems(mapped);
+    hydratedRef.current = true;
   }, [initialImages]);
+
+  // revoke objectURLs ao desmontar (evita memory leak)
+  useEffect(() => {
+    return () => {
+      items.forEach((i) => {
+        if (i.file && i.url?.startsWith("blob:")) {
+          try {
+            URL.revokeObjectURL(i.url);
+          } catch {}
+        }
+      });
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 4 } })
@@ -113,6 +156,12 @@ export function ImagesSortableGrid({
   };
 
   const handleRemove = (id: string) => {
+    const toRemove = items.find((i) => i.id === id);
+    if (toRemove?.file && toRemove.url?.startsWith("blob:")) {
+      try {
+        URL.revokeObjectURL(toRemove.url);
+      } catch {}
+    }
     const next = items.filter((i) => i.id !== id);
     setItems(next);
     onChange(next);
@@ -123,10 +172,18 @@ export function ImagesSortableGrid({
   return (
     <div className="space-y-3">
       <DndContext sensors={sensors} onDragEnd={handleDragEnd}>
-        <SortableContext items={items.map((i) => i.id)} strategy={rectSortingStrategy}>
+        <SortableContext
+          items={items.map((i) => i.id)}
+          strategy={rectSortingStrategy}
+        >
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
             {items.map((item, idx) => (
-              <SortableThumb key={item.id} item={item} index={idx} onRemove={handleRemove} />
+              <SortableThumb
+                key={item.id}
+                item={item}
+                index={idx}
+                onRemove={handleRemove}
+              />
             ))}
 
             {canAdd && (
@@ -139,19 +196,26 @@ export function ImagesSortableGrid({
                   onChange={(e) => {
                     const files = Array.from(e.currentTarget.files || []);
                     if (!files.length) return;
+
                     onFilesPicked(files);
-                    const next = [
-                      ...items,
-                      ...files.slice(0, max - items.length).map((f) => ({
+
+                    const toAdd: UiImage[] = [];
+                    for (const f of files.slice(0, max - items.length)) {
+                      const blobUrl = URL.createObjectURL(f);
+                      toAdd.push({
                         id: uid(),
-                        url: URL.createObjectURL(f),
+                        url: blobUrl,
                         meta: undefined,
                         file: f,
                         isNew: true,
-                      })),
-                    ];
+                      });
+                    }
+
+                    const next = [...items, ...toAdd];
                     setItems(next);
                     onChange(next);
+
+                    // permite selecionar os mesmos arquivos novamente depois
                     e.currentTarget.value = "";
                   }}
                 />
