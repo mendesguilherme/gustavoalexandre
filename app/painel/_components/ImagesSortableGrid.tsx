@@ -15,6 +15,7 @@ import {
   useSortable,
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
+import { thumbUrlFromMeta } from "@/utils/thumb";
 
 /** ===== Tipos expostos ===== */
 export type UiImage = {
@@ -24,6 +25,8 @@ export type UiImage = {
   file?: File | null;  // se for imagem nova (ainda não enviada)
   isNew?: boolean;     // flag auxiliar
 };
+
+const PLACEHOLDER = "/images/placeholder.webp";
 
 // utilitário p/ id estável
 const uid = () =>
@@ -51,6 +54,21 @@ function SortableThumb({
 
   const isLocalPreview = !!item.file; // blob: (novo upload)
 
+  // para imagens persistidas no banco, usamos a thumb via render API (com fallback para a URL original)
+  const remoteSrc = thumbUrlFromMeta(item.meta, item.url || PLACEHOLDER);
+
+  // estado local para tratar fallback de erro no <Image>
+  const [displaySrc, setDisplaySrc] = useState<string>(
+    isLocalPreview ? (item.url || PLACEHOLDER) : (remoteSrc || PLACEHOLDER)
+  );
+
+  useEffect(() => {
+    // se o item mudar (ex.: reordenação/replace), recalcula o src
+    const next = isLocalPreview ? (item.url || PLACEHOLDER) : (thumbUrlFromMeta(item.meta, item.url || PLACEHOLDER));
+    setDisplaySrc(next);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [item.id, item.url, item.meta, isLocalPreview]);
+
   return (
     <div
       ref={setNodeRef}
@@ -60,22 +78,33 @@ function SortableThumb({
       className="relative rounded-md overflow-hidden border bg-white"
     >
       {isLocalPreview ? (
+        // blob local: use <img> simples (Next/Image não precisa aqui)
         <img
-          src={item.url}
+          src={displaySrc}
           alt={`Imagem ${index + 1}`}
           width={240}
           height={160}
           className="w-full h-40 object-cover"
           draggable={false}
+          onError={() => setDisplaySrc(PLACEHOLDER)}
         />
       ) : (
+        // imagem persistida: Next/Image com miniatura do Supabase render
         <Image
-          src={item.url || "/images/placeholder.webp"}
+          key={displaySrc}                 // força recriar quando o src muda
+          src={displaySrc || PLACEHOLDER}
           alt={`Imagem ${index + 1}`}
           width={240}
           height={160}
           className="w-full h-40 object-cover"
           draggable={false}
+          unoptimized                      // evita inconsistências em domínios externos
+          onError={() => {
+            // se a thumb falhar, tenta a URL original; se também falhar, usa placeholder
+            const fallback = item.url || PLACEHOLDER;
+            if (displaySrc !== fallback) setDisplaySrc(fallback);
+            else setDisplaySrc(PLACEHOLDER);
+          }}
         />
       )}
 

@@ -18,8 +18,16 @@ import InnerImageZoom from "react-inner-image-zoom"
 import "react-inner-image-zoom/lib/InnerImageZoom/styles.css"
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { WEBHOOK_URL } from "@/lib/config"
+import { thumbUrlFromMeta } from "@/utils/thumb"
 
 import { Calendar, Fuel, Settings, ArrowLeft, Phone, MessageCircle, Gauge, MapPin, Shield } from "lucide-react"
+
+type VehicleImage =
+  | string
+  | {
+      image_url: string
+      image_meta?: any
+    }
 
 type PublicVehicle = {
   id: number
@@ -35,7 +43,10 @@ type PublicVehicle = {
   spotlight: boolean
   km?: string | null
   first_image_url?: string | null
-  images?: string[]
+  /** se o endpoint já devolver, aproveitamos para gerar a thumb */
+  first_image_meta?: any | null
+  /** pode vir como array de urls OU como objetos com meta */
+  images?: VehicleImage[]
 }
 
 function formatTelefone(value: string) {
@@ -105,11 +116,43 @@ export default function VehicleDetailsPage() {
     }
   }, [isModalOpen])
 
-  const images: string[] = useMemo(() => {
-    if (!vehicle) return []
-    if (vehicle.images && vehicle.images.length) return vehicle.images
-    if (vehicle.first_image_url) return [vehicle.first_image_url]
-    return []
+  /**
+   * Normaliza as imagens:
+   * - thumbs: URLs geradas via Render API (quando houver meta) ou fallback para image_url / first_image_url
+   * - originals: URLs originais (image_url ou first_image_url)
+   */
+  const { thumbs, originals } = useMemo(() => {
+    const PLACE = "/images/placeholder.webp"
+    const r = { thumbs: [] as string[], originals: [] as string[] }
+
+    if (!vehicle) return r
+
+    // caso a API retorne a lista completa
+    if (vehicle.images && vehicle.images.length) {
+      for (const it of vehicle.images) {
+        if (typeof it === "string") {
+          r.thumbs.push(it || PLACE)
+          r.originals.push(it || PLACE)
+        } else {
+          const orig = it.image_url || PLACE
+          const thumb = thumbUrlFromMeta(it.image_meta, orig)
+          r.thumbs.push(thumb || PLACE)
+          r.originals.push(orig)
+        }
+      }
+      return r
+    }
+
+    // fallback: só a primeira imagem
+    if (vehicle.first_image_url || vehicle.first_image_meta) {
+      const orig = vehicle.first_image_url || PLACE
+      const thumb = thumbUrlFromMeta(vehicle.first_image_meta, orig)
+      r.thumbs.push(thumb || PLACE)
+      r.originals.push(orig)
+      return r
+    }
+
+    return r
   }, [vehicle])
 
   if (!loading && !vehicle) {
@@ -233,20 +276,20 @@ export default function VehicleDetailsPage() {
               <CardContent className="p-0">
                 <div className="relative">
                   <Image
-                    src={safeSrc(images[selectedImage])}
+                    src={safeSrc(thumbs[selectedImage])}
                     alt={`${vehicle.name} - imagem ${selectedImage + 1}`}
                     width={1200}
                     height={900}
-                    // IMPORTANTE: pular otimização para evitar falhas com arquivos antigos
+                    // pular otimização para evitar edge cases com URLs remotas
                     unoptimized
                     className="w-full h-80 object-cover rounded-t-lg cursor-zoom-in"
                     onClick={() => setIsModalOpen(true)}
                     onError={() => setBrokenIdx(selectedImage)}
                   />
                 </div>
-                {images.length > 1 && (
+                {thumbs.length > 1 && (
                   <div className="grid grid-cols-4 gap-2 p-4">
-                    {images.map((img, idx) => (
+                    {thumbs.map((img, idx) => (
                       <button
                         key={idx}
                         onClick={() => setSelectedImage(idx)}
@@ -270,11 +313,17 @@ export default function VehicleDetailsPage() {
               </CardContent>
             </Card>
 
-            {isModalOpen && images.length > 0 && (
+            {isModalOpen && originals.length > 0 && (
               <div className="fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center px-4" onClick={() => setIsModalOpen(false)}>
                 <div className="relative max-w-4xl w-full" onClick={(e) => e.stopPropagation()}>
                   <button onClick={() => setIsModalOpen(false)} className="absolute top-2 right-2 text-white text-2xl font-bold z-50">&times;</button>
-                  <InnerImageZoom src={images[selectedImage]} zoomSrc={images[selectedImage]} zoomType="hover" zoomPreload className="rounded-lg" />
+                  <InnerImageZoom
+                    src={originals[selectedImage]}
+                    zoomSrc={originals[selectedImage]}
+                    zoomType="hover"
+                    zoomPreload
+                    className="rounded-lg"
+                  />
                 </div>
               </div>
             )}
@@ -385,7 +434,7 @@ export default function VehicleDetailsPage() {
                 <div className="text-sm text-gray-700 space-y-1">
                   <p>Av. Pref. Pedro Paschoal, 798</p>
                   <p>Jardim Ciranda - Bebedouro-SP</p>
-                  <p className="font-semibold text-red-600">(17) 99123-7276</p>
+                  <p className="font-semibold text-red-600">(17) 99123-7276)</p>
                 </div>
               </CardContent>
             </Card>

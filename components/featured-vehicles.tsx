@@ -11,6 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
+import { thumbUrlFromMeta } from "@/utils/thumb";
 
 type VehicleCard = {
   id: number;
@@ -25,6 +26,8 @@ type VehicleCard = {
   available: boolean;
   spotlight: boolean;
   first_image_url?: string | null;
+  /** <- acrescentado para usar o util existente */
+  first_image_meta?: any | null;
 };
 
 export function FeaturedVehicles() {
@@ -55,7 +58,12 @@ export function FeaturedVehicles() {
   }, []);
 
   const renderCard = (vehicle: VehicleCard) => {
-    const img = vehicle.first_image_url || "/images/placeholder.webp";
+    // usa sua função existente para gerar a thumb da Render API
+    const img = thumbUrlFromMeta(
+      vehicle.first_image_meta,
+      vehicle.first_image_url || "/images/placeholder.webp"
+    );
+
     const isSvg = img.endsWith(".svg");
 
     return (
@@ -78,6 +86,13 @@ export function FeaturedVehicles() {
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 33vw"
+                unoptimized
+                // se a imagem quebrar, pelo menos não trava o layout
+                onError={(ev) => {
+                  try {
+                    (ev.currentTarget as any).src = "/images/placeholder.webp";
+                  } catch {}
+                }}
               />
             )}
             {vehicle.badge && (
@@ -93,10 +108,14 @@ export function FeaturedVehicles() {
                 {vehicle.name}
               </h3>
               {vehicle.price && (
-                <div className="text-2xl font-bold text-red-600 mb-4">{vehicle.price}</div>
+                <div className="text-2xl font-bold text-red-600 mb-4">
+                  {vehicle.price}
+                </div>
               )}
               {vehicle.description && (
-                <p className="text-sm text-gray-600 truncate mb-4">{vehicle.description}</p>
+                <p className="text-sm text-gray-600 truncate mb-4">
+                  {vehicle.description}
+                </p>
               )}
               <div className="flex items-center justify-between text-sm text-gray-600 mb-4">
                 <div className="flex items-center space-x-1">
@@ -114,7 +133,9 @@ export function FeaturedVehicles() {
               </div>
             </div>
             <Link href={`/veiculos/${vehicle.id}`}>
-              <Button className="w-full bg-red-600 hover:bg-red-700">Ver Detalhes</Button>
+              <Button className="w-full bg-red-600 hover:bg-red-700">
+                Ver Detalhes
+              </Button>
             </Link>
           </CardContent>
         </Card>
@@ -126,7 +147,9 @@ export function FeaturedVehicles() {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Veículos em Destaque</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            Veículos em Destaque
+          </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Confira nossa seleção especial de veículos com as melhores condições
           </p>
@@ -136,7 +159,10 @@ export function FeaturedVehicles() {
         <div className="hidden sm:flex flex-wrap justify-center gap-8 mb-12">
           {loading
             ? Array.from({ length: 3 }).map((_, i) => (
-                <div key={i} className="w-full md:w-[330px] h-[500px] bg-gray-100 animate-pulse rounded-xl" />
+                <div
+                  key={i}
+                  className="w-full md:w-[330px] h-[500px] bg-gray-100 animate-pulse rounded-xl"
+                />
               ))
             : vehicles.map(renderCard)}
         </div>

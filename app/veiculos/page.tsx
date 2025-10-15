@@ -39,11 +39,25 @@ const PLACEHOLDER = "/images/placeholder.webp"
 
 /** Imagem do card com fallback + key por src para forçar re-render seguro */
 function CardImage({ src, alt, badge }: { src?: string | null; alt: string; badge?: string | null }) {
-  const [currentSrc, setCurrentSrc] = useState(src || PLACEHOLDER)
+  // tenta converter a URL pública do Supabase para a URL de render (thumb)
+  const toRenderUrl = (u?: string | null) => {
+    if (!u) return PLACEHOLDER
+    // casa: https://<host>/storage/v1/object/public/vehicles-media/<path>
+    const m = u.match(/^(https?:\/\/[^/]+)\/storage\/v1\/object\/public\/(vehicles-media\/.+)$/)
+    if (!m) return u
+    // devolve render com width/quality (thumb)
+    return `${m[1]}/storage/v1/render/image/public/${m[2]}?width=640&quality=75`
+  }
+
+  const original = src || PLACEHOLDER
+  const renderSrc = toRenderUrl(src)
+
+  const [currentSrc, setCurrentSrc] = useState(renderSrc)
 
   useEffect(() => {
-    // sempre que o src mudar, atualiza o estado (força recarregar a imagem)
-    setCurrentSrc(src || PLACEHOLDER)
+    // sempre que o src mudar, recalcula a tentativa de thumb
+    setCurrentSrc(toRenderUrl(src))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [src])
 
   return (
@@ -57,7 +71,11 @@ function CardImage({ src, alt, badge }: { src?: string | null; alt: string; badg
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         className="object-cover transition-transform duration-300 ease-in-out hover:scale-105"
         unoptimized                          // evita inconsistências do loader em fill com remotas
-        onError={() => setCurrentSrc(PLACEHOLDER)} // fallback se 404/erro
+        onError={() => {
+          // se a thumb der erro, tenta a URL original; se já era a original, cai no placeholder
+          if (currentSrc !== original) setCurrentSrc(original)
+          else setCurrentSrc(PLACEHOLDER)
+        }}
         priority={false}
       />
       {badge && <Badge className="absolute top-4 left-4 bg-red-600">{badge}</Badge>}
@@ -341,7 +359,12 @@ export default function VeiculosPage() {
           </DialogHeader>
           <p className="text-gray-700 text-base my-4">{feedback?.message}</p>
           <div className="w-full flex justify-center">
-            <Button onClick={() => setShowFeedbackModal(false)} className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded">OK</Button>
+            <Button
+              onClick={() => setShowFeedbackModal(false)}
+              className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded"
+            >
+              OK
+            </Button>
           </div>
         </DialogContent>
       </Dialog>
