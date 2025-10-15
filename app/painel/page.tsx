@@ -9,6 +9,7 @@ import Link from "next/link";
 import LogoutButton from "./_components/LogoutButton";
 import DeleteButton from "./_components/DeleteButton";
 import { ChevronUp, ChevronDown, Search, X } from "lucide-react";
+import AccountButton from "./_components/AccountButton";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -203,6 +204,7 @@ export default async function PainelPage({
           <span className="text-sm text-gray-600">
             {session?.user?.name ?? "Admin"}
           </span>
+          <AccountButton />
           <LogoutButton />
         </div>
       </div>
