@@ -60,31 +60,110 @@ export default function VehicleForm({ vehicle }: VehicleFormProps) {
 
     // Imagens EXISTENTES (sem file), NA ORDEM ATUAL DO GRID
     const existingImages = uiImages
-      .filter((img) => !img.file) // <- mais robusto do que usar somente !isNew
-      .filter((img) => !!img.url) // segurança extra
-      .map((img) => ({
-        url: img.url,
-        meta: img.meta ?? null,
-      }));
+      .filter((img) => !img.file)
+      .filter((img) => !!img.url)
+      .map((img) => ({ url: img.url, meta: img.meta ?? null }));
     formData.set("existingImages", JSON.stringify(existingImages));
 
-    // Imagens NOVAS (com file), na ordem do grid
-    let newIdx = 0;
-    uiImages.forEach((img) => {
-      if (img.file) {
-        formData.append(`newImage_${newIdx++}`, img.file);
+    // Novas (arquivos) para upload direto
+    const newFiles = uiImages.filter((img) => !!img.file).map((img) => img.file!) ;
+
+    // helper p/ assinar + enviar cada arquivo direto ao Storage e montar metadados
+    const basePublic = process.env.NEXT_PUBLIC_SUPABASE_URL!
+      .replace(/\/storage\/v1.*/, ""); // raiz do projeto Supabase
+
+    async function uploadNewImagesDirect(vehicleId: number) {
+      const items: Array<{
+        image_url: string;
+        image_meta: any;
+        display_order: number;
+      }> = [];
+
+      for (let i = 0; i < newFiles.length; i++) {
+        const file = newFiles[i];
+
+        // 1) pede URL assinada
+        const sign = await fetch("/api/storage/sign-upload", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ vehicleId, mime: file.type }),
+        }).then((r) => r.json());
+
+        if (!sign?.url || !sign?.path) {
+          throw new Error("Falha ao assinar upload de imagem.");
+        }
+
+        // 2) sobe direto pro Storage (PUT)
+        const putRes = await fetch(sign.url, { method: "PUT", body: file });
+        if (!putRes.ok) {
+          throw new Error("Falha ao enviar imagem para o storage.");
+        }
+
+        // 3) monta URL pública + metadados
+        const publicUrl = `${basePublic}/storage/v1/object/public/vehicles-media/${sign.path}`;
+        const ext =
+          file.type === "image/webp" ? "webp" :
+          file.type === "image/jpeg" ? "jpg"  :
+          file.type === "image/png"  ? "png"  : "bin";
+
+        items.push({
+          image_url: publicUrl,
+          image_meta: {
+            bucket: "vehicles-media",
+            path: sign.path,
+            formats: [ext],
+            sources: { original: { url: publicUrl, size: file.size, format: ext } },
+            original: { mime: file.type, width: null, height: null },
+            updated_at: new Date().toISOString(),
+            originalOnly: true,
+          },
+          // novas imagens entram depois das existentes
+          display_order: existingImages.length + i,
+        });
       }
-    });
+
+      // 4) registra no banco (vehicle_images)
+      if (items.length) {
+        const resp = await fetch("/api/vehicles/images/append", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ vehicleId, items }),
+        });
+        if (!resp.ok) {
+          const data = await resp.json().catch(() => ({}));
+          throw new Error(data.error || "Erro ao salvar imagens no banco");
+        }
+      }
+    }
 
     try {
-      const url = vehicle?.id ? `/api/vehicles/${vehicle.id}` : `/api/vehicles`;
-      const method = vehicle?.id ? "PUT" : "POST";
+      if (vehicle?.id) {
+        // ====== EDITAR ======
+        // Atualiza dados + ordem das existentes (sem subir arquivos)
+        const res = await fetch(`/api/vehicles/${vehicle.id}`, { method: "PUT", body: formData });
+        if (!res.ok) {
+          const data = await res.json().catch(() => ({}));
+          throw new Error(data.error || "Erro ao salvar veículo");
+        }
 
-      const res = await fetch(url, { method, body: formData });
-
-      if (!res.ok) {
+        // Sobe novas direto pro storage e registra metadados
+        if (newFiles.length) {
+          await uploadNewImagesDirect(vehicle.id);
+        }
+      } else {
+        // ====== CRIAR ======
+        // Cria o veículo sem enviar arquivos (a rota ignora ausência de newImage_*)
+        const res = await fetch("/api/vehicles", { method: "POST", body: formData });
         const data = await res.json().catch(() => ({}));
-        throw new Error(data.error || "Erro ao salvar veículo");
+        if (!res.ok || !data?.id) {
+          throw new Error(data.error || "Erro ao criar veículo");
+        }
+        const newId: number = data.id;
+
+        // Agora sobe as novas imagens direto e registra metadados
+        if (newFiles.length) {
+          await uploadNewImagesDirect(newId);
+        }
       }
 
       router.push("/painel");
