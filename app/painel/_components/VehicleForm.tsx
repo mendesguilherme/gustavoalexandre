@@ -66,18 +66,11 @@ export default function VehicleForm({ vehicle }: VehicleFormProps) {
     formData.set("existingImages", JSON.stringify(existingImages));
 
     // Novas (arquivos) para upload direto
-    const newFiles = uiImages.filter((img) => !!img.file).map((img) => img.file!) ;
+    const newFiles = uiImages.filter((img) => !!img.file).map((img) => img.file!);
 
-    // helper p/ assinar + enviar cada arquivo direto ao Storage e montar metadados
-    const basePublic = process.env.NEXT_PUBLIC_SUPABASE_URL!
-      .replace(/\/storage\/v1.*/, ""); // raiz do projeto Supabase
-
+    // helper p/ assinar + enviar cada arquivo direto ao Storage e montar payload compacto
     async function uploadNewImagesDirect(vehicleId: number) {
-      const items: Array<{
-        image_url: string;
-        image_meta: any;
-        display_order: number;
-      }> = [];
+      const compactItems: Array<{ path: string; mime: string; size: number; ext: string }> = [];
 
       for (let i = 0; i < newFiles.length; i++) {
         const file = newFiles[i];
@@ -99,35 +92,30 @@ export default function VehicleForm({ vehicle }: VehicleFormProps) {
           throw new Error("Falha ao enviar imagem para o storage.");
         }
 
-        // 3) monta URL pública + metadados
-        const publicUrl = `${basePublic}/storage/v1/object/public/vehicles-media/${sign.path}`;
+        // 3) adiciona item compacto para a rota append
         const ext =
-          file.type === "image/webp" ? "webp" :
-          file.type === "image/jpeg" ? "jpg"  :
-          file.type === "image/png"  ? "png"  : "bin";
+          file.type === "image/webp"
+            ? "webp"
+            : file.type === "image/jpeg"
+            ? "jpg"
+            : file.type === "image/png"
+            ? "png"
+            : "bin";
 
-        items.push({
-          image_url: publicUrl,
-          image_meta: {
-            bucket: "vehicles-media",
-            path: sign.path,
-            formats: [ext],
-            sources: { original: { url: publicUrl, size: file.size, format: ext } },
-            original: { mime: file.type, width: null, height: null },
-            updated_at: new Date().toISOString(),
-            originalOnly: true,
-          },
-          // novas imagens entram depois das existentes
-          display_order: existingImages.length + i,
+        compactItems.push({
+          path: sign.path,
+          mime: file.type,
+          size: file.size,
+          ext,
         });
       }
 
-      // 4) registra no banco (vehicle_images)
-      if (items.length) {
+      // 4) registra no banco (vehicle_images) na ordem após as existentes
+      if (compactItems.length) {
         const resp = await fetch("/api/vehicles/images/append", {
           method: "POST",
           headers: { "content-type": "application/json" },
-          body: JSON.stringify({ vehicleId, items }),
+          body: JSON.stringify({ vehicleId, items: compactItems }),
         });
         if (!resp.ok) {
           const data = await resp.json().catch(() => ({}));
@@ -399,15 +387,14 @@ export default function VehicleForm({ vehicle }: VehicleFormProps) {
         <h2 className="text-lg font-semibold text-gray-900 pb-2 border-b mb-4">
           Imagens (máximo 10) - Formato .webp recomendado
         </h2>
-        
+
         <ImagesSortableGrid
-          key={vehicle?.id ?? "novo"}   // <<<<<< ADICIONE ESTA LINHA
+          key={vehicle?.id ?? "novo"}
           initialImages={vehicle?.images || []}
           max={10}
           onChange={(items) => setUiImages(items)}
           onFilesPicked={() => {}}
         />
-
       </div>
 
       {/* Botões de Ação */}
